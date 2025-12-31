@@ -1,0 +1,59 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+Logs/
+UserSettings/
+
+# Visual Studio / Rider
+.vs/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.unityproj
+*.slnx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Crash and build reports
+sysinfo.txt
+
+# MonoDevelop
+.userprefs
+
+# Rider
+.idea/
+*.sln.iml
+
+# Packed addressables
+Assets/AddressableAssetsData/*/*.bin*
+
+# Unity cache
+[Aa]ssets/**/StreamingAssets/aa/*
+
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Oo]bj/
+[Ll]ogs/
+
+# User-specific
+*.csproj
+*.sln
+*.user
+*.unityproj
+
+# Large imported assets you want to ignore
+Assets/Packages/
+
+
