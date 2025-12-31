@@ -4,6 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Adventure Puzzle Kit v1.7.1/Scenes/FirstPerson_AdventureKit_Demo.unity
+    guid: 90783b12bbf2c4344b695c04220e9697
   m_configObjects: {}
-  m_UseUCBPForAssetBundles: 0
