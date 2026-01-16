@@ -26,9 +26,11 @@ Goal: Establish a playable "gray-box" loop where the player can navigate the spa
 ## Phase 2: Full Workday (Narrative & Atmosphere)
 
 Goal: Transform the mechanical loop into a cohesive horror experience.
-
+- [ ] Write notes: Write out all 8 planned narrative notes. 1 - 2 hours.
 - [ ] Note Integration: Place all 8 planned narrative notes (Jacob, Emily, and Abductor lists) in concealed locations . 10 mins - 20 mins.
 - [ ] Ambient Audio: Implement the 2D basement room tone and 3D environmental sounds for objects. 10 mins - 1hour.
+- [ ] Write Cult Ritual Script: 1 hour
+- [ ] Record Cult Ritual Audio & edit: 3 hours
 - [ ] Ending Sequence: Script the final escape passage, cult ritual audio, and the fade-to-black. 1 hour - 2 hours.
 - [ ] Lighting Design: Set up fully dynamic lighting with heavy use of shadows. 10 mins - 20 mins.
 
