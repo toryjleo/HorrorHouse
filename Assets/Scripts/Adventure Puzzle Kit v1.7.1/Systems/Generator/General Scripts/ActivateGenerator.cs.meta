@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: e9176e1aca256ff49a433077d569d9f3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 175376
+  packageName: Adventure Puzzle Kit
+  packageVersion: 1.7.1
+  assetPath: Assets/Adventure Puzzle Kit v1.7.1/Scripts/Systems/Generator/General
+    Scripts/ActivateGenerator.cs
+  uploadId: 840520

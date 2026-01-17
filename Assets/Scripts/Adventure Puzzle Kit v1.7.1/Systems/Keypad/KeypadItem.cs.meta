@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: b649f5f2e7bd8be41b834b9a9ee5f590
+timeCreated: 1473334269
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 175376
+  packageName: Adventure Puzzle Kit
+  packageVersion: 1.7.1
+  assetPath: Assets/Adventure Puzzle Kit v1.7.1/Scripts/Systems/Keypad/KeypadItem.cs
+  uploadId: 840520

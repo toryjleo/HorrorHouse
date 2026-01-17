@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 04cac376f4dd6574aa05dcff3ceff8e5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 175376
+  packageName: Adventure Puzzle Kit
+  packageVersion: 1.7.1
+  assetPath: Assets/Adventure Puzzle Kit v1.7.1/Scripts/Systems/Generator/Additional
+    Script (LEAVE HERE)/PopoutUI.cs
+  uploadId: 840520

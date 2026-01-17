@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 4c0109a8e0d10b6489dc44d70e6e9eb8
+timeCreated: 1483556385
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 175376
+  packageName: Adventure Puzzle Kit
+  packageVersion: 1.7.1
+  assetPath: Assets/Adventure Puzzle Kit v1.7.1/Scripts/Systems/Keycard/KeycardCollectable.cs
+  uploadId: 840520

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 3d0ea5592bbe8a54aac36fab22d95e8e
+timeCreated: 1560871191
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 175376
+  packageName: Adventure Puzzle Kit
+  packageVersion: 1.7.1
+  assetPath: Assets/Adventure Puzzle Kit v1.7.1/Scripts/Systems/Flashlight/FlashlightItem.cs
+  uploadId: 840520

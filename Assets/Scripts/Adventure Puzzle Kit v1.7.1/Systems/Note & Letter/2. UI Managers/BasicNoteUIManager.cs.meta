@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: a9dfe00ccdab00543a6e814fdd771b67
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 175376
+  packageName: Adventure Puzzle Kit
+  packageVersion: 1.7.1
+  assetPath: Assets/Adventure Puzzle Kit v1.7.1/Scripts/Systems/Note & Letter/2.
+    UI Managers/BasicNoteUIManager.cs
+  uploadId: 840520

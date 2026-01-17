@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6982962bff63d5349b77acb8a259ed98
+timeCreated: 1576787004
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 175376
+  packageName: Adventure Puzzle Kit
+  packageVersion: 1.7.1
+  assetPath: Assets/Adventure Puzzle Kit v1.7.1/Scripts/Systems/Note & Letter/3.
+    Note Controllers/BasicReverseNoteController.cs
+  uploadId: 840520

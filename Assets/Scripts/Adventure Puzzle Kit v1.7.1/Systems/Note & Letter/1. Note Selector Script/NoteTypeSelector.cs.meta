@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 7429e1f2a56cae546a8b8b2218c22a01
+timeCreated: 1576786121
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 175376
+  packageName: Adventure Puzzle Kit
+  packageVersion: 1.7.1
+  assetPath: Assets/Adventure Puzzle Kit v1.7.1/Scripts/Systems/Note & Letter/1.
+    Note Selector Script/NoteTypeSelector.cs
+  uploadId: 840520
