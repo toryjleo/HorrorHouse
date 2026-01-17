@@ -55,5 +55,5 @@ Assets/AddressableAssetsData/*/*.bin*
 
 # Large imported assets you want to ignore
 Assets/Packages/
-
-
+# But track AK Inventory scripts
+!Assets/Packages/Adventure Puzzle Kit v1.7.1/Scripts/Systems/**/*Inventory.cs
