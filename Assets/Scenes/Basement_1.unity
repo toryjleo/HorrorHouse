@@ -2495,7 +2495,7 @@ GameObject:
   - component: {fileID: 1217000226448948045}
   - component: {fileID: 1217000226448948047}
   - component: {fileID: 1217000226448948044}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Knight Fuse - End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2706,7 +2706,7 @@ GameObject:
   - component: {fileID: 1217000226601318397}
   - component: {fileID: 1217000226601318399}
   - component: {fileID: 1217000226601318396}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Queen Fuse - End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6034,8 +6034,8 @@ MonoBehaviour:
   highlightName: 
   showNameHighlight: 0
   showInteractPrompt: 0
-  showPickupPrompt: 0
-  showExaminePrompt: 0
+  showPickupPrompt: 1
+  showExaminePrompt: 1
   showEmissionHighlight: 0
   isEmptyParent: 0
   includeChildrenWithParentMesh: 0
@@ -6055,7 +6055,7 @@ GameObject:
   - component: {fileID: 6913653914086491638}
   - component: {fileID: 6913653914086491639}
   - component: {fileID: 6913653914086491636}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Knight Fuse
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
@@ -6240,8 +6240,8 @@ MonoBehaviour:
   highlightName: 
   showNameHighlight: 0
   showInteractPrompt: 0
-  showPickupPrompt: 0
-  showExaminePrompt: 0
+  showPickupPrompt: 1
+  showExaminePrompt: 1
   showEmissionHighlight: 0
   isEmptyParent: 0
   includeChildrenWithParentMesh: 0
@@ -6382,9 +6382,9 @@ MonoBehaviour:
   _systemType: 12
   highlightName: fafsd
   showNameHighlight: 0
-  showInteractPrompt: 1
+  showInteractPrompt: 0
   showPickupPrompt: 1
-  showExaminePrompt: 0
+  showExaminePrompt: 1
   showEmissionHighlight: 0
   isEmptyParent: 0
   includeChildrenWithParentMesh: 0
@@ -6404,7 +6404,7 @@ GameObject:
   - component: {fileID: 6913653914086491635}
   - component: {fileID: 6913653914086491632}
   - component: {fileID: 6913653914086491633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Queen Fuse
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
