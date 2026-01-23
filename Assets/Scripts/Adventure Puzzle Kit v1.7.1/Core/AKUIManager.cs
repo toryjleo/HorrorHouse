@@ -314,7 +314,6 @@ namespace AdventurePuzzleKit
             #endregion
 
             FieldNullCheck();
-            PrewarmPromptPool();
 
             #region Post Processing Debug
 #if UNITY_EDITOR
@@ -407,48 +406,7 @@ namespace AdventurePuzzleKit
         {
             // Show or hide the container based on the presence of prompts
             ShowPromptContainer(prompts.Count > 0);
-
-            // Step 1: Return all current prompt objects to the pool
-            var childrenToReturn = new List<GameObject>();
-
-            foreach (Transform child in promptContainer)
-            {
-                var prompt = child.gameObject;
-                childrenToReturn.Add(prompt);
-            }
-
-            foreach (var prompt in childrenToReturn)
-            {
-                prompt.transform.SetParent(null); // Detach
-                prompt.SetActive(false);
-                promptPool.Enqueue(prompt); // Return to pool
-            }
-
-            // Step 2: Display the required number of prompts
-            for (int i = 0; i < prompts.Count; i++)
-            {
-                var promptData = prompts[i];
-                GameObject promptUI = GetPooledPrompt(); // Will expand pool if needed
-
-                promptUI.transform.SetParent(promptContainer); // Reparent
-                promptUI.transform.SetSiblingIndex(i);
-
-                var textElements = promptUI.GetComponentsInChildren<TextMeshProUGUI>();
-                if (textElements.Length >= 2)
-                {
-                    textElements[0].text = promptData.Key;
-                    textElements[1].text = promptData.Label;
-                }
-                else
-                {
-                    Debug.LogWarning("Prompt prefab missing TextMeshProUGUI elements!");
-                }
-
-                promptUI.SetActive(true);
-            }
-
-            // Force layout rebuild to ensure proper positioning
-            LayoutRebuilder.ForceRebuildLayoutImmediate(promptContainer);
+            // Intentionally do not add/remove/reparent prompt UI children.
         }
 
         private GameObject GetPooledPrompt()
