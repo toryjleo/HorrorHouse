@@ -89,10 +89,10 @@ namespace AdventurePuzzleKit.ChessSystem
             // Update the light to green when a fuse is placed
             fuseBoxLightMaterial.color = Color.green;
 
-            // Instantiate the fuse model at the specified location
-            spawnedFuse = Instantiate(fuseType.ChessPrefab, fuseLocation.transform.position + spawnOffset, Quaternion.identity);
-            spawnedFuse.transform.parent = fuseLocation.transform;
-            spawnedFuse.transform.rotation = fuseRotation;
+            // Instantiate and align in local space so rotation follows the fuse location.
+            spawnedFuse = Instantiate(fuseType.ChessPrefab, fuseLocation.transform);
+            spawnedFuse.transform.localPosition = spawnOffset;
+            spawnedFuse.transform.localRotation = fuseRotation;
         }
 
         // Called when the player removes a fuse from the box
