@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 70c505bf91498fa4a880057315b08b00
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 175376
+  packageName: Adventure Puzzle Kit
+  packageVersion: 1.7.1
+  assetPath: Assets/Adventure Puzzle Kit v1.7.1/Prefabs/2- Main Prefabs/2- AK Managers/AK
+    - Input Manager.prefab
+  uploadId: 840520

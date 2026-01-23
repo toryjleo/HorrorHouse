@@ -446,6 +446,9 @@ namespace AdventurePuzzleKit
 
                 promptUI.SetActive(true);
             }
+
+            // Force layout rebuild to ensure proper positioning
+            LayoutRebuilder.ForceRebuildLayoutImmediate(promptContainer);
         }
 
         private GameObject GetPooledPrompt()
