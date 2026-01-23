@@ -6734,11 +6734,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _systemType: 12
+  _systemType: 0
   highlightName: 
   showNameHighlight: 0
   showInteractPrompt: 0
-  showPickupPrompt: 1
+  showPickupPrompt: 0
   showExaminePrompt: 1
   showEmissionHighlight: 0
   isEmptyParent: 0
@@ -6940,11 +6940,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _systemType: 12
+  _systemType: 0
   highlightName: 
   showNameHighlight: 0
   showInteractPrompt: 0
-  showPickupPrompt: 1
+  showPickupPrompt: 0
   showExaminePrompt: 1
   showEmissionHighlight: 0
   isEmptyParent: 0
@@ -7083,12 +7083,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _systemType: 12
+  _systemType: 0
   highlightName: fafsd
   showNameHighlight: 0
   showInteractPrompt: 0
   showPickupPrompt: 0
-  showExaminePrompt: 0
+  showExaminePrompt: 1
   showEmissionHighlight: 0
   isEmptyParent: 0
   includeChildrenWithParentMesh: 0
