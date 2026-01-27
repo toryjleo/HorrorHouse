@@ -49,6 +49,7 @@ namespace AdventurePuzzleKit.FlashlightSystem
             if (instance != null)
             {
                 Destroy(gameObject);
+                return;
             }
             else
             {
@@ -58,6 +59,8 @@ namespace AdventurePuzzleKit.FlashlightSystem
                     DontDestroyOnLoad(gameObject);
                 }
             }
+
+            ResolveReferences();
         }
 
         void Start()
@@ -88,6 +91,43 @@ namespace AdventurePuzzleKit.FlashlightSystem
             if (hasFlashlight)
             {
                 UpdateUIElements(true, true);
+            }
+        }
+
+        private void ResolveReferences()
+        {
+            if (flashlightMovement == null)
+            {
+                flashlightMovement = FindObjectOfType<FlashlightMovement>();
+            }
+
+            if (flashlightSpot == null)
+            {
+                if (flashlightMovement != null)
+                {
+                    flashlightSpot = flashlightMovement.GetComponent<Light>();
+                }
+
+                if (flashlightSpot == null)
+                {
+                    GameObject spotlightObject = GameObject.Find("Flashlight - Spotlight");
+                    if (spotlightObject != null)
+                    {
+                        flashlightSpot = spotlightObject.GetComponent<Light>();
+                        if (flashlightMovement == null)
+                        {
+                            flashlightMovement = spotlightObject.GetComponent<FlashlightMovement>();
+                        }
+                    }
+                }
+            }
+
+            if (flashlightSpot == null || flashlightMovement == null)
+            {
+                Debug.LogError(
+                    "FlashlightController is missing required references (flashlightSpot/flashlightMovement). Assign them in the inspector.",
+                    this);
+                enabled = false;
             }
         }
 
