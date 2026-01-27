@@ -895,6 +895,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2141796348}
     m_Modifications:
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[8].SubsystemName
+      value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[8].Prompts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[8].Prompts.Array.data[0].Key
+      value: F
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[8].Prompts.Array.data[1].Key
+      value: RMB
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[8].Prompts.Array.data[0].Label
+      value: Toggle Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[8].Prompts.Array.data[1].Label
+      value: Close
+      objectReference: {fileID: 0}
     - target: {fileID: 4830119294632748542, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2223,6 +2251,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1202692496387097932, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+      propertyPath: _systemType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202692496387097932, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+      propertyPath: showPickupPrompt
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202692496387097932, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+      propertyPath: showNameHighlight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202692496387097934, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.119
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202692496387097934, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.061
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202692496387097934, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.736
+      objectReference: {fileID: 0}
     - target: {fileID: 1202692496875816586, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
       propertyPath: m_Name
       value: Flashlight - Objects
@@ -2231,6 +2283,13 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1202692496880605008, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
     - {fileID: 1202692496818864905, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+    - {fileID: 8274137402608827586, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+    - {fileID: 1202692496184710697, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+    - {fileID: 1202692497643283397, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+    - {fileID: 1202692497076975001, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+    - {fileID: 8274137402608827590, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+    - {fileID: 1202692497409500019, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+    - {fileID: 1202692498122592100, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
