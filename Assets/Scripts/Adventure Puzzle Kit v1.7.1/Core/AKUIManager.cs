@@ -383,7 +383,7 @@ namespace AdventurePuzzleKit
         }
         #endregion
 
-        #region Prompt UI updating (Using AKPromptManager
+        #region Prompt UI updating (Using AKPromptManager)
         public void ShowPromptContainer(bool show)
         {
             if (promptContainer != null)
@@ -394,6 +394,8 @@ namespace AdventurePuzzleKit
 
         private void PrewarmPromptPool()
         {
+            if (promptPool == null) return;
+            
             for (int i = 0; i < initialPromptPoolSize; i++)
             {
                 GameObject prompt = Instantiate(promptPrefab);
@@ -406,7 +408,51 @@ namespace AdventurePuzzleKit
         {
             // Show or hide the container based on the presence of prompts
             ShowPromptContainer(prompts.Count > 0);
-            // Intentionally do not add/remove/reparent prompt UI children.
+
+            // Step 1: Return all current prompt objects to the pool
+            var childrenToReturn = new List<GameObject>();
+
+            foreach (Transform child in promptContainer)
+            {
+                var prompt = child.gameObject;
+                childrenToReturn.Add(prompt);
+            }
+
+            foreach (var prompt in childrenToReturn)
+            {
+                prompt.transform.SetParent(null); // Detach
+                prompt.SetActive(false);
+                promptPool.Enqueue(prompt); // Return to pool
+            }
+
+            // Step 2: Display the required number of prompts
+            for (int i = 0; i < prompts.Count; i++)
+            {
+                var promptData = prompts[i];
+                GameObject promptUI = GetPooledPrompt(); // Will expand pool if needed
+
+                promptUI.transform.SetParent(promptContainer, false); // Reparent with worldPositionStays=false to fix UI scaling/position
+                promptUI.transform.SetSiblingIndex(i);
+                
+                // Reset basic transform properties just in case
+                promptUI.transform.localScale = Vector3.one;
+                promptUI.transform.localPosition = Vector3.zero;
+                promptUI.transform.localRotation = Quaternion.identity;
+
+                // Flattened TMP Logic: Find the single TMP component
+                var textElement = promptUI.GetComponentInChildren<TextMeshProUGUI>();
+                if (textElement != null)
+                {
+                    // Combine Key and Label (e.g. "E Interact")
+                    textElement.text = $"{promptData.Key} {promptData.Label}";
+                }
+                else
+                {
+                    Debug.LogWarning("Prompt prefab missing TextMeshProUGUI element!");
+                }
+
+                promptUI.SetActive(true);
+            }
         }
 
         private GameObject GetPooledPrompt()
@@ -426,57 +472,59 @@ namespace AdventurePuzzleKit
         #region Highlighting name / pickup or examining
         public void SetHighlightName(string? itemName, bool? isVisible, bool? showHighlightNamePrompt, bool? showInteractPrompt, bool? showPickupPrompt, bool? showExaminePrompt)
         {
-            // Store previous states before making changes
-            if (showInteractPrompt.HasValue) previousShowInteractPrompt = showInteractPrompt;
-            if (showPickupPrompt.HasValue) previousShowPickupPrompt = showPickupPrompt;
-            if (showExaminePrompt.HasValue) previousShowExaminePrompt = showExaminePrompt;
-            if (showHighlightNamePrompt.HasValue) previousShowHighlightNamePrompt = showHighlightNamePrompt;
-
-            // Update the item name
-            highlightItemNameUI.text = itemName ?? (isVisible.HasValue && isVisible.Value ? previousItemName ?? string.Empty : string.Empty);
-            if (itemName != null) previousItemName = itemName;
-
+            // Update the item name UI
+            highlightItemNameUI.text = itemName ?? string.Empty;
+            
             // **Adjust background size dynamically**
             ResizeHighlightBackground();
 
-            // Update highlight name visibility
-            UpdateContainerState(highlightNameCanvas, isVisible, showHighlightNamePrompt, previousShowHighlightNamePrompt);
+            // Handle the Highlight Name visibility (separate from prompts)
+            if (highlightNameCanvas != null)
+            {
+                bool showName = (isVisible ?? false) && (showHighlightNamePrompt ?? false);
+                highlightNameCanvas.SetActive(showName);
+            }
 
-            // Update interact prompt visibility
-            UpdateContainerState(interactPromptContainer, isVisible, showInteractPrompt, previousShowInteractPrompt);
-            interactPromptTextUI.text = interactPromptText;
-            interactPromptButtonUI.text = interactPromptButtonText;
+            // Generate Dynamic Prompts List
+            List<AKPromptManager.Prompt> activePrompts = new List<AKPromptManager.Prompt>();
 
-            // Update pickup prompt visibility
-            UpdateContainerState(pickupPromptContainer, isVisible, showPickupPrompt, previousShowPickupPrompt);
-            pickupPromptTextUI.text = pickupPromptText;
-            pickupPromptButtonUI.text = pickupPromptButtonText;
+            bool visible = isVisible ?? false;
 
-            // Update examine prompt visibility
-            UpdateContainerState(examinePromptContainer, isVisible, showExaminePrompt, previousShowExaminePrompt);
-            examinePromptButtonUI.text = examinePromptButtonText;
+            if (visible)
+            {
+                if (showInteractPrompt ?? false)
+                {
+                    activePrompts.Add(new AKPromptManager.Prompt(interactPromptButtonText, interactPromptText));
+                }
+
+                if (showPickupPrompt ?? false)
+                {
+                    activePrompts.Add(new AKPromptManager.Prompt(pickupPromptButtonText, pickupPromptText));
+                }
+
+                if (showExaminePrompt ?? false)
+                {
+                    activePrompts.Add(new AKPromptManager.Prompt(examinePromptButtonText, "Inspect"));
+                }
+            }
+
+            // Update the UI with the generated list
+            UpdatePromptsUI(activePrompts);
         }
 
-        // Helper method to update container visibility
-        private void UpdateContainerState(GameObject container, bool? isVisible, bool? explicitState, bool? previousState)
-        {
-            if (isVisible.HasValue)
-            {
-                container.SetActive(explicitState.HasValue ? explicitState.Value : isVisible.Value && (previousState ?? false));
-            }
-            else if (explicitState.HasValue)
-            {
-                container.SetActive(explicitState.Value);
-            }
-        }
-
+        // Helper method to update container visibility - DEPRECATED/UNUSED in new logic but kept if needed for other parts, 
+        // though typically we'd remove it. For now, it's private and was only used in SetHighlightName, so it's safe to assume it's gone with the replace.
+        
         private void ResizeHighlightBackground()
         {
-            float textWidth = highlightItemNameUI.preferredWidth;
-            float padding = 35f; // Add extra padding if needed
+            if (highlightItemNameUI != null && highlightBackground != null)
+            {
+                float textWidth = highlightItemNameUI.preferredWidth;
+                float padding = 35f; // Add extra padding if needed
 
-            // Set the background's width dynamically
-            highlightBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, textWidth + padding);
+                // Set the background's width dynamically
+                highlightBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, textWidth + padding);
+            }
         }
         #endregion
 
@@ -1344,14 +1392,7 @@ namespace AdventurePuzzleKit
             #region Highlighting Prompts
             CheckField(highlightNameCanvas, "HighlightNameCanvas");
             CheckField(highlightItemNameUI, "HighlightItemNameUI");
-
-            CheckField(pickupPromptContainer, "Pickup Prompt Container");
-            CheckField(pickupPromptTextUI, "Pickup Prompt Text UI");
-
-            CheckField(pickupPromptButtonUI, "Pickup Prompt Button UI");
-
-            CheckField(examinePromptContainer, "Examine Prompt Container");
-            CheckField(examinePromptButtonUI, "Examine Prompt Button UI");
+            // Obsolete usage of prompt containers removed
             #endregion
 
             #region Examine
