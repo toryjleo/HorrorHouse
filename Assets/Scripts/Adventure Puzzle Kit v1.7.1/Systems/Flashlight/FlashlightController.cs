@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 namespace AdventurePuzzleKit.FlashlightSystem
 {
@@ -40,6 +41,7 @@ namespace AdventurePuzzleKit.FlashlightSystem
 
         private bool shouldUpdate = false;
         private bool isFlashlightOn;
+        private bool isFlashlightPromptActive;
 
         public static FlashlightController instance;
 
@@ -170,6 +172,12 @@ namespace AdventurePuzzleKit.FlashlightSystem
             if (Input.GetKeyDown(AKInputManager.instance.flashlightSwitch))
             {
                 FlashlightSwitch();
+                if (isFlashlightPromptActive)
+                {
+                    Debug.Log("[FlashlightController] Flashlight toggle pressed: clearing Flashlight prompt.");
+                    AKPromptManager.Instance.ClearPrompts();
+                    isFlashlightPromptActive = false;
+                }
             }
 
             if (!infiniteFlashlight)
@@ -196,6 +204,16 @@ namespace AdventurePuzzleKit.FlashlightSystem
             hasFlashlight = true;
             FlashlightPickupSound();
             UpdateUIElements(true, true);
+            StartCoroutine(RegisterPromptAfterPickup());
+        }
+
+        private IEnumerator RegisterPromptAfterPickup()
+        {
+            // Let Examine/DisableManager clear prompts first, then register.
+            yield return null;
+            Debug.Log("[FlashlightController] CollectFlashlight: registering Flashlight prompt.");
+            AKPromptManager.Instance.RegisterPromptsForSubsystem("Flashlight");
+            isFlashlightPromptActive = true;
         }
 
         // Called when battery is collected

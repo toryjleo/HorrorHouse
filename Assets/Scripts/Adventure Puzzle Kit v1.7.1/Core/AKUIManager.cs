@@ -389,6 +389,11 @@ namespace AdventurePuzzleKit
             if (promptContainer != null)
             {
                 promptContainer.gameObject.SetActive(show);
+                Debug.Log($"[AKUIManager] ShowPromptContainer: show={show}");
+            }
+            else
+            {
+                Debug.LogWarning("[AKUIManager] ShowPromptContainer: promptContainer is not assigned.");
             }
         }
 
@@ -404,6 +409,7 @@ namespace AdventurePuzzleKit
 
         public void UpdatePromptsUI(List<AKPromptManager.Prompt> prompts)
         {
+            Debug.Log($"[AKUIManager] UpdatePromptsUI: prompts={prompts.Count}, promptContainer={(promptContainer != null ? promptContainer.name : "null")}, promptPrefab={(promptPrefab != null ? promptPrefab.name : "null")}");
             // Show or hide the container based on the presence of prompts
             ShowPromptContainer(prompts.Count > 0);
 

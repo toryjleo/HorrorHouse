@@ -100,3 +100,7 @@ MonoBehaviour:
       Label: Interact
     - Key: RMB
       Label: Close
+  - SubsystemName: Flashlight
+    Prompts:
+    - Key: F
+      Label: Toggle Flashlight
