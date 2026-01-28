@@ -442,6 +442,7 @@ namespace AdventurePuzzleKit
                 if (textElement != null)
                 {
                     textElement.text = $"{promptData.Key} - {promptData.Label}";
+                    textElement.color = promptData.Color.a <= 0f ? Color.white : promptData.Color;
                 }
                 else
                 {

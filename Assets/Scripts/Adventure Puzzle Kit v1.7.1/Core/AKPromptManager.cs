@@ -19,6 +19,9 @@ namespace AdventurePuzzleKit
             [Tooltip("Description of the prompt action (e.g., Rotate, Close, Zoom)")]
             public string Label;
 
+            [Tooltip("Prompt text color")]
+            public Color Color = Color.white;
+
             public Prompt(string key, string label)
             {
                 Key = key;
