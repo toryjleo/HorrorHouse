@@ -121,7 +121,6 @@ namespace AdventurePuzzleKit
         // Pass the current prompts to the UI Manager
         private void UpdateUI()
         {
-            Debug.Log($"[AKPromptManager] UpdateUI: activePrompts={activePrompts.Count}, uiManager={(AKUIManager.instance != null ? AKUIManager.instance.name : "null")}");
             AKUIManager.instance.UpdatePromptsUI(activePrompts);
         }
     }

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace AdventurePuzzleKit.FlashlightSystem
 {
@@ -42,6 +41,7 @@ namespace AdventurePuzzleKit.FlashlightSystem
         private bool shouldUpdate = false;
         private bool isFlashlightOn;
         private bool isFlashlightPromptActive;
+        private bool isFlashlightPromptPending;
 
         public static FlashlightController instance;
 
@@ -155,6 +155,13 @@ namespace AdventurePuzzleKit.FlashlightSystem
 
         void Update()
         {
+            if (isFlashlightPromptPending && !GameState.IsPlayerBusy && !GameState.IsExamining && !GameState.IsUsingSystem)
+            {
+                AKPromptManager.Instance.RegisterPromptsForSubsystem("Flashlight");
+                isFlashlightPromptActive = true;
+                isFlashlightPromptPending = false;
+            }
+
             // Skip if player is doing something else
             if (GameState.IsPlayerBusy) return;
 
@@ -174,7 +181,6 @@ namespace AdventurePuzzleKit.FlashlightSystem
                 FlashlightSwitch();
                 if (isFlashlightPromptActive)
                 {
-                    Debug.Log("[FlashlightController] Flashlight toggle pressed: clearing Flashlight prompt.");
                     AKPromptManager.Instance.ClearPrompts();
                     isFlashlightPromptActive = false;
                 }
@@ -204,16 +210,7 @@ namespace AdventurePuzzleKit.FlashlightSystem
             hasFlashlight = true;
             FlashlightPickupSound();
             UpdateUIElements(true, true);
-            StartCoroutine(RegisterPromptAfterPickup());
-        }
-
-        private IEnumerator RegisterPromptAfterPickup()
-        {
-            // Let Examine/DisableManager clear prompts first, then register.
-            yield return null;
-            Debug.Log("[FlashlightController] CollectFlashlight: registering Flashlight prompt.");
-            AKPromptManager.Instance.RegisterPromptsForSubsystem("Flashlight");
-            isFlashlightPromptActive = true;
+            isFlashlightPromptPending = true;
         }
 
         // Called when battery is collected
