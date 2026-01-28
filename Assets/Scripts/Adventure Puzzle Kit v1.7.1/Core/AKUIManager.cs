@@ -223,13 +223,13 @@ namespace AdventurePuzzleKit
         [SerializeField] private GameObject safeCanvasContainerUI = null;
 
         [Tooltip("Add the UI numbers text UI elements here")]
-        [Space(5)] [SerializeField] private Button acceptBtn = null;
+        [Space(5)][SerializeField] private Button acceptBtn = null;
 
         [Tooltip("Add the UI numbers text UI elements here")]
-        [Space(5)] [SerializeField] private TMP_Text[] numberUI = new TMP_Text[3];
+        [Space(5)][SerializeField] private TMP_Text[] numberUI = new TMP_Text[3];
 
         [Tooltip("Add the UI selection buttons, there should be 3")]
-        [Space(5)] [SerializeField] private Button[] selectionBtn = new Button[3];
+        [Space(5)][SerializeField] private Button[] selectionBtn = new Button[3];
 
         public string playerInputNumber { get; private set; }
         #endregion
@@ -406,7 +406,51 @@ namespace AdventurePuzzleKit
         {
             // Show or hide the container based on the presence of prompts
             ShowPromptContainer(prompts.Count > 0);
-            // Intentionally do not add/remove/reparent prompt UI children.
+
+            // Step 1: Return all current prompt objects to the pool
+            var childrenToReturn = new List<GameObject>();
+
+            foreach (Transform child in promptContainer)
+            {
+                var prompt = child.gameObject;
+                childrenToReturn.Add(prompt);
+            }
+
+            foreach (var prompt in childrenToReturn)
+            {
+                prompt.transform.SetParent(null); // Detach
+                prompt.SetActive(false);
+                promptPool.Enqueue(prompt); // Return to pool
+            }
+
+            // Step 2: Display the required number of prompts
+            for (int i = 0; i < prompts.Count; i++)
+            {
+                var promptData = prompts[i];
+                GameObject promptUI = GetPooledPrompt(); // Will expand pool if needed
+
+                promptUI.transform.SetParent(promptContainer, false); // Reparent to UI space (avoid world-space offsets)
+                promptUI.transform.SetSiblingIndex(i);
+
+                if (promptUI.transform is RectTransform rectTransform)
+                {
+                    rectTransform.localScale = Vector3.one;
+                    rectTransform.localRotation = Quaternion.identity;
+                }
+
+                var textElement = promptUI.GetComponentInChildren<TextMeshProUGUI>();
+                if (textElement != null)
+                {
+                    textElement.text = $"{promptData.Key} - {promptData.Label}";
+                    textElement.color = promptData.Color.a <= 0f ? Color.white : promptData.Color;
+                }
+                else
+                {
+                    Debug.LogWarning("Prompt prefab missing TextMeshProUGUI element!");
+                }
+
+                promptUI.SetActive(true);
+            }
         }
 
         private GameObject GetPooledPrompt()
@@ -1344,14 +1388,7 @@ namespace AdventurePuzzleKit
             #region Highlighting Prompts
             CheckField(highlightNameCanvas, "HighlightNameCanvas");
             CheckField(highlightItemNameUI, "HighlightItemNameUI");
-
-            CheckField(pickupPromptContainer, "Pickup Prompt Container");
-            CheckField(pickupPromptTextUI, "Pickup Prompt Text UI");
-
-            CheckField(pickupPromptButtonUI, "Pickup Prompt Button UI");
-
-            CheckField(examinePromptContainer, "Examine Prompt Container");
-            CheckField(examinePromptButtonUI, "Examine Prompt Button UI");
+            // Obsolete usage of prompt containers removed
             #endregion
 
             #region Examine
@@ -1441,9 +1478,9 @@ namespace AdventurePuzzleKit
 
             CheckField(visorImageOverlay, "Gas Mask Glass Overlay UI");
 
-//            CheckField(_postProcessingVolume, "Post Processing Volume");
-//            CheckField(_originalProfile, "Original Post Processing Profile");
-//            CheckField(_gasMaskProfile, "Gas Mask Post Processing Profile");
+            //            CheckField(_postProcessingVolume, "Post Processing Volume");
+            //            CheckField(_originalProfile, "Original Post Processing Profile");
+            //            CheckField(_gasMaskProfile, "Gas Mask Post Processing Profile");
             #endregion
 
             #region Generator Fields

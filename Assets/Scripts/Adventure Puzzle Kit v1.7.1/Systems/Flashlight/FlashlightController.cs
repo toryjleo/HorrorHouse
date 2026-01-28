@@ -40,6 +40,8 @@ namespace AdventurePuzzleKit.FlashlightSystem
 
         private bool shouldUpdate = false;
         private bool isFlashlightOn;
+        private bool isFlashlightPromptActive;
+        private bool isFlashlightPromptPending;
 
         public static FlashlightController instance;
 
@@ -153,6 +155,13 @@ namespace AdventurePuzzleKit.FlashlightSystem
 
         void Update()
         {
+            if (isFlashlightPromptPending && !GameState.IsPlayerBusy && !GameState.IsExamining && !GameState.IsUsingSystem)
+            {
+                AKPromptManager.Instance.RegisterPromptsForSubsystem("Flashlight");
+                isFlashlightPromptActive = true;
+                isFlashlightPromptPending = false;
+            }
+
             // Skip if player is doing something else
             if (GameState.IsPlayerBusy) return;
 
@@ -170,6 +179,11 @@ namespace AdventurePuzzleKit.FlashlightSystem
             if (Input.GetKeyDown(AKInputManager.instance.flashlightSwitch))
             {
                 FlashlightSwitch();
+                if (isFlashlightPromptActive)
+                {
+                    AKPromptManager.Instance.ClearPrompts();
+                    isFlashlightPromptActive = false;
+                }
             }
 
             if (!infiniteFlashlight)
@@ -196,6 +210,7 @@ namespace AdventurePuzzleKit.FlashlightSystem
             hasFlashlight = true;
             FlashlightPickupSound();
             UpdateUIElements(true, true);
+            isFlashlightPromptPending = true;
         }
 
         // Called when battery is collected
