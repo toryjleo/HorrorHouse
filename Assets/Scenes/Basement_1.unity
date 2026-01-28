@@ -2719,6 +2719,10 @@ PrefabInstance:
       propertyPath: sprintStepInterval
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7920018926694573792, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     - target: {fileID: 8522404988165023863, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
       propertyPath: m_Color.b
       value: 0.73743063
