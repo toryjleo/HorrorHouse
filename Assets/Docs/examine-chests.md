@@ -1,5 +1,16 @@
-This documents the items required for an interact box witht the examine system.
+This doc outlines what you need to set up a chest (or any interactable box) for the Examine system.
 
-There is an ExaminableItem.cs script that has some cool features. It acts as the root of the amaxinaable item and can even exist on an emptuy obsect that is not part of the model. If this is the case, make sure to enable 'empty parent' on the component
-ExaminableItem.cs references a list of inspect points. Inspect points are empty gameobjects with an ExamineInspectPint.cs component. ExamineInspectPint.cs has a special interaction event hook and has a text description of the point. An object that has an ExamineInspectPint.cs component must be on the InspectPoint layer.
-There is an InspectReveal script that, when called, will hide an object and show another.
+## Core components
+- **ExaminableItem.cs** is the main script that drives examining. It can live on the model itself or on an empty parent object. If you use an empty parent, enable **Empty Parent** on the component.
+- **Inspect points** are empty GameObjects that define spots the player can examine. Each inspect point must have **ExamineInspectPoint.cs** attached.
+  - **ExamineInspectPoint.cs** includes a description string and an interaction event hook.
+  - Any object with **ExamineInspectPoint.cs** must be on the **InspectPoint** layer.
+
+## Reveal setup (optional)
+- **InspectReveal** can be triggered to hide one object and show another (useful for secret compartments, hidden items, etc.).
+
+## Quick checklist
+- ExaminableItem.cs placed on model or empty parent (and **Empty Parent** enabled if needed).
+- One or more inspect points with **ExamineInspectPoint.cs**.
+- Inspect points are on the **InspectPoint** layer.
+- Optional: InspectReveal configured for swap/reveal behavior.
