@@ -429,8 +429,14 @@ namespace AdventurePuzzleKit
                 var promptData = prompts[i];
                 GameObject promptUI = GetPooledPrompt(); // Will expand pool if needed
 
-                promptUI.transform.SetParent(promptContainer); // Reparent
+                promptUI.transform.SetParent(promptContainer, false); // Reparent to UI space (avoid world-space offsets)
                 promptUI.transform.SetSiblingIndex(i);
+
+                if (promptUI.transform is RectTransform rectTransform)
+                {
+                    rectTransform.localScale = Vector3.one;
+                    rectTransform.localRotation = Quaternion.identity;
+                }
 
                 var textElement = promptUI.GetComponentInChildren<TextMeshProUGUI>();
                 if (textElement != null)

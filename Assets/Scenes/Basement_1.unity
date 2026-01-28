@@ -910,6 +910,30 @@ PrefabInstance:
       propertyPath: SubsystemPromptDefinitions.Array.data[8].Prompts.Array.data[1].Label
       value: Close
       objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[0].Prompts.Array.data[2].Color.b
+      value: 0.9909426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[0].Prompts.Array.data[2].Color.g
+      value: 0.9909426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[0].Prompts.Array.data[2].Color.r
+      value: 0.9909426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[1].Prompts.Array.data[2].Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[1].Prompts.Array.data[2].Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830119294632748537, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
+      propertyPath: SubsystemPromptDefinitions.Array.data[1].Prompts.Array.data[2].Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4830119294632748542, guid: bd1f0ca787dead04796e3f9346cbf52c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
