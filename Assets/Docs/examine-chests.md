@@ -8,9 +8,13 @@ This doc outlines what you need to set up a chest (or any interactable box) for 
 
 ## Reveal setup (optional)
 - **InspectReveal** can be triggered to hide one object and show another (useful for secret compartments, hidden items, etc.).
+- ExamineInspectPoints are disabled by default. Turned on at inspection
+- Make an empty parent for inspect point to turn on. The model and the actual ExamineInspectPoints gameobject can be seperate children
 
 ## Quick checklist
 - ExaminableItem.cs placed on model or empty parent (and **Empty Parent** enabled if needed).
 - One or more inspect points with **ExamineInspectPoint.cs**.
 - Inspect points are on the **InspectPoint** layer.
 - Optional: InspectReveal configured for swap/reveal behavior.
+- Make sure Inspect Points are a good sixe
+
