@@ -130,6 +130,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa8ed5e4fbb4f148ba77495fc5c8ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &28106385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4909601476543146463, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_Name
+      value: Custom Note - Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161753755672991170, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: showInteractPrompt
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.894
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
 --- !u!1 &105312976 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7958175795447052499, guid: ef984a203fe21334f98987d417a3d69e, type: 3}
@@ -4252,7 +4313,7 @@ MonoBehaviour:
   _systemType: 12
   highlightName: 
   showNameHighlight: 0
-  showInteractPrompt: 0
+  showInteractPrompt: 1
   showPickupPrompt: 0
   showExaminePrompt: 0
   showEmissionHighlight: 0
@@ -4694,7 +4755,7 @@ MonoBehaviour:
   _systemType: 12
   highlightName: 
   showNameHighlight: 0
-  showInteractPrompt: 0
+  showInteractPrompt: 1
   showPickupPrompt: 0
   showExaminePrompt: 0
   showEmissionHighlight: 0
@@ -5188,7 +5249,7 @@ MonoBehaviour:
   _systemType: 12
   highlightName: 
   showNameHighlight: 0
-  showInteractPrompt: 0
+  showInteractPrompt: 1
   showPickupPrompt: 0
   showExaminePrompt: 0
   showEmissionHighlight: 0
@@ -7413,3 +7474,4 @@ SceneRoots:
   - {fileID: 1217000226657461791}
   - {fileID: 1518209498}
   - {fileID: 447210405996956641}
+  - {fileID: 28106385}
