@@ -1,7 +1,7 @@
 # Key to Open Chest Plan (Themed Key System)
 
 ## Goal
-Keep `ExamineInspectPoint` generic, but gate chest-open logic using a themed key. Reuse the **key-check pattern** from `TKDoorInteractable.CheckDoor()` (inventory contains key → allow; else denied), without importing its animation logic.
+Keep `ExamineInspectPoint` generic and unchanged, but gate chest-open logic using a themed key. Reuse the **key-check pattern** from `TKDoorInteractable.CheckDoor()` (inventory contains key → allow; else denied), without importing its animation logic.
 
 ## Design Summary
 - `ExamineInspectPoint` remains unchanged.
@@ -29,7 +29,7 @@ Keep `ExamineInspectPoint` generic, but gate chest-open logic using a themed key
   - invoke `onAllowed`
 - Else → invoke `onDenied` (optionally play locked sound)
 
-## Wiring in Unity
+## Wiring in Unity (Planning Only)
 1. Add `InspectKeyGate` to the chest or inspect-point GameObject.
 2. In `ExamineInspectPoint.specialInteraction`, connect to `InspectKeyGate.TryOpen()`.
 3. In `InspectKeyGate.onAllowed`, connect to chest open method (animation/state).
@@ -40,3 +40,4 @@ Keep `ExamineInspectPoint` generic, but gate chest-open logic using a themed key
 - This keeps `ExamineInspectPoint` generic and reusable.
 - Leverages existing TK key logic without duplicating animation logic.
 - If you want parity with `TKDoorInteractable`, we can optionally add the same locked sound hook.
+ - The gate component is the only new runtime code; all other steps are inspector wiring.
