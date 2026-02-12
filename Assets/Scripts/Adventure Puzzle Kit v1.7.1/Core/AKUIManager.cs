@@ -22,6 +22,7 @@ namespace AdventurePuzzleKit
     {
         #region Inventory UI System Container Fields / Core UI 
         [SerializeField] private GameObject inventoryContainer = null;
+        [SerializeField] private InventoryPanelController _inventoryPanel = null;
 
         [SerializeField] private GameObject flashlightUI = null;
         [SerializeField] private GameObject flashlightBatteryUI = null;
@@ -362,24 +363,42 @@ namespace AdventurePuzzleKit
         void OpenInventoryUI()
         {
             GameState.IsInventoryOpen = true;
-            inventoryContainer.SetActive(true);
             isInventoryOpen = true;
             AKDisableManager.instance.DisablePlayerDefault(true, false, false);
             isInteracting = false;
             showUI = true;
             AKPromptManager.Instance.RegisterPromptsForSubsystem("Inventory");
+
+            // Use the new panel if wired, otherwise fall back to old container
+            if (_inventoryPanel != null)
+            {
+                _inventoryPanel.Open();
+            }
+            else
+            {
+                inventoryContainer.SetActive(true);
+            }
         }
 
         void CloseInventoryUI()
         {
             GameState.IsInventoryOpen = false;
-            inventoryContainer.SetActive(false);
             isInventoryOpen = false;
             AKDisableManager.instance.DisablePlayerDefault(false, false, false);
             isInteracting = false;
             fuseBoxInteractable = null;
             showUI = false;
             AKPromptManager.Instance.ClearPrompts();
+
+            // Use the new panel if wired, otherwise fall back to old container
+            if (_inventoryPanel != null)
+            {
+                _inventoryPanel.Close();
+            }
+            else
+            {
+                inventoryContainer.SetActive(false);
+            }
         }
         #endregion
 
