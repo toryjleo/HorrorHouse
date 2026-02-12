@@ -2239,6 +2239,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3582632565991208518, guid: 958a6817c6c3d3c4ba050b4c363948db, type: 3}
   m_PrefabInstance: {fileID: 576669271}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &605147633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 605147634}
+  - component: {fileID: 605147635}
+  m_Layer: 0
+  m_Name: PlayerInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &605147634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605147633}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2141796348}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &605147635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605147633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36a50d5e769b805aa502cf37e8aef89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.PlayerInventory
+  persistAcrossScenes: 1
+  maxSlots: 8
 --- !u!1 &608910202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,7 +4156,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessInventory
   persistAcrossScenes: 1
-  chessPieceList: []
+  chessPieceMappings:
+  - {fileID: 11400000, guid: 30124a44612276ba6b389fa2cdd7ba3e, type: 2}
+  - {fileID: 11400000, guid: d923e0f6f9044a795a2f274a4ff7d18f, type: 2}
+  - {fileID: 11400000, guid: 50891671c2f75c93dadea1543041ce85, type: 2}
 --- !u!4 &1413539350
 Transform:
   m_ObjectHideFlags: 0
@@ -6110,6 +6159,7 @@ Transform:
   - {fileID: 557374178}
   - {fileID: 530067553}
   - {fileID: 1677282991}
+  - {fileID: 605147634}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &447210405996956641
