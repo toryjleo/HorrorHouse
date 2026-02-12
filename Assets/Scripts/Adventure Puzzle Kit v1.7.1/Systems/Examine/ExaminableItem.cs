@@ -1,6 +1,7 @@
 ﻿// Handles object examination logic: rotation, zoom, UI display, item collection, and inspect points
 // Requires ExaminableItemEditor (in the Editor folder) to expose new fields in inspector
 
+using System;
 using UnityEngine;
 using System.Collections;
 using AdventurePuzzleKit.FlashlightSystem;
@@ -107,12 +108,21 @@ namespace AdventurePuzzleKit.ExamineSystem
         private FuseItem _fuseboxItem;
         private ValveItem _valveItem;
         private KeycardItem _keycardItem;
+
+        // Optional runtime collect callback (used by outlets to wire custom logic)
+        private Action _onCollect;
         #endregion
 
         #region Public Properties
         // Get/set properties for inspect and collect states
         public bool hasInspectPoints { get => _hasInspectPoints; set => _hasInspectPoints = value; }
         public bool isCollectable { get => _isCollectable; set => _isCollectable = value; }
+
+        /// <summary>
+        /// Sets a custom collect action. When set, CollectItem invokes this
+        /// instead of dispatching by SystemType.
+        /// </summary>
+        public void SetCollectAction(Action action) => _onCollect = action;
         #endregion
 
         void Start()
@@ -422,6 +432,14 @@ namespace AdventurePuzzleKit.ExamineSystem
 
         void CollectItem()
         {
+            // If a custom collect action was wired (e.g. by an outlet), use it
+            if (_onCollect != null)
+            {
+                _onCollect.Invoke();
+                DropObject(false);
+                return;
+            }
+
             // Trigger item collection based on type
             switch (_systemType)
             {

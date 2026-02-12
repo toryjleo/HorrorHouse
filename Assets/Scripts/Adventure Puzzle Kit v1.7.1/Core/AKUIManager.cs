@@ -677,6 +677,12 @@ namespace AdventurePuzzleKit
             fuseBoxInteractable = fuseBoxController;
             OpenInventoryUI();
             disableRemoveButton = false;
+
+            // Pass outlet context to the new panel so clicking a piece auto-places it
+            if (_inventoryPanel != null)
+            {
+                _inventoryPanel.SetOutletContext(fuseBoxController);
+            }
         }
 
         public void DisableInventoryFusebox()

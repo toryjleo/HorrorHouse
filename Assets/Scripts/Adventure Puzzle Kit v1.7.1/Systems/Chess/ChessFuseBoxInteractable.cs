@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using AdventurePuzzleKit.ExamineSystem;
 
 namespace AdventurePuzzleKit.ChessSystem
 {
@@ -34,20 +35,31 @@ namespace AdventurePuzzleKit.ChessSystem
 
         private void Awake()
         {
+            // Cache the material first — SpawnFuse needs it
+            fuseBoxLightMaterial = fuseBoxLightRend.material;
+
             // If this box starts with a fuse, spawn it at the beginning
             if (fusePlaced)
             {
                 SpawnFuse(starterFuseScriptable);
             }
-
-            // Cache the material so we can update its color
-            fuseBoxLightMaterial = fuseBoxLightRend.material;
         }
 
         // Called when the player interacts with the fuse box
         public void InteractFuseBox()
         {
-            // Opens the inventory UI specifically for the fuse box system
+            if (fusePlaced && spawnedFuse != null)
+            {
+                // Occupied: examine the placed piece so player can collect it
+                var examine = spawnedFuse.GetComponent<ExaminableItem>();
+                if (examine != null)
+                {
+                    examine.ExamineObject();
+                    return;
+                }
+            }
+
+            // Empty: open inventory for placement
             AKUIManager.instance.OpenInventoryFusebox(this);
         }
 
@@ -93,6 +105,39 @@ namespace AdventurePuzzleKit.ChessSystem
             spawnedFuse = Instantiate(fuseType.ChessPrefab, fuseLocation.transform);
             spawnedFuse.transform.localPosition = spawnOffset;
             spawnedFuse.transform.localRotation = fuseRotation;
+
+            // Configure ExaminableItem so the placed piece can be examined & collected
+            var examine = spawnedFuse.GetComponent<ExaminableItem>();
+            if (examine == null)
+                examine = spawnedFuse.AddComponent<ExaminableItem>();
+
+            examine.isCollectable = true;
+
+            // Ensure there's a collider for the examine raycast
+            if (spawnedFuse.GetComponent<Collider>() == null)
+                spawnedFuse.AddComponent<BoxCollider>();
+
+            // Wire custom collect: remove from outlet + add back to inventory
+            examine.SetCollectAction(() => OnPlugCollected(fuseType));
+        }
+
+        // Called when the player collects a piece from this outlet via examine
+        private void OnPlugCollected(ChessPiece fuseType)
+        {
+            fusePlaced = false;
+            fuseBoxLightMaterial.color = Color.red;
+
+            // Return to inventory via adapter (flows through to PlayerInventory)
+            ChessInventory.instance.AddChessPiece(fuseType);
+
+            // Destroy the placed visual
+            Destroy(spawnedFuse);
+
+            // Update power logic
+            CheckFuseBox(null);
+
+            // Play audio feedback
+            AKAudioManager.instance.Play(insertFuseSound);
         }
 
         // Called when the player removes a fuse from the box

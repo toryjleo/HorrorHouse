@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using AdventurePuzzleKit.ChessSystem;
 
 namespace AdventurePuzzleKit
 {
@@ -22,6 +23,9 @@ namespace AdventurePuzzleKit
         [SerializeField] private GameObject _panelRoot;
 
         private int _selectedIndex = -1;
+
+        // Outlet context: when non-null, clicking a chess piece auto-places it
+        private ChessFuseBoxInteractable _activeOutlet;
 
         // ── Lifecycle ──────────────────────────────────────────────────
 
@@ -89,6 +93,7 @@ namespace AdventurePuzzleKit
             }
 
             ClearSelection();
+            ClearOutletContext();
         }
 
         public bool IsOpen => _panelRoot != null && _panelRoot.activeSelf;
@@ -105,6 +110,14 @@ namespace AdventurePuzzleKit
             InventoryItem item = _slots[index].Item;
             if (item == null) return;
 
+            // If an outlet is active and the item is a chess piece, auto-place it
+            if (_activeOutlet != null && item.category == ItemCategory.ChessPiece && item.chessPiece != null)
+            {
+                _activeOutlet.PlaceFuse(item.chessPiece);
+                AKUIManager.instance.DisableInventoryFusebox();
+                return;
+            }
+
             // Toggle selection if same slot clicked again
             if (_selectedIndex == index)
             {
@@ -113,6 +126,24 @@ namespace AdventurePuzzleKit
             }
 
             SetSelection(index, item);
+        }
+
+        // ── Outlet context ─────────────────────────────────────────────
+
+        /// <summary>
+        /// Called by AKUIManager when the panel is opened for an outlet interaction.
+        /// </summary>
+        public void SetOutletContext(ChessFuseBoxInteractable outlet)
+        {
+            _activeOutlet = outlet;
+        }
+
+        /// <summary>
+        /// Clears the outlet context (called on Close or after placement).
+        /// </summary>
+        public void ClearOutletContext()
+        {
+            _activeOutlet = null;
         }
 
         // ── Internal ───────────────────────────────────────────────────
