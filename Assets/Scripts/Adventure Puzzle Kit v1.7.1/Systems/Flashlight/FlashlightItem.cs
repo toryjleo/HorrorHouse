@@ -18,6 +18,10 @@ namespace AdventurePuzzleKit.FlashlightSystem
         [Header("Batteries Added On Pickup")]
         [SerializeField] private int batteryNumber = 1; // Amount of batteries granted on pickup
 
+        [Header("Inventory Integration")]
+        [Tooltip("Optional: assign to make this item appear in the unified inventory panel.")]
+        [SerializeField] private InventoryItem inventoryItem = null;
+
         // Property to get item type
         public ItemType FlashlightItemType => _itemType;
 
@@ -35,6 +39,8 @@ namespace AdventurePuzzleKit.FlashlightSystem
             {
                 case ItemType.Flashlight:
                     FlashlightController.instance.CollectFlashlight();
+                    if (inventoryItem != null && PlayerInventory.instance != null)
+                        PlayerInventory.instance.AddItem(inventoryItem);
                     gameObject.SetActive(false); // Disable after pickup
                     break;
                 case ItemType.Battery:

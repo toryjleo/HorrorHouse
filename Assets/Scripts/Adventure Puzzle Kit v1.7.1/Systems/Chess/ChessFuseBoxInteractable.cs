@@ -3,7 +3,7 @@ using AdventurePuzzleKit.ExamineSystem;
 
 namespace AdventurePuzzleKit.ChessSystem
 {
-    public class ChessFuseBoxInteractable : MonoBehaviour
+    public class ChessFuseBoxInteractable : MonoBehaviour, IOutletContext
     {
         [Header("Fuse Box Type")]
         [SerializeField] private ChessPiece chessPieceScriptable = null; // The correct fuse type that powers this box
@@ -62,6 +62,20 @@ namespace AdventurePuzzleKit.ChessSystem
             // Empty: open inventory for placement
             AKUIManager.instance.OpenInventoryFusebox(this);
         }
+
+        // ── IOutletContext ──────────────────────────────────────────────
+
+        public bool TryPlaceItem(InventoryItem item)
+        {
+            if (fusePlaced) return false;
+            if (item == null || item.category != ItemCategory.ChessPiece || item.chessPiece == null)
+                return false;
+
+            PlaceFuse(item.chessPiece);
+            return true;
+        }
+
+        public void OnCancel() { /* No cleanup needed for chess outlets */ }
 
         // Check if the currently placed fuse is the correct one
         public void CheckFuseBox(ChessPiece fuseType)

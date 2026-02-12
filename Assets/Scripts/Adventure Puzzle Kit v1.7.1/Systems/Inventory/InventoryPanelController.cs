@@ -1,6 +1,6 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using AdventurePuzzleKit.ChessSystem;
 
 namespace AdventurePuzzleKit
 {
@@ -24,8 +24,9 @@ namespace AdventurePuzzleKit
 
         private int _selectedIndex = -1;
 
-        // Outlet context: when non-null, clicking a chess piece auto-places it
-        private ChessFuseBoxInteractable _activeOutlet;
+        // Outlet context: when non-null, clicking an item attempts placement
+        private IOutletContext _activeOutlet;
+        private Coroutine _errorCoroutine;
 
         // ── Lifecycle ──────────────────────────────────────────────────
 
@@ -110,11 +111,19 @@ namespace AdventurePuzzleKit
             InventoryItem item = _slots[index].Item;
             if (item == null) return;
 
-            // If an outlet is active and the item is a chess piece, auto-place it
-            if (_activeOutlet != null && item.category == ItemCategory.ChessPiece && item.chessPiece != null)
+            // If an outlet is active, try to place the item
+            if (_activeOutlet != null)
             {
-                _activeOutlet.PlaceFuse(item.chessPiece);
-                AKUIManager.instance.DisableInventoryFusebox();
+                if (_activeOutlet.TryPlaceItem(item))
+                {
+                    // Success: close panel
+                    AKUIManager.instance.DisableInventoryFusebox();
+                }
+                else
+                {
+                    // Fail: show error text
+                    ShowErrorText("That doesn't fit here");
+                }
                 return;
             }
 
@@ -133,7 +142,7 @@ namespace AdventurePuzzleKit
         /// <summary>
         /// Called by AKUIManager when the panel is opened for an outlet interaction.
         /// </summary>
-        public void SetOutletContext(ChessFuseBoxInteractable outlet)
+        public void SetOutletContext(IOutletContext outlet)
         {
             _activeOutlet = outlet;
         }
@@ -144,6 +153,31 @@ namespace AdventurePuzzleKit
         public void ClearOutletContext()
         {
             _activeOutlet = null;
+        }
+
+        // ── Error feedback ─────────────────────────────────────────────
+
+        private void ShowErrorText(string message)
+        {
+            if (_errorCoroutine != null)
+                StopCoroutine(_errorCoroutine);
+            _errorCoroutine = StartCoroutine(ShowErrorTextCoroutine(message));
+        }
+
+        private IEnumerator ShowErrorTextCoroutine(string message)
+        {
+            if (_itemNameText != null)
+            {
+                Color originalColor = _itemNameText.color;
+                _itemNameText.text = message;
+                _itemNameText.color = Color.red;
+
+                yield return new WaitForSeconds(2f);
+
+                _itemNameText.text = "";
+                _itemNameText.color = originalColor;
+            }
+            _errorCoroutine = null;
         }
 
         // ── Internal ───────────────────────────────────────────────────
