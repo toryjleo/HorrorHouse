@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81cab8e4828e84eaa2284bc4321c96a, type: 3}
   m_Name: Flashlight
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.InventoryItem
-  itemName: 
-  icon: {fileID: 0}
+  itemName: Flashlight
+  icon: {fileID: 21300000, guid: 139527f2b2f87bd4aadc2112b09716e0, type: 3}
   worldPrefab: {fileID: 0}
-  category: 0
+  category: 5
   chessPiece: {fileID: 0}
   valve: {fileID: 0}
   keycard: {fileID: 0}
