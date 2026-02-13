@@ -263,14 +263,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: 'noteText.Array.data[0]'
-      value: 'You need to find a pawn, a queen, and a knight piece to get out of
-        here. They go in those boxes near that crawlspace. Start with the knight
-        piece in this chest. I placed the queen piece in the dark room. You should
-        be able to see around in there with the flashlight I left in the coat pocket.
+      value: 'I found out you need the pawn, queen, and knight pieces to get out
+        of here. I plugged them in those boxes near that small green doorway. The
+        queen piece is going to be in a dark corner. I left a flashlight in the overalls
+        on the rack. You can use it to see back there.
 
+        Stick with me.
 
-        Listen
-        to me. I am going to get you out of here.'
+        I
+        am going to get you out of here.
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: 'noteText.Array.data[1]'
@@ -281,7 +284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.108
+      value: 11.75
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.y
@@ -289,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.89
+      value: -3.58
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1120,6 +1123,10 @@ PrefabInstance:
     - target: {fileID: 6988933352746606415, guid: cead9ad3834a21b20a9f8f771027bede, type: 3}
       propertyPath: safeSolutionNum1
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423519101145483812, guid: cead9ad3834a21b20a9f8f771027bede, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2358,11 +2365,11 @@ PrefabInstance:
       propertyPath: 'noteText.Array.data[0]'
       value: "So those sisters are awful! They approached me after Sunday service
         and asked me to join me for a walk. Sally Sawyer thinks she is just so pretty
-        with that <ornament> she wears. Well, it\u2019s ugly. Anyway we walked for
-        a bit down <bacon street> and arrived at the <some place>. They asked me
-        to join them again on Wedesday for the Elk lodge\u2019s Fish Chowder dinner.
-        They walked away giggling and reciting <some church song...maybe about math>.
-        I should have never gone."
+        with that big clumpy necklace she wears. Well, it\u2019s ugly. Anyway we
+        walked for a bit down Water Street and arrived at the post office. They asked
+        me to join them again on Wednesday for the Elk lodge\u2019s Fish Chowder
+        dinner. They told me to mind my \u201Cp\u2019s and q\u2019s\u201D and skipped
+        off giggling. Damn those girls."
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: 'noteText.Array.data[1]'
@@ -2398,35 +2405,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5889993
+      value: 2.687
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 0.693
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.966
+      value: -8.848
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -3930,7 +3937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.148999
+      value: 4.654
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3938,7 +3945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.966
+      value: -2.604
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4283,15 +4290,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.7599993
+      value: 2.827478
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 0.9785
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.966
+      value: -8.559336
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4566,7 +4573,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1797480456}
   - {fileID: 1207661493}
   - {fileID: 874425192}
   - {fileID: 2081051715}
@@ -4574,7 +4580,6 @@ Transform:
   - {fileID: 1117360743}
   - {fileID: 1025478914}
   - {fileID: 554042789}
-  - {fileID: 2073727884}
   - {fileID: 1523889594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5183,8 +5188,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: 'noteText.Array.data[0]'
-      value: "The order of the chess pieces is knight, queen, pawn.\_\n\nGood luck!
-        I am putting the pieces back and seeing what is on the other side."
+      value: "The order of the pieces left-to-right are: knight->queen->pawn. \nAnyone
+        could figure it out with 6 combinations.\nGood luck! I am putting the pieces
+        back and I\u2019m seeing what is on the other side.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: 'noteText.Array.data[1]'
@@ -5220,15 +5226,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4179993
+      value: 2.799
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 0.083
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.966
+      value: -8.532783
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5589,87 +5595,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3739728663688303410, guid: d7cba7d58a80a1b40830636ae104d84b, type: 3}
   m_PrefabInstance: {fileID: 1784629308}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1797480455
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1345762119}
-    m_Modifications:
-    - target: {fileID: 4909601476543146463, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_Name
-      value: Onboard
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: hasMultPages
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: noteText.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: 'noteText.Array.data[0]'
-      value: Read the clues. Get OUT!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: 'noteText.Array.data[1]'
-      value: "Last night, the beacon lit itself. No power, no crew. Just an eye in
-        the fog, sweeping the sea. I can\u2019t tell if it\u2019s trying to warn
-        us... or lure something in. We\u2019re leaving at dawn \u2014 if dawn still
-        comes."
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.938
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
---- !u!4 &1797480456 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-  m_PrefabInstance: {fileID: 1797480455}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1816751684
 GameObject:
   m_ObjectHideFlags: 0
@@ -5928,7 +5853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.4799995
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5936,7 +5861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.966
+      value: -3.85
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6697,113 +6622,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7984104625331150259, guid: 0f93efb4b1231124493bc770e2622ca1, type: 3}
   m_PrefabInstance: {fileID: 2038699849}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2073727883
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1345762119}
-    m_Modifications:
-    - target: {fileID: 4909601476543146463, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_Name
-      value: "Emily \u2013 Moved pawn piece"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: hasMultPages
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: noteText.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: 'noteText.Array.data[0]'
-      value: "I  didn\u2019t like where Jacob left the knight piece. So I put it
-        in a better box \u2013 with a <key type> lock!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: 'noteText.Array.data[1]'
-      value: 'Jacob Violette, 16
-
-
-        John Knight, Susan Knight'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: 'noteText.Array.data[2]'
-      value: '
-
-        Emily, 12
-
-
-        Those damn Sawyer Sisters!
-
-
-        John
-        Mercier!
-
-
-        And why was this notebook left out in the OPEN?'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: 'noteText.Array.data[3]'
-      value: '
-
-        Eli Violette, 8
-
-
-        John Mercier'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.9459996
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
---- !u!4 &2073727884 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
-  m_PrefabInstance: {fileID: 2073727883}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2081051714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6814,7 +6632,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4909601476543146463, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_Name
-      value: Safe Note
+      value: Emily - Safe Note
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: hasMultPages
@@ -6864,7 +6682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.3499994
+      value: 3.876
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6872,7 +6690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.966
+      value: -0.803
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7186,7 +7004,7 @@ Transform:
   m_GameObject: {fileID: 972531032278356315}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710665, z: -0, w: -0.70710695}
-  m_LocalPosition: {x: -4.816, y: 0.103, z: 4.196}
+  m_LocalPosition: {x: -0.675, y: 0.103, z: 4.906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9416,7 +9234,7 @@ Transform:
   m_GameObject: {fileID: 6349775251538748613}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: 0.00000008742278, z: -1.9106855e-15, w: 1}
-  m_LocalPosition: {x: 0.000027894974, y: -0.04935187, z: 0.0077281035}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10572,7 +10390,7 @@ Transform:
   m_GameObject: {fileID: 6913653914086491618}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5.651, y: 0.733, z: -38.944}
+  m_LocalPosition: {x: -5.651, y: 0.287, z: -38.944}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
