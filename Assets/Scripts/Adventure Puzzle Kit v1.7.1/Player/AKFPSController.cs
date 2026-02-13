@@ -23,6 +23,7 @@ namespace AdventurePuzzleKit
         [SerializeField] private float cameraHeightOffset = 1.05f;   // Camera height offset from character base
         [SerializeField] private float crouchTransitionSpeed = 5.0f;  // Speed of crouch animation
         [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl; // Key to toggle crouch
+        [SerializeField] private LayerMask uncrouchObstructionMask = ~0;  // Layers that can block standing up
 
         [Header("Footstep Audio Settings")]
         [SerializeField] private AudioSource playerAudioSource;       // AudioSource used to play player sounds
@@ -166,7 +167,7 @@ namespace AdventurePuzzleKit
             // If crouch is disabled, force standing height
             if (!canCrouch)
             {
-                if (isCrouching)
+                if (isCrouching && CanStandUp())
                 {
                     isCrouching = false;
                     characterController.height = standHeight;
@@ -179,7 +180,17 @@ namespace AdventurePuzzleKit
             // Toggle crouch state on key press
             if (Input.GetKeyDown(crouchKey))
             {
-                isCrouching = !isCrouching;
+                if (isCrouching)
+                {
+                    if (CanStandUp())
+                    {
+                        isCrouching = false;
+                    }
+                }
+                else
+                {
+                    isCrouching = true;
+                }
             }
 
             // Smoothly transition height and scale
@@ -195,6 +206,33 @@ namespace AdventurePuzzleKit
             float currentCameraY = mainCamera.transform.localPosition.y;
             float newCameraY = Mathf.Lerp(currentCameraY, targetCameraHeight, Time.deltaTime * crouchTransitionSpeed);
             mainCamera.transform.localPosition = new Vector3(0, newCameraY, 0);
+        }
+
+        bool CanStandUp()
+        {
+            Bounds bounds = characterController.bounds;
+            float currentLocalScaleY = Mathf.Max(transform.localScale.y, 0.0001f);
+            float parentScaleY = transform.lossyScale.y / currentLocalScaleY;
+            float targetTop = bounds.min.y + (standHeight * parentScaleY);
+            float extraHeight = targetTop - bounds.max.y;
+
+            if (extraHeight <= 0f)
+            {
+                return true;
+            }
+
+            float checkRadius = Mathf.Min(bounds.extents.x, bounds.extents.z) * 0.95f;
+            Vector3 castOrigin = new Vector3(bounds.center.x, bounds.max.y - checkRadius, bounds.center.z);
+
+            return !Physics.SphereCast(
+                castOrigin,
+                checkRadius,
+                Vector3.up,
+                out _,
+                extraHeight,
+                uncrouchObstructionMask,
+                QueryTriggerInteraction.Ignore
+            );
         }
 
         // Triggers footstep sounds based on movement and state
