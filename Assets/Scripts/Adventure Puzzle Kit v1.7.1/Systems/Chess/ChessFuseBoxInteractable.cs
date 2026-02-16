@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using AdventurePuzzleKit.ExamineSystem;
 
 namespace AdventurePuzzleKit.ChessSystem
@@ -19,6 +20,12 @@ namespace AdventurePuzzleKit.ChessSystem
 
         [Header("Light Object")]
         [SerializeField] private Renderer fuseBoxLightRend = null;       // The light renderer used for color feedback
+        [SerializeField] private Light fuseBoxPointLight = null;          // Optional point light for active/inactive feedback
+
+        [Header("Point Light Settings")]
+        [SerializeField] private float inactiveBlinkInterval = 0.4f;      // Blink speed while inactive
+        [SerializeField] private float inactiveLightIntensity = 1.5f;     // Point light intensity while inactive
+        [SerializeField] private float activeLightIntensity = 1.5f;       // Point light intensity while active
 
         [Header("Power Manager")]
         [SerializeField] private ChessPowerManager powerManager = null;  // Reference to the master manager that tracks fuse status
@@ -30,6 +37,7 @@ namespace AdventurePuzzleKit.ChessSystem
         private GameObject spawnedFuse;          // The visual fuse object in the scene
         private bool isPowered;                 // Whether this box is currently powered
         private Material fuseBoxLightMaterial;  // Material instance for changing fuse light color
+        private Coroutine inactiveBlinkRoutine; // Blink routine while box is inactive
 
         public ChessPiece currentFuse { get; set; } // The currently placed fuse (if any)
 
@@ -38,10 +46,21 @@ namespace AdventurePuzzleKit.ChessSystem
             // Cache the material first — SpawnFuse needs it
             fuseBoxLightMaterial = fuseBoxLightRend.material;
 
+            // Fallback if not assigned in inspector.
+            if (fuseBoxPointLight == null)
+                fuseBoxPointLight = GetComponentInChildren<Light>(true);
+
             // If this box starts with a fuse, spawn it at the beginning
             if (fusePlaced)
             {
                 SpawnFuse(starterFuseScriptable);
+                CheckFuseBox(starterFuseScriptable);
+                SetActiveLightState();
+            }
+            else
+            {
+                CheckFuseBox(null);
+                SetInactiveLightState();
             }
         }
 
@@ -112,8 +131,7 @@ namespace AdventurePuzzleKit.ChessSystem
         {
             currentFuse = fuseType;
 
-            // Update the light to green when a fuse is placed
-            fuseBoxLightMaterial.color = Color.green;
+            SetActiveLightState();
 
             // Instantiate and align in local space so rotation follows the fuse location.
             spawnedFuse = Instantiate(fuseType.ChessPrefab, fuseLocation.transform);
@@ -139,7 +157,6 @@ namespace AdventurePuzzleKit.ChessSystem
         private void OnPlugCollected(ChessPiece fuseType)
         {
             fusePlaced = false;
-            fuseBoxLightMaterial.color = Color.red;
 
             // Return to inventory via adapter (flows through to PlayerInventory)
             ChessInventory.instance.AddChessPiece(fuseType);
@@ -149,6 +166,7 @@ namespace AdventurePuzzleKit.ChessSystem
 
             // Update power logic
             CheckFuseBox(null);
+            SetInactiveLightState();
 
             // Play audio feedback
             AKAudioManager.instance.Play(insertFuseSound);
@@ -161,9 +179,6 @@ namespace AdventurePuzzleKit.ChessSystem
             {
                 fusePlaced = false;
 
-                // Set light back to red to show it's inactive
-                fuseBoxLightMaterial.color = Color.red;
-
                 // Return the fuse to the inventory
                 ChessInventory.instance.AddChessPiece(fuseType);
 
@@ -172,15 +187,71 @@ namespace AdventurePuzzleKit.ChessSystem
 
                 // Update power logic
                 CheckFuseBox(null);
+                SetInactiveLightState();
 
                 // Play audio feedback
                 AKAudioManager.instance.Play(insertFuseSound);
             }
         }
 
+        private void SetActiveLightState()
+        {
+            fuseBoxLightMaterial.color = Color.green;
+
+            if (fuseBoxPointLight == null)
+                return;
+
+            StopInactiveBlink();
+            fuseBoxPointLight.color = Color.green;
+            fuseBoxPointLight.enabled = true;
+            fuseBoxPointLight.intensity = activeLightIntensity;
+        }
+
+        private void SetInactiveLightState()
+        {
+            fuseBoxLightMaterial.color = Color.red;
+
+            if (fuseBoxPointLight == null)
+                return;
+
+            fuseBoxPointLight.color = Color.red;
+            fuseBoxPointLight.intensity = inactiveLightIntensity;
+            StartInactiveBlink();
+        }
+
+        private void StartInactiveBlink()
+        {
+            if (inactiveBlinkRoutine != null || inactiveBlinkInterval <= 0f)
+                return;
+
+            inactiveBlinkRoutine = StartCoroutine(InactiveBlinkLoop());
+        }
+
+        private void StopInactiveBlink()
+        {
+            if (inactiveBlinkRoutine == null)
+                return;
+
+            StopCoroutine(inactiveBlinkRoutine);
+            inactiveBlinkRoutine = null;
+        }
+
+        private IEnumerator InactiveBlinkLoop()
+        {
+            while (!fusePlaced)
+            {
+                fuseBoxPointLight.enabled = !fuseBoxPointLight.enabled;
+                yield return new WaitForSeconds(inactiveBlinkInterval);
+            }
+
+            fuseBoxPointLight.enabled = true;
+            inactiveBlinkRoutine = null;
+        }
+
         // Cleanup if this object is destroyed
         private void OnDestroy()
         {
+            StopInactiveBlink();
             Destroy(fuseBoxLightRend);
         }
     }
