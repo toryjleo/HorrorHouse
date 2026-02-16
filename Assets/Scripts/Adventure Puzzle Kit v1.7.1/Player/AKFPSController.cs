@@ -35,7 +35,7 @@ namespace AdventurePuzzleKit
         [SerializeField] private float walkStepInterval = 0.5f;       // Time between steps when walking
         [SerializeField] private float sprintStepInterval = 0.3f;     // Time between steps when sprinting
         [SerializeField] private float crouchStepInterval = 0.7f;     // Time between steps when crouched
-        [SerializeField] private float velocityThreshold = 2.0f;      // Min velocity before footstep sound plays
+        [SerializeField] private float velocityThreshold = 0.1f;      // Min horizontal velocity before footstep sound plays
 
         [Header("Control Toggles")]
         [SerializeField] public bool canJump = true; // Toggle for jumping
@@ -243,11 +243,12 @@ namespace AdventurePuzzleKit
             // Determine step interval based on crouch/sprint
             float currentStepInterval = isCrouching ? crouchStepInterval : (Input.GetKey(KeyCode.LeftShift) ? sprintStepInterval : walkStepInterval);
 
-            // Adjust velocity sensitivity for crouching
-            float adjustedVelocityThreshold = isCrouching ? 0.1f : velocityThreshold;
+            // Use horizontal movement speed only; ignore slight vertical grounding force.
+            Vector3 horizontalVelocity = new Vector3(characterController.velocity.x, 0f, characterController.velocity.z);
+            float adjustedVelocityThreshold = Mathf.Max(0.05f, velocityThreshold);
 
             // Play footstep sound if grounded, moving, and enough time has passed
-            if (characterController.isGrounded && isMoving && Time.time > nextStepTime && characterController.velocity.magnitude > adjustedVelocityThreshold)
+            if (characterController.isGrounded && isMoving && Time.time > nextStepTime && horizontalVelocity.magnitude > adjustedVelocityThreshold)
             {
                 PlayFoostepSounds();
                 nextStepTime = Time.time + currentStepInterval;
