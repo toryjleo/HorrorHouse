@@ -5741,6 +5741,10 @@ PrefabInstance:
       value: 128.22368
       objectReference: {fileID: 0}
     - target: {fileID: 1677414467778179071, guid: 75d0a822d77130e76bad4ca2696fe523, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677414467778179071, guid: 75d0a822d77130e76bad4ca2696fe523, type: 3}
       propertyPath: m_InnerSpotAngle
       value: 95.82587
       objectReference: {fileID: 0}
@@ -5750,7 +5754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4611311936785620662, guid: 75d0a822d77130e76bad4ca2696fe523, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.708
+      value: 0.698
       objectReference: {fileID: 0}
     - target: {fileID: 4611311936785620662, guid: 75d0a822d77130e76bad4ca2696fe523, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5758,7 +5762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4611311936785620662, guid: 75d0a822d77130e76bad4ca2696fe523, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.166
+      value: 8.069
       objectReference: {fileID: 0}
     - target: {fileID: 4611311936785620662, guid: 75d0a822d77130e76bad4ca2696fe523, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7138,9 +7142,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1938184840}
     m_Modifications:
+    - target: {fileID: 1775795909, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775795912, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 621134970978869097, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8327159830592657237, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
       propertyPath: m_Name
       value: Lamp_cellar_wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327159830592657237, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8708786385975299567, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7183,7 +7203,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1775795909, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
@@ -9915,7 +9936,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1775795909, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ca9b1d34afc2e4296a12d891a5f136, type: 3}
@@ -9951,7 +9973,7 @@ Transform:
   m_GameObject: {fileID: 1803604851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0266999, y: 0.5282999, z: 0.07899952}
+  m_LocalPosition: {x: -0.0266999, y: 0.5348, z: 0.076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14020,7 +14042,7 @@ Transform:
   m_GameObject: {fileID: 1217000226255837837}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.025379725, y: 0.31571364, z: -0.0012174174}
+  m_LocalPosition: {x: -0.025379725, y: 0.315, z: -0.0012174174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16125,6 +16147,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1938184840}
     m_Modifications:
+    - target: {fileID: 1677414467778179071, guid: 75d0a822d77130e76bad4ca2696fe523, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3798077559410803724, guid: 75d0a822d77130e76bad4ca2696fe523, type: 3}
       propertyPath: m_Name
       value: Lamp_ceiling_cone_B
