@@ -42,6 +42,18 @@ namespace AdventurePuzzleKit
             // Create audio sources for each sound
             foreach (Sound s in sounds)
             {
+                if (s == null)
+                {
+                    Debug.LogWarning("AKAudioManager: Null Sound entry found in sounds array. Skipping.");
+                    continue;
+                }
+
+                if (s.clip == null)
+                {
+                    Debug.LogWarning($"AKAudioManager: Sound '{s.name}' has no AudioClip assigned. Skipping.");
+                    continue;
+                }
+
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.clip = s.clip;
                 s.source.loop = s.loop;
