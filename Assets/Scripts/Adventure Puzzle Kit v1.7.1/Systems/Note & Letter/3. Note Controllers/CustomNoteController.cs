@@ -43,6 +43,14 @@ namespace AdventurePuzzleKit.NoteSystem
         [SerializeField] private Sound noteReadAudio = null; // Audio clip for note reading
         [SerializeField] private Sound noteFlipAudio = null; // Audio clip for page flipping
 
+        [Header("Discovery & Page-Specific Audio")]
+        [Tooltip("Optional: plays the first time this note is ever opened.")]
+        [SerializeField] private Sound discoverySound = null;
+        [Tooltip("Optional: plays the first time the player turns to a specific page.")]
+        [SerializeField] private Sound pageSpecificSound = null;
+        [Tooltip("Zero-based page index that triggers the page-specific sound.")]
+        [SerializeField] private int pageSpecificSoundPage = -1;
+
         // Trigger settings for note interaction
         [SerializeField] private bool _isNoteTrigger = false; // Indicates if the note is activated by a trigger
         [SerializeField] private GameObject triggerObject = null; // Object that triggers note interaction
@@ -54,6 +62,8 @@ namespace AdventurePuzzleKit.NoteSystem
         private bool canClick; // Tracks if the note can be interacted with via input
         private int pageNum = 0; // Current page number of the note
         private bool audioPlaying; // Tracks if audio is currently playing
+        private bool hasBeenDiscovered = false; // Tracks if note has been opened before
+        private readonly System.Collections.Generic.HashSet<int> visitedPages = new System.Collections.Generic.HashSet<int>(); // Tracks which pages have been visited
 
         // Public property for readability status
         public bool isReadable
@@ -119,6 +129,14 @@ namespace AdventurePuzzleKit.NoteSystem
             noteUIController.CustomNoteInitialize(pageImage, pageScale, noteText[pageNum], noteTextAreaScale, textSize, fontType, fontColor);
             PlayFlipAudio(); // Play page flip sound
 
+            // Play discovery sound the first time this note is opened
+            if (!hasBeenDiscovered && discoverySound != null)
+            {
+                AKAudioManager.instance.Play(discoverySound);
+                hasBeenDiscovered = true;
+            }
+            visitedPages.Add(pageNum); // Mark opening page as visited
+
             // Handle audio playback settings
             if (allowAudioPlayback)
             {
@@ -176,6 +194,7 @@ namespace AdventurePuzzleKit.NoteSystem
                 pageNum++; // Increment page number
                 noteUIController.FillNoteText(noteText[pageNum]); // Update text content
                 PlayFlipAudio(); // Play page flip sound
+                TryPlayPageSpecificSound(); // Play page-specific sound if applicable
                 EnabledButtons(); // Enable navigation buttons
 
                 // Hide next button if on the last page
@@ -194,6 +213,7 @@ namespace AdventurePuzzleKit.NoteSystem
                 pageNum--; // Decrement page number
                 noteUIController.FillNoteText(noteText[pageNum]); // Update text content
                 PlayFlipAudio(); // Play page flip sound
+                TryPlayPageSpecificSound(); // Play page-specific sound if applicable
                 EnabledButtons(); // Enable navigation buttons
 
                 // Hide previous button if on the first page
@@ -237,6 +257,16 @@ namespace AdventurePuzzleKit.NoteSystem
         void PlayFlipAudio()
         {
             AKAudioManager.instance.Play(noteFlipAudio);
+        }
+
+        // Plays a one-time sound the first time the player visits a specific page
+        private void TryPlayPageSpecificSound()
+        {
+            if (pageSpecificSound != null && pageNum == pageSpecificSoundPage && !visitedPages.Contains(pageNum))
+            {
+                AKAudioManager.instance.Play(pageSpecificSound);
+            }
+            visitedPages.Add(pageNum);
         }
 
         // Toggles play/pause of the note's audio

@@ -42,6 +42,11 @@ namespace AdventurePuzzleKit
         public event Action<InventoryItem> OnItemRemoved;
         public event Action<InventoryItem> OnSelectionChanged;
 
+        // ── Audio ──────────────────────────────────────────────────────
+        [Header("Audio")]
+        [Tooltip("Sound played when any item is picked up.")]
+        [SerializeField] private Sound pickupSound;
+
         // ── Singleton ──────────────────────────────────────────────────
         public static PlayerInventory instance;
 
@@ -81,6 +86,10 @@ namespace AdventurePuzzleKit
 
             _items.Add(item);
             OnItemAdded?.Invoke(item);
+
+            if (pickupSound != null)
+                AKAudioManager.instance.Play(pickupSound);
+
             return true;
         }
 

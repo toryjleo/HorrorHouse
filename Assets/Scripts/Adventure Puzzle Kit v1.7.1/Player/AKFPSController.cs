@@ -37,6 +37,11 @@ namespace AdventurePuzzleKit
         [SerializeField] private float crouchStepInterval = 0.7f;     // Time between steps when crouched
         [SerializeField] private float velocityThreshold = 0.1f;      // Min horizontal velocity before footstep sound plays
 
+        [Header("Footstep Volume")]
+        [SerializeField] private float walkVolume = 0.4f;              // Volume when walking
+        [SerializeField] private float sprintVolume = 0.6f;            // Volume when sprinting
+        [SerializeField] private float crouchVolume = 0.2f;            // Volume when crouching (quieter)
+
         [Header("Control Toggles")]
         [SerializeField] public bool canJump = true; // Toggle for jumping
 
@@ -250,6 +255,9 @@ namespace AdventurePuzzleKit
             // Play footstep sound if grounded, moving, and enough time has passed
             if (characterController.isGrounded && isMoving && Time.time > nextStepTime && horizontalVelocity.magnitude > adjustedVelocityThreshold)
             {
+                // Set volume based on movement state
+                playerAudioSource.volume = isCrouching ? crouchVolume
+                    : (Input.GetKey(KeyCode.LeftShift) ? sprintVolume : walkVolume);
                 PlayFoostepSounds();
                 nextStepTime = Time.time + currentStepInterval;
             }
