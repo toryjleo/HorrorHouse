@@ -210,9 +210,14 @@ namespace AdventurePuzzleKit.ExamineSystem
 
             if (hasInspectPoints) FindInspectPoints();
 
-            // Rotate item
+            // Rotate item in camera-space axes so input stays consistent
+            // even after the object has already been rotated.
             if (Input.GetKey(AKInputManager.instance.rotateKey))
-                transform.Rotate(v, h, 0);
+            {
+                if (mainCamera == null) return;
+                transform.Rotate(mainCamera.transform.right, -v, Space.World);
+                transform.Rotate(mainCamera.transform.up, h, Space.World);
+            }
             // Drop item
             else if (Input.GetKeyDown(AKInputManager.instance.dropKey))
                 DropObject(true);
