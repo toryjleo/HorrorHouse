@@ -38,6 +38,7 @@ namespace AdventurePuzzleKit.SafeSystem
         private bool canClose = false; // Tracks if the safe UI can be closed
         private bool isInteracting = false; // Tracks if the safe UI is active
         private Animator safeAnim; // Animator for the safe model
+        private Coroutine closeDoorRoutine;
         private int[] currentLockNumbers = new int[3]; // Current numbers for each lock state
         private int currentLockNumber; // Current number being adjusted
 
@@ -163,6 +164,7 @@ namespace AdventurePuzzleKit.SafeSystem
 
                 PlayBoltUnlockSound(); // Play bolt unlock sound
                 yield return new WaitForSeconds(beforeAnimationStart); // Wait before animation
+                safeAnim.speed = 1f;
                 safeAnim.Play(safeAnimationName, 0, 0.0f); // Play the safe open animation
                 PlayHandleSpinSound(); // Play handle spin sound
                 yield return new WaitForSeconds(beforeOpenDoor); // Wait before door open sound
@@ -269,6 +271,80 @@ namespace AdventurePuzzleKit.SafeSystem
         void PlaySafeClickSound()
         {
             _safeAudioClips.PlaySafeClickSound();
+        }
+
+        /// <summary>
+        /// Plays the safe-door-open animation in reverse to close the door.
+        /// Wire this to a UnityEvent (e.g., ChessPieceReturnPoint.onPieceReturned for the pawn).
+        /// </summary>
+        public void CloseSafeDoor()
+        {
+            if (safeAnim == null)
+            {
+                safeAnim = safeModel != null ? safeModel.GetComponent<Animator>() : null;
+            }
+
+            if (safeAnim == null)
+            {
+                Debug.LogWarning("[SafeController] CloseSafeDoor called, but no Animator was found on safeModel.");
+                return;
+            }
+
+            if (closeDoorRoutine != null)
+            {
+                StopCoroutine(closeDoorRoutine);
+            }
+
+            PlayDoorOpenSound();
+            closeDoorRoutine = StartCoroutine(CloseSafeDoorRoutine());
+        }
+
+
+
+        private IEnumerator CloseSafeDoorRoutine()
+        {
+            float duration = GetClipLength(safeAnimationName);
+            Debug.Log($"[SafeController] Closing safe door, clip length: {duration}s");
+
+            if (duration <= 0f)
+            {
+                duration = 0.01f;
+            }
+
+            // Rewind by manually sampling normalized time from 1 -> 0.
+            // This is more reliable than negative Animator.speed with Mecanim.
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                float normalizedTime = Mathf.Clamp01(1f - (elapsed / duration));
+                safeAnim.Play(safeAnimationName, 0, normalizedTime);
+                safeAnim.Update(0f);
+
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            safeAnim.Play(safeAnimationName, 0, 0f);
+            safeAnim.Update(0f);
+            safeAnim.speed = 0f;
+            closeDoorRoutine = null;
+        }
+
+        /// <summary>
+        /// Gets the length of an AnimationClip by name from the Animator's controller.
+        /// Falls back to 1.5s if not found.
+        /// </summary>
+        private float GetClipLength(string clipName)
+        {
+            if (safeAnim.runtimeAnimatorController != null)
+            {
+                foreach (AnimationClip clip in safeAnim.runtimeAnimatorController.animationClips)
+                {
+                    if (clip.name == clipName)
+                        return clip.length;
+                }
+            }
+            return 1.5f;
         }
     }
 }
