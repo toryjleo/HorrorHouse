@@ -70,10 +70,37 @@ namespace AdventurePuzzleKit.SafeSystem
 
         private void Update()
         {
+            if (!isInteracting) return;
+
             // Close the safe UI if the close key is pressed while interacting and closing is allowed
-            if (!canClose && isInteracting && Input.GetKeyDown(AKInputManager.instance.closeSafeKey))
+            if (!canClose && Input.GetKeyDown(AKInputManager.instance.closeSafeKey))
             {
                 CloseSafeUI();
+                return;
+            }
+
+            // Arrow key input: Up arrow for fields 1 & 3 (up direction), Down arrow for field 2 (down direction)
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                // lockState 1 and 3 are "up" fields
+                if (lockState == 1 || lockState == 3)
+                {
+                    MoveDialLogic(lockState);
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                // lockState 2 is the "down" field
+                if (lockState == 2)
+                {
+                    MoveDialLogic(lockState);
+                }
+            }
+
+            // Spacebar advances to the next input (same as the checkmark button)
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                CheckDialNumber();
             }
         }
 
