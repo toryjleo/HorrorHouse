@@ -685,6 +685,20 @@ namespace AdventurePuzzleKit
             }
         }
 
+        /// <summary>
+        /// Opens the inventory panel for any <see cref="IOutletContext"/> implementor
+        /// (e.g., <see cref="ChessSystem.ChessPieceReturnPoint"/>).
+        /// </summary>
+        public void OpenInventoryForOutlet(IOutletContext outletContext)
+        {
+            OpenInventoryUI();
+
+            if (_inventoryPanel != null)
+            {
+                _inventoryPanel.SetOutletContext(outletContext);
+            }
+        }
+
         public void DisableInventoryFusebox()
         {
             CloseInventoryUI();

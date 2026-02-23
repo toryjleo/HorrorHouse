@@ -2,15 +2,16 @@
 
 namespace AdventurePuzzleKit.ChessSystem
 {
-    // Allows interaction with chess-related objects (fuse piece or fuse box)
+    // Allows interaction with chess-related objects (fuse piece, fuse box, or return point)
     public class ChessItem : MonoBehaviour, IInteractable
     {
-        [SerializeField] private ItemType _itemType = ItemType.None; // Define item role: fuse or fuse box
-        private enum ItemType { None, ChessFuse, Fusebox }
+        [SerializeField] private ItemType _itemType = ItemType.None;
+        private enum ItemType { None, ChessFuse, Fusebox, ReturnPoint }
 
         // References to specific interactable components
         private ChessFuseCollectable _fuseCollectable;
         private ChessFuseBoxInteractable _fuseboxInteractable;
+        private ChessPieceReturnPoint _returnPoint;
 
         private void Awake()
         {
@@ -20,38 +21,46 @@ namespace AdventurePuzzleKit.ChessSystem
                 case ItemType.ChessFuse:
                     if (!TryGetComponent(out _fuseCollectable))
                     {
-                        Debug.LogWarning($"Chess Item '{gameObject.name}' is set to Door but has no CPFuseCollectable attached.");
+                        Debug.LogWarning($"Chess Item '{gameObject.name}' is set to ChessFuse but has no ChessFuseCollectable attached.");
                     }
                     break;
                 case ItemType.Fusebox:
                     if (!TryGetComponent(out _fuseboxInteractable))
                     {
-                        Debug.LogWarning($"Chess Item Item '{gameObject.name}' is set to Key but has no CPFuseBoxInteractable attached.");
+                        Debug.LogWarning($"Chess Item '{gameObject.name}' is set to Fusebox but has no ChessFuseBoxInteractable attached.");
+                    }
+                    break;
+                case ItemType.ReturnPoint:
+                    if (!TryGetComponent(out _returnPoint))
+                    {
+                        Debug.LogWarning($"Chess Item '{gameObject.name}' is set to ReturnPoint but has no ChessPieceReturnPoint attached.");
                     }
                     break;
             }
         }
 
-        public void StartLooking() { } // Optional: called when player looks at the object
+        public void StartLooking() { }
 
-        public void StopInteraction() { } // Optional: called when interaction stops
+        public void StopInteraction() { }
 
         public void HandleInputClick()
         {
-            // Trigger interaction based on item type
             switch (_itemType)
             {
                 case ItemType.ChessFuse:
-                    _fuseCollectable.PickupChessPiece();
+                    _fuseCollectable?.PickupChessPiece();
                     break;
                 case ItemType.Fusebox:
-                    _fuseboxInteractable.InteractFuseBox();
+                    _fuseboxInteractable?.InteractFuseBox();
+                    break;
+                case ItemType.ReturnPoint:
+                    _returnPoint?.HandleInputClick();
                     break;
             }
         }
 
-        public void HandleInputHold() { } // Optional: holding interaction
+        public void HandleInputHold() { }
 
-        public void HandleInputStop() { } // Optional: released interaction
+        public void HandleInputStop() { }
     }
 }
