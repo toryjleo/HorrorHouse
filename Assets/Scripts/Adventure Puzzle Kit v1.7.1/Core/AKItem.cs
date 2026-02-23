@@ -2,6 +2,7 @@
 /// Contact me if you have any troubles at all!
 
 using UnityEngine;
+using FS_Atmo;
 using System.Linq;
 using System.Collections.Generic;
 using AdventurePuzzleKit.ExamineSystem;
@@ -25,7 +26,7 @@ namespace AdventurePuzzleKit
     public class AKItem : MonoBehaviour
     {
         public enum SystemType { None, GeneratorSys, ValveSys, FlashlightSys, GasMaskSys, KeypadSys, PhoneSys, SafeSys, FuseBoxSys, PadlockSys, LeverSys, ThemedKeySys,
-        ChessSys, DoorSys, NoteSys, KeycardSys }
+        ChessSys, DoorSys, NoteSys, KeycardSys, SimpleOpenCloseSys }
         [SerializeField] private SystemType _systemType = SystemType.None;
 
         [Tooltip("This is to add a highlight name when looking at objects, ONLY if you're not using Examine Sys as Primary Type")]
@@ -56,6 +57,7 @@ namespace AdventurePuzzleKit
         private DoorController _doorController;
         private NoteTypeSelector _noteItem;
         private KeycardItem _keycardItem;
+        private SimpleOpenClose _simpleOpenClose;
 
         private List<Renderer> childObjects = null; // Automatically populated in Awake()
         private Material parentMaterial;
@@ -86,6 +88,7 @@ namespace AdventurePuzzleKit
             CheckAndAssignComponent(ref _doorController, SystemType.DoorSys, "DoorController");
             CheckAndAssignComponent(ref _noteItem, SystemType.NoteSys, "NoteItem");
             CheckAndAssignComponent(ref _keycardItem, SystemType.KeycardSys, "KeycardItem");
+            CheckAndAssignComponent(ref _simpleOpenClose, SystemType.SimpleOpenCloseSys, "SimpleOpenClose");
 
 
             // Check for parent renderer and assign material
@@ -286,6 +289,7 @@ namespace AdventurePuzzleKit
                 SystemType.DoorSys => _doorController,
                 SystemType.NoteSys => _noteItem,
                 SystemType.KeycardSys => _keycardItem,
+                SystemType.SimpleOpenCloseSys => _simpleOpenClose,
                 _ => null
             };
         }
