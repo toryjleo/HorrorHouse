@@ -80,8 +80,12 @@ namespace AdventurePuzzleKit.SafeSystem
                 return;
             }
 
-            // Arrow key input: Up arrow for fields 1 & 3 (up direction), Down arrow for field 2 (down direction)
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            // Input: UpArrow/W for fields 1 & 3 (up direction), DownArrow/S for field 2 (down direction)
+            bool upPressed = Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W);
+            bool downPressed = Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S);
+            bool enterPressed = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter);
+
+            if (upPressed)
             {
                 // lockState 1 and 3 are "up" fields
                 if (lockState == 1 || lockState == 3)
@@ -89,7 +93,7 @@ namespace AdventurePuzzleKit.SafeSystem
                     MoveDialLogic(lockState);
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            else if (downPressed)
             {
                 // lockState 2 is the "down" field
                 if (lockState == 2)
@@ -98,8 +102,8 @@ namespace AdventurePuzzleKit.SafeSystem
                 }
             }
 
-            // Spacebar advances to the next input (same as the checkmark button)
-            if (Input.GetKeyDown(KeyCode.Space))
+            // Spacebar or Enter advances to the next input (same as the checkmark button)
+            if (enterPressed)
             {
                 CheckDialNumber();
             }
