@@ -8,6 +8,7 @@ namespace AdventurePuzzleKit.ChessSystem
         [Header("Total Number of Fuse Boxes")]
         [SerializeField] private int maxFuseBoxCount = 6;          // Total number of fuse boxes needed to power the system
         [SerializeField] private int currentFuseBoxCount = 0;      // How many fuse boxes are currently powered
+        [SerializeField] private bool hasPoweredUp = false;        // Ensures powerUp event only fires once
 
         [Header("Disabling Interaction")]
         [SerializeField] private bool disablePuzzleAfterUse = false; // Optionally disable the puzzle after it's completed
@@ -23,9 +24,10 @@ namespace AdventurePuzzleKit.ChessSystem
         {
             // Add or subtract from the fuse count depending on whether the box is powered or not
             currentFuseBoxCount += fuseBoxPowered ? 1 : -1;
+            currentFuseBoxCount = Mathf.Clamp(currentFuseBoxCount, 0, maxFuseBoxCount);
 
-            // Clamp to max count and trigger the power-up if complete
-            if (currentFuseBoxCount >= maxFuseBoxCount)
+            // Trigger power-up only the first time the full set is powered
+            if (!hasPoweredUp && currentFuseBoxCount >= maxFuseBoxCount)
             {
                 PowerFuseBox(); // Trigger success
                 currentFuseBoxCount = maxFuseBoxCount;
@@ -47,6 +49,11 @@ namespace AdventurePuzzleKit.ChessSystem
         // Final activation: disables UI/inventory if needed, removes interaction, and invokes success event
         public void PowerFuseBox()
         {
+            if (hasPoweredUp)
+                return;
+
+            hasPoweredUp = true;
+
             if (disablePuzzleAfterUse)
             {
                 // Disable fusebox-related UI and interaction if set
