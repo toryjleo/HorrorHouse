@@ -169,6 +169,7 @@ Actions:
 - **Combine with invalid item**: show a quick “Not combinable” message and return to menu.
 - **Examine item without prefab**: fall back to static UI panel.
 - **Use item in wrong context**: show feedback, don’t consume.
+- **Combine with inappropriate object**: show a rejection message (e.g., “That won’t work”) and keep the first item selected.
 - **Custom actions**: safely ignore if handler missing (log warning).
 
 ---
