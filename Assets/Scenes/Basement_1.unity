@@ -485,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 56431383}
   m_Layer: 0
-  m_Name: Queen_Fuse_Parent
+  m_Name: King_Fuse_Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15756,7 +15756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55d634b4b0436988bf2e275a48c9581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessPieceReturnPoint
-  expectedPiece: {fileID: 11400000, guid: 7aec7c9ccf155ef4987d2cefdcd5e3a7, type: 2}
+  expectedPiece: {fileID: 11400000, guid: aa572e2718ae2bf4bb693aac5b8f0318, type: 2}
   originalFuseObject: {fileID: 6913653914086491644}
   originalPosition: {x: -9.37117, y: 0.0483364, z: 6.505993}
   originalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
@@ -17558,7 +17558,7 @@ GameObject:
   - component: {fileID: 1217000226601318399}
   - component: {fileID: 1217000226601318396}
   m_Layer: 0
-  m_Name: Queen Fuse - End
+  m_Name: King Fuse - End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17864,7 +17864,7 @@ GameObject:
   - component: {fileID: 1217000227048088222}
   - component: {fileID: 1217000227048088223}
   m_Layer: 0
-  m_Name: Queen Chess Fusebox - 1
+  m_Name: King Chess Fusebox - 1
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17895,7 +17895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9675eba9957284cbe44cc71e750450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chessPieceScriptable: {fileID: 11400000, guid: 7aec7c9ccf155ef4987d2cefdcd5e3a7, type: 2}
+  chessPieceScriptable: {fileID: 11400000, guid: aa572e2718ae2bf4bb693aac5b8f0318, type: 2}
   fusePlaced: 0
   starterFuseScriptable: {fileID: 0}
   fuseLocation: {fileID: 1217000227549862484}
@@ -21849,7 +21849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b3539cbe97ba94db62cb49baeb415b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chessPieceScriptable: {fileID: 11400000, guid: 7aec7c9ccf155ef4987d2cefdcd5e3a7, type: 2}
+  chessPieceScriptable: {fileID: 11400000, guid: aa572e2718ae2bf4bb693aac5b8f0318, type: 2}
   pickupSound: {fileID: 11400000, guid: 4e2f24bff0e17c640bf9b7799fcee0b5, type: 2}
 --- !u!114 &6913653914086491633
 MonoBehaviour:
@@ -21877,11 +21877,11 @@ MonoBehaviour:
   pickupSound: {fileID: 11400000, guid: 4e2f24bff0e17c640bf9b7799fcee0b5, type: 2}
   dropSound: {fileID: 11400000, guid: 4e2f24bff0e17c640bf9b7799fcee0b5, type: 2}
   _UIType: 1
-  itemName: Queen Fuse
+  itemName: King Fuse
   textSize: 40
   fontType: {fileID: 12800000, guid: 743c70eb6003f944fae12c6aec32b7ce, type: 3}
   fontColor: {r: 1, g: 1, b: 1, a: 1}
-  itemDescription: 'A little Queen fuse, where could this go?
+  itemDescription: 'A little King fuse, where could this go?
 
 '
   textSizeDesc: 32
@@ -22072,7 +22072,7 @@ GameObject:
   - component: {fileID: 6913653914086491632}
   - component: {fileID: 6913653914086491633}
   m_Layer: 0
-  m_Name: Queen Fuse
+  m_Name: King Fuse
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22093,7 +22093,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6913653914086491644}
-  m_Mesh: {fileID: 4300004, guid: 937e0cbdd3dcbd44ca885f31ed874af8, type: 3}
+  m_Mesh: {fileID: 4300006, guid: 937e0cbdd3dcbd44ca885f31ed874af8, type: 3}
 --- !u!33 &6913653914087627238
 MeshFilter:
   m_ObjectHideFlags: 0
