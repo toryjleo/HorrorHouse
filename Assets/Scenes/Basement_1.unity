@@ -361,7 +361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.462
+      value: 11.568
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.y
@@ -369,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.128
+      value: -8.24
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3200,7 +3200,6 @@ Transform:
   m_Children:
   - {fileID: 2024830550}
   - {fileID: 1217000226657461791}
-  - {fileID: 447210405996956641}
   - {fileID: 961363927}
   - {fileID: 1345762119}
   - {fileID: 1731824380}
@@ -3681,7 +3680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessPieceReturnPoint
   expectedPiece: {fileID: 11400000, guid: 41a9d78a5292a124690bebf3a6662bdf, type: 2}
   originalFuseObject: {fileID: 6913653914086491616}
-  originalPosition: {x: -3.1540794, y: 0.80293906, z: 5.9138966}
+  originalPosition: {x: -1.3690467, y: 0.80293906, z: 0.4081216}
   originalRotation: {x: -0, y: -0.8746197, z: -0, w: 0.4848096}
   returnSound: {fileID: 11400000, guid: 9863a0c1b5ad687d4b6463a3f81b4852, type: 2}
   onPieceReturned:
@@ -5559,7 +5558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessPieceReturnPoint
   expectedPiece: {fileID: 11400000, guid: c2336a772efa6c44a95498bc63fad6af, type: 2}
   originalFuseObject: {fileID: 1291393560}
-  originalPosition: {x: -3.3597524, y: 0.79830587, z: 5.900077}
+  originalPosition: {x: -2.1487198, y: 0.79830587, z: 0.6352992}
   originalRotation: {x: -0, y: -0, z: -0, w: 1}
   returnSound: {fileID: 11400000, guid: 9863a0c1b5ad687d4b6463a3f81b4852, type: 2}
   onPieceReturned:
@@ -5751,7 +5750,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6491467644141432682, guid: 0a2960a7ebf07974eb66d68958b336f4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a2960a7ebf07974eb66d68958b336f4, type: 3}
@@ -6649,7 +6649,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 570200127797222117, guid: 29a8d91d9fc6d275ea7f37b9402b1fb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 570200127797222117, guid: 29a8d91d9fc6d275ea7f37b9402b1fb8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6657,7 +6657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 570200127797222117, guid: 29a8d91d9fc6d275ea7f37b9402b1fb8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.62
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 570200127797222117, guid: 29a8d91d9fc6d275ea7f37b9402b1fb8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9759,7 +9759,7 @@ Transform:
   m_GameObject: {fileID: 1380173247}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.4379997, y: 0.28700006, z: -35.986}
+  m_LocalPosition: {x: -5.52, y: 0.225, z: -35.862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9779,7 +9779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessPieceReturnPoint
   expectedPiece: {fileID: 11400000, guid: 81b5b1a415af7b145809e878be019678, type: 2}
   originalFuseObject: {fileID: 6913653914086491618}
-  originalPosition: {x: -9.316, y: 0.17700005, z: 3.382}
+  originalPosition: {x: -4.8229995, y: 0.17700005, z: 4.027}
   originalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   returnSound: {fileID: 11400000, guid: 9863a0c1b5ad687d4b6463a3f81b4852, type: 2}
   onPieceReturned:
@@ -9850,7 +9850,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: -0.19, y: 0.12, z: 0.19}
+  m_Size: {x: -0.33, y: 0.16, z: 0.47}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1390151424
 PrefabInstance:
@@ -11879,6 +11879,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5024699712663345848, guid: c64715f018568924cbb304343889d52f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1908788803}
+    - targetCorrespondingSourceObject: {fileID: 5024699712663345848, guid: c64715f018568924cbb304343889d52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 447210405996956641}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6155804093231708905, guid: c64715f018568924cbb304343889d52f, type: 3}
       insertIndex: -1
@@ -12206,6 +12209,128 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f263c001cf2d04422a18db22f4fe5ad9, type: 3}
+--- !u!1 &1775643701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1775643702}
+  - component: {fileID: 1775643706}
+  - component: {fileID: 1775643705}
+  - component: {fileID: 1775643704}
+  - component: {fileID: 1775643703}
+  m_Layer: 0
+  m_Name: ReturnPoint
+  m_TagString: InteractiveObject
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1775643702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775643701}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03206092, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 447210405996956641}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775643703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775643701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55d634b4b0436988bf2e275a48c9581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessPieceReturnPoint
+  expectedPiece: {fileID: 11400000, guid: 41a9d78a5292a124690bebf3a6662bdf, type: 2}
+  originalFuseObject: {fileID: 6913653914086491616}
+  originalPosition: {x: -1.3690467, y: 0.80293906, z: 0.4081216}
+  originalRotation: {x: -0, y: -0.8746197, z: -0, w: 0.4848096}
+  returnSound: {fileID: 11400000, guid: 9863a0c1b5ad687d4b6463a3f81b4852, type: 2}
+  onPieceReturned:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 972531032278356295}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Idle
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1775643704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775643701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0339763812ce79a46975000d7f1f6859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessItem
+  _itemType: 3
+--- !u!114 &1775643705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775643701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.AKItem
+  _systemType: 12
+  highlightName: Change Name Here
+  showNameHighlight: 0
+  showInteractPrompt: 1
+  showPickupPrompt: 0
+  showExaminePrompt: 0
+  showEmissionHighlight: 0
+  isEmptyParent: 0
+  includeChildrenWithParentMesh: 0
+--- !u!65 &1775643706
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775643701}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.22, z: 0.29}
+  m_Center: {x: 0, y: 0.07, z: 0}
 --- !u!4 &1777473355 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 570200127797222117, guid: 29a8d91d9fc6d275ea7f37b9402b1fb8, type: 3}
@@ -13850,7 +13975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1908788803
 Transform:
   m_ObjectHideFlags: 0
@@ -13860,7 +13985,7 @@ Transform:
   m_GameObject: {fileID: 1908788802}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.027, y: -0.10853444, z: 38.759}
+  m_LocalPosition: {x: -0.453, y: -0.10853444, z: 38.518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14397,8 +14522,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1380173248}
   - {fileID: 6913653914086332866}
+  - {fileID: 1380173248}
   m_Father: {fileID: 961363927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1982243205
@@ -16040,8 +16165,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972531032278356315}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.87419635, z: 0, w: -0.48557264}
-  m_LocalPosition: {x: 3.765965, y: 0.835, z: -4.4769626}
+  m_LocalRotation: {x: -0, y: -0.87419635, z: -0, w: -0.48557264}
+  m_LocalPosition: {x: 0.562, y: 0.83646554, z: 0.053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16049,7 +16174,8 @@ Transform:
   - {fileID: 5688623992691905211}
   - {fileID: 6589800872570489880}
   - {fileID: 8130868519504549648}
-  m_Father: {fileID: 379043681}
+  - {fileID: 1775643702}
+  m_Father: {fileID: 1401955934}
   m_LocalEulerAnglesHint: {x: 0, y: 481.9, z: 0}
 --- !u!1001 &466631261450438264
 PrefabInstance:
@@ -16738,7 +16864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &984643403922181130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16905,18 +17031,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 473177359}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1380173247}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -16928,6 +17042,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1775643701}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 972531032278356294}
+        m_TargetAssemblyTypeName: UnityEngine.BoxCollider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &1174094938127363545
 PrefabInstance:
@@ -19104,7 +19242,7 @@ Transform:
   m_GameObject: {fileID: 5678492479207734331}
   serializedVersion: 2
   m_LocalRotation: {x: 3.5063874e-14, y: -0.0000001872535, z: -0.0000001872535, w: 1}
-  m_LocalPosition: {x: 0.000027894974, y: 0.0008649528, z: 0.13179404}
+  m_LocalPosition: {x: -0, y: 0.0554, z: 0.127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
