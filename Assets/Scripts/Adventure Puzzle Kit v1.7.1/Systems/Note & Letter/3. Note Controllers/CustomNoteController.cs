@@ -8,7 +8,7 @@ using UnityEngine;
 namespace AdventurePuzzleKit.NoteSystem
 {
     // Controls the logic for displaying and interacting with a custom note, which includes a single image and customizable text
-    public class CustomNoteController : MonoBehaviour, IPauseClosable
+    public class CustomNoteController : PauseClosableBehaviour
     {
         // Determines if the note can be read
         [SerializeField] private bool _isReadable = true;
@@ -105,7 +105,7 @@ namespace AdventurePuzzleKit.NoteSystem
 
         public void ShowNote()
         {
-            PauseCloseRegistry.Register(this);
+            RegisterPauseClose();
             CustomNoteUIManager.instance.noteController = gameObject.GetComponent<CustomNoteController>(); // Link this controller to the UI
             noteUIController = CustomNoteUIManager.instance; // Cache UI manager reference
             StartCoroutine(WaitTime()); // Start delay to enable input
@@ -159,7 +159,7 @@ namespace AdventurePuzzleKit.NoteSystem
 
         public void CloseNote()
         {
-            PauseCloseRegistry.Unregister(this);
+            UnregisterPauseClose();
 
             noteUIController.DisableNoteDisplay(false); // Hide note UI
             AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement and interaction

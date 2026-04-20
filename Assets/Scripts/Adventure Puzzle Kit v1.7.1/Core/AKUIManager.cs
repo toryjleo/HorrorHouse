@@ -18,7 +18,7 @@ using System.Collections.Generic;
 
 namespace AdventurePuzzleKit
 {
-    public class AKUIManager : MonoBehaviour, IPauseClosable
+    public class AKUIManager : PauseClosableBehaviour
     {
         #region Inventory UI System Container Fields / Core UI 
         [SerializeField] private GameObject inventoryContainer = null;
@@ -366,7 +366,7 @@ namespace AdventurePuzzleKit
         {
             GameState.IsInventoryOpen = true;
             isInventoryOpen = true;
-            PauseCloseRegistry.Register(this);
+            RegisterPauseClose();
             AKDisableManager.instance.DisablePlayerDefault(true, false, false);
             isInteracting = false;
             showUI = true;
@@ -387,7 +387,7 @@ namespace AdventurePuzzleKit
         {
             GameState.IsInventoryOpen = false;
             isInventoryOpen = false;
-            PauseCloseRegistry.Unregister(this);
+            UnregisterPauseClose();
             AKDisableManager.instance.DisablePlayerDefault(false, false, false);
             isInteracting = false;
             fuseBoxInteractable = null;

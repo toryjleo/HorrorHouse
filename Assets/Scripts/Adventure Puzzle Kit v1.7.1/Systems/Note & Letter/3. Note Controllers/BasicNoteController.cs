@@ -7,7 +7,7 @@ using UnityEngine;
 namespace AdventurePuzzleKit.NoteSystem
 {
     // Controls the logic for displaying and interacting with a basic note in the game
-    public class BasicNoteController : MonoBehaviour, IPauseClosable
+    public class BasicNoteController : PauseClosableBehaviour
     {
         // Determines if the note can be read
         [SerializeField] private bool _isReadable = true;
@@ -89,7 +89,7 @@ namespace AdventurePuzzleKit.NoteSystem
 
         public void ShowNote()
         {
-            PauseCloseRegistry.Register(this);
+            RegisterPauseClose();
             BasicNoteUIManager.instance.noteController = gameObject.GetComponent<BasicNoteController>(); // Link this controller to the UI
             noteUIController = BasicNoteUIManager.instance; // Cache UI manager reference
             StartCoroutine(WaitTime()); // Start delay to enable input
@@ -142,7 +142,7 @@ namespace AdventurePuzzleKit.NoteSystem
 
         public void CloseNote()
         {
-            PauseCloseRegistry.Unregister(this);
+            UnregisterPauseClose();
 
             noteUIController.DisableNoteDisplay(false); // Hide note UI
             AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement and interaction
