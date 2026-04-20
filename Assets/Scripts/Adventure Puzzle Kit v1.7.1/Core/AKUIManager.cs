@@ -405,7 +405,7 @@ namespace AdventurePuzzleKit
             }
         }
 
-        public void CloseForPause()
+        public override void CloseForPause()
         {
             if (GameState.IsExamining && _examinableItem != null)
             {

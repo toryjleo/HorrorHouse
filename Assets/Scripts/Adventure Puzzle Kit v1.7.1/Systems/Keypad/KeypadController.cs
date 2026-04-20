@@ -97,7 +97,7 @@ namespace AdventurePuzzleKit.KeypadSystem
             AKPromptManager.Instance.ClearPrompts();
         }
 
-        public void CloseForPause()
+        public override void CloseForPause()
         {
             if (!isOpen) return;
             CloseKeypad();

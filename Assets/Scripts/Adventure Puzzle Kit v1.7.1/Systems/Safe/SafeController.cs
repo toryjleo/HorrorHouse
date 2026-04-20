@@ -131,7 +131,7 @@ namespace AdventurePuzzleKit.SafeSystem
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
         }
 
-        public void CloseForPause()
+        public override void CloseForPause()
         {
             if (!isInteracting) return;
             CloseSafeUI();

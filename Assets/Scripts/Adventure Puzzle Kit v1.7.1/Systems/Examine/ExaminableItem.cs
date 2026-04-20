@@ -162,9 +162,9 @@ namespace AdventurePuzzleKit.ExamineSystem
 #endif
                 return;
             }
-            
-            if (!hasChildObjects) 
-            { 
+
+            if (!hasChildObjects)
+            {
                 gameObject.layer = layer;
             }
             else
@@ -172,7 +172,7 @@ namespace AdventurePuzzleKit.ExamineSystem
                 foreach (Transform child in transform.GetComponentsInChildren<Transform>(true))
                     child.gameObject.layer = layer;
             }
-            
+
             // Update camera culling mask
             if (mainCamera != null)
             {
@@ -274,7 +274,7 @@ namespace AdventurePuzzleKit.ExamineSystem
             HandleUI(false);
         }
 
-        public void CloseForPause()
+        public override void CloseForPause()
         {
             if (!GameState.IsExamining) return;
             DropObject(true);

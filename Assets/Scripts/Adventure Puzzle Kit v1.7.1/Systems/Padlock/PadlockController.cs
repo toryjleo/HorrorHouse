@@ -147,7 +147,7 @@ namespace AdventurePuzzleKit.PadlockSystem
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
         }
 
-        public void CloseForPause()
+        public override void CloseForPause()
         {
             if (!isShowing) return;
             DisablePadlock();

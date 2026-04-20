@@ -174,7 +174,7 @@ namespace AdventurePuzzleKit.NoteSystem
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
         }
 
-        public void CloseForPause()
+        public override void CloseForPause()
         {
             if (!enabled) return;
             CloseNote();

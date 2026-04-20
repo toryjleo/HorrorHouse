@@ -94,7 +94,7 @@ namespace AdventurePuzzleKit.PhoneSystem
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
         }
 
-        public void CloseForPause()
+        public override void CloseForPause()
         {
             if (!isOpen) return;
             StopAudio();
