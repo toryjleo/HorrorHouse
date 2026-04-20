@@ -1,221 +1,241 @@
 # Pause Menu Implementation Plan
 
-Add a pause menu triggered by **Escape** with a "Paused" title and **Resume** / **Quit** buttons. Freezes player input, pauses audio, and stops `Time.timeScale`.
+Add a pause menu triggered by `Escape` with a `PAUSED` title and `Resume` / `Quit` buttons.
+
+This version is synced to the current codebase and uses a simpler rule:
+
+`Escape` should work during interactions, but pause should not preserve live interaction state.
+Instead, it should first close the current transient interaction/UI cleanly, then enter pause from a neutral gameplay state.
 
 ---
 
-## Existing Systems Summary
+## Recommendation
 
-| System | Key Details |
-|---|---|
-| [GameState.cs](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Core/GameState.cs) | Already has `isGamePaused`, `IsPlayerBusy`, `IsInteracting` |
-| [AKDisableManager.cs](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Core/AKDisableManager.cs) | Singleton; [DisablePlayerDefault()](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Core/AKDisableManager.cs#46-67) and [SetCursorState()](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Core/AKDisableManager.cs#90-96) |
-| [AKFPSController.cs](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Player/AKFPSController.cs) | [SetPlayerDisableMode(bool)](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Player/AKFPSController.cs#290-296) → sets `canMove`/`canRotate` |
-| [AKAudioManager.cs](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Core/AKAudioManager.cs) | Singleton; [StopAll()](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Core/AKAudioManager.cs#125-133) **stops** audio permanently (no resume). We'll use `AudioListener.pause` instead |
-| [SceneManager.cs](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/SceneManagement/SceneManager.cs) | Has [EndGame()](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/SceneManagement/SceneManager.cs#17-25) which calls `Application.Quit()` |
+Use **close-then-pause**, not **pause-and-preserve**.
 
-> [!IMPORTANT]
-> `GameState.isGamePaused` already exists and is checked by `IsPlayerBusy` / `IsInteracting`. The new `PauseManager` will set this flag, so existing systems that check `IsPlayerBusy` will automatically respect the paused state.
+### Why this is cleaner
 
----
+- Most interaction systems already own a proper close path that restores player state, cursor state, prompts, and temporary UI.
+- Preserving interaction state during pause would require the pause system to understand and restore many subsystem-specific states.
+- Several systems still process input independently, so pausing in place would require a wide input audit and more cross-system coupling.
+- Closing the active interaction first keeps pause behavior predictable: pause always means "gameplay is suspended from a normal baseline state".
 
-## Proposed Changes
+### Product behavior
 
-### PauseManager Script
-
-#### [NEW] [PauseManager.cs](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/PauseMenu/PauseManager.cs)
-
-A new singleton `MonoBehaviour` that follows the same pattern as the other managers (`persistAcrossScenes`, `DontDestroyOnLoad`, `instance` field).
-
-**Responsibilities:**
-- Listen for `KeyCode.Escape` in [Update()](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/SceneManagement/SceneManager.cs#11-16)
-- Guard: only allow pause toggle when **not** `GameState.IsPlayerBusy` (examining, inventory, etc.) — but always allow **unpausing** via Escape
-- On **Pause**:
-  1. Save current cursor state (`Cursor.visible`, `Cursor.lockState`)
-  2. `GameState.isGamePaused = true`
-  3. `Time.timeScale = 0f` — freezes physics, animations, and any time-based logic
-  4. `AudioListener.pause = true` — globally pauses all audio; resumes exactly where it left off when set back to `false`
-  5. Show cursor (visible + unlocked)
-  6. Show the pause UI panel
-- On **Resume**:
-  1. Hide the pause UI panel
-  2. `AudioListener.pause = false`
-  3. Restore saved cursor state (so if the player was mid-interaction with cursor visible, it stays visible; if they were in normal play, cursor locks again)
-  4. `Time.timeScale = 1f`
-  5. `GameState.isGamePaused = false`
-- On **Quit**: call the same `Application.Quit()` / `EditorApplication.isPlaying = false` pattern from `SceneManager.EndGame()`
-
-> [!IMPORTANT]
-> We intentionally **do not** call `AKDisableManager.DisablePlayerDefault()` during pause/resume. That method changes interaction state, crosshair, and prompts. If the player pauses mid-interaction (examining an item, using the safe, etc.), calling it on resume would wipe that state. Instead, `Time.timeScale = 0` + the `isGamePaused` guard in [AKFPSController](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Player/AKFPSController.cs#5-297) handles freezing the player cleanly.
+- If the player is in normal gameplay, `Escape` opens pause immediately.
+- If the player is examining an item, reading a note, in inventory, using a keypad/phone/safe/padlock, etc., `Escape` first closes that interaction, then opens pause in the same keypress.
+- `Resume` returns to normal gameplay, not back into the old interaction.
 
 ---
 
-### FPS Controller Guard
+## Existing System Notes
 
-#### [MODIFY] [AKFPSController.cs](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Player/AKFPSController.cs)
+### Useful current behavior
 
-[HandleRotation()](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Player/AKFPSController.cs#156-168) does **not** use `Time.deltaTime`, so mouse look still works at `timeScale = 0`. Add a simple early-return guard at the top of [Update()](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/SceneManagement/SceneManager.cs#11-16):
+- `GameState.isGamePaused` already exists in [GameState.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Core/GameState.cs:10).
+- `AKDisableManager.DisablePlayerDefault()` already centralizes cursor, crosshair, player movement, interactor, and zoom state in [AKDisableManager.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Core/AKDisableManager.cs:43).
+- Many interaction systems already have explicit close/exit methods:
+  - Examine: `DropObject(...)` in [ExaminableItem.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Systems/Examine/ExaminableItem.cs:253)
+  - Inventory: `CloseInventoryUI()` in [AKUIManager.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Core/AKUIManager.cs:383)
+  - Safe: `CloseSafeUI()` in [SafeController.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Systems/Safe/SafeController.cs:112)
+  - Keypad: `CloseKeypad()` in [KeypadController.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Systems/Keypad/KeypadController.cs:79)
+  - Phone: `CloseKeypad()` in [PhoneController.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Systems/Phone/PhoneController.cs:78)
+  - Padlock: `DisablePadlock()` in [PadlockController.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Systems/Padlock/PadlockController.cs:132)
+  - Notes: `CloseNote()` in the note controllers
 
-```diff
- private void Update()
- {
-+    if (GameState.isGamePaused) return;
-     if (canMove) HandleMovement();
-     if (canRotate) HandleRotation();
-     HandleCrouching();
-     HandleFootsteps();
- }
+### Important limitation
+
+`GameState.isGamePaused` does **not** automatically freeze all input. Some scripts respect `GameState.IsPlayerBusy`, but others read input directly in their own `Update()` methods. So the pause plan should not rely on `Time.timeScale = 0` alone.
+
+---
+
+## Proposed Architecture
+
+### 1. New `PauseManager`
+
+Create [PauseManager.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/PauseMenu/PauseManager.cs).
+
+Responsibilities:
+
+- Listen for `Escape`
+- If currently paused, resume
+- If not paused:
+  - close any active transient interaction/UI first
+  - then enter pause
+- Show/hide the pause menu panel
+- Set and clear `GameState.isGamePaused`
+- Set `Time.timeScale`
+- Set `AudioListener.pause`
+- Handle `Quit`
+
+Suggested flow:
+
+```csharp
+private void Update()
+{
+    if (!Input.GetKeyDown(KeyCode.Escape)) return;
+
+    if (GameState.isGamePaused)
+    {
+        ResumeGame();
+        return;
+    }
+
+    CloseTransientStateBeforePause();
+    PauseGame();
+}
 ```
 
-This freezes **all** player input (movement, rotation, crouching, footsteps) while paused, without touching `canMove`/`canRotate` — so the pre-pause state is fully preserved on resume.
+### 2. Add a central "close transient state" pass
 
-**Inspector fields:**
-- `[SerializeField] private GameObject pauseMenuPanel` — the UI root panel to show/hide
-- `[SerializeField] private bool persistAcrossScenes = true`
+This is the key change that makes the feature clean.
 
-> [!TIP]
-> `Input.GetKeyDown` still fires at `timeScale = 0`, so the Escape toggle works without needing `Time.unscaledDeltaTime` hacks.
+Add a method in `PauseManager` that asks the currently active systems to close themselves using their existing cleanup methods.
+
+Suggested order:
+
+1. Close notes
+2. Close examine
+3. Close keypad / phone / safe / padlock
+4. Close inventory
+5. Enter pause
+
+Reasoning:
+
+- These systems already know how to restore prompts, colliders, cursor state, and player control.
+- Pause stays decoupled from internal subsystem details.
+- Resume becomes trivial because there is no suspended subsystem to reconstruct.
+
+### 3. Add a small integration layer for systems that cannot currently be closed externally
+
+Some close methods are private or only reachable through UI buttons. That is the main cleanup task required for this design.
+
+Recommended changes:
+
+- Expose a public inventory close method in `AKUIManager`
+- Expose a public safe close method in `SafeController`
+- Expose a public padlock close method in `PadlockController`
+- Add a small public helper in each note UI/controller family if needed so pause can close the active note safely
+
+Keep these wrappers narrow. The pause system should call existing close logic, not duplicate it.
+
+Example pattern:
+
+```csharp
+public void ForceCloseForPause()
+{
+    if (!isOpen) return;
+    CloseKeypad();
+}
+```
+
+### 4. Add a lightweight input guard where needed
+
+Even with close-then-pause, you still want a small protection layer during the paused state itself.
+
+Minimum required:
+
+- Add an early return in [AKFPSController.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/Adventure%20Puzzle%20Kit%20v1.7.1/Player/AKFPSController.cs:67) so mouse look does not continue at `timeScale = 0`
+- Add `if (GameState.isGamePaused) return;` guards to any remaining scripts that can still process gameplay input while paused
+
+This guard pass should be limited to scripts that remain active after transient UI closes, such as equipment toggles or other always-on player systems.
 
 ---
 
-### Unity UI Setup (Manual Steps in Editor)
+## Pause/Resume Rules
 
-Since Unity UI must be created in the scene hierarchy, here are the step-by-step instructions to set up the Canvas, Panel, and Buttons.
+### On Pause
 
-> [!IMPORTANT]
-> These steps are done **in the Unity Editor**, not in code. Follow them in order.
+1. Close transient interaction/UI state
+2. `GameState.isGamePaused = true`
+3. `Time.timeScale = 0f`
+4. `AudioListener.pause = true`
+5. Show cursor and unlock it
+6. Show pause menu panel
 
-#### Step 1 — Create the Canvas
+### On Resume
 
-1. In the **Hierarchy**, right-click on the **Managers** parent object (or wherever your managers live)
-2. Select **UI → Canvas**
-3. Rename it to **PauseMenuCanvas**
-4. In the Inspector, set:
-   - **Canvas** component → Render Mode: **Screen Space - Overlay**
-   - **Canvas Scaler** → UI Scale Mode: **Scale With Screen Size**
-   - Reference Resolution: **1920 × 1080**
-   - Match: **0.5** (balanced width/height scaling)
+1. Hide pause menu panel
+2. `AudioListener.pause = false`
+3. `Time.timeScale = 1f`
+4. `GameState.isGamePaused = false`
+5. Restore gameplay cursor state: hidden + locked
 
-#### Step 2 — Create the Panel (background overlay)
+### On Quit
 
-1. Right-click **PauseMenuCanvas** → **UI → Panel**
-2. Rename to **PauseMenuPanel**
-3. In the Inspector:
-   - **Image** component → Color: **black, alpha ~150** (semi-transparent dark overlay)
-   - **Rect Transform**: anchors = Stretch/Stretch (already default for Panel)
-4. **This is the GameObject you'll drag into `PauseManager.pauseMenuPanel`**
+Use the same editor/build split already used in [SceneManager.cs](/home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/SceneManagement/SceneManager.cs:17).
 
-#### Step 3 — Choose a Font
+---
 
-You'll want a custom font for the horror aesthetic. Some good free options:
+## Why Not Preserve Interaction State
 
-| Font | Style | Where to Get It |
-|---|---|---|
-| **Nosifer** | Dripping horror | [Google Fonts](https://fonts.google.com/specimen/Nosifer) |
-| **Creepster** | Spooky handwritten | [Google Fonts](https://fonts.google.com/specimen/Creepster) |
-| **Eater** | Grungy horror | [Google Fonts](https://fonts.google.com/specimen/Eater) |
-| **Butcherman** | Rough, creepy | [Google Fonts](https://fonts.google.com/specimen/Butcherman) |
-| **Special Elite** | Typewriter/unsettling | [Google Fonts](https://fonts.google.com/specimen/Special+Elite) |
+Avoid this approach for this project.
 
-**To import a font into Unity:**
-1. Download the `.ttf` file from Google Fonts
-2. Drag it into your project (e.g. `Assets/Fonts/`)
-3. In Unity, go to **Window → TextMeshPro → Font Asset Creator**
-4. Drag your `.ttf` into the **Source Font File** field
-5. Click **Generate Font Atlas**, then **Save** (save as e.g. `Nosifer SDF` in `Assets/Fonts/`)
+Problems it would introduce:
 
-#### Step 4 — Add the "Paused" Title Text
+- Examine mode has live object transforms, inspect points, custom UI, and camera state.
+- Puzzle UIs and notes each have their own active object references and close flows.
+- Some systems disable input through `AKDisableManager`, while others keep local booleans.
+- Resume would need to restore subsystem-specific state in the correct order, which is fragile.
 
-1. Right-click **PauseMenuPanel** → **UI → Text - TextMeshPro**
-   - If prompted to import TMP Essentials, click **Import**
-2. Rename to **PausedTitle**
-3. In the Inspector:
-   - **Text Input**: `PAUSED`
-   - **Font Asset**: your chosen horror font SDF asset
-   - **Font Size**: `72` (adjust to taste)
-   - **Alignment**: Center + Middle
-   - **Color**: white or a blood-red (#8B0000)
-   - **Rect Transform**:
-     - **Anchor**: Top-Center
-     - **Anchor Preset**: hold Alt+Shift, click the top-center option
-     - **Pos Y**: `-200` (pushes it down from top, roughly upper-third)
-     - **Width**: `600`, **Height**: `100`
+That is higher risk for little product value. Closing the interaction before pausing is the cleaner dependency boundary.
 
-#### Step 5 — Add the Resume Button
+---
 
-1. Right-click **PauseMenuPanel** → **UI → Button - TextMeshPro**
-2. Rename to **ResumeButton**
-3. Select the child **Text (TMP)** object:
-   - **Text**: `Resume`
-   - **Font Asset**: same horror font
-   - **Font Size**: `36`
-   - **Alignment**: Center + Middle
-   - **Color**: white
-4. Select the **ResumeButton** itself:
-   - **Rect Transform**:
-     - **Anchor**: Middle-Center
-     - **Pos Y**: `0` (centered vertically)
-     - **Width**: `300`, **Height**: `60`
-   - **Image** component → Color: dark gray with some transparency, or fully transparent for text-only look
-   - **Button** component → **On Click ()**: drag the **PauseManager** object → select `PauseManager.ResumeGame`
+## Unity UI Setup
 
-#### Step 6 — Add the Quit Button
+Create the pause UI in the editor:
 
-1. Right-click **PauseMenuPanel** → **UI → Button - TextMeshPro**
-2. Rename to **QuitButton**
-3. Select the child **Text (TMP)**:
-   - **Text**: `Quit`
-   - **Font Asset**: same horror font
-   - **Font Size**: `36`
-   - **Alignment**: Center + Middle
-   - **Color**: white
-4. Select the **QuitButton** itself:
-   - **Rect Transform**:
-     - **Anchor**: Middle-Center
-     - **Pos Y**: `-80` (below Resume)
-     - **Width**: `300`, **Height**: `60`
-   - **Image** component → match Resume button styling
-   - **Button** component → **On Click ()**: drag the **PauseManager** object → select `PauseManager.QuitGame`
+1. Add a `Canvas`
+2. Add a full-screen dark `PauseMenuPanel`
+3. Add a `PAUSED` title
+4. Add `Resume` and `Quit` buttons
+5. Disable the panel by default
+6. Wire the buttons to `PauseManager.ResumeGame()` and `PauseManager.QuitGame()`
 
-#### Step 7 — Disable the Panel by Default
-
-1. Select **PauseMenuPanel** in the hierarchy
-2. Uncheck the **checkbox** at top-left of the Inspector (disables the GameObject)
-3. The panel starts hidden — `PauseManager` will call `SetActive(true/false)` on it
-
-#### Final Hierarchy
-
-```
-Managers
-├── ... (existing managers)
-└── PauseMenuCanvas
-    └── PauseMenuPanel  ← drag into PauseManager.pauseMenuPanel
-        ├── PausedTitle (TMP)
-        ├── ResumeButton
-        │   └── Text (TMP)
-        └── QuitButton
-            └── Text (TMP)
-```
+The earlier visual recommendations are still fine; they are just separate from the implementation decision.
 
 ---
 
 ## Verification Plan
 
-### Manual Testing in Unity Editor
+### Manual tests
 
-Since this is a Unity runtime UI feature, it must be tested by playing in the editor:
+1. In normal gameplay, press `Escape`
+   - Pause menu opens
+   - Player cannot move or look
+   - Audio pauses
+   - Cursor unlocks
 
-1. **Enter Play mode** in Unity
-2. **Press Escape** → verify:
-   - Panel appears with "PAUSED" text and two buttons
-   - Player cannot move or look around
-   - All audio is paused (ambient, footsteps, etc.)
-   - Cursor is visible and unlocked
-3. **Click Resume** → verify:
-   - Panel hides
-   - Player movement and look restored
-   - Audio resumes
-   - Cursor is hidden and locked
-4. **Press Escape again** → verify it pauses again (toggle works)
-5. **Press Escape while examining an item / in inventory** → verify nothing happens (guard check)
-6. **Click Quit** → verify play mode stops (in-editor) or app closes (in build)
+2. While examining an item, press `Escape`
+   - Item exits examine mode cleanly
+   - Pause menu opens immediately after
+   - No stuck prompts, inspect points, or cursor issues remain
+
+3. While inventory is open, press `Escape`
+   - Inventory closes
+   - Pause menu opens
+
+4. While using keypad / phone / safe / padlock, press `Escape`
+   - Active UI closes cleanly
+   - Pause menu opens
+
+5. While reading each note type, press `Escape`
+   - Note closes cleanly
+   - Pause menu opens
+
+6. Click `Resume`
+   - Pause menu closes
+   - Gameplay input returns normally
+   - Player is back in neutral gameplay, not inside an old interaction
+
+7. Click `Quit`
+   - Play mode stops in editor
+   - Build quits in standalone
+
+### Regression checks
+
+- No duplicated prompts after resuming
+- No invisible active UI left behind
+- No stuck cursor-visible state after resume
+- No stuck `GameState.IsUsingSystem`, `IsExamining`, or `IsInventoryOpen` flags
