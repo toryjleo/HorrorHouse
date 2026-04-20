@@ -8,7 +8,7 @@ using UnityEngine.Events;
 namespace AdventurePuzzleKit.PadlockSystem
 {
     // Manages the logic for a padlock puzzle, handling combination input, UI, audio, and unlocking events
-    public class PadlockController : MonoBehaviour
+    public class PadlockController : MonoBehaviour, IPauseClosable
     {
         // The correct combination for the padlock (e.g., "1234")
         [Header("Padlock Code")]
@@ -87,6 +87,7 @@ namespace AdventurePuzzleKit.PadlockSystem
         public void ShowPadlock()
         {
             isShowing = true; // Mark padlock UI as active
+            PauseCloseRegistry.Register(this);
             AKDisableManager.instance.DisablePlayerDefault(true, true, false); // Disable player movement and interaction
             SpawnPadlock(distanceFromCamera); // Spawn the padlock UI
             mainCamera.transform.localEulerAngles = new Vector3(0, 0, 0); // Reset camera rotation
@@ -132,6 +133,7 @@ namespace AdventurePuzzleKit.PadlockSystem
         void DisablePadlock()
         {
             isShowing = false; // Mark padlock UI as inactive
+            PauseCloseRegistry.Unregister(this);
             AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement and interaction
             Destroy(instantiatedPadlock); // Destroy the padlock UI instance
 
@@ -143,6 +145,12 @@ namespace AdventurePuzzleKit.PadlockSystem
             }
 
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
+        }
+
+        public void CloseForPause()
+        {
+            if (!isShowing) return;
+            DisablePadlock();
         }
 
         // Checks if the player's combination matches the correct combination
@@ -167,6 +175,7 @@ namespace AdventurePuzzleKit.PadlockSystem
 
             const float waitDuration = 1.2f; // Wait time for animation
             yield return new WaitForSeconds(waitDuration);
+            PauseCloseRegistry.Unregister(this);
 
             Destroy(instantiatedPadlock); // Destroy the padlock UI
             interactableLock.SetActive(false); // Hide the interactable lock

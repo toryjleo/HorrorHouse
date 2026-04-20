@@ -18,7 +18,7 @@ using System.Collections.Generic;
 
 namespace AdventurePuzzleKit
 {
-    public class AKUIManager : MonoBehaviour
+    public class AKUIManager : MonoBehaviour, IPauseClosable
     {
         #region Inventory UI System Container Fields / Core UI 
         [SerializeField] private GameObject inventoryContainer = null;
@@ -336,6 +336,8 @@ namespace AdventurePuzzleKit
         #region Update Method for Enabling / Disabling Inventory + Input Checks
         private void Update()
         {
+            if (GameState.isGamePaused) return;
+
             // If isInteracting is true, exit the method early
             if (GameState.IsUsingSystem) return;
 
@@ -364,6 +366,7 @@ namespace AdventurePuzzleKit
         {
             GameState.IsInventoryOpen = true;
             isInventoryOpen = true;
+            PauseCloseRegistry.Register(this);
             AKDisableManager.instance.DisablePlayerDefault(true, false, false);
             isInteracting = false;
             showUI = true;
@@ -384,6 +387,7 @@ namespace AdventurePuzzleKit
         {
             GameState.IsInventoryOpen = false;
             isInventoryOpen = false;
+            PauseCloseRegistry.Unregister(this);
             AKDisableManager.instance.DisablePlayerDefault(false, false, false);
             isInteracting = false;
             fuseBoxInteractable = null;
@@ -398,6 +402,20 @@ namespace AdventurePuzzleKit
             else
             {
                 inventoryContainer.SetActive(false);
+            }
+        }
+
+        public void CloseForPause()
+        {
+            if (GameState.IsExamining && _examinableItem != null)
+            {
+                _examinableItem.DropObject(true);
+                return;
+            }
+
+            if (showUI || GameState.IsInventoryOpen)
+            {
+                CloseInventoryUI();
             }
         }
         #endregion
@@ -1255,6 +1273,12 @@ namespace AdventurePuzzleKit
             firstPhoneClick = false;
         }
 
+        public void ResetPhoneStateForClose()
+        {
+            ClearPhoneInputFields();
+            firstPhoneClick = false;
+        }
+
         private void ClearPhoneInputFields()
         {
             ClearPhoneFieldData(payPhoneCodeText);
@@ -1356,6 +1380,12 @@ namespace AdventurePuzzleKit
             KeypadKeyPressClear();
             _keypadController.SingleBeepSound();
             _keypadController.CloseKeypad();
+        }
+
+        public void ResetKeypadStateForClose()
+        {
+            ClearKeypadInputFields();
+            firstKeypadClick = false;
         }
 
         private void ClearKeypadInputFields()

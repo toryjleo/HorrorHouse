@@ -5,7 +5,7 @@ using System.Collections;
 namespace AdventurePuzzleKit.SafeSystem
 {
     // Manages the logic for a safe puzzle, handling combination input, UI, animations, audio, and unlocking events
-    public class SafeController : MonoBehaviour
+    public class SafeController : MonoBehaviour, IPauseClosable
     {
         [Header("Universal")]
         [SerializeField] private GameObject safeModel = null; // The safe's 3D model
@@ -60,6 +60,7 @@ namespace AdventurePuzzleKit.SafeSystem
             }
 
             isInteracting = true; // Mark safe as being interacted with
+            PauseCloseRegistry.Register(this);
             lockState = 1; // Start at the first lock state
             AKUIManager.instance.ShowMainSafeUI(true); // Show the safe UI
             AKDisableManager.instance.DisablePlayerDefault(true, true, false); // Disable player movement and interaction
@@ -111,6 +112,8 @@ namespace AdventurePuzzleKit.SafeSystem
 
         private void CloseSafeUI()
         {
+            PauseCloseRegistry.Unregister(this);
+
             // Restore trigger object visibility for trigger-based safes
             if (isTriggerInteraction)
             {
@@ -126,6 +129,12 @@ namespace AdventurePuzzleKit.SafeSystem
             isInteracting = false; // Mark safe as not being interacted with
 
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
+        }
+
+        public void CloseForPause()
+        {
+            if (!isInteracting) return;
+            CloseSafeUI();
         }
 
         // Resets the safe dial and lock state
@@ -156,6 +165,8 @@ namespace AdventurePuzzleKit.SafeSystem
 
             if (AKUIManager.instance.playerInputNumber == safeSolution) // If the combination is correct
             {
+                PauseCloseRegistry.Unregister(this);
+
                 AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement
                 AKUIManager.instance.ShowMainSafeUI(false); // Hide the safe UI
                 isInteracting = false; // Mark safe as not being interacted with

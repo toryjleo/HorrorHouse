@@ -16,7 +16,7 @@ using TMPro;
 
 namespace AdventurePuzzleKit.ExamineSystem
 {
-    public class ExaminableItem : MonoBehaviour, IInteractable
+    public class ExaminableItem : MonoBehaviour, IInteractable, IPauseClosable
     {
         #region Offset Fields
         // Offset the position and rotation of the item when examined
@@ -230,6 +230,7 @@ namespace AdventurePuzzleKit.ExamineSystem
         {
             // Start the examination state
             GameState.IsExamining = true;
+            PauseCloseRegistry.Register(this);
             AKUIManager.instance._examinableItem = this;
             akUIManager = AKUIManager.instance;
             AKDisableManager.instance.DisablePlayerDefault(true, true, true);
@@ -254,6 +255,7 @@ namespace AdventurePuzzleKit.ExamineSystem
         {
             // End examination and return object
             GameState.IsExamining = false;
+            PauseCloseRegistry.Unregister(this);
             AKDisableManager.instance.DisablePlayerDefault(false, false, true);
             if (shouldLerp) StartCoroutine(MoveToPosition(transform, originalPosition, smoothExamineSpeed));
 
@@ -270,6 +272,12 @@ namespace AdventurePuzzleKit.ExamineSystem
             ToggleEmission(true);
             AKPromptManager.Instance.ClearPrompts();
             HandleUI(false);
+        }
+
+        public void CloseForPause()
+        {
+            if (!GameState.IsExamining) return;
+            DropObject(true);
         }
 
         private void ToggleEmission(bool enable)

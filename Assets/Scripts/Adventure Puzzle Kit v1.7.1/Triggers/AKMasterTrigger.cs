@@ -59,6 +59,8 @@ namespace AdventurePuzzleKit
 
         private void HandleInput()
         {
+            if (GameState.IsPlayerBusy) return;
+
             // Only proceed if the player is in range and presses the interact key
             if (canUse && Input.GetKeyDown(AKInputManager.instance.triggerInteractKey))
             {

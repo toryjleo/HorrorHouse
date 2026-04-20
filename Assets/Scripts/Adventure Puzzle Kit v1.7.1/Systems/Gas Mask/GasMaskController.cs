@@ -109,6 +109,8 @@ namespace AdventurePuzzleKit.GasMaskSystem
 
         void Update()
         {
+            if (GameState.isGamePaused) return;
+
             // Run all core systems each frame
             EquippingGasMask(); // Check mask toggle input
             EquippingFilter();  // Check filter swap input

@@ -8,7 +8,7 @@ using UnityEngine;
 namespace AdventurePuzzleKit.NoteSystem
 {
     // Controls the logic for displaying and interacting with a custom reverse note, featuring a single image and a flippable text panel with customizable text
-    public class CustomReverseNoteController : MonoBehaviour
+    public class CustomReverseNoteController : MonoBehaviour, IPauseClosable
     {
         // Determines if the note can be read
         [SerializeField] private bool _isReadable = true;
@@ -115,6 +115,7 @@ namespace AdventurePuzzleKit.NoteSystem
 
         public void ShowNote()
         {
+            PauseCloseRegistry.Register(this);
             CustomReverseNoteUIManager.instance.noteController = gameObject.GetComponent<CustomReverseNoteController>(); // Link this controller to the UI
             noteUIController = CustomReverseNoteUIManager.instance; // Cache UI manager reference
             StartCoroutine(WaitTime()); // Start delay to enable input
@@ -164,6 +165,8 @@ namespace AdventurePuzzleKit.NoteSystem
 
         public void CloseNote()
         {
+            PauseCloseRegistry.Unregister(this);
+
             noteUIController.DisableNoteDisplay(false); // Hide main note UI
             noteUIController.SetReverseNoteAction(false); // Hide reverse text panel
             AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement and interaction
@@ -193,6 +196,12 @@ namespace AdventurePuzzleKit.NoteSystem
             }
 
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
+        }
+
+        public void CloseForPause()
+        {
+            if (!enabled) return;
+            CloseNote();
         }
 
         // Toggles the visibility of the reverse text panel

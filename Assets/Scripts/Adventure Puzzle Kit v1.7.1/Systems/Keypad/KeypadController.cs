@@ -15,7 +15,7 @@ namespace AdventurePuzzleKit.KeypadSystem
     }
 
     // Manages the keypad system, handling user input, code validation, and UI/audio feedback
-    public class KeypadController : MonoBehaviour
+    public class KeypadController : MonoBehaviour, IPauseClosable
     {
         // Defines the visual style of the keypad
         [Header("Keypad Type")]
@@ -60,6 +60,7 @@ namespace AdventurePuzzleKit.KeypadSystem
         public void ShowKeypad()
         {
             isOpen = true; // Mark keypad as open
+            PauseCloseRegistry.Register(this);
             // Disable player movement and interaction while keypad is active
             AKDisableManager.instance.DisablePlayerDefault(true, true, false);
             AKUIManager.instance.SetKeypadController(this); // Link this controller to the UI
@@ -79,9 +80,10 @@ namespace AdventurePuzzleKit.KeypadSystem
         public void CloseKeypad()
         {
             isOpen = false; // Mark keypad as closed
+            PauseCloseRegistry.Unregister(this);
             // Re-enable player movement and interaction
             AKDisableManager.instance.DisablePlayerDefault(false, false, false);
-            AKUIManager.instance.KeypadKeyPressClear(); // Clear keypad input
+            AKUIManager.instance.ResetKeypadStateForClose(); // Clear keypad input and reset keypad state
             SetKeypadTypeActive(false); // Hide the keypad UI
 
             // Restore trigger object visibility for trigger-based keypads
@@ -93,6 +95,12 @@ namespace AdventurePuzzleKit.KeypadSystem
 
             // Clear any active prompts
             AKPromptManager.Instance.ClearPrompts();
+        }
+
+        public void CloseForPause()
+        {
+            if (!isOpen) return;
+            CloseKeypad();
         }
 
         // Activates or deactivates the keypad UI based on the keypad type

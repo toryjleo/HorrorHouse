@@ -66,6 +66,8 @@ namespace AdventurePuzzleKit
 
         private void Update()
         {
+            if (GameState.isGamePaused) return;
+
             // Handle player controls
             if (canMove) HandleMovement();
             if (canRotate) HandleRotation();

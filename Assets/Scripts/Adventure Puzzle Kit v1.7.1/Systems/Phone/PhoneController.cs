@@ -13,7 +13,7 @@ namespace AdventurePuzzleKit.PhoneSystem
     }
 
     // Manages the phone system, handling keypad input, code validation, UI, and audio feedback
-    public class PhoneController : MonoBehaviour
+    public class PhoneController : MonoBehaviour, IPauseClosable
     {
         // Defines the visual style of the phone
         [Header("Phone UI Type")]
@@ -61,6 +61,7 @@ namespace AdventurePuzzleKit.PhoneSystem
         public void ShowKeypad()
         {
             isOpen = true; // Mark phone UI as open
+            PauseCloseRegistry.Register(this);
             AKDisableManager.instance.DisablePlayerDefault(true, true, false); // Disable player movement and interaction
             AKUIManager.instance.SetPhoneController(this); // Link this controller to the UI
             SetPhoneTypeActive(true); // Show the appropriate phone UI based on type
@@ -78,8 +79,9 @@ namespace AdventurePuzzleKit.PhoneSystem
         public void CloseKeypad()
         {
             isOpen = false; // Mark phone UI as closed
+            PauseCloseRegistry.Unregister(this);
             AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement and interaction
-            AKUIManager.instance.PhoneKeyPressClear(); // Clear phone input
+            AKUIManager.instance.ResetPhoneStateForClose(); // Clear phone input and reset phone state
             SetPhoneTypeActive(false); // Hide the phone UI
 
             // Restore trigger object visibility for trigger-based phones
@@ -90,6 +92,13 @@ namespace AdventurePuzzleKit.PhoneSystem
             }
 
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
+        }
+
+        public void CloseForPause()
+        {
+            if (!isOpen) return;
+            StopAudio();
+            CloseKeypad();
         }
 
         // Activates or deactivates the phone UI based on the phone type
