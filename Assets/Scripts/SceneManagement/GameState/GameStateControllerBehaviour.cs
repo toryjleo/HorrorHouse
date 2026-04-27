@@ -42,8 +42,28 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Instance.controller.HandleTrigger(StateTrigger.hitPause);
+            TogglePause();
         }
+    }
+
+    public void TogglePause()
+    {
+        if (controller == null)
+        {
+            return;
+        }
+
+        controller.HandleTrigger(StateTrigger.hitPause);
+    }
+
+    public void ResumeFromPause()
+    {
+        if (controller == null || !GameIsPaused)
+        {
+            return;
+        }
+
+        controller.HandleTrigger(StateTrigger.hitPause);
     }
 
     private void OnDestroy()
