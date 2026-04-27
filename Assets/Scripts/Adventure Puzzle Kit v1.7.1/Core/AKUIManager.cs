@@ -333,11 +333,21 @@ namespace AdventurePuzzleKit
             #endregion
         }
 
+        private void OnEnable()
+        {
+            GameState.Paused += HandleGameplayPaused;
+        }
+
+        private void OnDisable()
+        {
+            GameState.Paused -= HandleGameplayPaused;
+        }
+
         #region Update Method for Enabling / Disabling Inventory + Input Checks
         private void Update()
         {
             // If isInteracting is true, exit the method early
-            if (GameState.IsUsingSystem) return;
+            if (GameState.IsUsingSystem || GameState.isGamePaused) return;
 
             if (Input.GetKeyDown(AKInputManager.instance.toggleInventoryKey))
             {
@@ -401,6 +411,14 @@ namespace AdventurePuzzleKit
             }
         }
         #endregion
+
+        private void HandleGameplayPaused()
+        {
+            if (showUI)
+            {
+                CloseInventoryUI();
+            }
+        }
 
         #region Prompt UI updating (Using AKPromptManager
         public void ShowPromptContainer(bool show)

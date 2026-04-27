@@ -108,6 +108,8 @@ namespace AdventurePuzzleKit.NoteSystem
         {
             BasicReverseNoteUIManager.instance.noteController = gameObject.GetComponent<BasicReverseNoteController>(); // Link this controller to the UI
             noteUIController = BasicReverseNoteUIManager.instance; // Cache UI manager reference
+            GameState.Paused -= CloseNote;
+            GameState.Paused += CloseNote;
             StartCoroutine(WaitTime()); // Start delay to enable input
             AKDisableManager.instance.DisablePlayerDefault(true, true, false); // Disable player movement and interaction
             notesRaycastScript.enabled = false; // Disable raycast interaction
@@ -154,6 +156,7 @@ namespace AdventurePuzzleKit.NoteSystem
 
         public void CloseNote()
         {
+            GameState.Paused -= CloseNote;
             noteUIController.DisableNoteDisplay(false); // Hide main note UI
             noteUIController.DisableReverseNoteDisplay(false); // Hide reverse text panel
             AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement and interaction
@@ -184,6 +187,11 @@ namespace AdventurePuzzleKit.NoteSystem
             }
 
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
+        }
+
+        private void OnDestroy()
+        {
+            GameState.Paused -= CloseNote;
         }
 
         // Navigates to the next page of the note

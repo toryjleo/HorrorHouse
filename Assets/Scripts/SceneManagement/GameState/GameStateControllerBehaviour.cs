@@ -1,3 +1,4 @@
+using AdventurePuzzleKit;
 using UnityEngine;
 
 [DefaultExecutionOrder(-100)]
@@ -23,6 +24,8 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
 
         Instance = this;
         controller = new StateController(printState);
+        controller.playingState.notifyListenersEnter += GameState.ResumeGameplay;
+        controller.pausedState.notifyListenersEnter += GameState.PauseGameplay;
     }
 
     private void Start()
@@ -45,6 +48,12 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (controller != null)
+        {
+            controller.playingState.notifyListenersEnter -= GameState.ResumeGameplay;
+            controller.pausedState.notifyListenersEnter -= GameState.PauseGameplay;
+        }
+
         if (Instance == this)
         {
             Instance = null;

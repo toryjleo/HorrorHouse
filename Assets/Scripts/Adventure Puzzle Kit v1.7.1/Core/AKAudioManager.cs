@@ -61,6 +61,18 @@ namespace AdventurePuzzleKit
             }
         }
 
+        private void OnEnable()
+        {
+            GameState.Paused += PauseAll;
+            GameState.Resumed += ResumeAll;
+        }
+
+        private void OnDisable()
+        {
+            GameState.Paused -= PauseAll;
+            GameState.Resumed -= ResumeAll;
+        }
+
         public void Play(Sound sound)
         {
             // Find the matching sound
@@ -127,7 +139,41 @@ namespace AdventurePuzzleKit
             // Stop all sounds
             foreach (Sound s in sounds)
             {
+                if (s == null || s.source == null)
+                {
+                    continue;
+                }
+
                 s.source.Stop();
+            }
+        }
+
+        public void PauseAll()
+        {
+            foreach (Sound s in sounds)
+            {
+                if (s == null || s.source == null)
+                {
+                    continue;
+                }
+
+                if (s.source.isPlaying)
+                {
+                    s.source.Pause();
+                }
+            }
+        }
+
+        public void ResumeAll()
+        {
+            foreach (Sound s in sounds)
+            {
+                if (s == null || s.source == null)
+                {
+                    continue;
+                }
+
+                s.source.UnPause();
             }
         }
 

@@ -43,30 +43,44 @@ namespace AdventurePuzzleKit
             ValidateFields();
         }
 
+        private void OnEnable()
+        {
+            GameState.Paused += HandlePaused;
+            GameState.Resumed += HandleResumed;
+        }
+
+        private void OnDisable()
+        {
+            GameState.Paused -= HandlePaused;
+            GameState.Resumed -= HandleResumed;
+        }
+
         // Controls player input and UI state during interactions
         public void DisablePlayerDefault(bool disable, bool isInteracting, bool isExamine)
         {
+            bool shouldDisableGameplay = disable || GameState.isGamePaused;
+
             // Update interaction and UI components
-            akInteractor.enabled = !disable;
-            SetCursorState(disable);
+            akInteractor.enabled = !shouldDisableGameplay;
+            SetCursorState(shouldDisableGameplay);
             GameState.IsUsingSystem = isInteracting;
-            AKUIManager.instance.ShowCrosshair(!disable);
-            AKUIManager.instance.SetHighlightName(null, !disable, null, null, null, null);
+            AKUIManager.instance.ShowCrosshair(!shouldDisableGameplay);
+            AKUIManager.instance.SetHighlightName(null, !shouldDisableGameplay, null, null, null, null);
             AKPromptManager.Instance.ClearPrompts(); // Remove any active UI prompts
 
             // Apply appropriate camera and player settings based on state
-            if (disable)
+            if (shouldDisableGameplay)
             {
-                SetCameraAndPlayerState(true, isExamine);
+                SetCameraAndPlayerState(true, disable && isExamine);
             }
             else
             {
-                SetCameraAndPlayerState(false, isExamine);
+                SetCameraAndPlayerState(false, false);
             }
         }
 
         // Configures camera effects and player controls based on interaction state
-        private void SetCameraAndPlayerState(bool disable, bool isExamine)
+        private void SetCameraAndPlayerState(bool disable, bool showExamineBlur)
         {
             // Toggle camera zoom functionality
             if (cameraZoom != null)
@@ -77,7 +91,7 @@ namespace AdventurePuzzleKit
             // Enable blur effect during examination when disabled
             if (blur != null)
             {
-                blur.enabled = disable && isExamine;
+                blur.enabled = showExamineBlur;
             }
 
             // Update first-person controller state if applicable
@@ -110,6 +124,16 @@ namespace AdventurePuzzleKit
             {
                 Debug.LogWarning($"{fieldName} is not assigned in {nameof(AKDisableManager)} on GameObject '{gameObject.name}'.");
             }
+        }
+
+        private void HandlePaused()
+        {
+            DisablePlayerDefault(true, false, false);
+        }
+
+        private void HandleResumed()
+        {
+            DisablePlayerDefault(false, false, false);
         }
     }
 }

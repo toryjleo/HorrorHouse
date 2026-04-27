@@ -230,6 +230,8 @@ namespace AdventurePuzzleKit.ExamineSystem
         {
             // Start the examination state
             GameState.IsExamining = true;
+            GameState.Paused -= HandlePauseWhileExamining;
+            GameState.Paused += HandlePauseWhileExamining;
             AKUIManager.instance._examinableItem = this;
             akUIManager = AKUIManager.instance;
             AKDisableManager.instance.DisablePlayerDefault(true, true, true);
@@ -253,6 +255,7 @@ namespace AdventurePuzzleKit.ExamineSystem
         public void DropObject(bool shouldLerp)
         {
             // End examination and return object
+            GameState.Paused -= HandlePauseWhileExamining;
             GameState.IsExamining = false;
             AKDisableManager.instance.DisablePlayerDefault(false, false, true);
             if (shouldLerp) StartCoroutine(MoveToPosition(transform, originalPosition, smoothExamineSpeed));
@@ -270,6 +273,19 @@ namespace AdventurePuzzleKit.ExamineSystem
             ToggleEmission(true);
             AKPromptManager.Instance.ClearPrompts();
             HandleUI(false);
+        }
+
+        private void HandlePauseWhileExamining()
+        {
+            if (GameState.IsExamining)
+            {
+                DropObject(true);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            GameState.Paused -= HandlePauseWhileExamining;
         }
 
         private void ToggleEmission(bool enable)
