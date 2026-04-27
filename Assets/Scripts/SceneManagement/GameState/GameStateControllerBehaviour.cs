@@ -8,7 +8,9 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
     [SerializeField] private bool printState;
     [SerializeField] private bool startInPlayingState = true;
 
-    public StateController Controller { get; private set; }
+    public bool GameIsPaused => controller.CurrentState == controller.pausedState;
+
+    private StateController controller;
 
     private void Awake()
     {
@@ -20,16 +22,16 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
         }
 
         Instance = this;
-        Controller = new StateController(printState);
+        controller = new StateController(printState);
     }
 
     private void Start()
     {
-        Controller.CurrentState.Enter();
+        controller.CurrentState.Enter();
 
         if (startInPlayingState)
         {
-            Controller.HandleTrigger(StateTrigger.invalid);
+            controller.HandleTrigger(StateTrigger.invalid);
         }
     }
 
@@ -37,7 +39,7 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Instance.Controller.HandleTrigger(StateTrigger.hitPause);
+            Instance.controller.HandleTrigger(StateTrigger.hitPause);
         }
     }
 
