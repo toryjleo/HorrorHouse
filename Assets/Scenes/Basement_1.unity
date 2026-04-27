@@ -5558,7 +5558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessPieceReturnPoint
   expectedPiece: {fileID: 11400000, guid: c2336a772efa6c44a95498bc63fad6af, type: 2}
   originalFuseObject: {fileID: 1291393560}
-  originalPosition: {x: -2.1487198, y: 0.79830587, z: 0.6352992}
+  originalPosition: {x: -7.556057, y: 0.019771636, z: 0.6352134}
   originalRotation: {x: -0, y: -0, z: -0, w: 1}
   returnSound: {fileID: 11400000, guid: 9863a0c1b5ad687d4b6463a3f81b4852, type: 2}
   onPieceReturned:
@@ -9364,6 +9364,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f72d729bf7c201d4b961e78a65662e28, type: 3}
   m_PrefabInstance: {fileID: 1933067593}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1307299091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307299092}
+  - component: {fileID: 1307299093}
+  m_Layer: 0
+  m_Name: GameStateController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1307299092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307299091}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2141796348}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1307299093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307299091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1c9a1fb532e9a078a135dfcfd1105d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameStateControllerBehaviour
+  printState: 1
+  startInPlayingState: 1
 --- !u!1001 &1308783239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15990,6 +16036,7 @@ Transform:
   - {fileID: 190335202}
   - {fileID: 674210317}
   - {fileID: 1534561985}
+  - {fileID: 1307299092}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2142881744 stripped

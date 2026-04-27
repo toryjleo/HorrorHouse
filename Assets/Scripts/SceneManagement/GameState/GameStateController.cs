@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Diagnostics;
 using UnityEngine;
 
 
@@ -21,6 +19,7 @@ public class StateController
     public bool printState = false;
     #region Properties
 
+    public State CurrentState => state;
 
     #endregion
 
@@ -31,8 +30,6 @@ public class StateController
         pausedState = new PausedState(this);
 
         state = enterState;
-
-        // TODO: Make sure that we get out of the enter state by default SOMEWHERE
 
         this.printState = printState;
     }
@@ -50,12 +47,14 @@ public class StateController
             {
                 state.PrintStateEnter();
             }
+
+            state.Exit();
             state = newState;
             newState.Enter();
         }
         else
         {
-            Debug.Fail("StateController > No transition from " + state.Name + " on trigger " + trigger);
+            Debug.LogError("StateController > No transition from " + state.Name + " on trigger " + trigger);
         }
     }
 
@@ -66,7 +65,6 @@ public class StateController
     {
         state = enterState;
     }
-
 }
 
 /// <summary>
@@ -116,10 +114,8 @@ public abstract class State
     {
         notifyListenersExit?.Invoke();
     }
-
 }
 
-// TODO: Check
 public class EnterState : State
 {
     public EnterState(StateController controller) : base(controller)
@@ -134,7 +130,6 @@ public class EnterState : State
     }
 }
 
-// TODO: Check
 public class PlayingState : State
 {
     public PlayingState(StateController controller) : base(controller)
@@ -155,7 +150,6 @@ public class PlayingState : State
     }
 }
 
-// TODO: Check
 public class PausedState : State
 {
     public PausedState(StateController controller) : base(controller)
@@ -175,3 +169,5 @@ public class PausedState : State
         }
     }
 }
+
+public delegate void StateChangeHandler();
