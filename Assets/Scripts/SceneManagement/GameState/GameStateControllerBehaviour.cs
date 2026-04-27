@@ -33,6 +33,14 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Instance.Controller.HandleTrigger(StateTrigger.hitPause);
+        }
+    }
+
     private void OnDestroy()
     {
         if (Instance == this)

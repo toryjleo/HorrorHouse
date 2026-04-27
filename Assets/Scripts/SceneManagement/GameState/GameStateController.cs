@@ -25,13 +25,13 @@ public class StateController
 
     public StateController(bool printState = false)
     {
+        this.printState = printState;
         enterState = new EnterState(this);
         playingState = new PlayingState(this);
         pausedState = new PausedState(this);
 
         state = enterState;
-
-        this.printState = printState;
+        state.PrintStateEnter();
     }
 
     /// <summary>
@@ -45,7 +45,7 @@ public class StateController
         {
             if (printState)
             {
-                state.PrintStateEnter();
+                newState.PrintStateEnter();
             }
 
             state.Exit();
