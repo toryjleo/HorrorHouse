@@ -1,7 +1,7 @@
 using AdventurePuzzleKit;
 using UnityEngine;
 
-public sealed class PauseMenuUI : MonoBehaviour
+public sealed class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private GameStateControllerBehaviour gameStateController;
