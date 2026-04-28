@@ -1,9 +1,11 @@
 using AdventurePuzzleKit;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public sealed class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuPanel;
+    [SerializeField] private GameObject firstSelected;
     [SerializeField] private GameStateControllerBehaviour gameStateController;
     [SerializeField] private SceneManager sceneManager;
 
@@ -66,10 +68,20 @@ public sealed class PauseMenu : MonoBehaviour
         {
             pauseMenuPanel.SetActive(true);
         }
+
+        if (EventSystem.current != null && firstSelected != null)
+        {
+            EventSystem.current.SetSelectedGameObject(firstSelected);
+        }
     }
 
     private void HidePauseMenu()
     {
+        if (EventSystem.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
         if (pauseMenuPanel != null)
         {
             pauseMenuPanel.SetActive(false);
