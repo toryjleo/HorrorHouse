@@ -107,6 +107,8 @@ namespace AdventurePuzzleKit.NoteSystem
         {
             CustomNoteUIManager.instance.noteController = gameObject.GetComponent<CustomNoteController>(); // Link this controller to the UI
             noteUIController = CustomNoteUIManager.instance; // Cache UI manager reference
+            GameState.Paused -= CloseNote;
+            GameState.Paused += CloseNote;
             StartCoroutine(WaitTime()); // Start delay to enable input
             AKDisableManager.instance.DisablePlayerDefault(true, true, false); // Disable player movement and interaction
             notesRaycastScript.enabled = false; // Disable raycast interaction
@@ -158,6 +160,7 @@ namespace AdventurePuzzleKit.NoteSystem
 
         public void CloseNote()
         {
+            GameState.Paused -= CloseNote;
             noteUIController.DisableNoteDisplay(false); // Hide note UI
             AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement and interaction
             notesRaycastScript.enabled = true; // Re-enable raycast interaction
@@ -184,6 +187,11 @@ namespace AdventurePuzzleKit.NoteSystem
             }
 
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
+        }
+
+        private void OnDestroy()
+        {
+            GameState.Paused -= CloseNote;
         }
 
         // Navigates to the next page of the note

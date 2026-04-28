@@ -87,6 +87,8 @@ namespace AdventurePuzzleKit.PadlockSystem
         public void ShowPadlock()
         {
             isShowing = true; // Mark padlock UI as active
+            GameState.Paused -= DisablePadlock;
+            GameState.Paused += DisablePadlock;
             AKDisableManager.instance.DisablePlayerDefault(true, true, false); // Disable player movement and interaction
             SpawnPadlock(distanceFromCamera); // Spawn the padlock UI
             mainCamera.transform.localEulerAngles = new Vector3(0, 0, 0); // Reset camera rotation
@@ -131,6 +133,7 @@ namespace AdventurePuzzleKit.PadlockSystem
         // Closes the padlock UI and resets interaction
         void DisablePadlock()
         {
+            GameState.Paused -= DisablePadlock;
             isShowing = false; // Mark padlock UI as inactive
             AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement and interaction
             Destroy(instantiatedPadlock); // Destroy the padlock UI instance
@@ -143,6 +146,11 @@ namespace AdventurePuzzleKit.PadlockSystem
             }
 
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
+        }
+
+        private void OnDestroy()
+        {
+            GameState.Paused -= DisablePadlock;
         }
 
         // Checks if the player's combination matches the correct combination

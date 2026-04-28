@@ -60,6 +60,8 @@ namespace AdventurePuzzleKit.SafeSystem
             }
 
             isInteracting = true; // Mark safe as being interacted with
+            GameState.Paused -= CloseSafeUI;
+            GameState.Paused += CloseSafeUI;
             lockState = 1; // Start at the first lock state
             AKUIManager.instance.ShowMainSafeUI(true); // Show the safe UI
             AKDisableManager.instance.DisablePlayerDefault(true, true, false); // Disable player movement and interaction
@@ -111,6 +113,7 @@ namespace AdventurePuzzleKit.SafeSystem
 
         private void CloseSafeUI()
         {
+            GameState.Paused -= CloseSafeUI;
             // Restore trigger object visibility for trigger-based safes
             if (isTriggerInteraction)
             {
@@ -126,6 +129,11 @@ namespace AdventurePuzzleKit.SafeSystem
             isInteracting = false; // Mark safe as not being interacted with
 
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
+        }
+
+        private void OnDestroy()
+        {
+            GameState.Paused -= CloseSafeUI;
         }
 
         // Resets the safe dial and lock state

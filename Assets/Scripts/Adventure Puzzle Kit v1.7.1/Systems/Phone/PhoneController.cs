@@ -61,6 +61,8 @@ namespace AdventurePuzzleKit.PhoneSystem
         public void ShowKeypad()
         {
             isOpen = true; // Mark phone UI as open
+            GameState.Paused -= CloseKeypad;
+            GameState.Paused += CloseKeypad;
             AKDisableManager.instance.DisablePlayerDefault(true, true, false); // Disable player movement and interaction
             AKUIManager.instance.SetPhoneController(this); // Link this controller to the UI
             SetPhoneTypeActive(true); // Show the appropriate phone UI based on type
@@ -77,6 +79,7 @@ namespace AdventurePuzzleKit.PhoneSystem
 
         public void CloseKeypad()
         {
+            GameState.Paused -= CloseKeypad;
             isOpen = false; // Mark phone UI as closed
             AKDisableManager.instance.DisablePlayerDefault(false, false, false); // Re-enable player movement and interaction
             AKUIManager.instance.PhoneKeyPressClear(); // Clear phone input
@@ -90,6 +93,11 @@ namespace AdventurePuzzleKit.PhoneSystem
             }
 
             AKPromptManager.Instance.ClearPrompts(); // Clear active prompts
+        }
+
+        private void OnDestroy()
+        {
+            GameState.Paused -= CloseKeypad;
         }
 
         // Activates or deactivates the phone UI based on the phone type

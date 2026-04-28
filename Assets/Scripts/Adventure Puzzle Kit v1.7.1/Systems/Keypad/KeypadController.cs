@@ -60,6 +60,8 @@ namespace AdventurePuzzleKit.KeypadSystem
         public void ShowKeypad()
         {
             isOpen = true; // Mark keypad as open
+            GameState.Paused -= CloseKeypad;
+            GameState.Paused += CloseKeypad;
             // Disable player movement and interaction while keypad is active
             AKDisableManager.instance.DisablePlayerDefault(true, true, false);
             AKUIManager.instance.SetKeypadController(this); // Link this controller to the UI
@@ -78,6 +80,7 @@ namespace AdventurePuzzleKit.KeypadSystem
 
         public void CloseKeypad()
         {
+            GameState.Paused -= CloseKeypad;
             isOpen = false; // Mark keypad as closed
             // Re-enable player movement and interaction
             AKDisableManager.instance.DisablePlayerDefault(false, false, false);
@@ -93,6 +96,11 @@ namespace AdventurePuzzleKit.KeypadSystem
 
             // Clear any active prompts
             AKPromptManager.Instance.ClearPrompts();
+        }
+
+        private void OnDestroy()
+        {
+            GameState.Paused -= CloseKeypad;
         }
 
         // Activates or deactivates the keypad UI based on the keypad type
