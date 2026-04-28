@@ -139,12 +139,10 @@ namespace AdventurePuzzleKit
             // Stop all sounds
             foreach (Sound s in sounds)
             {
-                if (s == null || s.source == null)
+                if (s != null && s.source != null)
                 {
-                    continue;
+                    s.source.Stop();
                 }
-
-                s.source.Stop();
             }
         }
 
@@ -152,12 +150,7 @@ namespace AdventurePuzzleKit
         {
             foreach (Sound s in sounds)
             {
-                if (s == null || s.source == null)
-                {
-                    continue;
-                }
-
-                if (s.source.isPlaying)
+                if (s != null && s.source != null && s.source.isPlaying)
                 {
                     s.source.Pause();
                 }
@@ -168,12 +161,10 @@ namespace AdventurePuzzleKit
         {
             foreach (Sound s in sounds)
             {
-                if (s == null || s.source == null)
+                if (s != null && s.source != null)
                 {
-                    continue;
+                    s.source.UnPause();
                 }
-
-                s.source.UnPause();
             }
         }
 

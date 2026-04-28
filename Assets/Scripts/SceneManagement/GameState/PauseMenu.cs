@@ -64,6 +64,16 @@ public sealed class PauseMenu : MonoBehaviour
 
     private void ShowPauseMenu()
     {
+        if (AKDisableManager.instance != null)
+        {
+            AKDisableManager.instance.DisablePlayerDefault(true, false, false);
+        }
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         if (pauseMenuPanel != null)
         {
             pauseMenuPanel.SetActive(true);
@@ -85,6 +95,16 @@ public sealed class PauseMenu : MonoBehaviour
         if (pauseMenuPanel != null)
         {
             pauseMenuPanel.SetActive(false);
+        }
+
+        if (AKDisableManager.instance != null)
+        {
+            AKDisableManager.instance.DisablePlayerDefault(false, false, false);
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

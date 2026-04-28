@@ -7,8 +7,8 @@ namespace AdventurePuzzleKit
 {
     public static class GameState
     {
-        private const float DefaultTimeScale = 1f;
-        private const float DefaultFixedDeltaTime = 0.02f;
+        private const float DEFAULT_TIME_SCALE = 1f;
+        private const float DEFAULT_FIXED_DELTA_TIME = 0.02f;
 
         public static event Action Paused;
         public static event Action Resumed;
@@ -67,8 +67,8 @@ namespace AdventurePuzzleKit
 
         private static void ApplyTimeScale(bool paused)
         {
-            Time.timeScale = paused ? 0f : DefaultTimeScale;
-            Time.fixedDeltaTime = paused ? 0f : DefaultFixedDeltaTime;
+            Time.timeScale = paused ? 0f : DEFAULT_TIME_SCALE;
+            Time.fixedDeltaTime = paused ? 0f : DEFAULT_FIXED_DELTA_TIME;
         }
     }
 }
