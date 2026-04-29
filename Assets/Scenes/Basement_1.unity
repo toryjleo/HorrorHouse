@@ -12851,7 +12851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9298906
+      value: 6.755
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12859,7 +12859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.7348986
+      value: -8.3
       objectReference: {fileID: 0}
     - target: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13131,7 +13131,7 @@ PrefabInstance:
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: 'noteText.Array.data[0]'
       value: "The order of the pieces left-to-right are: knight->bishop->king->pawn.
-        \nAnyone could figure it out with 6 combinations.\nGood luck! I am putting
+        \nAnyone could figure it out with 24 combinations.\nGood luck! I am putting
         the pieces back and I\u2019m seeing what is on the other side.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
