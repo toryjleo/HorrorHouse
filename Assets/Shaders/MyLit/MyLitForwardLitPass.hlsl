@@ -9,6 +9,7 @@ struct Attributes
 {
 	float3 positionOS : POSITION; // Position in object space
 	float2 uv         : TEXCOORD0; // Material texture UVs
+    float2 lightmapUV : TEXCOORD1; // Lightmap UVs (uv2)
 	float3 normalOS   : NORMAL; // Normal in object space
 	float4 tangentOS  : TANGENT;
 };
@@ -25,6 +26,7 @@ struct Interpolators
 	float3 positionWS : TEXCOORD1;
 	float3 normalWS   : TEXCOORD2;
 	float4 tangentWS  : TEXCOORD3;
+	DECLARE_LIGHTMAP_OR_SH(staticLightmapUV, vertexSH, 4);
 };
 
 Interpolators Vertex(Attributes input)
@@ -42,6 +44,8 @@ Interpolators Vertex(Attributes input)
 	output.positionWS = posnInputs.positionWS;
 	output.normalWS = normInputs.normalWS;
 	output.tangentWS = float4(normInputs.tangentWS, input.tangentOS.w);
+	OUTPUT_LIGHTMAP_UV(input.lightmapUV, unity_LightmapST, output.staticLightmapUV);
+	OUTPUT_SH(output.normalWS, output.vertexSH);
 
 	return output;
 }
@@ -88,6 +92,8 @@ float4 Fragment(Interpolators input
 	lightingInput.normalWS = normalWS;
 	lightingInput.viewDirectionWS = viewDirWS;
 	lightingInput.shadowCoord = TransformWorldToShadowCoord(positionWS); // Sample the shadow coord from the shadow map
+	lightingInput.bakedGI = SAMPLE_GI(input.staticLightmapUV, input.vertexSH, normalWS);
+	lightingInput.shadowMask = SAMPLE_SHADOWMASK(input.staticLightmapUV);
 #if UNITY_VERSION >= 202120
 	lightingInput.positionCS = input.positionCS;
 	lightingInput.tangentToWorld = tangentToWorld;

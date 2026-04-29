@@ -6,6 +6,7 @@ Shader "Custom/MyLit"
         [Header(Surface options)] // Creates a text header
 
         [Toggle(_ADDITIONAL_LIGHTS)] _EnableMultipleLights("Enable Multiple Lights", Float) = 1.0
+        [ToggleOff(_RECEIVE_SHADOWS_OFF)] _ReceiveShadows("Receive Shadows", Float) = 1.0
 
         // Format the properties like so: <_PropertyName>(<Material Inspector Name>, <DataType>) <DefaultVal>
         // Convention states that property names start with an underscore
@@ -69,11 +70,11 @@ Shader "Custom/MyLit"
 
             #define _NORMALMAP
             #define _CLEARCOATMAP
-            #pragma shader_feature_local _ADDITIONAL_LIGHTS
             #pragma shader_feature_local _ALPHA_CUTOUT
             #pragma shader_feature_local _DOUBLE_SIDED_NORMALS
             #pragma shader_feature_local _SPECULAR_SETUP
             #pragma shader_feature_local _ROUGHNESS_SETUP
+            #pragma shader_feature_local _RECEIVE_SHADOWS_OFF
             #pragma shader_feature_local_fragment _ALPHAPREMULTIPLY_ON
             #pragma shader_feature_local _ParMap
             #pragma shader_feature_local _CCMask
@@ -82,12 +83,27 @@ Shader "Custom/MyLit"
 
 
 #if UNITY_VERSION >= 202120
-            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN
 #else
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS // Tells unity to compile a version of the shader that works with and without main light shadows. This creates variants of the forward lit pass
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE // Handles soft shadows automatically
 #endif
             #pragma multi_compile_fragment _ _SHADOWS_SOFT      // Handles soft shadows automatically
+
+            // Additional lights + their shadows (needed for mixed/real-time shadowing beyond main light)
+            #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS
+            #pragma multi_compile _ EVALUATE_SH_MIXED EVALUATE_SH_VERTEX
+
+            // Baked + mixed lighting (lightmaps / shadowmask)
+            #pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
+            #pragma multi_compile _ SHADOWS_SHADOWMASK
+            #pragma multi_compile _ DIRLIGHTMAP_COMBINED
+            #pragma multi_compile _ LIGHTMAP_ON
+            #pragma multi_compile_fragment _ LIGHTMAP_BICUBIC_SAMPLING
+            #pragma multi_compile _ DYNAMICLIGHTMAP_ON
+            #pragma multi_compile _ USE_LEGACY_LIGHTMAPS
+
 #if UNITY_VERSION >= 202120
             #pragma multi_compile_fragment _ DEBUG_DISPLAY
 #endif

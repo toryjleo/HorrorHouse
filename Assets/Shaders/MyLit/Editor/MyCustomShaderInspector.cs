@@ -58,6 +58,11 @@ public abstract class MyCustomShaderInspector : ShaderGUI
     /// <param name="material">Material to be impacted</param>
     protected virtual void UpdateSurfaceType(Material material)
     {
+        if (material.HasProperty("_ReceiveShadows"))
+        {
+            CoreUtils.SetKeyword(material, "_RECEIVE_SHADOWS_OFF", material.GetFloat("_ReceiveShadows") == 0.0f);
+        }
+
         //--- SurfaceType ---
         SurfaceType surface = (SurfaceType)material.GetFloat("_SurfaceType");
         switch (surface)
