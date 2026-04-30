@@ -13,16 +13,18 @@ namespace AdventurePuzzleKit
         public static event Action Paused;
         public static event Action Resumed;
         public static event Action<bool> PauseStateChanged;
+        public static event Action EndGameStarted;
 
         public static bool IsExamining { get; set; }
         public static bool IsInventoryOpen { get; set; }
         public static bool IsUsingSystem { get; set; }
         public static bool isGamePaused { get; private set; }
+        public static bool IsEndGame { get; private set; }
 
         // A combined property to check if the player is "busy" with any major state
-        public static bool IsPlayerBusy => IsExamining || IsInventoryOpen || isGamePaused || IsInteracting;
+        public static bool IsPlayerBusy => IsExamining || IsInventoryOpen || isGamePaused || IsEndGame || IsInteracting;
 
-        public static bool IsInteracting => IsUsingSystem || IsExamining || isGamePaused;
+        public static bool IsInteracting => IsUsingSystem || IsExamining || isGamePaused || IsEndGame;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetStatics()
@@ -31,6 +33,7 @@ namespace AdventurePuzzleKit
             IsInventoryOpen = false;
             IsUsingSystem = false;
             isGamePaused = false;
+            IsEndGame = false;
             ApplyTimeScale(false);
         }
 
@@ -42,6 +45,17 @@ namespace AdventurePuzzleKit
         public static void ResumeGameplay()
         {
             SetPaused(false);
+        }
+
+        public static void EnterEndGame()
+        {
+            if (IsEndGame)
+            {
+                return;
+            }
+
+            IsEndGame = true;
+            EndGameStarted?.Invoke();
         }
 
         public static void SetPaused(bool paused)
@@ -72,4 +86,3 @@ namespace AdventurePuzzleKit
         }
     }
 }
-

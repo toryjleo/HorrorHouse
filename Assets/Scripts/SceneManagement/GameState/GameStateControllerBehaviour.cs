@@ -42,6 +42,11 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (GameState.IsEndGame)
+            {
+                return;
+            }
+
             TogglePause();
         }
     }
