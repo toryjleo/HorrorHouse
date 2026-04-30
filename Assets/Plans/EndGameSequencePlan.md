@@ -140,7 +140,9 @@ Each phase is independently testable:
 
 ### Phase 2 (Nice): Jumpscare Phase
 - Add Jumpscare phase to `EndGameController` coroutine
-- Add jumpscare image with 0→1 intensity ramp driven from script
+- Add jumpscare image with 0→1 intensity ramp driven from script (+ short hold)
+- (Optional) play a jumpscare stinger `Sound` at the start of the ramp
+- (Optional) drive an existing `AudioDistortionFilter` on your music object during the ramp (then reset)
 - **Result**: Walk into trigger → jumpscare → logo → quit ✅
 
 ### Phase 3 (Stretch): Glitch Phase + Music Distortion

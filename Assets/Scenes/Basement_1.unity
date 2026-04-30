@@ -2673,7 +2673,7 @@ GameObject:
   - component: {fileID: 271349941}
   - component: {fileID: 271349940}
   m_Layer: 0
-  m_Name: LogoSplashPanel
+  m_Name: EndGameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2755,6 +2755,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2010866471}
+  - {fileID: 1377160099}
   m_Father: {fileID: 190335202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3994,10 +3995,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EndGameController
   splashPanel: {fileID: 2010866470}
   splashDurationSeconds: 6
-  enableJumpscare: 0
-  jumpscareCanvasGroup: {fileID: 0}
-  jumpscareRampDurationSeconds: 0.35
+  enableJumpscare: 1
+  jumpscareCanvasGroup: {fileID: 1377160096}
+  jumpscareRampDurationSeconds: 6
+  jumpscareHoldDurationSeconds: 0.2
+  hideJumpscareOnSplash: 1
   stopAllAkAudioOnStart: 1
+  jumpscareStinger: {fileID: 0}
   endStinger: {fileID: 0}
   sceneManager: {fileID: 0}
 --- !u!224 &386875553 stripped
@@ -7020,7 +7024,7 @@ Transform:
   m_GameObject: {fileID: 726981566}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.2, y: 0, z: -2.99}
+  m_LocalPosition: {x: -1.76, y: 0, z: -0.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11904,6 +11908,94 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3582632565991208518, guid: 958a6817c6c3d3c4ba050b4c363948db, type: 3}
   m_PrefabInstance: {fileID: 1372919297}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1377160095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1377160099}
+  - component: {fileID: 1377160098}
+  - component: {fileID: 1377160097}
+  - component: {fileID: 1377160096}
+  m_Layer: 0
+  m_Name: JumpScarePanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!225 &1377160096
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377160095}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1377160097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377160095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1377160098
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377160095}
+  m_CullTransparentMesh: 1
+--- !u!224 &1377160099
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377160095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 271349943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1380173247
 GameObject:
   m_ObjectHideFlags: 0
@@ -14109,6 +14201,15 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5690694577315793776, guid: 4238137db8545285990b7364d51c3fdc, type: 3}
   m_PrefabInstance: {fileID: 1763487543}
   m_PrefabAsset: {fileID: 0}
+--- !u!170 &1617951175
+AudioDistortionFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617951169}
+  m_Enabled: 1
+  m_DistortionLevel: 0
 --- !u!1 &1626235638 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2867797882538297368, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
@@ -15220,7 +15321,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5690694577315793776, guid: 4238137db8545285990b7364d51c3fdc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1617951175}
   m_SourcePrefab: {fileID: 100100000, guid: 4238137db8545285990b7364d51c3fdc, type: 3}
 --- !u!1 &1775643701
 GameObject:
@@ -18018,7 +18122,7 @@ GameObject:
   - component: {fileID: 2010866473}
   - component: {fileID: 2010866472}
   m_Layer: 0
-  m_Name: Splash
+  m_Name: LogoSplashPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18787,7 +18891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8558030965546953129, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8558030965546953129, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
       propertyPath: m_StaticEditorFlags
