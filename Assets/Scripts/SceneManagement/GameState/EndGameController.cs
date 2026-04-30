@@ -14,6 +14,7 @@ public sealed class EndGameController : MonoBehaviour
     [SerializeField] private float jumpscareRampDurationSeconds = 0.35f;
 
     [Header("Audio")]
+    [SerializeField] private bool stopAllAkAudioOnStart = true;
     [SerializeField] private Sound endStinger;
 
     [Header("Refs")]
@@ -47,6 +48,11 @@ public sealed class EndGameController : MonoBehaviour
 
         GameState.SetPaused(false);
         GameState.EnterEndGame();
+
+        if (stopAllAkAudioOnStart && AKAudioManager.instance != null)
+        {
+            AKAudioManager.instance.StopAll();
+        }
 
         if (routine != null)
         {
@@ -110,4 +116,3 @@ public sealed class EndGameController : MonoBehaviour
 #endif
     }
 }
-
