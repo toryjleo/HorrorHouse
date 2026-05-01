@@ -13,7 +13,6 @@ namespace AdventurePuzzleKit
         public static event Action Paused;
         public static event Action Resumed;
         public static event Action<bool> PauseStateChanged;
-        public static event Action EndGameStarted;
 
         public static bool IsExamining { get; set; }
         public static bool IsInventoryOpen { get; set; }
@@ -45,17 +44,6 @@ namespace AdventurePuzzleKit
         public static void ResumeGameplay()
         {
             SetPaused(false);
-        }
-
-        public static void EnterEndGame()
-        {
-            if (IsEndGame)
-            {
-                return;
-            }
-
-            IsEndGame = true;
-            EndGameStarted?.Invoke();
         }
 
         public static void SetPaused(bool paused)
