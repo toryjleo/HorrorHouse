@@ -26,6 +26,7 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
         controller = new StateController(printState);
         controller.playingState.notifyListenersEnter += GameState.ResumeGameplay;
         controller.pausedState.notifyListenersEnter += GameState.PauseGameplay;
+        controller.endGameState.notifyListenersEnter += GameState.EnterEndGame;
     }
 
     private void Start()
@@ -71,12 +72,23 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
         controller.HandleTrigger(StateTrigger.hitPause);
     }
 
+    public void TriggerEndGame()
+    {
+        if (controller == null || GameState.IsEndGame)
+        {
+            return;
+        }
+
+        controller.HandleTrigger(StateTrigger.endGame);
+    }
+
     private void OnDestroy()
     {
         if (controller != null)
         {
             controller.playingState.notifyListenersEnter -= GameState.ResumeGameplay;
             controller.pausedState.notifyListenersEnter -= GameState.PauseGameplay;
+            controller.endGameState.notifyListenersEnter -= GameState.EnterEndGame;
         }
 
         if (Instance == this)

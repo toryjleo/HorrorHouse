@@ -22,9 +22,9 @@ namespace AdventurePuzzleKit
         public static bool IsEndGame { get; private set; }
 
         // A combined property to check if the player is "busy" with any major state
-        public static bool IsPlayerBusy => IsExamining || IsInventoryOpen || isGamePaused || IsEndGame || IsInteracting;
+        public static bool IsPlayerBusy => IsExamining || IsInventoryOpen || isGamePaused || IsInteracting;
 
-        public static bool IsInteracting => IsUsingSystem || IsExamining || isGamePaused || IsEndGame;
+        public static bool IsInteracting => IsUsingSystem || IsExamining || isGamePaused;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetStatics()

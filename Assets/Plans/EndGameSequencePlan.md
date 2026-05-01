@@ -138,6 +138,28 @@ Each phase is independently testable:
 - Wire a [PlayerTriggerEvent](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Scripts/SceneManagement/PlayerTriggerEvent.cs#4-19) in the scene to test
 - **Result**: Walk into trigger → logo → quit ✅
 
+## Two End Conditions
+
+We support two endings using two UnityEvents (no parameters needed):
+- **Splash only (clean)**: call `EndGameController.StartEndGameSplashOnly()` (or `StartEndGame()` if `defaultEndCondition = SplashOnly`) — no glitch, no distortion
+- **Return to normal → then splash**: call `EndGameController.StartEndGameReturnToNormalThenSplash()` to briefly restore control, move the player, and enable a world object before showing the logo/quit
+
+### Chess Return Points Condition (plug-back win)
+
+If your “put each plug back” win condition is “all `ChessPieceReturnPoint` objects have been used”, add `ChessReturnPointsEndCondition` to the scene and assign:
+- `endGameController` → your `EndGameController`
+- Leave `autoFindReturnPointsInScene` enabled (or manually assign `returnPoints`)
+
+### Exit Router (recommended)
+
+If the ending is triggered when the player reaches an exit:
+- Add `ChessReturnPointsExitRouter` to any GameObject and assign `endGameController`
+- Wire your exit trigger’s `PlayerTriggerEvent.OnPlayerTrigger` → `ChessReturnPointsExitRouter.TriggerEndFromExit()`
+- Behavior:
+  - **0 returned** → splash-only (clean)
+  - **all returned** → return-to-normal then splash
+  - **partial** → splash-only (clean)
+
 ### Phase 2 (Nice): Jumpscare Phase
 - Add Jumpscare phase to `EndGameController` coroutine
 - Add jumpscare image with 0→1 intensity ramp driven from script (+ short hold)
