@@ -53,19 +53,6 @@ public sealed class EndGameController : MonoBehaviour
         GameStateControllerBehaviour.Instance.EndGameStateEnter.notifyListenersEnter -= HandleEndGameStarted;
     }
 
-    // ── Public entry point ────────────────────────────────────────────
-    /// <summary>
-    /// Call this to start the endgame sequence. Safe to call multiple times — only runs once.
-    /// Wire to a PlayerTriggerEvent.OnPlayerTrigger in the Inspector.
-    /// </summary>
-    public void StartEndGame()
-    {
-        if (GameStateControllerBehaviour.Instance != null)
-        {
-            GameStateControllerBehaviour.Instance.TriggerEndGame();
-        }
-    }
-
     private void HandleEndGameStarted()
     {
         if (hasStarted)
