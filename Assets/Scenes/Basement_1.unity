@@ -11934,8 +11934,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessPieceReturnPoint
   expectedPiece: {fileID: 11400000, guid: 81b5b1a415af7b145809e878be019678, type: 2}
   originalFuseObject: {fileID: 6913653914086491618}
-  originalPosition: {x: -0.5838332, y: 0.15799999, z: 7.538624}
-  originalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
+  originalPosition: {x: -0.5838332, y: 0.08099997, z: 7.531624}
+  originalRotation: {x: -0, y: -0.04536288, z: 0.9989706, w: 0}
   returnSound: {fileID: 11400000, guid: 9863a0c1b5ad687d4b6463a3f81b4852, type: 2}
   onPieceReturned:
     m_PersistentCalls:
@@ -24538,14 +24538,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6913653914086491618}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5.4379997, y: 0.28700006, z: -35.986}
+  m_LocalRotation: {x: -0.9989706, y: 0, z: 0, w: -0.04536288}
+  m_LocalPosition: {x: -5.4379997, y: 0.21, z: -35.979}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6913653914086332872}
   m_Father: {fileID: 1971160037}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -185.2, y: 0, z: 0}
 --- !u!4 &6913653914086332872
 Transform:
   m_ObjectHideFlags: 0
