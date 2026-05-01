@@ -7,7 +7,7 @@ using UnityEngine;
 /// Each phase is optional — disable by leaving its GameObject/duration unset.
 /// Attach to a GameObject in the scene and wire via PlayerTriggerEvent or similar.
 /// </summary>
-public sealed class EndGameController : MonoBehaviour
+public sealed class EndGameManager : MonoBehaviour
 {
     // ── Phase durations ──────────────────────────────────────────────
     [Header("Phase Durations (seconds, real-time)")]
