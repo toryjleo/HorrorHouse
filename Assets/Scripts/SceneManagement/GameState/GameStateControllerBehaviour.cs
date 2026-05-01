@@ -13,6 +13,8 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
 
     private StateController controller;
 
+    public EndGameState EndGameStateEnter => controller.endGameState;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -26,7 +28,6 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
         controller = new StateController(printState);
         controller.playingState.notifyListenersEnter += GameState.ResumeGameplay;
         controller.pausedState.notifyListenersEnter += GameState.PauseGameplay;
-        controller.endGameState.notifyListenersEnter += GameState.EnterEndGame;
     }
 
     private void Start()
@@ -88,7 +89,6 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
         {
             controller.playingState.notifyListenersEnter -= GameState.ResumeGameplay;
             controller.pausedState.notifyListenersEnter -= GameState.PauseGameplay;
-            controller.endGameState.notifyListenersEnter -= GameState.EnterEndGame;
         }
 
         if (Instance == this)

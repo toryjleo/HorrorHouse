@@ -22,16 +22,8 @@ public sealed class EndGameController : MonoBehaviour
     [Tooltip("Full-screen glitch overlay (Not Responding dialog, scanlines, etc)")]
     [SerializeField] private GameObject glitchOverlayPanel;
 
-    [Tooltip("Jumpscare image — alpha driven from 0 to 1")]
-    [SerializeField] private CanvasGroup jumpscareCanvasGroup;
-
     [Tooltip("Company logo splash screen")]
     [SerializeField] private GameObject splashPanel;
-
-    // ── Breather ─────────────────────────────────────────────────────
-    [Header("Breather")]
-    [Tooltip("Optional world object to reveal during the breather")]
-    [SerializeField] private GameObject clueObject;
 
     // ── Audio ─────────────────────────────────────────────────────────
     [Header("Audio")]
@@ -49,12 +41,16 @@ public sealed class EndGameController : MonoBehaviour
         // Ensure all panels start hidden
         SetActive(glitchOverlayPanel, false);
         SetActive(splashPanel, false);
+    }
 
-        if (jumpscareCanvasGroup != null)
-        {
-            jumpscareCanvasGroup.alpha = 0f;
-            jumpscareCanvasGroup.gameObject.SetActive(false);
-        }
+    private void OnEnable()
+    {
+        GameStateControllerBehaviour.Instance.EndGameStateEnter.notifyListenersEnter += HandleEndGameStarted;
+    }
+
+    private void OnDisable()
+    {
+        GameStateControllerBehaviour.Instance.EndGameStateEnter.notifyListenersEnter -= HandleEndGameStarted;
     }
 
     // ── Public entry point ────────────────────────────────────────────
@@ -64,23 +60,20 @@ public sealed class EndGameController : MonoBehaviour
     /// </summary>
     public void StartEndGame()
     {
+        if (GameStateControllerBehaviour.Instance != null)
+        {
+            GameStateControllerBehaviour.Instance.TriggerEndGame();
+        }
+    }
+
+    private void HandleEndGameStarted()
+    {
         if (hasStarted)
         {
             return;
         }
 
         hasStarted = true;
-
-        // Transition the state machine
-        if (GameStateControllerBehaviour.Instance != null)
-        {
-            GameStateControllerBehaviour.Instance.TriggerEndGame();
-        }
-        else
-        {
-            GameState.EnterEndGame();
-        }
-
         StartCoroutine(EndGameSequence());
     }
 
@@ -94,33 +87,9 @@ public sealed class EndGameController : MonoBehaviour
             SetActive(glitchOverlayPanel, true);
             StopAllGameAudio();
 
-            yield return new WaitForSecondsRealtime(glitchDuration);
-        }
-
-        // ── JUMPSCARE ────────────────────────────────────────────────
-        if (jumpscareCanvasGroup != null)
-        {
-            jumpscareCanvasGroup.gameObject.SetActive(true);
             PlaySound(jumpscareStinger);
 
-            // Ramp alpha 0 → 1
-            float elapsed = 0f;
-            float duration = Mathf.Max(0.001f, jumpscareRampDuration);
-            while (elapsed < duration)
-            {
-                elapsed += Time.unscaledDeltaTime;
-                jumpscareCanvasGroup.alpha = Mathf.Clamp01(elapsed / duration);
-                yield return null;
-            }
-
-            jumpscareCanvasGroup.alpha = 1f;
-
-            if (jumpscareHoldDuration > 0f)
-            {
-                yield return new WaitForSecondsRealtime(jumpscareHoldDuration);
-            }
-
-            jumpscareCanvasGroup.gameObject.SetActive(false);
+            yield return new WaitForSecondsRealtime(glitchDuration);
         }
 
         // ── BREATHER ─────────────────────────────────────────────────
@@ -128,7 +97,6 @@ public sealed class EndGameController : MonoBehaviour
         {
             SetActive(glitchOverlayPanel, false);
             FreezePlayer(false);
-            SetActive(clueObject, true);
 
             yield return new WaitForSecondsRealtime(breatherDuration);
         }
