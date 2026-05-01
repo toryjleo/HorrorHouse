@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 namespace AdventurePuzzleKit.ChessSystem
 {
@@ -41,6 +42,10 @@ namespace AdventurePuzzleKit.ChessSystem
         [SerializeField] private UnityEvent onPieceReturned = null;
 
         private bool pieceReturned = false;
+
+        public bool IsPieceReturned => pieceReturned;
+
+        public event Action<ChessPieceReturnPoint> PieceReturned;
 
         // ── IInteractable ──────────────────────────────────────────────
 
@@ -105,6 +110,7 @@ namespace AdventurePuzzleKit.ChessSystem
 
             // Fire event (e.g., close the safe for the pawn)
             onPieceReturned?.Invoke();
+            PieceReturned?.Invoke(this);
 
             // Disable this trigger so it can't be interacted with again
             gameObject.tag = "Untagged";

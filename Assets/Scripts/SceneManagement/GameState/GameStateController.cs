@@ -4,6 +4,7 @@ using UnityEngine;
 public enum StateTrigger
 {
     hitPause,
+    endGame,
     invalid
 }
 
@@ -12,6 +13,7 @@ public class StateController
     public EnterState enterState;
     public PlayingState playingState;
     public PausedState pausedState;
+    public EndGameState endGameState;
 
 
     private State state;
@@ -29,6 +31,7 @@ public class StateController
         enterState = new EnterState(this);
         playingState = new PlayingState(this);
         pausedState = new PausedState(this);
+        endGameState = new EndGameState(this);
 
         state = enterState;
         state.PrintStateEnter();
@@ -144,6 +147,8 @@ public class PlayingState : State
         {
             case StateTrigger.hitPause:
                 return controller.pausedState;
+            case StateTrigger.endGame:
+                return controller.endGameState;
             default:
                 return null;
         }
@@ -167,6 +172,23 @@ public class PausedState : State
             default:
                 return null;
         }
+    }
+}
+
+/// <summary>
+/// Terminal state — the game is ending. No transitions out.
+/// </summary>
+public class EndGameState : State
+{
+    public EndGameState(StateController controller) : base(controller)
+    {
+    }
+
+    public override string Name => "EndGame";
+
+    public override State HandleTrigger(StateTrigger trigger)
+    {
+        return null;
     }
 }
 

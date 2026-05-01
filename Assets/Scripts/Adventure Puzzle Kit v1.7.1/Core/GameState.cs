@@ -18,6 +18,7 @@ namespace AdventurePuzzleKit
         public static bool IsInventoryOpen { get; set; }
         public static bool IsUsingSystem { get; set; }
         public static bool isGamePaused { get; private set; }
+        public static bool IsEndGame { get; private set; }
 
         // A combined property to check if the player is "busy" with any major state
         public static bool IsPlayerBusy => IsExamining || IsInventoryOpen || isGamePaused || IsInteracting;
@@ -31,6 +32,7 @@ namespace AdventurePuzzleKit
             IsInventoryOpen = false;
             IsUsingSystem = false;
             isGamePaused = false;
+            IsEndGame = false;
             ApplyTimeScale(false);
         }
 
@@ -72,4 +74,3 @@ namespace AdventurePuzzleKit
         }
     }
 }
-

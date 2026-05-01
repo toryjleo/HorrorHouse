@@ -243,7 +243,15 @@ namespace AdventurePuzzleKit
         // Triggers footstep sounds based on movement and state
         void HandleFootsteps()
         {
-            if (GameState.IsInventoryOpen) return; // Don't play footsteps in menus
+            if (!canMove || GameState.IsPlayerBusy)
+            {
+                if (playerAudioSource != null && playerAudioSource.isPlaying)
+                {
+                    playerAudioSource.Stop();
+                }
+
+                return;
+            }
 
             // Determine step interval based on crouch/sprint
             float currentStepInterval = isCrouching ? crouchStepInterval : (Input.GetKey(KeyCode.LeftShift) ? sprintStepInterval : walkStepInterval);
@@ -266,6 +274,11 @@ namespace AdventurePuzzleKit
         // Picks and plays a random footstep sound
         void PlayFoostepSounds()
         {
+            if (playerAudioSource == null || footstepSounds == null || footstepSounds.Length == 0)
+            {
+                return;
+            }
+
             int randomIndex;
 
             if (footstepSounds.Length == 1)
@@ -292,6 +305,11 @@ namespace AdventurePuzzleKit
         {
             canMove = !active;
             canRotate = !active;
+
+            if (active && playerAudioSource != null && playerAudioSource.isPlaying)
+            {
+                playerAudioSource.Stop();
+            }
         }
     }
 }

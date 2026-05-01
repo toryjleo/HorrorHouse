@@ -13,6 +13,8 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
 
     private StateController controller;
 
+    public EndGameState EndGameStateEnter => controller.endGameState;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -42,6 +44,11 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (GameState.IsEndGame)
+            {
+                return;
+            }
+
             TogglePause();
         }
     }
@@ -64,6 +71,16 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
         }
 
         controller.HandleTrigger(StateTrigger.hitPause);
+    }
+
+    public void TriggerEndGame()
+    {
+        if (controller == null || GameState.IsEndGame)
+        {
+            return;
+        }
+
+        controller.HandleTrigger(StateTrigger.endGame);
     }
 
     private void OnDestroy()
