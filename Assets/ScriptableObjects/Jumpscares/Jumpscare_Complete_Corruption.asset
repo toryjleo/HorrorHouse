@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scareImage: {fileID: 0}
   scareMaterial: {fileID: 0}
+  shaderProgressProperty: _ScareProgress
   scareAudio: {fileID: 11400000, guid: 637437c5c23e4c9ca8aac35881e14364, type: 2}
   fadeInDuration: 0.05
   fadeOutDuration: 0

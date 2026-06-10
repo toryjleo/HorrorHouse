@@ -7,6 +7,7 @@ public sealed class JumpscareData : ScriptableObject
     [Header("Visuals")]
     [SerializeField] private Sprite scareImage;
     [SerializeField] private Material scareMaterial;
+    [SerializeField] private string shaderProgressProperty = "_ScareProgress";
 
     [Header("Audio")]
     [SerializeField] private Sound scareAudio;
@@ -23,6 +24,7 @@ public sealed class JumpscareData : ScriptableObject
 
     public Sprite ScareImage => scareImage;
     public Material ScareMaterial => scareMaterial;
+    public string ShaderProgressProperty => shaderProgressProperty;
     public Sound ScareAudio => scareAudio;
     public float FadeInDuration => fadeInDuration;
     public float FadeOutDuration => fadeOutDuration;

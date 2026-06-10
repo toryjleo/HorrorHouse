@@ -13,6 +13,8 @@ public sealed class JumpscarePlayer : MonoBehaviour
 
     public static JumpscarePlayer Instance { get; private set; }
 
+    private Material runtimeMaterial;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -31,6 +33,8 @@ public sealed class JumpscarePlayer : MonoBehaviour
         {
             Instance = null;
         }
+
+        DestroyRuntimeMaterial();
     }
 
     public static Coroutine Play(JumpscareData data)
@@ -71,16 +75,21 @@ public sealed class JumpscarePlayer : MonoBehaviour
 
         float fadeInDuration = Mathf.Min(data.FadeInDuration, totalDuration);
         float fadeOutDuration = Mathf.Min(data.FadeOutDuration, Mathf.Max(0f, totalDuration - fadeInDuration));
-        float holdDuration = Mathf.Max(0f, totalDuration - fadeInDuration - fadeOutDuration);
 
-        yield return FadeAlpha(0f, 1f, fadeInDuration);
-
-        if (holdDuration > 0f)
+        float elapsed = 0f;
+        while (elapsed < totalDuration)
         {
-            yield return new WaitForSecondsRealtime(holdDuration);
+            elapsed += Time.unscaledDeltaTime;
+            float progress = Mathf.Clamp01(elapsed / totalDuration);
+
+            overlayCanvasGroup.alpha = EvaluateAlpha(elapsed, totalDuration, fadeInDuration, fadeOutDuration);
+            SetShaderProgress(data, progress);
+
+            yield return null;
         }
 
-        yield return FadeAlpha(1f, 0f, fadeOutDuration);
+        overlayCanvasGroup.alpha = fadeOutDuration > 0f ? 0f : 1f;
+        SetShaderProgress(data, 1f);
 
         HideOverlay();
         FreezePlayer(false);
@@ -90,7 +99,19 @@ public sealed class JumpscarePlayer : MonoBehaviour
     private void ShowOverlay(JumpscareData data)
     {
         overlayImage.sprite = data.ScareImage;
-        overlayImage.material = data.ScareMaterial;
+        DestroyRuntimeMaterial();
+
+        if (data.ScareMaterial != null)
+        {
+            runtimeMaterial = Instantiate(data.ScareMaterial);
+            overlayImage.material = runtimeMaterial;
+            SetShaderProgress(data, 0f);
+        }
+        else
+        {
+            overlayImage.material = null;
+        }
+
         overlayCanvasGroup.alpha = 0f;
         overlayCanvasGroup.blocksRaycasts = true;
         overlayCanvasGroup.interactable = false;
@@ -108,27 +129,51 @@ public sealed class JumpscarePlayer : MonoBehaviour
 
         if (overlayImage != null)
         {
+            overlayImage.material = null;
             overlayImage.gameObject.SetActive(false);
         }
+
+        DestroyRuntimeMaterial();
     }
 
-    private IEnumerator FadeAlpha(float from, float to, float duration)
+    private static float EvaluateAlpha(float elapsed, float totalDuration, float fadeInDuration, float fadeOutDuration)
     {
-        if (duration <= 0f)
+        if (fadeInDuration > 0f && elapsed < fadeInDuration)
         {
-            overlayCanvasGroup.alpha = to;
-            yield break;
+            return Mathf.Clamp01(elapsed / fadeInDuration);
         }
 
-        float elapsed = 0f;
-        while (elapsed < duration)
+        if (fadeOutDuration > 0f)
         {
-            elapsed += Time.unscaledDeltaTime;
-            overlayCanvasGroup.alpha = Mathf.Lerp(from, to, Mathf.Clamp01(elapsed / duration));
-            yield return null;
+            float fadeOutStart = Mathf.Max(0f, totalDuration - fadeOutDuration);
+            if (elapsed >= fadeOutStart)
+            {
+                return 1f - Mathf.Clamp01((elapsed - fadeOutStart) / fadeOutDuration);
+            }
         }
 
-        overlayCanvasGroup.alpha = to;
+        return 1f;
+    }
+
+    private void SetShaderProgress(JumpscareData data, float progress)
+    {
+        if (runtimeMaterial == null || string.IsNullOrWhiteSpace(data.ShaderProgressProperty))
+        {
+            return;
+        }
+
+        runtimeMaterial.SetFloat(data.ShaderProgressProperty, progress);
+    }
+
+    private void DestroyRuntimeMaterial()
+    {
+        if (runtimeMaterial == null)
+        {
+            return;
+        }
+
+        Destroy(runtimeMaterial);
+        runtimeMaterial = null;
     }
 
     private static void FreezePlayer(bool freeze)
