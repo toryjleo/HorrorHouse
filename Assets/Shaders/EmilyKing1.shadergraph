@@ -5,6 +5,9 @@
     "m_Properties": [
         {
             "m_Id": "689b1e1164fd46e9b7ba9e33542945c9"
+        },
+        {
+            "m_Id": "7ec8152e29a848e5b20440001ebfb9d9"
         }
     ],
     "m_Keywords": [],
@@ -219,20 +222,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "cdd19f63e51941a793240f6b58bc651a"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "dad9608898db425dba5eae550296a469"
-                },
-                "m_SlotId": 2
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "dad9608898db425dba5eae550296a469"
                 },
                 "m_SlotId": 0
@@ -341,7 +330,7 @@
     "m_ObjectId": "09a6ea9cd9c34505a090a8e3b5adc114",
     "m_Version": 0,
     "m_fullscreenMode": 0,
-    "m_BlendMode": 0,
+    "m_BlendMode": 1,
     "m_SrcColorBlendMode": 0,
     "m_DstColorBlendMode": 1,
     "m_ColorBlendOperation": 0,
@@ -596,6 +585,9 @@
     "m_ChildObjectList": [
         {
             "m_Id": "689b1e1164fd46e9b7ba9e33542945c9"
+        },
+        {
+            "m_Id": "7ec8152e29a848e5b20440001ebfb9d9"
         }
     ]
 }
@@ -773,10 +765,10 @@
     "m_Guid": {
         "m_GuidSerialized": "66d504de-bc34-4c97-a3e2-b53760840295"
     },
-    "m_Name": "TextureInput",
+    "m_Name": "_MainTex",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "TextureInput",
-    "m_DefaultReferenceName": "_TextureInput",
+    "m_RefNameGeneratedByDisplayName": "_MainTex",
+    "m_DefaultReferenceName": "_MainTex",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -867,7 +859,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "7236735920f84925b1cac279d853e371",
     "m_Id": 0,
-    "m_DisplayName": "TextureInput",
+    "m_DisplayName": "_MainTex",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -909,6 +901,46 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "7ec8152e29a848e5b20440001ebfb9d9",
+    "m_Guid": {
+        "m_GuidSerialized": "9585c68e-2035-4f94-8a0a-0326d2970be5"
+    },
+    "m_Name": "_ScareProgress",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "_ScareProgress",
+    "m_DefaultReferenceName": "_ScareProgress",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -1626,8 +1658,8 @@
     "m_ObjectId": "e8267942601f4d1ea9349875f8fa67e9",
     "m_Title": "Image Stretch",
     "m_Position": {
-        "x": -2809.0,
-        "y": -515.9999389648438
+        "x": -2808.999755859375,
+        "y": -516.0
     }
 }
 
