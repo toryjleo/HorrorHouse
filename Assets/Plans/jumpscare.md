@@ -2,7 +2,7 @@
 
 ## Goal
 
-Replace the single white-image jumpscare with a **configurable, data-driven system** that supports **4 unique jumpscares**, each with its own image, audio, material effect, optional scripting, and independent duration.
+Replace the single white-image jumpscare with a **configurable, data-driven system** that supports **4 unique jumpscares**, each with its own image, audio, material effect, optional scripting, and independent duration dependant on audioclip length.
 
 ---
 
@@ -33,13 +33,14 @@ A new `ScriptableObject` that defines everything about a single jumpscare. Creat
 | `fadeOutDuration` | `float` | How long the image fades out (0 = hard cut) |
 | `onScareStart` | `UnityEvent` | Hook for per-scare custom scripting (camera shake, light flicker, etc.) |
 | `onScareEnd` | `UnityEvent` | Hook for cleanup after the scare |
+| `showMouse` | `bool` | Whether to show the mouse during the jumpscare |
 
 > [!TIP]
 > Using a `ScriptableObject` means each scare is a drag-and-drop asset. Tweaking duration or swapping audio/image requires zero code changes.
 
 ### 2. `JumpscarePlayer` MonoBehaviour
 
-A reusable component that **plays any `JumpscareData`**. Responsibilities:
+A reusable component that **plays any `JumpscareData`**. Must also work for an isolated unity scene test environment. Responsibilities:
 
 1. **Show overlay** — Sets the `scareImage` sprite and `scareMaterial` on a full-screen UI element
 2. **Fade in** — Lerps alpha from 0→1 over `fadeInDuration`
@@ -48,6 +49,7 @@ A reusable component that **plays any `JumpscareData`**. Responsibilities:
 5. **Audio** — Calls `AKAudioManager.instance.Play(scareAudio)` at scare start
 6. **Player freeze** — Calls `AKDisableManager.instance.DisablePlayerDefault(true, ...)` on start, restores on end
 7. **Events** — Fires `onScareStart` / `onScareEnd` for custom per-scare logic
+8. **Mouse cursor** — Shows/hides mouse based on `showMouse` field. Always hides cursor at end of scare.
 
 ```
 Coroutine flow:
@@ -64,6 +66,8 @@ Coroutine flow:
 `JumpscarePlayer` is a **standalone scene-placed component** with a static accessor. Any trigger in the game (collider, event, `EndGameManager`, etc.) can call `JumpscarePlayer.Play(data)` from anywhere. `EndGameManager` becomes just another consumer — its jumpscare phase simply calls into `JumpscarePlayer` with whichever `JumpscareData` asset is assigned.
 
 This means jumpscares can be used at **any point** in the game, not just the ending.
+
+Jumpscares can also be triggered in an isolated test scene with the `JumpscarePlayer` component.
 
 ### 4. The 4 Jumpscares
 
