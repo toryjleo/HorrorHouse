@@ -12,8 +12,6 @@ public sealed class EndGameManager : MonoBehaviour
     // ── Phase durations ──────────────────────────────────────────────
     [Header("Phase Durations (seconds, real-time)")]
     [SerializeField] private float glitchDuration = 3f;
-    [SerializeField] private float jumpscareRampDuration = 0.35f;
-    [SerializeField] private float jumpscareHoldDuration = 0.15f;
     [SerializeField] private float breatherDuration = 5f;
     [SerializeField] private float splashDuration = 10f;
 
@@ -25,9 +23,12 @@ public sealed class EndGameManager : MonoBehaviour
     [Tooltip("Company logo splash screen")]
     [SerializeField] private GameObject splashPanel;
 
+    // ── Jumpscare ─────────────────────────────────────────────────────
+    [Header("Jumpscare")]
+    [SerializeField] private JumpscareData endGameJumpscare;
+
     // ── Audio ─────────────────────────────────────────────────────────
     [Header("Audio")]
-    [SerializeField] private Sound jumpscareStinger;
     [SerializeField] private Sound endStinger;
 
     // ── Refs ──────────────────────────────────────────────────────────
@@ -74,16 +75,30 @@ public sealed class EndGameManager : MonoBehaviour
             SetActive(glitchOverlayPanel, true);
             StopAllGameAudio();
 
-            PlaySound(jumpscareStinger);
-
             yield return new WaitForSecondsRealtime(glitchDuration);
+
+            SetActive(glitchOverlayPanel, false);
+        }
+
+        // ── JUMPSCARE ─────────────────────────────────────────────────
+        if (endGameJumpscare != null && JumpscarePlayer.Instance != null)
+        {
+            yield return JumpscarePlayer.Instance.PlayRoutine(endGameJumpscare);
+        }
+        else
+        {
+            if (endGameJumpscare != null)
+            {
+                Debug.LogWarning($"{nameof(EndGameManager)} has an endgame jumpscare assigned, but no {nameof(JumpscarePlayer)} exists in the scene.");
+            }
+
+            FreezePlayer(false);
         }
 
         // ── BREATHER ─────────────────────────────────────────────────
         if (breatherDuration > 0f)
         {
             SetActive(glitchOverlayPanel, false);
-            FreezePlayer(false);
 
             yield return new WaitForSecondsRealtime(breatherDuration);
         }

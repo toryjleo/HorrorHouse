@@ -111,4 +111,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0ac2a0c975e81a548a77042154630dfe, type: 2}
   - {fileID: 11400000, guid: e87638f5e4907f64caaf93015043f52d, type: 2}
   - {fileID: 11400000, guid: c41f427b0f528ba4abc54345202a6736, type: 2}
+  - {fileID: 11400000, guid: e37e396afe2f40fca38469eba60ae780, type: 2}
+  - {fileID: 11400000, guid: 6d2fd27844e449248ffaf94eea3ecf07, type: 2}
+  - {fileID: 11400000, guid: 637437c5c23e4c9ca8aac35881e14364, type: 2}
+  - {fileID: 11400000, guid: 6eefbbe6d17541c39b5483ab836813a1, type: 2}
+  - {fileID: 11400000, guid: 77ee27d3ff3942e5ad03e3f9680fc89d, type: 2}
   mixerGroup: {fileID: 0}
