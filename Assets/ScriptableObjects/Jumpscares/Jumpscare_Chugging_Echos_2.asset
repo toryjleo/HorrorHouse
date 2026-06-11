@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Jumpscare_Chugging_Echos_2
   m_EditorClassIdentifier: 
   scareImage: {fileID: 0}
-  scareMaterial: {fileID: 0}
+  scareMaterial: {fileID: 2100000, guid: e869ce9dbd5c4b169df4663a0dbf7f3f, type: 2}
   shaderProgressProperty: _ScareProgress
   scareAudio: {fileID: 11400000, guid: 6d2fd27844e449248ffaf94eea3ecf07, type: 2}
   fadeInDuration: 0.05

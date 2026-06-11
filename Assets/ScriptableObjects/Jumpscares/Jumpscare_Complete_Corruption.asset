@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Jumpscare_Complete_Corruption
   m_EditorClassIdentifier: 
   scareImage: {fileID: 0}
-  scareMaterial: {fileID: 0}
+  scareMaterial: {fileID: 2100000, guid: e869ce9dbd5c4b169df4663a0dbf7f3f, type: 2}
   shaderProgressProperty: _ScareProgress
   scareAudio: {fileID: 11400000, guid: 637437c5c23e4c9ca8aac35881e14364, type: 2}
   fadeInDuration: 0.05
