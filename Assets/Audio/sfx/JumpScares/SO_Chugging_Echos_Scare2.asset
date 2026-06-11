@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_Chugging_Echos_Scare2
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.Sound
   category: 24
-  clip: {fileID: 8300000, guid: a11502d05be82f51ca71cbb63b7f3eef, type: 3}
+  clip: {fileID: 8300000, guid: 001f63fc25ce3be17ab0a012be122954, type: 3}
   volume: 1
   volumeVariance: 0
   pitch: 1

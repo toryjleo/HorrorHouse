@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b69c5c9e54dd4337b0d267fefb07db70, type: 3}
-  m_Name: Jumpscare_Chugging_Echos_2
+  m_Name: Jumpscare_Field
   m_EditorClassIdentifier: 
   scareImage: {fileID: 21300000, guid: 3c550f6025b2051758fcec6c6432dea4, type: 3}
   scareMaterial: {fileID: 2100000, guid: 670d54e4c6fb2595fa84718479244cf2, type: 2}
