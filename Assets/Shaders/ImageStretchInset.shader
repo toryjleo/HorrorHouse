@@ -10,6 +10,7 @@ Shader "HorrorHouse/Image Stretch Inset"
         _StretchStrength("Stretch Strength", Range(0, 1)) = 1
         _StretchTint("Stretch Tint", Color) = (1, 1, 1, 1)
         _StretchAlpha("Stretch Alpha", Range(0, 1)) = 1
+        _ScareProgress("Scare Progress", Range(0, 1)) = 0
 
         [HideInInspector] _StencilComp("Stencil Comparison", Float) = 8
         [HideInInspector] _Stencil("Stencil ID", Float) = 0
@@ -86,6 +87,7 @@ Shader "HorrorHouse/Image Stretch Inset"
             float _StretchStrength;
             fixed4 _StretchTint;
             float _StretchAlpha;
+            float _ScareProgress;
 
             v2f vert(appdata input)
             {
@@ -103,7 +105,17 @@ Shader "HorrorHouse/Image Stretch Inset"
                 float insetScale = saturate(_InsetScale);
                 float padding = saturate(_Padding);
                 float2 insetSize = float2(insetScale, insetScale);
-                float2 insetMax = 1.0 - padding;
+
+                float jumpPhase = floor(saturate(_ScareProgress) * 4.0);
+                float2 topLeft = float2(padding + insetSize.x, 1.0 - padding);
+                float2 bottomRight = float2(1.0 - padding, padding + insetSize.y);
+                float2 bottomLeft = padding + insetSize;
+                float2 topRight = 1.0 - padding;
+
+                float2 insetMax = topLeft;
+                insetMax = lerp(insetMax, bottomRight, step(1.0, jumpPhase));
+                insetMax = lerp(insetMax, bottomLeft, step(2.0, jumpPhase));
+                insetMax = lerp(insetMax, topRight, step(3.0, jumpPhase));
                 float2 insetMin = insetMax - insetSize;
 
                 float2 clampedInsetUv = clamp(uv, insetMin, insetMax);
