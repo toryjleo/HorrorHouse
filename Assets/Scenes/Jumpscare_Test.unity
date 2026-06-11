@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96747462a1ba23a8fb6f82549453016c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  jumpscare: {fileID: 11400000, guid: 2b4d061babb24f4189768bbed11d2e77, type: 2}
+  jumpscare: {fileID: 11400000, guid: 94bf9f2b9f684e2689452ec2d9043994, type: 2}
 --- !u!114 &859594321
 MonoBehaviour:
   m_ObjectHideFlags: 0
