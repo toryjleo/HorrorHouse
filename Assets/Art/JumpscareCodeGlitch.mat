@@ -31,9 +31,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _ColorMask: 15
-    - _FlashIntensity: 1.4
-    - _GlitchStrength: 0.055
-    - _NoiseScale: 42
+    - _FlashIntensity: 0.29
+    - _GlitchStrength: 0.1295
+    - _NoiseScale: 44.4
     - _RedBlueSplit: 0.0058
     - _ScanlineStrength: 0.35
     - _ScareProgress: 0
@@ -45,6 +45,6 @@ Material:
     - _UseUIAlphaClip: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _FlashColor: {r: 1, g: 0.14458416, b: 0.036284804, a: 1}
+    - _FlashColor: {r: 0.004624098, g: 0.71575063, b: 0.11001274, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
