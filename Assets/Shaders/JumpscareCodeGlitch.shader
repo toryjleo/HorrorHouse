@@ -111,7 +111,7 @@ Shader "HorrorHouse/Jumpscare Code Glitch"
             float _ScanlineStrength;
             float _RedBlueSplit;
             fixed4 _FlashColor;
-            float _FlashIntensity;
+            float _FlashIntensity; // TODO: Remove this unused property
 
             float hash12(float2 value)
             {
@@ -155,7 +155,7 @@ Shader "HorrorHouse/Jumpscare Code Glitch"
                 color.rgb *= 1.0 - step(0.5, scanline) * _ScanlineStrength * (0.35 + progress);
 
                 float flash = step(0.74, hash12(float2(band + 17.0, floor(time * 34.0))));
-                color.rgb = lerp(color.rgb, _FlashColor.rgb, flash * _FlashIntensity * progress * 0.35);
+                color.rgb = lerp(color.rgb, _FlashColor.rgb, flash * _ScareProgress * progress * 0.35);
 
                 color *= input.color;
 
