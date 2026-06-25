@@ -13025,8 +13025,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: 'noteText.Array.data[0]'
-      value: 'There is this really crappy constructed room. I need you to go in there
-        and climb under the tables. A gift is under there.
+      value: 'I need you to go into the gardening room and go underneath the tables.
+        A gift is under there.
 
 
         ~ Emily
