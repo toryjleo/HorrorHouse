@@ -2584,13 +2584,13 @@ MonoBehaviour:
   _UIType: 1
   itemName: Knight Fuse
   textSize: 40
-  fontType: {fileID: 12800000, guid: 743c70eb6003f944fae12c6aec32b7ce, type: 3}
+  fontType: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   fontColor: {r: 1, g: 1, b: 1, a: 1}
   itemDescription: 'A little Knight fuse, where could this go?
 
 '
   textSizeDesc: 32
-  fontTypeDesc: {fileID: 12800000, guid: a125720e3aadef1499d45a4ca302c719, type: 3}
+  fontTypeDesc: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   fontColorDesc: {r: 1, g: 1, b: 1, a: 1}
   hasChildObjects: 1
   _isCollectable: 1
@@ -11323,97 +11323,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8022370039602121894, guid: a85a55fab3bce1b46a577963acc3cb0c, type: 3}
   m_PrefabInstance: {fileID: 1635226290}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1291393561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291393560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f30e2ef9078add84ead075b008bf6543, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ExamineSystem.ExaminableItem
-  initialRotationOffset: {x: -90, y: 90, z: 45}
-  horizontalOffset: 0
-  verticalOffset: 0
-  smoothExamineSpeed: 0.2
-  initialZoom: 0.5
-  zoomRange: {x: 0.1, y: 0.4}
-  zoomSensitivity: 0.1
-  rotationSpeed: 5
-  invertRotation: 0
-  _hasInspectPoints: 0
-  inspectPoints: []
-  pickupSound: {fileID: 11400000, guid: 4e2f24bff0e17c640bf9b7799fcee0b5, type: 2}
-  dropSound: {fileID: 11400000, guid: 4e2f24bff0e17c640bf9b7799fcee0b5, type: 2}
-  _UIType: 1
-  itemName: Bishop Fuse
-  textSize: 40
-  fontType: {fileID: 0}
-  fontColor: {r: 1, g: 1, b: 1, a: 1}
-  itemDescription: A little Bishop fuse, where could this go?
-  textSizeDesc: 30
-  fontTypeDesc: {fileID: 0}
-  fontColorDesc: {r: 1, g: 1, b: 1, a: 1}
-  hasChildObjects: 1
-  _isCollectable: 1
-  removeInteractionCollider: 0
-  _systemType: 5
---- !u!114 &1291393562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291393560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b3539cbe97ba94db62cb49baeb415b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessFuseCollectable
-  chessPieceScriptable: {fileID: 11400000, guid: c2336a772efa6c44a95498bc63fad6af, type: 2}
-  pickupSound: {fileID: 11400000, guid: 4e2f24bff0e17c640bf9b7799fcee0b5, type: 2}
---- !u!114 &1291393563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291393560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0339763812ce79a46975000d7f1f6859, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ChessSystem.ChessItem
-  _itemType: 1
 --- !u!4 &1291393567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8022370039602548870, guid: a85a55fab3bce1b46a577963acc3cb0c, type: 3}
   m_PrefabInstance: {fileID: 1635226290}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1291393568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291393560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.AKItem
-  _systemType: 0
-  highlightName: Change Name Here
-  showNameHighlight: 0
-  showInteractPrompt: 0
-  showPickupPrompt: 0
-  showExaminePrompt: 1
-  showEmissionHighlight: 0
-  isEmptyParent: 0
-  includeChildrenWithParentMesh: 0
 --- !u!1001 &1297320108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14318,10 +14232,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bishop_Fuse
       objectReference: {fileID: 0}
-    - target: {fileID: 8022370039602121894, guid: a85a55fab3bce1b46a577963acc3cb0c, type: 3}
-      propertyPath: m_TagString
-      value: InteractiveObject
-      objectReference: {fileID: 0}
     - target: {fileID: 8022370039602548870, guid: a85a55fab3bce1b46a577963acc3cb0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -14365,19 +14275,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8022370039602121894, guid: a85a55fab3bce1b46a577963acc3cb0c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1291393568}
-    - targetCorrespondingSourceObject: {fileID: 8022370039602121894, guid: a85a55fab3bce1b46a577963acc3cb0c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1291393563}
-    - targetCorrespondingSourceObject: {fileID: 8022370039602121894, guid: a85a55fab3bce1b46a577963acc3cb0c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1291393562}
-    - targetCorrespondingSourceObject: {fileID: 8022370039602121894, guid: a85a55fab3bce1b46a577963acc3cb0c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1291393561}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a85a55fab3bce1b46a577963acc3cb0c, type: 3}
 --- !u!1001 &1650283039
 PrefabInstance:
@@ -24674,13 +24572,13 @@ MonoBehaviour:
   _UIType: 1
   itemName: Pawn Fuse
   textSize: 40
-  fontType: {fileID: 12800000, guid: 743c70eb6003f944fae12c6aec32b7ce, type: 3}
+  fontType: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   fontColor: {r: 1, g: 1, b: 1, a: 1}
   itemDescription: 'A little Rook fuse, where could this go?
 
 '
   textSizeDesc: 32
-  fontTypeDesc: {fileID: 12800000, guid: a125720e3aadef1499d45a4ca302c719, type: 3}
+  fontTypeDesc: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   fontColorDesc: {r: 1, g: 1, b: 1, a: 1}
   hasChildObjects: 1
   _isCollectable: 1
@@ -24759,13 +24657,13 @@ MonoBehaviour:
   _UIType: 1
   itemName: King Fuse
   textSize: 40
-  fontType: {fileID: 12800000, guid: 743c70eb6003f944fae12c6aec32b7ce, type: 3}
+  fontType: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   fontColor: {r: 1, g: 1, b: 1, a: 1}
   itemDescription: 'A little King fuse, where could this go?
 
 '
   textSizeDesc: 32
-  fontTypeDesc: {fileID: 12800000, guid: a125720e3aadef1499d45a4ca302c719, type: 3}
+  fontTypeDesc: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   fontColorDesc: {r: 1, g: 1, b: 1, a: 1}
   hasChildObjects: 1
   _isCollectable: 1
