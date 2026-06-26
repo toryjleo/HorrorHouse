@@ -1,4 +1,4 @@
-Shader "Custom/BasicUIImageShader"
+﻿Shader "Custom/#SCRIPTNAME#"
 {
     Properties
     {
