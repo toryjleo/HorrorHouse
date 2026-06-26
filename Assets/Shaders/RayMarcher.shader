@@ -94,6 +94,7 @@ Shader "Custom/RayMarcher"
             #define MAX_STEPS 100
             #define MAX_DISTANCE 100.0
             #define SURFACE_DISTANCE 0.01 // Is this the minimum clip plane?
+            #define SHADOW_BRIGHTNESS 0.1
 
             float GetDistance(fixed3 p)
             {
@@ -105,6 +106,7 @@ Shader "Custom/RayMarcher"
 
                 return totalDistance;
             }
+
 
             float RayMarch(fixed3 rayOrigin, fixed3 rayDirection)
             {
@@ -126,6 +128,41 @@ Shader "Custom/RayMarcher"
                 return distanceOrigin;
             }
 
+            fixed3 GetNormal(fixed3 p)
+            {
+                float distance = GetDistance(p);
+                fixed2 e = fixed2(.01, 0);
+
+                fixed3 normal = distance - fixed3(
+                    GetDistance(p - e.xyy),
+                    GetDistance(p - e.yxy),
+                    GetDistance(p - e.yyx)
+                );
+
+                return normalize(normal);
+            }
+
+            float GetLight(fixed3 p)
+            {
+                fixed3 lightPosition = fixed3(0, 5, 6);
+
+                lightPosition.xz += fixed2(sin(_Time.y), cos(_Time.y));
+
+                fixed3 lightDirection = normalize(lightPosition - p);
+                fixed3 surfaceNormal = GetNormal(p);
+
+
+                float dif = clamp(dot(lightDirection, surfaceNormal), 0.0, 1.0);
+                
+                float d = RayMarch(p + (surfaceNormal * SURFACE_DISTANCE), lightDirection);
+                if (d < length(lightPosition - p))
+                {
+                    dif *= SHADOW_BRIGHTNESS;
+                }
+
+                return dif;
+            }
+
             // --- Frag Shader ---
             fixed4 frag(Varyings IN) : SV_Target
             {
@@ -138,13 +175,14 @@ Shader "Custom/RayMarcher"
 
                 // Ray Intersection
                 float distance = RayMarch(rayOrigin, rayDirection);
-                distance /= 6.0;
-                color = fixed4(distance, distance, distance, distance);
+
+                // Lighting
+                fixed3 p = rayOrigin + rayDirection * distance;
+
+                float diffuse = GetLight(p);
 
 
-
-
-
+                color = fixed4(diffuse, diffuse, diffuse, 1);
 
                 // EXTRA
                 #ifdef UNITY_UI_CLIP_RECT
