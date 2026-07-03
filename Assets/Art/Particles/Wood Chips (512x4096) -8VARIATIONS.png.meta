@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -95,12 +95,4940 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 41
+        width: 396
+        height: 422
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d09d2df454a2614a56600cee8eba94
+      internalID: -2126670659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_1
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 447
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1914035c0e204715844e94e02c2462f
+      internalID: -874345349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_2
+      rect:
+        serializedVersion: 2
+        x: 2693
+        y: 459
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b971bd182e97df794bfb351829685825
+      internalID: -2020267301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_3
+      rect:
+        serializedVersion: 2
+        x: 2829
+        y: 445
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6942bbb0a6e75f77fb1c74b63db68851
+      internalID: -203223220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_4
+      rect:
+        serializedVersion: 2
+        x: 2997
+        y: 443
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06265c7ccd25f1b19b6240e495a04881
+      internalID: 1787785704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_5
+      rect:
+        serializedVersion: 2
+        x: 3337
+        y: 459
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4dbeb4f2b896d51f95488a759e56624
+      internalID: 1541439899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_6
+      rect:
+        serializedVersion: 2
+        x: 3390
+        y: 457
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777e3334ba4f182e997fb1ad93889faa
+      internalID: -870834340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_7
+      rect:
+        serializedVersion: 2
+        x: 3411
+        y: 457
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4acd267c8c44eb9693c24e97682c98f
+      internalID: -829702605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_8
+      rect:
+        serializedVersion: 2
+        x: 3429
+        y: 461
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082fbf0ef3242c952a66611d7f3b0d8c
+      internalID: 56375082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_9
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 445
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f973087fae0481cbdb2095eda8d5b539
+      internalID: 1120189106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_10
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 426
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bcb19569ffb0fb109a1aad02e1a4544
+      internalID: 1755750198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_11
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 45
+        width: 440
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9e8ccaaf489523bb4687f674382ce8
+      internalID: 544114875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_12
+      rect:
+        serializedVersion: 2
+        x: 2677
+        y: 435
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f49ea568e2be2b9a824dd73dc72f9da
+      internalID: 1893322408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_13
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 437
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187378cbb0b60d25988b6cf83f7433bd
+      internalID: -169329048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_14
+      rect:
+        serializedVersion: 2
+        x: 2873
+        y: 385
+        width: 102
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b285d8e52c8e4df818b0c6530ced1247
+      internalID: 764023848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_15
+      rect:
+        serializedVersion: 2
+        x: 3173
+        y: 435
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c99504e5ef3e86086c08d3ea8cd274
+      internalID: 265803691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_16
+      rect:
+        serializedVersion: 2
+        x: 3353
+        y: 439
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce9b1bc3f89d7cbab9f6f7825937bea
+      internalID: 591145499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_17
+      rect:
+        serializedVersion: 2
+        x: 3410
+        y: 442
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf5d49b002f7a9e7adfca9d96236cec
+      internalID: 1626375168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_18
+      rect:
+        serializedVersion: 2
+        x: 3463
+        y: 431
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e716ad12a1d74bc8ac48b57c0d621a8
+      internalID: 221777682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_19
+      rect:
+        serializedVersion: 2
+        x: 3545
+        y: 439
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d925627aa1d49125db69375e25df01cf
+      internalID: 1079439776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_20
+      rect:
+        serializedVersion: 2
+        x: 3843
+        y: 443
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fae739665b0ed1feafa3688dd922e3f
+      internalID: 838929142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_21
+      rect:
+        serializedVersion: 2
+        x: 3386
+        y: 421
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4050455234e31d428a9f851bfd286135
+      internalID: 1472366744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_22
+      rect:
+        serializedVersion: 2
+        x: 3524
+        y: 431
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91dfe6d42ec16b799fe08d0c04976ae
+      internalID: 140329841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_23
+      rect:
+        serializedVersion: 2
+        x: 3895
+        y: 419
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debdca2427d29c735b4fb3d3ae0ca2be
+      internalID: -680431896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_24
+      rect:
+        serializedVersion: 2
+        x: 4005
+        y: 406
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd1d7fc1fb11a1bcafcdd35d287d4ee
+      internalID: 423393341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_25
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 72
+        width: 454
+        height: 354
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a369f9cdf79e3079b2972dc0e71e284
+      internalID: 1532496864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_26
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 69
+        width: 382
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62998ca4dfe6dcec789988f310811270
+      internalID: -703438031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_27
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 411
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60be29043d813ca4997a07d4e294e8d
+      internalID: 1475855014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_28
+      rect:
+        serializedVersion: 2
+        x: 2643
+        y: 347
+        width: 48
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274c534ade5ad4489aeab000eff648cf
+      internalID: 534474580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_29
+      rect:
+        serializedVersion: 2
+        x: 2991
+        y: 363
+        width: 42
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8423896fbb3831f169810324134741d9
+      internalID: 350434268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_30
+      rect:
+        serializedVersion: 2
+        x: 3189
+        y: 413
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af192aac0f54a92682069be9365d15d
+      internalID: -245894178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_31
+      rect:
+        serializedVersion: 2
+        x: 3379
+        y: 413
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46fcb2732baac7c398d15a76ad326385
+      internalID: -1284465183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_32
+      rect:
+        serializedVersion: 2
+        x: 3437
+        y: 407
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7579f013ef28ff8edb389f7abec483e4
+      internalID: 674178263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_33
+      rect:
+        serializedVersion: 2
+        x: 3512
+        y: 420
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fd0c300a54c37119cc7bc78788460f
+      internalID: 434104505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_34
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 418
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53db55f1199fb0039a0aa2c63d79561
+      internalID: -826695805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_35
+      rect:
+        serializedVersion: 2
+        x: 4043
+        y: 417
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98593bd3f34f831c99682535841ff3e8
+      internalID: -1357106345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_36
+      rect:
+        serializedVersion: 2
+        x: 3475
+        y: 401
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2218f2812be192cad9dbee284897f9
+      internalID: 1152925833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_37
+      rect:
+        serializedVersion: 2
+        x: 3545
+        y: 411
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4af8c9bf111a956db0b8c7621576c43
+      internalID: 1818725120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_38
+      rect:
+        serializedVersion: 2
+        x: 3677
+        y: 407
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53f22acee1158f7bb908ed51f9818a5
+      internalID: -365245924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_39
+      rect:
+        serializedVersion: 2
+        x: 3870
+        y: 393
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee924e78d9259b0d0ac310dc0bae99b9
+      internalID: 1002121555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_40
+      rect:
+        serializedVersion: 2
+        x: 2749
+        y: 299
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b049d31eb93a729854183e36ff917b
+      internalID: 490691531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_41
+      rect:
+        serializedVersion: 2
+        x: 3237
+        y: 401
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d8b4a24676c011187ca48fc0dd0d08
+      internalID: -1966928562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_42
+      rect:
+        serializedVersion: 2
+        x: 3685
+        y: 395
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c399786ffc7f2c4899e5a1a2beed42c2
+      internalID: -826021875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_43
+      rect:
+        serializedVersion: 2
+        x: 3701
+        y: 387
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ce0a6eeb30f4578917d5d8e5534878
+      internalID: 1995560122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_44
+      rect:
+        serializedVersion: 2
+        x: 4033
+        y: 399
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83854a661a5fbfb67b89c4d05c274cba
+      internalID: 681453359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_45
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 107
+        width: 342
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a95efedbc270b5a8c85e239c28f3ab
+      internalID: -1099391441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_46
+      rect:
+        serializedVersion: 2
+        x: 2717
+        y: 389
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2d9c971ab79cb1e81225507a2cd334
+      internalID: -664510323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_47
+      rect:
+        serializedVersion: 2
+        x: 3147
+        y: 385
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe445473a720142eb82ed0b83ceb5d1
+      internalID: 105110546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_48
+      rect:
+        serializedVersion: 2
+        x: 3501
+        y: 387
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa5eabc711562e65b91aff2e9a020de
+      internalID: 1242065142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_49
+      rect:
+        serializedVersion: 2
+        x: 3749
+        y: 391
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64c2c45c0980380e880ef7f55ab55a0
+      internalID: 1035719277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_50
+      rect:
+        serializedVersion: 2
+        x: 3806
+        y: 371
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eec6f84a165204ccae8db3cc130d946
+      internalID: -990111513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_51
+      rect:
+        serializedVersion: 2
+        x: 2723
+        y: 369
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a842ea986f668c4ab4456369ae2c6fe
+      internalID: -2077552965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_52
+      rect:
+        serializedVersion: 2
+        x: 3323
+        y: 377
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec93476b4241c81db19cc15b04eb5fd
+      internalID: 1606956957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_53
+      rect:
+        serializedVersion: 2
+        x: 3509
+        y: 366
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7e484a97a3546b5b6133384e1c8438
+      internalID: 959294300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_54
+      rect:
+        serializedVersion: 2
+        x: 3493
+        y: 357
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f4270079b2b7f93b402e48a62b0614
+      internalID: 359469064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_55
+      rect:
+        serializedVersion: 2
+        x: 3715
+        y: 359
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f68f3d0f1c9959caa88c10d9b9f754
+      internalID: -1047604274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_56
+      rect:
+        serializedVersion: 2
+        x: 3745
+        y: 367
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e802be5528df62e008f8afb411650e2f
+      internalID: 1638955845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_57
+      rect:
+        serializedVersion: 2
+        x: 3755
+        y: 365
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397f30efc3fc0f7cd8ed9e85f1b5948a
+      internalID: -451473339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_58
+      rect:
+        serializedVersion: 2
+        x: 2597
+        y: 309
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee97194bd13fd80bb996de1dd8a5acf
+      internalID: 1756908699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_59
+      rect:
+        serializedVersion: 2
+        x: 3169
+        y: 355
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6990b909602018f19561a2585cc3938
+      internalID: -586736027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_60
+      rect:
+        serializedVersion: 2
+        x: 3205
+        y: 349
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6556e0b7c2f0776a24bde296ab7333
+      internalID: -1204145774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_61
+      rect:
+        serializedVersion: 2
+        x: 3406
+        y: 355
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a83c7182011a9188da99de0a6a3f36
+      internalID: 959830507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_62
+      rect:
+        serializedVersion: 2
+        x: 3535
+        y: 353
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f949686684385978832d895ff845b7a
+      internalID: 296961390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_63
+      rect:
+        serializedVersion: 2
+        x: 3757
+        y: 349
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ba1b58f1345fd3a84b65d0fe7f9a00
+      internalID: 2075583709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_64
+      rect:
+        serializedVersion: 2
+        x: 3973
+        y: 337
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ce9480f8bb33f978abd77280724286
+      internalID: -234611146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_65
+      rect:
+        serializedVersion: 2
+        x: 2919
+        y: 321
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2defb4f2777d6ad2689f5c7e15e909ea
+      internalID: -1037984030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_66
+      rect:
+        serializedVersion: 2
+        x: 2947
+        y: 343
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f385d5edce13b55c88be89d0cbe90d72
+      internalID: 2040323363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_67
+      rect:
+        serializedVersion: 2
+        x: 3149
+        y: 345
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6a8731b0120bf0e9948b5cb6a0e366
+      internalID: 559347939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_68
+      rect:
+        serializedVersion: 2
+        x: 3713
+        y: 347
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1626a0bd71f09e388fb7693d178c9fa
+      internalID: 49329431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_69
+      rect:
+        serializedVersion: 2
+        x: 3801
+        y: 317
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0afb8e2ebdf9279caf82b398a65d58d
+      internalID: -132490827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_70
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 331
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a04b779a7986b6179b643a67396b9744
+      internalID: 315708827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_71
+      rect:
+        serializedVersion: 2
+        x: 3219
+        y: 331
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd8ab052a87fba728d674617fc830f9
+      internalID: -1499271115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_72
+      rect:
+        serializedVersion: 2
+        x: 3285
+        y: 333
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f7525b185649aa92b30fa7b4c548443
+      internalID: -667932658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_73
+      rect:
+        serializedVersion: 2
+        x: 3439
+        y: 335
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2293c2db953376d649d1812a67a0804d
+      internalID: 465632385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_74
+      rect:
+        serializedVersion: 2
+        x: 3524
+        y: 336
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcd138085bd89c52a99e0e3fef71caa
+      internalID: 1011088897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_75
+      rect:
+        serializedVersion: 2
+        x: 3673
+        y: 327
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770819c26acd946b48282ccf474ad5d5
+      internalID: -1731710435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_76
+      rect:
+        serializedVersion: 2
+        x: 3749
+        y: 331
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0950f6df77a5b3506ba210de6ad4fcd5
+      internalID: -694911921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_77
+      rect:
+        serializedVersion: 2
+        x: 2691
+        y: 309
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a008908de919e3705995883ef3a9d04c
+      internalID: 2074726426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_78
+      rect:
+        serializedVersion: 2
+        x: 2699
+        y: 317
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b5090598281d3a79324320c8d904aa
+      internalID: -1740331878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_79
+      rect:
+        serializedVersion: 2
+        x: 2947
+        y: 311
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8b9d87388b33759a108b4ff8e4aba5
+      internalID: 1391769102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_80
+      rect:
+        serializedVersion: 2
+        x: 2995
+        y: 275
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a301fe2a07d2527ae8aa11ba47ce99
+      internalID: -483605083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_81
+      rect:
+        serializedVersion: 2
+        x: 3207
+        y: 317
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d68147fdf057a9b89a293cf8505a860
+      internalID: 465457686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_82
+      rect:
+        serializedVersion: 2
+        x: 3365
+        y: 305
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069160df58e95ae73a01bfb445187af1
+      internalID: -339345586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_83
+      rect:
+        serializedVersion: 2
+        x: 3421
+        y: 317
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d657a2debba4a0818fcb431d5145c03
+      internalID: -1547206213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_84
+      rect:
+        serializedVersion: 2
+        x: 3459
+        y: 317
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208cc38d0e1706d7a888c103d38e9ca2
+      internalID: 2027628517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_85
+      rect:
+        serializedVersion: 2
+        x: 3953
+        y: 307
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb94b841eb5da1a6faa549eb005c97bd
+      internalID: -40062421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_86
+      rect:
+        serializedVersion: 2
+        x: 2659
+        y: 262
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861a1f59d412af92fb545a53ec7d1e02
+      internalID: -260230744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_87
+      rect:
+        serializedVersion: 2
+        x: 3149
+        y: 301
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58c3083f567b00cc9b5c9fd6c8bde1f
+      internalID: -723547414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_88
+      rect:
+        serializedVersion: 2
+        x: 3415
+        y: 299
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7fa87d09ad8ac42ae23d17693846de
+      internalID: -2044466484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_89
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 307
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfed3dd6d85f5a765a369ef8df938564
+      internalID: 1766511504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_90
+      rect:
+        serializedVersion: 2
+        x: 3867
+        y: 303
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df32f85bc51aecdfb810ef938104eeeb
+      internalID: 1342971610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_91
+      rect:
+        serializedVersion: 2
+        x: 4051
+        y: 299
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc02b278b78efaf5b731c3355f53eff
+      internalID: -1983630389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_92
+      rect:
+        serializedVersion: 2
+        x: 2829
+        y: 297
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec104dd1b86891312876f592b4c83acc
+      internalID: -1562603308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_93
+      rect:
+        serializedVersion: 2
+        x: 2877
+        y: 223
+        width: 130
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e34c17d03c63eaeb0c58c717ad49ca
+      internalID: -649608390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_94
+      rect:
+        serializedVersion: 2
+        x: 3847
+        y: 289
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6c3fcf58c55c4e396f116b2b5fc5cb
+      internalID: 381012801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_95
+      rect:
+        serializedVersion: 2
+        x: 3911
+        y: 281
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa08fed48447101bbb8d892d5a17227
+      internalID: -1342828148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_96
+      rect:
+        serializedVersion: 2
+        x: 2821
+        y: 283
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3e49c6b99bd06c2b228938e653729c
+      internalID: -635291494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_97
+      rect:
+        serializedVersion: 2
+        x: 3503
+        y: 285
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c07620ebcad09af9682cbecc25ebb1
+      internalID: -386016511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_98
+      rect:
+        serializedVersion: 2
+        x: 3750
+        y: 286
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa13812d2a2f25e9aeb62a13d7a7e3f
+      internalID: -1868643856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_99
+      rect:
+        serializedVersion: 2
+        x: 3769
+        y: 283
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf0a8acc8a28665e930299700ae587b
+      internalID: -1039515376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_100
+      rect:
+        serializedVersion: 2
+        x: 3873
+        y: 283
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd498ed26a7e3ca339f96a3dd4abbeb4
+      internalID: 1362665165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_101
+      rect:
+        serializedVersion: 2
+        x: 3893
+        y: 263
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1918cc229bca7170f83f8a0e5040786f
+      internalID: 707939162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_102
+      rect:
+        serializedVersion: 2
+        x: 4041
+        y: 287
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43d100b093d9ca0d8d6a5daf43f3336
+      internalID: -835636793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_103
+      rect:
+        serializedVersion: 2
+        x: 4057
+        y: 283
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdfd61ddeb2c7099690ed47eb7ed81b1
+      internalID: -1300326424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_104
+      rect:
+        serializedVersion: 2
+        x: 2831
+        y: 255
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e21b907f7c3e27dc9939ef5c1fdfd28
+      internalID: 1742014175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_105
+      rect:
+        serializedVersion: 2
+        x: 3195
+        y: 267
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1db7a214dd01c8680332a91eb3876e
+      internalID: 1399950815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_106
+      rect:
+        serializedVersion: 2
+        x: 3301
+        y: 257
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8aa7219358a881ea12eab9906ae2cb
+      internalID: -561786308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_107
+      rect:
+        serializedVersion: 2
+        x: 3319
+        y: 267
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d434db78d5db373081227dd98ac5a41
+      internalID: -945185793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_108
+      rect:
+        serializedVersion: 2
+        x: 3435
+        y: 267
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e3d0ec347a1772c8ef14b6f208a815
+      internalID: -818960397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_109
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 259
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71332d6f139d33c55aff4e83eab8a6d3
+      internalID: 1626648869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_110
+      rect:
+        serializedVersion: 2
+        x: 3533
+        y: 261
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d474a57bdef789a863f7780bae12ee
+      internalID: 587069046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_111
+      rect:
+        serializedVersion: 2
+        x: 3663
+        y: 251
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e596a6e817f3f19eebb8ea791178b367
+      internalID: 1650156384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_112
+      rect:
+        serializedVersion: 2
+        x: 3771
+        y: 257
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11036cbafa6723bbc8de628569aef82f
+      internalID: -169548904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_113
+      rect:
+        serializedVersion: 2
+        x: 3858
+        y: 242
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a035865ce8cf04b9149df2ce5cf82a
+      internalID: 1338197712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_114
+      rect:
+        serializedVersion: 2
+        x: 2697
+        y: 109
+        width: 114
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9abaf72558d8156fd8dd363182adf1fc
+      internalID: 1213129361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_115
+      rect:
+        serializedVersion: 2
+        x: 2853
+        y: 249
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182029063b695da119ba357190dfca62
+      internalID: 963444546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_116
+      rect:
+        serializedVersion: 2
+        x: 3419
+        y: 247
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7557ad6d1310c0062872f8aefabca8ba
+      internalID: 936583679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_117
+      rect:
+        serializedVersion: 2
+        x: 3505
+        y: 241
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4436ffea32afafea98d6cdd3e2e06f0c
+      internalID: -751749420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_118
+      rect:
+        serializedVersion: 2
+        x: 3537
+        y: 245
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730b6459e5b641ce0b3ea723f6c1d824
+      internalID: 539908162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_119
+      rect:
+        serializedVersion: 2
+        x: 3757
+        y: 233
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bdae2e9921beda7b50f6841360b226
+      internalID: -799189082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_120
+      rect:
+        serializedVersion: 2
+        x: 3141
+        y: 221
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abeda6d03457232e9ba1531b0d31792
+      internalID: -1782398093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_121
+      rect:
+        serializedVersion: 2
+        x: 3153
+        y: 219
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85318309bb357a98a8616371288ef07b
+      internalID: 1562432267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_122
+      rect:
+        serializedVersion: 2
+        x: 3213
+        y: 217
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef8df7e722247455a8e553f5f546db3
+      internalID: -636496197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_123
+      rect:
+        serializedVersion: 2
+        x: 3238
+        y: 221
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af0f503e967fc5c28cb1899a2bb1f01
+      internalID: 1440416710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_124
+      rect:
+        serializedVersion: 2
+        x: 3299
+        y: 227
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4db18d8c23ed66db3fb22f93e2e9f6
+      internalID: 722913359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_125
+      rect:
+        serializedVersion: 2
+        x: 4007
+        y: 221
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552d5296bc5eafef2b751e35114509dc
+      internalID: 416440945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_126
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 185
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c80806a86b8fd93a0b7789afe2487e5b
+      internalID: 1559561924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_127
+      rect:
+        serializedVersion: 2
+        x: 2621
+        y: 214
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef61d0b31610917758dd50e4fd6ea47c
+      internalID: 1819751577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_128
+      rect:
+        serializedVersion: 2
+        x: 3445
+        y: 209
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22a3a492dbae0b2380b58b423bd96bd
+      internalID: -308035463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_129
+      rect:
+        serializedVersion: 2
+        x: 3665
+        y: 197
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0a2525001cc5c00a96b3a6e9f9e1ff
+      internalID: -1995140895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_130
+      rect:
+        serializedVersion: 2
+        x: 3815
+        y: 209
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f6e8836bdf032d9b8f7f366b97e186
+      internalID: 2002337083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_131
+      rect:
+        serializedVersion: 2
+        x: 3837
+        y: 217
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ed0a3230a48267f8242caa8ed4a813
+      internalID: -807037692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_132
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 207
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1abf4152987b026836bd898389d5bf
+      internalID: 1508675148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_133
+      rect:
+        serializedVersion: 2
+        x: 3137
+        y: 205
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a80623983d20eac90548dec098f0af
+      internalID: -849960764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_134
+      rect:
+        serializedVersion: 2
+        x: 3453
+        y: 199
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e862b0ccd1a3d2474b680ebbd6f312d3
+      internalID: -967003470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_135
+      rect:
+        serializedVersion: 2
+        x: 3505
+        y: 197
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1115b88afcb6b65b0bc830a0ac00dee3
+      internalID: -1973818152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_136
+      rect:
+        serializedVersion: 2
+        x: 3995
+        y: 199
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdddc1cc082e7c224ac87b438613a026
+      internalID: -1793910753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_137
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 145
+        width: 30
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dae2d84ba2dc155080a04dd17b42fee
+      internalID: -663372787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_138
+      rect:
+        serializedVersion: 2
+        x: 3189
+        y: 197
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00a9a13a15a39288a35d0a5bd238d62
+      internalID: -1750784289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_139
+      rect:
+        serializedVersion: 2
+        x: 3205
+        y: 193
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf4d0a50fa89a54eb50d057eefa4a29
+      internalID: 202538862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_140
+      rect:
+        serializedVersion: 2
+        x: 3279
+        y: 189
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd177e2ad71901ba4975b26b06547410
+      internalID: 1589753974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_141
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 189
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3587b898247307bba2087b51e02f206
+      internalID: -107044860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_142
+      rect:
+        serializedVersion: 2
+        x: 3401
+        y: 193
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87e59445097b98e7a35d63734d5c5a6
+      internalID: 1609941154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_143
+      rect:
+        serializedVersion: 2
+        x: 3433
+        y: 189
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c364e118b445e72b88bd59bacfd3ba32
+      internalID: -76535797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_144
+      rect:
+        serializedVersion: 2
+        x: 3493
+        y: 181
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310b7f05a4a6b60149ab72511d1291f6
+      internalID: 545389304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_145
+      rect:
+        serializedVersion: 2
+        x: 3529
+        y: 190
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9037382892061f9c9969c21e4043d974
+      internalID: 1390747573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_146
+      rect:
+        serializedVersion: 2
+        x: 3707
+        y: 189
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc1f1ed70fddac959c06b913b62527b
+      internalID: -271464276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_147
+      rect:
+        serializedVersion: 2
+        x: 3907
+        y: 185
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6adfaf1997d5d5363a7262aca6098a45
+      internalID: 1216217346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_148
+      rect:
+        serializedVersion: 2
+        x: 2653
+        y: 181
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49049f2172166cb938252206de5b9107
+      internalID: 304191129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_149
+      rect:
+        serializedVersion: 2
+        x: 2989
+        y: 148
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96ac38a3e52b5001afd992728ab29fc
+      internalID: -1354183890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_150
+      rect:
+        serializedVersion: 2
+        x: 3291
+        y: 181
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9dd7d288148a7b518e30a7ed9eccbdb
+      internalID: 97433532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_151
+      rect:
+        serializedVersion: 2
+        x: 2613
+        y: 161
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fdbb180e1de6e0a94bad8eaf74943b
+      internalID: 1956886047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_152
+      rect:
+        serializedVersion: 2
+        x: 2897
+        y: 163
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91915ce42cb8c49382bd89afd642005
+      internalID: -1274688137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_153
+      rect:
+        serializedVersion: 2
+        x: 2909
+        y: 161
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928ffb0368b4741e784ea95255a6ce76
+      internalID: 471897957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_154
+      rect:
+        serializedVersion: 2
+        x: 3275
+        y: 169
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138ad58a7cddd937fa1b1d1824ddb658
+      internalID: -2096501893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_155
+      rect:
+        serializedVersion: 2
+        x: 3393
+        y: 165
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef1f230cadf7cdd5783ee8159f5a4da8
+      internalID: 202613110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_156
+      rect:
+        serializedVersion: 2
+        x: 3421
+        y: 165
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c580e3dde8e92a366add015405344ca6
+      internalID: -886924484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_157
+      rect:
+        serializedVersion: 2
+        x: 3661
+        y: 161
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbad5974e2a64b033ba7c83f1597a1bb
+      internalID: -1564278492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_158
+      rect:
+        serializedVersion: 2
+        x: 3926
+        y: 168
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b413b256d1e5c1cfb24c015e3964b93
+      internalID: 607781839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_159
+      rect:
+        serializedVersion: 2
+        x: 3989
+        y: 151
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80cc863f2e84d4d1e88e76e25298004b
+      internalID: -596289991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_160
+      rect:
+        serializedVersion: 2
+        x: 2603
+        y: 155
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b1db10ca940c672aaf4f768de1d07d
+      internalID: -1939663173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_161
+      rect:
+        serializedVersion: 2
+        x: 2619
+        y: 59
+        width: 55
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03708e3e50d97a4992189a8c062cd53
+      internalID: 407144248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_162
+      rect:
+        serializedVersion: 2
+        x: 3511
+        y: 147
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79319f806f9c68c85a806c6c77abef21
+      internalID: -1066224869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_163
+      rect:
+        serializedVersion: 2
+        x: 3899
+        y: 149
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4167b52d0dcd82860907f5e9eac45997
+      internalID: -1051070486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_164
+      rect:
+        serializedVersion: 2
+        x: 3919
+        y: 159
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e77707cd2e79e5ea6cd2b391d0e08e
+      internalID: 463500501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_165
+      rect:
+        serializedVersion: 2
+        x: 3939
+        y: 155
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb10432e7c9022c2a82f679359919f0
+      internalID: -1766676065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_166
+      rect:
+        serializedVersion: 2
+        x: 2767
+        y: 21
+        width: 60
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d5c2c25a7f92aeabefbe40574a3378
+      internalID: 772664688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_167
+      rect:
+        serializedVersion: 2
+        x: 2875
+        y: 67
+        width: 64
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cb8b9c12ee98c64a3dcc734a9c6cd2
+      internalID: 90508509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_168
+      rect:
+        serializedVersion: 2
+        x: 2991
+        y: 141
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab419129515a420787fe4353ef9ed84
+      internalID: 867406477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_169
+      rect:
+        serializedVersion: 2
+        x: 3121
+        y: 149
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7179b3e8c43923b5ad1df79e39a06b2
+      internalID: -716601812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_170
+      rect:
+        serializedVersion: 2
+        x: 3135
+        y: 147
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a71a73077cef09f686d0668d66b768a
+      internalID: -213275104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_171
+      rect:
+        serializedVersion: 2
+        x: 3151
+        y: 145
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3537b7fb4699dfcab4fcd762e4e88e
+      internalID: 838385695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_172
+      rect:
+        serializedVersion: 2
+        x: 3663
+        y: 143
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c7389051d590f33b7e89838b16df2a
+      internalID: -294415100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_173
+      rect:
+        serializedVersion: 2
+        x: 3679
+        y: 149
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa5c80bc585815c3b8904a322ec9f37
+      internalID: 1834531992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_174
+      rect:
+        serializedVersion: 2
+        x: 3827
+        y: 125
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cba271a80ddfa6aeaa4218905f07252
+      internalID: -402455452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_175
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 142
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c9f311f3440a9cf902de3cd3aedaed
+      internalID: -24850000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_176
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 122
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19edb933165e1d8fcbbc292515f3fd3e
+      internalID: 1423714337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_177
+      rect:
+        serializedVersion: 2
+        x: 3215
+        y: 131
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea1d5e0aac00d97783efddbad660e7a
+      internalID: -78474470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_178
+      rect:
+        serializedVersion: 2
+        x: 3301
+        y: 125
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba8c814e7b60c8bab4614afe1b133e5
+      internalID: 2135202111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_179
+      rect:
+        serializedVersion: 2
+        x: 3535
+        y: 132
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b8fcb7fb48fe0cca84e7136fe4357f
+      internalID: 1192124242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_180
+      rect:
+        serializedVersion: 2
+        x: 2979
+        y: 127
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca552c0f77df4bc45a3e84f84082102e
+      internalID: 1134058342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_181
+      rect:
+        serializedVersion: 2
+        x: 3129
+        y: 127
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dde6c800ef4783be7b5f7a32fc8bd08c
+      internalID: 2062416243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_182
+      rect:
+        serializedVersion: 2
+        x: 3229
+        y: 125
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59dd49bad93d3238384853f9aec9b5a3
+      internalID: 2116388473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_183
+      rect:
+        serializedVersion: 2
+        x: 3327
+        y: 119
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1469e2732041c0aac988a299fdbe07f7
+      internalID: -1670477236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_184
+      rect:
+        serializedVersion: 2
+        x: 3527
+        y: 117
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6efac3d7949c6f093586b31b96eb3c
+      internalID: 892124482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_185
+      rect:
+        serializedVersion: 2
+        x: 2989
+        y: 114
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf75608e6c4b5c36a862d54cc271157
+      internalID: 511872506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_186
+      rect:
+        serializedVersion: 2
+        x: 3107
+        y: 115
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b622ed9c47cf838a8b9bee1a030c01
+      internalID: -62869101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_187
+      rect:
+        serializedVersion: 2
+        x: 3173
+        y: 105
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579d57dde24a4f600a02ba52c895ff43
+      internalID: -156826533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_188
+      rect:
+        serializedVersion: 2
+        x: 3227
+        y: 97
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71092374b099444e38b069894a21b665
+      internalID: 303303523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_189
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 115
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6528a058d3fd645458a00ad67abc0536
+      internalID: -615747139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_190
+      rect:
+        serializedVersion: 2
+        x: 3297
+        y: 113
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ade992b0f37551cdbdbccca0b654294
+      internalID: 143854940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_191
+      rect:
+        serializedVersion: 2
+        x: 3397
+        y: 103
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e0da43e013d0e57a843e79d7d191cf
+      internalID: 177453624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_192
+      rect:
+        serializedVersion: 2
+        x: 3509
+        y: 113
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a51c90a4f5ce279683070a1e4701ce2
+      internalID: 352155404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_193
+      rect:
+        serializedVersion: 2
+        x: 3107
+        y: 97
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6660be6c2f005f83b6396da7efa4bb8
+      internalID: 1395485475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_194
+      rect:
+        serializedVersion: 2
+        x: 3171
+        y: 93
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c30ad66c594cf96eb032cd867d7723a
+      internalID: 561001416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_195
+      rect:
+        serializedVersion: 2
+        x: 3753
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe85551aa3986e999703b204f607ea9
+      internalID: -1368192710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_196
+      rect:
+        serializedVersion: 2
+        x: 3869
+        y: 93
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b711c732d732359f18872436bb20031c
+      internalID: 961993636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_197
+      rect:
+        serializedVersion: 2
+        x: 3271
+        y: 87
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24240209d7ac226dad5ad21750aeb35
+      internalID: -1965100028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_198
+      rect:
+        serializedVersion: 2
+        x: 3499
+        y: 89
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353d8b072f0ada77f9aac57bbf816411
+      internalID: -1473734147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_199
+      rect:
+        serializedVersion: 2
+        x: 3717
+        y: 73
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc372d7a3fdf26db296be3fee8aee9ec
+      internalID: 643822216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_200
+      rect:
+        serializedVersion: 2
+        x: 3755
+        y: 91
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db496eaf77361c05b93c75a454a94a37
+      internalID: 19230060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_201
+      rect:
+        serializedVersion: 2
+        x: 3961
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fba92db9fdb8a6eca5f312199332354
+      internalID: 813104476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_202
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 59
+        width: 56
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e664b5bed240561daf676b93a92d1f4
+      internalID: 543586688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_203
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 69
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5e8895fba1a5dcebe10ed6092761bc
+      internalID: 374198051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_204
+      rect:
+        serializedVersion: 2
+        x: 2941
+        y: 31
+        width: 77
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e93fa5dd0e4d38ca9ca545a098cfbdd
+      internalID: 6320126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_205
+      rect:
+        serializedVersion: 2
+        x: 3197
+        y: 53
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2a37176d7cc13539693bbdd3e3b68f
+      internalID: -1027395237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_206
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 73
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de72e414e92571a7943536ea746e074
+      internalID: -2138367800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_207
+      rect:
+        serializedVersion: 2
+        x: 3367
+        y: 79
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fecd104a15ff284487e7f704fe7ee33
+      internalID: -598107250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_208
+      rect:
+        serializedVersion: 2
+        x: 3773
+        y: 73
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c7a2d998dca9aa996dbe21ea312b25
+      internalID: -1720729507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_209
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 65
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0736bc95975c30e5980d2cad1150ce6
+      internalID: 550701394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_210
+      rect:
+        serializedVersion: 2
+        x: 3163
+        y: 63
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d13e3439a61614a8daac5875c4ee9e
+      internalID: -472632073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_211
+      rect:
+        serializedVersion: 2
+        x: 3475
+        y: 61
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb6ab2bceab5c8f388f5b826f582a3b
+      internalID: 1602521431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_212
+      rect:
+        serializedVersion: 2
+        x: 3865
+        y: 59
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ecc722d19e10e70e8980108f012a372
+      internalID: 1445422815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_213
+      rect:
+        serializedVersion: 2
+        x: 3887
+        y: 59
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1b69bcaaa258ccd849fd8c046eb1e3
+      internalID: 1587172168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_214
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 38
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510bd704ac21845a295830194185bc07
+      internalID: 1804651709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_215
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 51
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003bb9ddb3430a838a90205b4ece32f9
+      internalID: -477556593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_216
+      rect:
+        serializedVersion: 2
+        x: 2733
+        y: 55
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf402f9081b816a2a3a2f304fb26338
+      internalID: -2078554367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_217
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 53
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1b6fe1917910d78a4c87be8bb3329d
+      internalID: 848798415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_218
+      rect:
+        serializedVersion: 2
+        x: 3321
+        y: 43
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6851f27370b93308b9694e22b9677ee
+      internalID: 1992380662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_219
+      rect:
+        serializedVersion: 2
+        x: 3867
+        y: 49
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7164db61b96d9c8d3946cadbde0b3c8e
+      internalID: 1675918826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_220
+      rect:
+        serializedVersion: 2
+        x: 3969
+        y: 51
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ed2b41f1fa9528bbfcb0c5f085ab9a
+      internalID: 960028915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_221
+      rect:
+        serializedVersion: 2
+        x: 2710
+        y: 40
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a113a7b2d324414639f206660f9716d1
+      internalID: -1710505728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_222
+      rect:
+        serializedVersion: 2
+        x: 3155
+        y: 43
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a96967eddadaa12c8175d64f9e2d605
+      internalID: -597250203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood Chips (512x4096) -8VARIATIONS_223
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 30
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46155ecf7100eeb87bf5c5665bc9c7f5
+      internalID: -1112366235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5125acc353afd302b8c714352dbf57b6
     internalID: 0
     vertices: []
     indices: 
@@ -108,8 +5036,234 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Wood Chips (512x4096) -8VARIATIONS_0: -2126670659
+      Wood Chips (512x4096) -8VARIATIONS_1: -874345349
+      Wood Chips (512x4096) -8VARIATIONS_10: 1755750198
+      Wood Chips (512x4096) -8VARIATIONS_100: 1362665165
+      Wood Chips (512x4096) -8VARIATIONS_101: 707939162
+      Wood Chips (512x4096) -8VARIATIONS_102: -835636793
+      Wood Chips (512x4096) -8VARIATIONS_103: -1300326424
+      Wood Chips (512x4096) -8VARIATIONS_104: 1742014175
+      Wood Chips (512x4096) -8VARIATIONS_105: 1399950815
+      Wood Chips (512x4096) -8VARIATIONS_106: -561786308
+      Wood Chips (512x4096) -8VARIATIONS_107: -945185793
+      Wood Chips (512x4096) -8VARIATIONS_108: -818960397
+      Wood Chips (512x4096) -8VARIATIONS_109: 1626648869
+      Wood Chips (512x4096) -8VARIATIONS_11: 544114875
+      Wood Chips (512x4096) -8VARIATIONS_110: 587069046
+      Wood Chips (512x4096) -8VARIATIONS_111: 1650156384
+      Wood Chips (512x4096) -8VARIATIONS_112: -169548904
+      Wood Chips (512x4096) -8VARIATIONS_113: 1338197712
+      Wood Chips (512x4096) -8VARIATIONS_114: 1213129361
+      Wood Chips (512x4096) -8VARIATIONS_115: 963444546
+      Wood Chips (512x4096) -8VARIATIONS_116: 936583679
+      Wood Chips (512x4096) -8VARIATIONS_117: -751749420
+      Wood Chips (512x4096) -8VARIATIONS_118: 539908162
+      Wood Chips (512x4096) -8VARIATIONS_119: -799189082
+      Wood Chips (512x4096) -8VARIATIONS_12: 1893322408
+      Wood Chips (512x4096) -8VARIATIONS_120: -1782398093
+      Wood Chips (512x4096) -8VARIATIONS_121: 1562432267
+      Wood Chips (512x4096) -8VARIATIONS_122: -636496197
+      Wood Chips (512x4096) -8VARIATIONS_123: 1440416710
+      Wood Chips (512x4096) -8VARIATIONS_124: 722913359
+      Wood Chips (512x4096) -8VARIATIONS_125: 416440945
+      Wood Chips (512x4096) -8VARIATIONS_126: 1559561924
+      Wood Chips (512x4096) -8VARIATIONS_127: 1819751577
+      Wood Chips (512x4096) -8VARIATIONS_128: -308035463
+      Wood Chips (512x4096) -8VARIATIONS_129: -1995140895
+      Wood Chips (512x4096) -8VARIATIONS_13: -169329048
+      Wood Chips (512x4096) -8VARIATIONS_130: 2002337083
+      Wood Chips (512x4096) -8VARIATIONS_131: -807037692
+      Wood Chips (512x4096) -8VARIATIONS_132: 1508675148
+      Wood Chips (512x4096) -8VARIATIONS_133: -849960764
+      Wood Chips (512x4096) -8VARIATIONS_134: -967003470
+      Wood Chips (512x4096) -8VARIATIONS_135: -1973818152
+      Wood Chips (512x4096) -8VARIATIONS_136: -1793910753
+      Wood Chips (512x4096) -8VARIATIONS_137: -663372787
+      Wood Chips (512x4096) -8VARIATIONS_138: -1750784289
+      Wood Chips (512x4096) -8VARIATIONS_139: 202538862
+      Wood Chips (512x4096) -8VARIATIONS_14: 764023848
+      Wood Chips (512x4096) -8VARIATIONS_140: 1589753974
+      Wood Chips (512x4096) -8VARIATIONS_141: -107044860
+      Wood Chips (512x4096) -8VARIATIONS_142: 1609941154
+      Wood Chips (512x4096) -8VARIATIONS_143: -76535797
+      Wood Chips (512x4096) -8VARIATIONS_144: 545389304
+      Wood Chips (512x4096) -8VARIATIONS_145: 1390747573
+      Wood Chips (512x4096) -8VARIATIONS_146: -271464276
+      Wood Chips (512x4096) -8VARIATIONS_147: 1216217346
+      Wood Chips (512x4096) -8VARIATIONS_148: 304191129
+      Wood Chips (512x4096) -8VARIATIONS_149: -1354183890
+      Wood Chips (512x4096) -8VARIATIONS_15: 265803691
+      Wood Chips (512x4096) -8VARIATIONS_150: 97433532
+      Wood Chips (512x4096) -8VARIATIONS_151: 1956886047
+      Wood Chips (512x4096) -8VARIATIONS_152: -1274688137
+      Wood Chips (512x4096) -8VARIATIONS_153: 471897957
+      Wood Chips (512x4096) -8VARIATIONS_154: -2096501893
+      Wood Chips (512x4096) -8VARIATIONS_155: 202613110
+      Wood Chips (512x4096) -8VARIATIONS_156: -886924484
+      Wood Chips (512x4096) -8VARIATIONS_157: -1564278492
+      Wood Chips (512x4096) -8VARIATIONS_158: 607781839
+      Wood Chips (512x4096) -8VARIATIONS_159: -596289991
+      Wood Chips (512x4096) -8VARIATIONS_16: 591145499
+      Wood Chips (512x4096) -8VARIATIONS_160: -1939663173
+      Wood Chips (512x4096) -8VARIATIONS_161: 407144248
+      Wood Chips (512x4096) -8VARIATIONS_162: -1066224869
+      Wood Chips (512x4096) -8VARIATIONS_163: -1051070486
+      Wood Chips (512x4096) -8VARIATIONS_164: 463500501
+      Wood Chips (512x4096) -8VARIATIONS_165: -1766676065
+      Wood Chips (512x4096) -8VARIATIONS_166: 772664688
+      Wood Chips (512x4096) -8VARIATIONS_167: 90508509
+      Wood Chips (512x4096) -8VARIATIONS_168: 867406477
+      Wood Chips (512x4096) -8VARIATIONS_169: -716601812
+      Wood Chips (512x4096) -8VARIATIONS_17: 1626375168
+      Wood Chips (512x4096) -8VARIATIONS_170: -213275104
+      Wood Chips (512x4096) -8VARIATIONS_171: 838385695
+      Wood Chips (512x4096) -8VARIATIONS_172: -294415100
+      Wood Chips (512x4096) -8VARIATIONS_173: 1834531992
+      Wood Chips (512x4096) -8VARIATIONS_174: -402455452
+      Wood Chips (512x4096) -8VARIATIONS_175: -24850000
+      Wood Chips (512x4096) -8VARIATIONS_176: 1423714337
+      Wood Chips (512x4096) -8VARIATIONS_177: -78474470
+      Wood Chips (512x4096) -8VARIATIONS_178: 2135202111
+      Wood Chips (512x4096) -8VARIATIONS_179: 1192124242
+      Wood Chips (512x4096) -8VARIATIONS_18: 221777682
+      Wood Chips (512x4096) -8VARIATIONS_180: 1134058342
+      Wood Chips (512x4096) -8VARIATIONS_181: 2062416243
+      Wood Chips (512x4096) -8VARIATIONS_182: 2116388473
+      Wood Chips (512x4096) -8VARIATIONS_183: -1670477236
+      Wood Chips (512x4096) -8VARIATIONS_184: 892124482
+      Wood Chips (512x4096) -8VARIATIONS_185: 511872506
+      Wood Chips (512x4096) -8VARIATIONS_186: -62869101
+      Wood Chips (512x4096) -8VARIATIONS_187: -156826533
+      Wood Chips (512x4096) -8VARIATIONS_188: 303303523
+      Wood Chips (512x4096) -8VARIATIONS_189: -615747139
+      Wood Chips (512x4096) -8VARIATIONS_19: 1079439776
+      Wood Chips (512x4096) -8VARIATIONS_190: 143854940
+      Wood Chips (512x4096) -8VARIATIONS_191: 177453624
+      Wood Chips (512x4096) -8VARIATIONS_192: 352155404
+      Wood Chips (512x4096) -8VARIATIONS_193: 1395485475
+      Wood Chips (512x4096) -8VARIATIONS_194: 561001416
+      Wood Chips (512x4096) -8VARIATIONS_195: -1368192710
+      Wood Chips (512x4096) -8VARIATIONS_196: 961993636
+      Wood Chips (512x4096) -8VARIATIONS_197: -1965100028
+      Wood Chips (512x4096) -8VARIATIONS_198: -1473734147
+      Wood Chips (512x4096) -8VARIATIONS_199: 643822216
+      Wood Chips (512x4096) -8VARIATIONS_2: -2020267301
+      Wood Chips (512x4096) -8VARIATIONS_20: 838929142
+      Wood Chips (512x4096) -8VARIATIONS_200: 19230060
+      Wood Chips (512x4096) -8VARIATIONS_201: 813104476
+      Wood Chips (512x4096) -8VARIATIONS_202: 543586688
+      Wood Chips (512x4096) -8VARIATIONS_203: 374198051
+      Wood Chips (512x4096) -8VARIATIONS_204: 6320126
+      Wood Chips (512x4096) -8VARIATIONS_205: -1027395237
+      Wood Chips (512x4096) -8VARIATIONS_206: -2138367800
+      Wood Chips (512x4096) -8VARIATIONS_207: -598107250
+      Wood Chips (512x4096) -8VARIATIONS_208: -1720729507
+      Wood Chips (512x4096) -8VARIATIONS_209: 550701394
+      Wood Chips (512x4096) -8VARIATIONS_21: 1472366744
+      Wood Chips (512x4096) -8VARIATIONS_210: -472632073
+      Wood Chips (512x4096) -8VARIATIONS_211: 1602521431
+      Wood Chips (512x4096) -8VARIATIONS_212: 1445422815
+      Wood Chips (512x4096) -8VARIATIONS_213: 1587172168
+      Wood Chips (512x4096) -8VARIATIONS_214: 1804651709
+      Wood Chips (512x4096) -8VARIATIONS_215: -477556593
+      Wood Chips (512x4096) -8VARIATIONS_216: -2078554367
+      Wood Chips (512x4096) -8VARIATIONS_217: 848798415
+      Wood Chips (512x4096) -8VARIATIONS_218: 1992380662
+      Wood Chips (512x4096) -8VARIATIONS_219: 1675918826
+      Wood Chips (512x4096) -8VARIATIONS_22: 140329841
+      Wood Chips (512x4096) -8VARIATIONS_220: 960028915
+      Wood Chips (512x4096) -8VARIATIONS_221: -1710505728
+      Wood Chips (512x4096) -8VARIATIONS_222: -597250203
+      Wood Chips (512x4096) -8VARIATIONS_223: -1112366235
+      Wood Chips (512x4096) -8VARIATIONS_23: -680431896
+      Wood Chips (512x4096) -8VARIATIONS_24: 423393341
+      Wood Chips (512x4096) -8VARIATIONS_25: 1532496864
+      Wood Chips (512x4096) -8VARIATIONS_26: -703438031
+      Wood Chips (512x4096) -8VARIATIONS_27: 1475855014
+      Wood Chips (512x4096) -8VARIATIONS_28: 534474580
+      Wood Chips (512x4096) -8VARIATIONS_29: 350434268
+      Wood Chips (512x4096) -8VARIATIONS_3: -203223220
+      Wood Chips (512x4096) -8VARIATIONS_30: -245894178
+      Wood Chips (512x4096) -8VARIATIONS_31: -1284465183
+      Wood Chips (512x4096) -8VARIATIONS_32: 674178263
+      Wood Chips (512x4096) -8VARIATIONS_33: 434104505
+      Wood Chips (512x4096) -8VARIATIONS_34: -826695805
+      Wood Chips (512x4096) -8VARIATIONS_35: -1357106345
+      Wood Chips (512x4096) -8VARIATIONS_36: 1152925833
+      Wood Chips (512x4096) -8VARIATIONS_37: 1818725120
+      Wood Chips (512x4096) -8VARIATIONS_38: -365245924
+      Wood Chips (512x4096) -8VARIATIONS_39: 1002121555
+      Wood Chips (512x4096) -8VARIATIONS_4: 1787785704
+      Wood Chips (512x4096) -8VARIATIONS_40: 490691531
+      Wood Chips (512x4096) -8VARIATIONS_41: -1966928562
+      Wood Chips (512x4096) -8VARIATIONS_42: -826021875
+      Wood Chips (512x4096) -8VARIATIONS_43: 1995560122
+      Wood Chips (512x4096) -8VARIATIONS_44: 681453359
+      Wood Chips (512x4096) -8VARIATIONS_45: -1099391441
+      Wood Chips (512x4096) -8VARIATIONS_46: -664510323
+      Wood Chips (512x4096) -8VARIATIONS_47: 105110546
+      Wood Chips (512x4096) -8VARIATIONS_48: 1242065142
+      Wood Chips (512x4096) -8VARIATIONS_49: 1035719277
+      Wood Chips (512x4096) -8VARIATIONS_5: 1541439899
+      Wood Chips (512x4096) -8VARIATIONS_50: -990111513
+      Wood Chips (512x4096) -8VARIATIONS_51: -2077552965
+      Wood Chips (512x4096) -8VARIATIONS_52: 1606956957
+      Wood Chips (512x4096) -8VARIATIONS_53: 959294300
+      Wood Chips (512x4096) -8VARIATIONS_54: 359469064
+      Wood Chips (512x4096) -8VARIATIONS_55: -1047604274
+      Wood Chips (512x4096) -8VARIATIONS_56: 1638955845
+      Wood Chips (512x4096) -8VARIATIONS_57: -451473339
+      Wood Chips (512x4096) -8VARIATIONS_58: 1756908699
+      Wood Chips (512x4096) -8VARIATIONS_59: -586736027
+      Wood Chips (512x4096) -8VARIATIONS_6: -870834340
+      Wood Chips (512x4096) -8VARIATIONS_60: -1204145774
+      Wood Chips (512x4096) -8VARIATIONS_61: 959830507
+      Wood Chips (512x4096) -8VARIATIONS_62: 296961390
+      Wood Chips (512x4096) -8VARIATIONS_63: 2075583709
+      Wood Chips (512x4096) -8VARIATIONS_64: -234611146
+      Wood Chips (512x4096) -8VARIATIONS_65: -1037984030
+      Wood Chips (512x4096) -8VARIATIONS_66: 2040323363
+      Wood Chips (512x4096) -8VARIATIONS_67: 559347939
+      Wood Chips (512x4096) -8VARIATIONS_68: 49329431
+      Wood Chips (512x4096) -8VARIATIONS_69: -132490827
+      Wood Chips (512x4096) -8VARIATIONS_7: -829702605
+      Wood Chips (512x4096) -8VARIATIONS_70: 315708827
+      Wood Chips (512x4096) -8VARIATIONS_71: -1499271115
+      Wood Chips (512x4096) -8VARIATIONS_72: -667932658
+      Wood Chips (512x4096) -8VARIATIONS_73: 465632385
+      Wood Chips (512x4096) -8VARIATIONS_74: 1011088897
+      Wood Chips (512x4096) -8VARIATIONS_75: -1731710435
+      Wood Chips (512x4096) -8VARIATIONS_76: -694911921
+      Wood Chips (512x4096) -8VARIATIONS_77: 2074726426
+      Wood Chips (512x4096) -8VARIATIONS_78: -1740331878
+      Wood Chips (512x4096) -8VARIATIONS_79: 1391769102
+      Wood Chips (512x4096) -8VARIATIONS_8: 56375082
+      Wood Chips (512x4096) -8VARIATIONS_80: -483605083
+      Wood Chips (512x4096) -8VARIATIONS_81: 465457686
+      Wood Chips (512x4096) -8VARIATIONS_82: -339345586
+      Wood Chips (512x4096) -8VARIATIONS_83: -1547206213
+      Wood Chips (512x4096) -8VARIATIONS_84: 2027628517
+      Wood Chips (512x4096) -8VARIATIONS_85: -40062421
+      Wood Chips (512x4096) -8VARIATIONS_86: -260230744
+      Wood Chips (512x4096) -8VARIATIONS_87: -723547414
+      Wood Chips (512x4096) -8VARIATIONS_88: -2044466484
+      Wood Chips (512x4096) -8VARIATIONS_89: 1766511504
+      Wood Chips (512x4096) -8VARIATIONS_9: 1120189106
+      Wood Chips (512x4096) -8VARIATIONS_90: 1342971610
+      Wood Chips (512x4096) -8VARIATIONS_91: -1983630389
+      Wood Chips (512x4096) -8VARIATIONS_92: -1562603308
+      Wood Chips (512x4096) -8VARIATIONS_93: -649608390
+      Wood Chips (512x4096) -8VARIATIONS_94: 381012801
+      Wood Chips (512x4096) -8VARIATIONS_95: -1342828148
+      Wood Chips (512x4096) -8VARIATIONS_96: -635291494
+      Wood Chips (512x4096) -8VARIATIONS_97: -386016511
+      Wood Chips (512x4096) -8VARIATIONS_98: -1868643856
+      Wood Chips (512x4096) -8VARIATIONS_99: -1039515376
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -95,12 +95,122 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Dog Hair (512x2048) - 4VARIATIONS_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 29
+        width: 332
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2834170886bd0cdac66262eebe41f8
+      internalID: 2099337376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Hair (512x2048) - 4VARIATIONS_1
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 27
+        width: 427
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6bf22e80d5ba9f4950dfcee78ce94c
+      internalID: 98029363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Hair (512x2048) - 4VARIATIONS_2
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 33
+        width: 440
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4db9b50b18b78fe8aeeacfd50114ec
+      internalID: 1180088165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Hair (512x2048) - 4VARIATIONS_3
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 31
+        width: 423
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72059fb49ee2baf68834ad4e6346fd22
+      internalID: 1986565452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Hair (512x2048) - 4VARIATIONS_4
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 25
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2207623a9cedcc59bbd0833aef33f1a7
+      internalID: 1711255810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 558a2ca613f047a018639613ac87f9f5
     internalID: 0
     vertices: []
     indices: 
@@ -108,8 +218,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Dog Hair (512x2048) - 4VARIATIONS_0: 2099337376
+      Dog Hair (512x2048) - 4VARIATIONS_1: 98029363
+      Dog Hair (512x2048) - 4VARIATIONS_2: 1180088165
+      Dog Hair (512x2048) - 4VARIATIONS_3: 1986565452
+      Dog Hair (512x2048) - 4VARIATIONS_4: 1711255810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
