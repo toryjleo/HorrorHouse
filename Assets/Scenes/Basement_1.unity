@@ -21404,10 +21404,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human Hair Particle System
       objectReference: {fileID: 0}
-    - target: {fileID: 7485139704682224897, guid: f29f24709a8bf8f36a1bdc2ff10429b8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
