@@ -2,7 +2,8 @@ Shader "Custom/RayMarcher"
 {
 
     // DONE: https://www.youtube.com/watch?v=PGtv-dBi2wE
-    // NEXT: https://www.youtube.com/watch?v=Ff0jJyyiVyw
+    // DONE: https://www.youtube.com/watch?v=Ff0jJyyiVyw
+    // NEXT: https://www.youtube.com/watch?v=AfKGMUDWfuE
     Properties
     {
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
