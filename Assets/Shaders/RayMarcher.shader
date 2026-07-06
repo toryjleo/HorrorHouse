@@ -115,6 +115,11 @@ Shader "Custom/RayMarcher"
                 return length(float2(x, p.y)) - r.y;
             }
 
+            float sdBox(float3 p, float3 s)
+            {
+                return length(max(abs(p) - s, 0));
+            }
+
             float GetDistance(float3 p)
             {
                 float4 s = float4(0, 1, 6, 1);
@@ -123,8 +128,10 @@ Shader "Custom/RayMarcher"
 
                 float capsuleDistance = sdCapsule(p, float3(0, 1, 6), float3(1, 2, 6), 0.2);
                 float torusDistance = sdTorus(p - float3(0,.5,6), float2(1.5, 0.3));
+                float boxDistance = sdBox(p - float3(-3, .75, 6), float3(0.75, 0.75, 0.75));
                 float totalDistance = min(capsuleDistance, planeDistance);
                 totalDistance = min(totalDistance, torusDistance);
+                totalDistance = min(totalDistance, boxDistance);
 
                 return totalDistance;
             }
