@@ -31,20 +31,20 @@
 
 The existing SDFs work but the file is messy. Clean it up before adding complexity.
 
-- [ ] **Extract SDF functions to an include file** — Create `Assets/Shaders/Includes/SDF.cginc`
+- [x] **Extract SDF functions to an include file** — Create `Assets/Shaders/Includes/SDF.cginc`
   - Move `sdCapsule`, `sdCylinder`, `sdTorus`, `sdBox` into it
   - Add `sdSphere(float3 p, float3 center, float radius)` as a proper function (currently inline)
   - `#include "Includes/SDF.cginc"` from [RayMarcher.shader](file:///home/tory/Documents/Code/unity/HorrorHouse/Assets/Shaders/RayMarcher.shader)
-- [ ] **Fix `sdBox` before using booleans** — use the signed box formula:
+- [x] **Fix `sdBox` before using booleans** — use the signed box formula:
   ```hlsl
   float sdBox(float3 p, float3 b) {
       float3 q = abs(p) - b;
       return length(max(q, 0.0)) + min(max(q.x, max(q.y, q.z)), 0.0);
   }
   ```
-- [ ] **Clean up dead code** — Remove the commented-out `GetDistance` block (lines 140–157)
-- [ ] **Consistent naming** — All SDFs follow `sdName(float3 p, ...)` convention; verify parameters match [Inigo Quilez reference](https://iquilezles.org/articles/distfunctions/)
-- [ ] **Raise shader target if needed** — move from `#pragma target 2.0` to `#pragma target 3.0` once scene keywords/material IDs/smooth ops are added.
+- [x] **Clean up dead code** — Remove the commented-out `GetDistance` block (lines 140–157)
+- [x] **Consistent naming** — All SDFs follow `sdName(float3 p, ...)` convention; verify parameters match [Inigo Quilez reference](https://iquilezles.org/articles/distfunctions/)
+- [x] **Raise shader target if needed** — move from `#pragma target 2.0` to `#pragma target 3.0` once scene keywords/material IDs/smooth ops are added. Not needed for Phase 1; keep `2.0` until later features require it.
 
 > [!TIP]
 > Keeping SDFs in a shared `.cginc` means the jumpscare shader can also `#include` them later if you want ray-marched jumpscare visuals.

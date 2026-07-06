@@ -56,6 +56,7 @@ Shader "Custom/RayMarcher"
 
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
+            #include "Includes/SDF.cginc"
 
             struct Attributes
             {
@@ -90,7 +91,6 @@ Shader "Custom/RayMarcher"
                 return OUT;
             }
 
-            // TODO: Move section to a separate file:
             // --- Ray Marching Functions --- 
             #define MAX_STEPS 100
             #define MAX_DISTANCE 100.0
@@ -99,47 +99,9 @@ Shader "Custom/RayMarcher"
             #define SHADOW_BIAS 0.02
             #define SHADOW_BRIGHTNESS 0.1
 
-            float sdCapsule(float3 p, float3 a, float3 b, float r)
-            {
-                float3 ab = b - a;
-                float3 ap = p - a;
-
-                float t = clamp(dot(ap, ab) / dot(ab, ab), 0.0, 1.0);
-                float3 c = a + ab * t;
-                return length(p - c) - r;
-            }
-
-            float sdCylinder(float3 p, float3 a, float3 b, float r)
-            {
-                float3 ab = b - a;
-                float3 ap = p - a;
-
-                float t = dot(ap, ab) / dot(ab, ab);
-                float3 c = a + ab * t;
-
-                float x = length(p - c) - r;
-                float y = (abs(t-.5) - .5) * length(ab);
-                float exteriorDistance = length(max(float2(x, y), 0.0));
-
-                float interiorDistance = min(max(x, y), 0.0);
-                return exteriorDistance + interiorDistance;
-            }
-
-            float sdTorus(float3 p, float2 r)
-            {
-                float x = length(p.xz) - r.x;
-                return length(float2(x, p.y)) - r.y;
-            }
-
-            float sdBox(float3 p, float3 s)
-            {
-                return length(max(abs(p) - s, 0));
-            }
-
             float GetDistance(float3 p)
             {
-                float4 s = float4(0, 1, 6, 1);
-                float sphereDistance = length(p - s.xyz) - s.w;
+                float sphereDistance = sdSphere(p, float3(0, 1, 6), 1.0);
                 float planeDistance = p.y;
 
                 float capsuleDistance = sdCapsule(p, float3(0, 1, 6), float3(1, 2, 6), 0.2);
@@ -147,7 +109,8 @@ Shader "Custom/RayMarcher"
                 float boxDistance = sdBox(p - float3(-3, .75, 6), float3(0.75, 0.75, 0.75));
                 float cylinderDistance = sdCylinder(p, float3(0, .3, 4), float3(3, .3, 5), 0.3);
 
-                float totalDistance = min(capsuleDistance, planeDistance);
+                float totalDistance = min(sphereDistance, planeDistance);
+                totalDistance = min(totalDistance, capsuleDistance);
                 totalDistance = min(totalDistance, torusDistance);
                 totalDistance = min(totalDistance, boxDistance);
                 totalDistance = min(totalDistance, cylinderDistance);
