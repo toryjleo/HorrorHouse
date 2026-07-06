@@ -94,28 +94,41 @@ Shader "Custom/RayMarcher"
             // --- Ray Marching Functions --- 
             #define MAX_STEPS 100
             #define MAX_DISTANCE 100.0
-            #define SURFACE_DISTANCE 0.01 // Is this the minimum clip plane?
+            #define SURFACE_DISTANCE 0.001
+            #define NORMAL_EPSILON 0.001
+            #define SHADOW_BIAS 0.02
             #define SHADOW_BRIGHTNESS 0.1
 
-            float GetDistance(fixed3 p)
+            float sdCapsule(float3 p, float3 a, float3 b, float r)
             {
-                fixed4 s = fixed4(0, 1, 6, 1);
+                float3 ab = b - a;
+                float3 ap = p - a;
+
+                float t = clamp(dot(ap, ab) / dot(ab, ab), 0.0, 1.0);
+                float3 c = a + ab * t;
+                return length(p - c) - r;
+            }
+
+            float GetDistance(float3 p)
+            {
+                float4 s = float4(0, 1, 6, 1);
                 float sphereDistance = length(p - s.xyz) - s.w;
                 float planeDistance = p.y;
 
-                float totalDistance = min(sphereDistance, planeDistance);
+                float capsuleDistance = sdCapsule(p, float3(0, 1, 6), float3(1, 2, 6), 0.2);
+                float totalDistance = min(capsuleDistance, planeDistance);
 
                 return totalDistance;
             }
 
 
-            float RayMarch(fixed3 rayOrigin, fixed3 rayDirection)
+            float RayMarch(float3 rayOrigin, float3 rayDirection)
             {
                 float distanceOrigin = 0.0;
 
                 for(int i = 0; i < MAX_STEPS; i++)
                 {
-                    fixed3 p = rayOrigin + rayDirection * distanceOrigin;
+                    float3 p = rayOrigin + rayDirection * distanceOrigin;
                     float distanceScene = GetDistance(p);
                     distanceOrigin += distanceScene;
 
@@ -129,33 +142,32 @@ Shader "Custom/RayMarcher"
                 return distanceOrigin;
             }
 
-            fixed3 GetNormal(fixed3 p)
+            float3 GetNormal(float3 p)
             {
-                float distance = GetDistance(p);
-                fixed2 e = fixed2(.01, 0);
+                float2 e = float2(NORMAL_EPSILON, 0);
 
-                fixed3 normal = distance - fixed3(
-                    GetDistance(p - e.xyy),
-                    GetDistance(p - e.yxy),
-                    GetDistance(p - e.yyx)
+                float3 normal = float3(
+                    GetDistance(p + e.xyy) - GetDistance(p - e.xyy),
+                    GetDistance(p + e.yxy) - GetDistance(p - e.yxy),
+                    GetDistance(p + e.yyx) - GetDistance(p - e.yyx)
                 );
 
                 return normalize(normal);
             }
 
-            float GetLight(fixed3 p)
+            float GetLight(float3 p)
             {
-                fixed3 lightPosition = fixed3(0, 5, 6);
+                float3 lightPosition = float3(0, 5, 6);
 
-                lightPosition.xz += fixed2(sin(_Time.y), cos(_Time.y));
+                lightPosition.xz += float2(sin(_Time.y), cos(_Time.y));
 
-                fixed3 lightDirection = normalize(lightPosition - p);
-                fixed3 surfaceNormal = GetNormal(p);
+                float3 lightDirection = normalize(lightPosition - p);
+                float3 surfaceNormal = GetNormal(p);
 
 
                 float dif = clamp(dot(lightDirection, surfaceNormal), 0.0, 1.0);
                 
-                float d = RayMarch(p + (surfaceNormal * SURFACE_DISTANCE), lightDirection);
+                float d = RayMarch(p + surfaceNormal * SHADOW_BIAS, lightDirection);
                 if (d < length(lightPosition - p))
                 {
                     dif *= SHADOW_BRIGHTNESS;
@@ -170,15 +182,15 @@ Shader "Custom/RayMarcher"
                 fixed4 color = fixed4(0, 0, 0, 1);
 
                 // Simple Camera Model
-                fixed3 rayOrigin = fixed3(0, 1, 0);
-                fixed3 rayDirection = normalize(fixed3(IN.uv.x, IN.uv.y, 1));
+                float3 rayOrigin = float3(0, 1, 0);
+                float3 rayDirection = normalize(float3(IN.uv.x, IN.uv.y, 1));
 
 
                 // Ray Intersection
                 float distance = RayMarch(rayOrigin, rayDirection);
 
                 // Lighting
-                fixed3 p = rayOrigin + rayDirection * distance;
+                float3 p = rayOrigin + rayDirection * distance;
 
                 float diffuse = GetLight(p);
 
