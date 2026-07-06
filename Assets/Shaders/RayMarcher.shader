@@ -109,6 +109,12 @@ Shader "Custom/RayMarcher"
                 return length(p - c) - r;
             }
 
+            float sdTorus(float3 p, float2 r)
+            {
+                float x = length(p.xz) - r.x;
+                return length(float2(x, p.y)) - r.y;
+            }
+
             float GetDistance(float3 p)
             {
                 float4 s = float4(0, 1, 6, 1);
@@ -116,7 +122,9 @@ Shader "Custom/RayMarcher"
                 float planeDistance = p.y;
 
                 float capsuleDistance = sdCapsule(p, float3(0, 1, 6), float3(1, 2, 6), 0.2);
+                float torusDistance = sdTorus(p - float3(0,.5,6), float2(1.5, 0.3));
                 float totalDistance = min(capsuleDistance, planeDistance);
+                totalDistance = min(totalDistance, torusDistance);
 
                 return totalDistance;
             }
@@ -182,8 +190,8 @@ Shader "Custom/RayMarcher"
                 fixed4 color = fixed4(0, 0, 0, 1);
 
                 // Simple Camera Model
-                float3 rayOrigin = float3(0, 1, 0);
-                float3 rayDirection = normalize(float3(IN.uv.x, IN.uv.y, 1));
+                float3 rayOrigin = float3(0, 2, 0);
+                float3 rayDirection = normalize(float3(IN.uv.x, IN.uv.y - .2, 1));
 
 
                 // Ray Intersection
