@@ -109,6 +109,22 @@ Shader "Custom/RayMarcher"
                 return length(p - c) - r;
             }
 
+            float sdCylinder(float3 p, float3 a, float3 b, float r)
+            {
+                float3 ab = b - a;
+                float3 ap = p - a;
+
+                float t = dot(ap, ab) / dot(ab, ab);
+                float3 c = a + ab * t;
+
+                float x = length(p - c) - r;
+                float y = (abs(t-.5) - .5) * length(ab);
+                float exteriorDistance = length(max(float2(x, y), 0.0));
+
+                float interiorDistance = min(max(x, y), 0.0);
+                return exteriorDistance + interiorDistance;
+            }
+
             float sdTorus(float3 p, float2 r)
             {
                 float x = length(p.xz) - r.x;
@@ -129,9 +145,12 @@ Shader "Custom/RayMarcher"
                 float capsuleDistance = sdCapsule(p, float3(0, 1, 6), float3(1, 2, 6), 0.2);
                 float torusDistance = sdTorus(p - float3(0,.5,6), float2(1.5, 0.3));
                 float boxDistance = sdBox(p - float3(-3, .75, 6), float3(0.75, 0.75, 0.75));
+                float cylinderDistance = sdCylinder(p, float3(0, .3, 4), float3(3, .3, 5), 0.3);
+
                 float totalDistance = min(capsuleDistance, planeDistance);
                 totalDistance = min(totalDistance, torusDistance);
                 totalDistance = min(totalDistance, boxDistance);
+                totalDistance = min(totalDistance, cylinderDistance);
 
                 return totalDistance;
             }
