@@ -16,6 +16,15 @@ Shader "Custom/RayMarcher"
         [HideInInspector] _StencilReadMask("Stencil Read Mask", Float) = 255
         [HideInInspector] _ColorMask("Color Mask", Float) = 15
         [HideInInspector] [Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip("Use Alpha Clip", Float) = 0
+
+        _CamPos("Camera Position", Vector) = (0, 2, 0, 0)
+        _CamDir("Camera Direction", Vector) = (0, 0, 1, 0)
+        _CamUp("Camera Up", Vector) = (0, 1, 0, 0)
+        _CamFov("Camera FOV", Float) = 60
+        _CamAspect("Camera Aspect", Float) = 1.777
+        _ScareProgress("Scare Progress", Range(0, 1)) = 0
+        _ScareSlideStart("Scare Slide Start", Range(0, 1)) = 0.75
+        _ScareSlideDistance("Scare Slide Distance", Float) = 0
     }
 
     SubShader
@@ -79,6 +88,15 @@ Shader "Custom/RayMarcher"
             fixed4 _Color;
             float4 _ClipRect;
 
+            float3 _CamPos;
+            float3 _CamDir;
+            float3 _CamUp;
+            float _CamFov;
+            float _CamAspect;
+            float _ScareProgress;
+            float _ScareSlideStart;
+            float _ScareSlideDistance;
+
             // --- Vertex Shader ---
             Varyings vert(Attributes IN)
             {
@@ -93,7 +111,7 @@ Shader "Custom/RayMarcher"
 
             // --- Ray Marching Functions --- 
             #define MAX_STEPS 100
-            #define MAX_DISTANCE 100.0
+            #define MAX_DISTANCE 1000.0
             #define SURFACE_DISTANCE 0.001
             #define NORMAL_EPSILON 0.001
             #define SHADOW_BIAS 0.02
@@ -116,10 +134,10 @@ Shader "Custom/RayMarcher"
 
             float sdBoxWithSphereHole(float3 p)
             {
-                float sphereDistance = sdSphere(p, float3(0, 1, 6), 1.0);
+                float sphereDistance = sdSphere(p, float3(0, 0, 0.5), 1.0);
 
                 
-                float boxDistance = sdBox(p, float3(0, 1, 6), float3(0.75, 0.75, 0.75));
+                float boxDistance = sdBox(p, float3(0, 0, 0.5), float3(0.75, 0.75, 0.75));
 
                 float totalDistance = max(-sphereDistance, boxDistance);
                 
@@ -130,14 +148,15 @@ Shader "Custom/RayMarcher"
             float repeated(float3 p, float s )
             {
                 // Return the SDF for each integer
-                float3 r = p - s*round(p / s);
+                float3 r = p - s * round(p / s);
                 return sdBoxWithSphereHole(r);
             }
 
             float GetDistance(float3 p)
             {
-                float totalDistance = repeated(p, 25);
-
+                float padding = 8;
+                float totalDistance = repeated(p, padding);
+                //float totalDistance = sdBoxWithSphereHole(p);
 
                 return totalDistance;
             }
@@ -197,14 +216,41 @@ Shader "Custom/RayMarcher"
                 return dif;
             }
 
+            float3 GetCameraRayDirection(float2 uv)
+            {
+                float3 forward = normalize(_CamDir);
+                float3 right = normalize(cross(normalize(_CamUp), forward));
+                float3 up = cross(forward, right);
+
+                float slideT = smoothstep(_ScareSlideStart, 1.0, saturate(_ScareProgress));
+                float3 rayOrigin = _CamPos + forward * (_ScareSlideDistance * slideT);
+
+                float fovScale = tan(radians(_CamFov) * 0.5);
+                float2 screen = float2(uv.x * _CamAspect, uv.y) * fovScale;
+                float3 rayDirection = normalize(forward + right * screen.x + up * screen.y);
+                return rayDirection;
+            }
+
+            float3 GetCameraRayOrigin(float2 uv)
+            {
+                float3 forward = normalize(_CamDir);
+                float slideT = smoothstep(_ScareSlideStart, 1.0, saturate(_ScareProgress));
+                float3 rayOrigin = _CamPos + forward * (_ScareSlideDistance * slideT);
+
+                return rayOrigin;
+            }
+
             // --- Frag Shader ---
             fixed4 frag(Varyings IN) : SV_Target
             {
                 fixed4 color = fixed4(0, 0, 0, 1);
 
-                // Simple Camera Model
-                float3 rayOrigin = float3(0, 2, 0);
-                float3 rayDirection = normalize(float3(IN.uv.x, IN.uv.y - .2, 1));
+                // // Simple Camera Model
+                // float3 rayOrigin = float3(0, 2, 0);
+                // float3 rayDirection = normalize(float3(IN.uv.x, IN.uv.y - .2, 1));
+
+                float3 rayOrigin = GetCameraRayOrigin(IN.uv);
+                float3 rayDirection = GetCameraRayDirection(IN.uv);
 
 
                 // Ray Intersection
