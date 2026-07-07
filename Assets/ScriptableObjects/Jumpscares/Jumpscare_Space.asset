@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b69c5c9e54dd4337b0d267fefb07db70, type: 3}
-  m_Name: Jumpscare_Laugh
+  m_Name: Jumpscare_Space
   m_EditorClassIdentifier: 
-  scareImage: {fileID: 21300000, guid: 3c550f6025b2051758fcec6c6432dea4, type: 3}
-  scareMaterial: {fileID: 2100000, guid: 670d54e4c6fb2595fa84718479244cf2, type: 2}
+  scareImage: {fileID: 0}
+  scareMaterial: {fileID: 2100000, guid: 790c715e03fa061478f4ededc56c8c72, type: 2}
   shaderProgressProperty: _ScareProgress
   scareAudio: {fileID: 11400000, guid: e37e396afe2f40fca38469eba60ae780, type: 2}
   fadeInDuration: 0.05

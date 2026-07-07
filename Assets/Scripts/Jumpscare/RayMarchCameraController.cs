@@ -3,6 +3,12 @@ using UnityEngine.UI;
 
 public sealed class RayMarchCameraController : MonoBehaviour
 {
+    private static readonly int CamPosId = Shader.PropertyToID("_CamPos");
+    private static readonly int CamDirId = Shader.PropertyToID("_CamDir");
+    private static readonly int CamUpId = Shader.PropertyToID("_CamUp");
+    private static readonly int CamFovId = Shader.PropertyToID("_CamFov");
+    private static readonly int CamAspectId = Shader.PropertyToID("_CamAspect");
+
     [SerializeField] private Material targetMaterial;
     [SerializeField] private Graphic targetGraphic;
 
@@ -22,14 +28,7 @@ public sealed class RayMarchCameraController : MonoBehaviour
 
     private void Update()
     {
-        if (rotationInput)
-        {
-            yaw += Input.GetAxisRaw("Mouse X") * mouseSensitivity;
-            pitch -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
-            pitch = Mathf.Clamp(pitch, -85f, 85f);
-        }
-
-        Quaternion rotation = Quaternion.Euler(pitch, yaw, 0f);
+        Quaternion rotation = GetInputRotation();
 
         if (positionInput)
         {
@@ -37,21 +36,48 @@ public sealed class RayMarchCameraController : MonoBehaviour
             position += rotation * move.normalized * (moveSpeed * Time.deltaTime);
         }
 
-        PushCamera(rotation);
+        PushCamera(Material, GetTargetAspect());
     }
 
-    private void PushCamera(Quaternion rotation)
+    public void PushCamera(Material material, float aspect)
     {
-        Material material = Material;
         if (material == null)
         {
             return;
         }
 
-        material.SetVector("_CamPos", position);
-        material.SetVector("_CamDir", rotation * Vector3.forward);
-        material.SetVector("_CamUp", rotation * Vector3.up);
-        material.SetFloat("_CamFov", fov);
-        material.SetFloat("_CamAspect", Screen.width / Mathf.Max(1f, (float)Screen.height));
+        Quaternion rotation = Quaternion.Euler(pitch, yaw, 0f);
+
+        material.SetVector(CamPosId, position);
+        material.SetVector(CamDirId, rotation * Vector3.forward);
+        material.SetVector(CamUpId, rotation * Vector3.up);
+        material.SetFloat(CamFovId, fov);
+        material.SetFloat(CamAspectId, aspect);
+    }
+
+    private Quaternion GetInputRotation()
+    {
+        if (rotationInput)
+        {
+            yaw += Input.GetAxisRaw("Mouse X") * mouseSensitivity;
+            pitch -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
+            pitch = Mathf.Clamp(pitch, -85f, 85f);
+        }
+
+        return Quaternion.Euler(pitch, yaw, 0f);
+    }
+
+    private float GetTargetAspect()
+    {
+        if (targetGraphic != null)
+        {
+            Rect rect = targetGraphic.rectTransform.rect;
+            if (rect.height > 0f)
+            {
+                return rect.width / rect.height;
+            }
+        }
+
+        return Screen.width / Mathf.Max(1f, (float)Screen.height);
     }
 }

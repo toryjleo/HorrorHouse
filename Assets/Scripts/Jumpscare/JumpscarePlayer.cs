@@ -11,6 +11,10 @@ public sealed class JumpscarePlayer : MonoBehaviour
     [SerializeField] private Image overlayImage;
     [SerializeField] private CanvasGroup overlayCanvasGroup;
 
+    [Header("Ray March Camera")]
+    [SerializeField] private RayMarchCameraController rayMarchCameraController;
+    [SerializeField] private bool driveRayMarchCamera = true;
+
     public static JumpscarePlayer Instance { get; private set; }
 
     private Material runtimeMaterial;
@@ -84,12 +88,14 @@ public sealed class JumpscarePlayer : MonoBehaviour
 
             overlayCanvasGroup.alpha = EvaluateAlpha(elapsed, totalDuration, fadeInDuration, fadeOutDuration);
             SetShaderProgress(data, progress);
+            PushRayMarchCamera();
 
             yield return null;
         }
 
         overlayCanvasGroup.alpha = fadeOutDuration > 0f ? 0f : 1f;
         SetShaderProgress(data, 1f);
+        PushRayMarchCamera();
 
         HideOverlay();
         FreezePlayer(false);
@@ -106,6 +112,7 @@ public sealed class JumpscarePlayer : MonoBehaviour
             runtimeMaterial = Instantiate(data.ScareMaterial);
             overlayImage.material = runtimeMaterial;
             SetShaderProgress(data, 0f);
+            PushRayMarchCamera();
         }
         else
         {
@@ -163,6 +170,27 @@ public sealed class JumpscarePlayer : MonoBehaviour
         }
 
         runtimeMaterial.SetFloat(data.ShaderProgressProperty, progress);
+    }
+
+    private void PushRayMarchCamera()
+    {
+        if (!driveRayMarchCamera || rayMarchCameraController == null || runtimeMaterial == null)
+        {
+            return;
+        }
+
+        rayMarchCameraController.PushCamera(runtimeMaterial, GetOverlayAspect());
+    }
+
+    private float GetOverlayAspect()
+    {
+        Rect rect = overlayImage.rectTransform.rect;
+        if (rect.height > 0f)
+        {
+            return rect.width / rect.height;
+        }
+
+        return Screen.width / Mathf.Max(1f, (float)Screen.height);
     }
 
     private void DestroyRuntimeMaterial()

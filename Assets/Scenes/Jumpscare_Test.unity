@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &221257566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 859594322}
   - component: {fileID: 859594321}
   - component: {fileID: 859594320}
+  - component: {fileID: 859594323}
   m_Layer: 0
   m_Name: '[Edit] JumpScarePlayer'
   m_TagString: Untagged
@@ -624,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96747462a1ba23a8fb6f82549453016c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  jumpscare: {fileID: 11400000, guid: 94bf9f2b9f684e2689452ec2d9043994, type: 2}
+  jumpscare: {fileID: 11400000, guid: 65d7803146f14893ab662b85c05d455d, type: 2}
 --- !u!114 &859594321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpscarePlayer
   overlayImage: {fileID: 1465645388}
   overlayCanvasGroup: {fileID: 1465645385}
+  rayMarchCameraController: {fileID: 0}
+  driveRayMarchCamera: 1
 --- !u!4 &859594322
 Transform:
   m_ObjectHideFlags: 0
@@ -654,6 +657,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &859594323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859594319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98397ea49f472be40bfaab9b2ead274b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RayMarchCameraController
+  targetMaterial: {fileID: 2100000, guid: 790c715e03fa061478f4ededc56c8c72, type: 2}
+  targetGraphic: {fileID: 1465645388}
+  position: {x: 0, y: 2, z: 0}
+  yaw: 0
+  pitch: 0
+  fov: 60
+  rotationInput: 1
+  positionInput: 0
+  mouseSensitivity: 1
+  moveSpeed: 3
 --- !u!1 &992748347
 GameObject:
   m_ObjectHideFlags: 0
