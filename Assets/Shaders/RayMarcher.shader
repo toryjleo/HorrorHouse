@@ -126,9 +126,17 @@ Shader "Custom/RayMarcher"
                 return totalDistance;
             }
 
+            // s - repeat space
+            float repeated(float3 p, float s )
+            {
+                // Return the SDF for each integer
+                float3 r = p - s*round(p / s);
+                return sdBoxWithSphereHole(r);
+            }
+
             float GetDistance(float3 p)
             {
-                float totalDistance = sdBoxWithSphereHole(p);
+                float totalDistance = repeated(p, 25);
 
 
                 return totalDistance;
