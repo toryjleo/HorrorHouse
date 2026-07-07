@@ -854,6 +854,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: sounds.Array.size
+      value: 82
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: 'sounds.Array.data[80]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a347a4fb0f4f28906bc0e1a37f5c1ef4, type: 2}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: 'sounds.Array.data[81]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e48e2fc976e55142ca5a41f8c223ee51, type: 2}
     - target: {fileID: 5011438939134509701, guid: 6409546c772906746be719df44f0ff85, type: 3}
       propertyPath: m_Name
       value: AK - Audio Manager

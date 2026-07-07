@@ -126,4 +126,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 637437c5c23e4c9ca8aac35881e14364, type: 2}
   - {fileID: 11400000, guid: 6eefbbe6d17541c39b5483ab836813a1, type: 2}
   - {fileID: 11400000, guid: 77ee27d3ff3942e5ad03e3f9680fc89d, type: 2}
+  - {fileID: 11400000, guid: e48e2fc976e55142ca5a41f8c223ee51, type: 2}
   mixerGroup: {fileID: 0}
