@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &221257566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,10 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   targetMaterial: {fileID: 2100000, guid: 790c715e03fa061478f4ededc56c8c72, type: 2}
   targetGraphic: {fileID: 308961292}
-  position: {x: 0, y: 2, z: 0}
   yaw: 0
   pitch: 0
-  fov: 60
   rotationInput: 1
   positionInput: 0
   mouseSensitivity: 0.15
@@ -671,10 +669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RayMarchCameraController
   targetMaterial: {fileID: 2100000, guid: 790c715e03fa061478f4ededc56c8c72, type: 2}
   targetGraphic: {fileID: 1465645388}
-  position: {x: 0, y: 2, z: 0}
   yaw: 0
   pitch: 0
-  fov: 60
   rotationInput: 1
   positionInput: 0
   mouseSensitivity: 1

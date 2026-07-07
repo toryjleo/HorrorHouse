@@ -13,10 +13,8 @@ public sealed class RayMarchCameraController : MonoBehaviour
     [SerializeField] private Graphic targetGraphic;
 
     [Header("Pose")]
-    [SerializeField] private Vector3 position = new Vector3(0f, 2f, 0f);
     [SerializeField] private float yaw;
     [SerializeField] private float pitch;
-    [SerializeField] private float fov = 60f;
 
     [Header("Input")]
     [SerializeField] private bool rotationInput = true;
@@ -33,7 +31,6 @@ public sealed class RayMarchCameraController : MonoBehaviour
         if (positionInput)
         {
             Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-            position += rotation * move.normalized * (moveSpeed * Time.deltaTime);
         }
 
         PushCamera(Material, GetTargetAspect());
@@ -48,10 +45,8 @@ public sealed class RayMarchCameraController : MonoBehaviour
 
         Quaternion rotation = Quaternion.Euler(pitch, yaw, 0f);
 
-        material.SetVector(CamPosId, position);
         material.SetVector(CamDirId, rotation * Vector3.forward);
         material.SetVector(CamUpId, rotation * Vector3.up);
-        material.SetFloat(CamFovId, fov);
         material.SetFloat(CamAspectId, aspect);
     }
 
