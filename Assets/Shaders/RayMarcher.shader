@@ -57,7 +57,6 @@ Shader "Custom/RayMarcher"
 
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
-            #include "Includes/SDF.cginc"
 
             struct Attributes
             {
@@ -100,21 +99,30 @@ Shader "Custom/RayMarcher"
             #define SHADOW_BIAS 0.02
             #define SHADOW_BRIGHTNESS 0.1
 
+
+            // Sphere centered at center with the given radius.
+            float sdSphere(float3 p, float3 center, float radius)
+            {
+                return length(p - center) - radius;
+            }
+
+            // Axis-aligned box centered at the origin with half-extents b.
+            float sdBox(float3 p, float3 center, float3 b)
+            {
+                p = p - center;
+                float3 q = abs(p) - b;
+                return length(max(q, 0.0)) + min(max(q.x, max(q.y, q.z)), 0.0);
+            }
+
             float GetDistance(float3 p)
             {
                 float sphereDistance = sdSphere(p, float3(0, 1, 6), 1.0);
-                float planeDistance = p.y;
 
-                float capsuleDistance = sdCapsule(p, float3(0, 1, 6), float3(1, 2, 6), 0.2);
-                float torusDistance = sdTorus(p - float3(0,.5,6), float2(1.5, 0.3));
-                float boxDistance = sdBox(p - float3(-3, .75, 6), float3(0.75, 0.75, 0.75));
-                float cylinderDistance = sdCylinder(p, float3(0, .3, 4), float3(3, .3, 5), 0.3);
+                
+                float boxDistance = sdBox(p, float3(0, 1, 6), float3(0.75, 0.75, 0.75));
 
-                float totalDistance = min(sphereDistance, planeDistance);
-                totalDistance = min(totalDistance, capsuleDistance);
-                totalDistance = min(totalDistance, torusDistance);
-                totalDistance = min(totalDistance, boxDistance);
-                totalDistance = min(totalDistance, cylinderDistance);
+                float totalDistance = min(sphereDistance, boxDistance);
+
 
                 return totalDistance;
             }
