@@ -114,14 +114,21 @@ Shader "Custom/RayMarcher"
                 return length(max(q, 0.0)) + min(max(q.x, max(q.y, q.z)), 0.0);
             }
 
-            float GetDistance(float3 p)
+            float sdBoxWithSphereHole(float3 p)
             {
                 float sphereDistance = sdSphere(p, float3(0, 1, 6), 1.0);
 
                 
                 float boxDistance = sdBox(p, float3(0, 1, 6), float3(0.75, 0.75, 0.75));
 
-                float totalDistance = min(sphereDistance, boxDistance);
+                float totalDistance = max(-sphereDistance, boxDistance);
+                
+                return totalDistance;
+            }
+
+            float GetDistance(float3 p)
+            {
+                float totalDistance = sdBoxWithSphereHole(p);
 
 
                 return totalDistance;
