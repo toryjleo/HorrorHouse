@@ -315,6 +315,7 @@ namespace AdventurePuzzleKit
             #endregion
 
             FieldNullCheck();
+            ConfigureExamineCloseButton();
 
             #region Post Processing Debug
 #if UNITY_EDITOR
@@ -638,7 +639,30 @@ namespace AdventurePuzzleKit
 
         public void CloseButton()
         {
-            _examinableItem.DropObject(true);
+            if (_examinableItem != null)
+            {
+                _examinableItem.DropObject(true);
+            }
+        }
+
+        private void ConfigureExamineCloseButton()
+        {
+            if (noUICloseButton == null) return;
+
+            Button closeButton = noUICloseButton.GetComponent<Button>();
+            if (closeButton == null)
+            {
+                closeButton = noUICloseButton.GetComponentInChildren<Button>(true);
+            }
+
+            if (closeButton == null)
+            {
+                Debug.LogWarning("NoUICloseButton is assigned, but no Button component was found on it or its children.");
+                return;
+            }
+
+            closeButton.onClick.RemoveListener(CloseButton);
+            closeButton.onClick.AddListener(CloseButton);
         }
         #endregion
 
