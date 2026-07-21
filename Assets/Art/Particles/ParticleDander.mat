@@ -25,6 +25,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _ALPHAMODULATE_ON
   - _ALPHATEST_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
@@ -131,7 +132,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 1
     - _AlphaToMask: 0
-    - _Blend: 2
+    - _Blend: 3
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
     - _BlendType: 0
@@ -152,7 +153,7 @@ Material:
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0.1
-    - _DstBlend: 1
+    - _DstBlend: 0
     - _DstBlendAlpha: 1
     - _EmissionEnabled: 0
     - _EnableMultipleLights: 1
@@ -183,8 +184,8 @@ Material:
     - _SourceBlend: 5
     - _SpecularHighlights: 1
     - _SpecularSetupToggle: 0
-    - _SrcBlend: 5
-    - _SrcBlendAlpha: 1
+    - _SrcBlend: 2
+    - _SrcBlendAlpha: 0
     - _Surface: 1
     - _SurfaceType: 1
     - _WorkflowMode: 1
