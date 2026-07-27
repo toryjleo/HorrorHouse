@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public sealed class RayMarchCameraController : MonoBehaviour
 {
-    private static readonly int CamPosId = Shader.PropertyToID("_CamPos");
+    //private static readonly int CamPosId = Shader.PropertyToID("_CamPos");
     private static readonly int CamDirId = Shader.PropertyToID("_CamDir");
     private static readonly int CamUpId = Shader.PropertyToID("_CamUp");
-    private static readonly int CamFovId = Shader.PropertyToID("_CamFov");
+    //private static readonly int CamFovId = Shader.PropertyToID("_CamFov");
     private static readonly int CamAspectId = Shader.PropertyToID("_CamAspect");
 
     [SerializeField] private Material targetMaterial;
@@ -18,20 +18,13 @@ public sealed class RayMarchCameraController : MonoBehaviour
 
     [Header("Input")]
     [SerializeField] private bool rotationInput = true;
-    [SerializeField] private bool positionInput = false;
     [SerializeField] private float mouseSensitivity = 0.15f;
-    [SerializeField] private float moveSpeed = 3f;
 
     private Material Material => targetGraphic != null ? targetGraphic.material : targetMaterial;
 
     private void Update()
     {
         Quaternion rotation = GetInputRotation();
-
-        if (positionInput)
-        {
-            Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        }
 
         PushCamera(Material, GetTargetAspect());
     }

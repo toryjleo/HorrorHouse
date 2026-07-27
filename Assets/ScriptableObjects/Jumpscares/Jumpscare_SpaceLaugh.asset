@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b69c5c9e54dd4337b0d267fefb07db70, type: 3}
-  m_Name: Jumpscare_Space
+  m_Name: Jumpscare_SpaceLaugh
   m_EditorClassIdentifier: 
   scareImage: {fileID: 0}
   scareMaterial: {fileID: 2100000, guid: 790c715e03fa061478f4ededc56c8c72, type: 2}
