@@ -79,7 +79,15 @@ public sealed class EndGameManager : MonoBehaviour
         // ── JUMPSCARE ─────────────────────────────────────────────────
         if (JumpscarePlayer.Instance != null)
         {
-            yield return JumpscarePlayer.Instance.PlayRandomJumpscare();
+            Coroutine jumpScare = JumpscarePlayer.Instance.PlayRandomJumpscare();
+            if (jumpScare != null)
+            {
+                yield return jumpScare;
+            }
+            else
+            {
+                FreezePlayer(false);
+            }
         }
         else
         {

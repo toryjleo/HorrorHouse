@@ -24,8 +24,6 @@ public sealed class RayMarchCameraController : MonoBehaviour
 
     private void Update()
     {
-        Quaternion rotation = GetInputRotation();
-
         PushCamera(Material, GetTargetAspect());
     }
 
