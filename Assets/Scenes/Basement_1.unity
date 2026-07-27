@@ -4025,6 +4025,7 @@ GameObject:
   - component: {fileID: 386804045}
   - component: {fileID: 386804046}
   - component: {fileID: 386804047}
+  - component: {fileID: 386804048}
   m_Layer: 0
   m_Name: EndGameManager
   m_TagString: Untagged
@@ -4064,7 +4065,6 @@ MonoBehaviour:
   splashDuration: 10
   glitchOverlayPanel: {fileID: 0}
   splashPanel: {fileID: 2010866470}
-  endGameJumpscare: {fileID: 11400000, guid: 65d7803146f14893ab662b85c05d455d, type: 2}
   endStinger: {fileID: 0}
   sceneManager: {fileID: 0}
 --- !u!114 &386804047
@@ -4081,6 +4081,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overlayImage: {fileID: 1377160097}
   overlayCanvasGroup: {fileID: 1377160096}
+  rayMarchCameraController: {fileID: 386804048}
+  driveRayMarchCamera: 1
+  endGameJumpscares:
+  - {fileID: 11400000, guid: 65d7803146f14893ab662b85c05d455d, type: 2}
+  - {fileID: 11400000, guid: 2b4d061babb24f4189768bbed11d2e77, type: 2}
+  - {fileID: 11400000, guid: 18e5c5fa1eab4d0c91f1549b7db14dd2, type: 2}
+  - {fileID: 11400000, guid: 94bf9f2b9f684e2689452ec2d9043994, type: 2}
+--- !u!114 &386804048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386804044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98397ea49f472be40bfaab9b2ead274b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RayMarchCameraController
+  targetMaterial: {fileID: 2100000, guid: 790c715e03fa061478f4ededc56c8c72, type: 2}
+  targetGraphic: {fileID: 1377160097}
+  yaw: 0
+  pitch: 0
+  rotationInput: 1
+  mouseSensitivity: 0.15
 --- !u!224 &386875553 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3918569237388303673, guid: 0ca6e80e09e226763a8be13a18057fde, type: 3}
@@ -18544,6 +18569,10 @@ PrefabInstance:
     - target: {fileID: 5823719645450592646, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
       propertyPath: m_Name
       value: Door Frame - Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823719645450592646, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5823719645450592646, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
       propertyPath: m_StaticEditorFlags
