@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69c5c9e54dd4337b0d267fefb07db70, type: 3}
+  m_Name: Jumpscare_SpaceLaugh
+  m_EditorClassIdentifier: 
+  scareImage: {fileID: 0}
+  scareMaterial: {fileID: 2100000, guid: 790c715e03fa061478f4ededc56c8c72, type: 2}
+  shaderProgressProperty: _ScareProgress
+  scareAudio: {fileID: 11400000, guid: e48e2fc976e55142ca5a41f8c223ee51, type: 2}
+  fadeInDuration: 0.05
+  fadeOutDuration: 0
+  showMouse: 0

@@ -12,8 +12,6 @@ public sealed class EndGameManager : MonoBehaviour
     // ── Phase durations ──────────────────────────────────────────────
     [Header("Phase Durations (seconds, real-time)")]
     [SerializeField] private float glitchDuration = 3f;
-    [SerializeField] private float jumpscareRampDuration = 0.35f;
-    [SerializeField] private float jumpscareHoldDuration = 0.15f;
     [SerializeField] private float breatherDuration = 5f;
     [SerializeField] private float splashDuration = 10f;
 
@@ -27,7 +25,6 @@ public sealed class EndGameManager : MonoBehaviour
 
     // ── Audio ─────────────────────────────────────────────────────────
     [Header("Audio")]
-    [SerializeField] private Sound jumpscareStinger;
     [SerializeField] private Sound endStinger;
 
     // ── Refs ──────────────────────────────────────────────────────────
@@ -74,16 +71,33 @@ public sealed class EndGameManager : MonoBehaviour
             SetActive(glitchOverlayPanel, true);
             StopAllGameAudio();
 
-            PlaySound(jumpscareStinger);
-
             yield return new WaitForSecondsRealtime(glitchDuration);
+
+            SetActive(glitchOverlayPanel, false);
+        }
+
+        // ── JUMPSCARE ─────────────────────────────────────────────────
+        if (JumpscarePlayer.Instance != null)
+        {
+            Coroutine jumpScare = JumpscarePlayer.Instance.PlayRandomJumpscare();
+            if (jumpScare != null)
+            {
+                yield return jumpScare;
+            }
+            else
+            {
+                FreezePlayer(false);
+            }
+        }
+        else
+        {
+            FreezePlayer(false);
         }
 
         // ── BREATHER ─────────────────────────────────────────────────
         if (breatherDuration > 0f)
         {
             SetActive(glitchOverlayPanel, false);
-            FreezePlayer(false);
 
             yield return new WaitForSecondsRealtime(breatherDuration);
         }
