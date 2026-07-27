@@ -15,6 +15,9 @@ public sealed class JumpscarePlayer : MonoBehaviour
     [SerializeField] private RayMarchCameraController rayMarchCameraController;
     [SerializeField] private bool driveRayMarchCamera = true;
 
+    [Header("End Game Jumpscares")]
+    [SerializeField] private JumpscareData[] endGameJumpscares;
+
     public static JumpscarePlayer Instance { get; private set; }
 
     private Material runtimeMaterial;
@@ -52,7 +55,25 @@ public sealed class JumpscarePlayer : MonoBehaviour
         return Instance.StartCoroutine(Instance.PlayRoutine(data));
     }
 
-    public IEnumerator PlayRoutine(JumpscareData data)
+    public Coroutine PlayRandomJumpscare()
+    {
+        if (Instance == null)
+        {
+            Debug.LogWarning($"{nameof(JumpscarePlayer)}.{nameof(PlayRandomJumpscare)} called, but no player exists in the scene.");
+            return null;
+        }
+
+        JumpscareData randomData = Instance.GetRandomJumpscare();
+        if (randomData == null)
+        {
+            Debug.LogWarning($"{nameof(JumpscarePlayer)}.{nameof(PlayRandomJumpscare)} called, but no endgame jumpscares are assigned.");
+            return null;
+        }
+
+        return Instance.StartCoroutine(Instance.PlayRoutine(randomData));
+    }
+
+    private IEnumerator PlayRoutine(JumpscareData data)
     {
         if (data == null)
         {
@@ -100,6 +121,16 @@ public sealed class JumpscarePlayer : MonoBehaviour
         HideOverlay();
         FreezePlayer(false);
         SetCursorVisible(false);
+    }
+
+    private JumpscareData GetRandomJumpscare()
+    {
+        if (endGameJumpscares == null || endGameJumpscares.Length == 0)
+        {
+            return null;
+        }
+
+        return endGameJumpscares[Random.Range(0, endGameJumpscares.Length)];
     }
 
     private void ShowOverlay(JumpscareData data)

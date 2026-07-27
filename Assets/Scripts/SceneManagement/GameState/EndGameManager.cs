@@ -23,10 +23,6 @@ public sealed class EndGameManager : MonoBehaviour
     [Tooltip("Company logo splash screen")]
     [SerializeField] private GameObject splashPanel;
 
-    // ── Jumpscare ─────────────────────────────────────────────────────
-    [Header("Jumpscare")]
-    [SerializeField] private JumpscareData endGameJumpscare;
-
     // ── Audio ─────────────────────────────────────────────────────────
     [Header("Audio")]
     [SerializeField] private Sound endStinger;
@@ -81,17 +77,12 @@ public sealed class EndGameManager : MonoBehaviour
         }
 
         // ── JUMPSCARE ─────────────────────────────────────────────────
-        if (endGameJumpscare != null && JumpscarePlayer.Instance != null)
+        if (JumpscarePlayer.Instance != null)
         {
-            yield return JumpscarePlayer.Instance.PlayRoutine(endGameJumpscare);
+            yield return JumpscarePlayer.Instance.PlayRandomJumpscare();
         }
         else
         {
-            if (endGameJumpscare != null)
-            {
-                Debug.LogWarning($"{nameof(EndGameManager)} has an endgame jumpscare assigned, but no {nameof(JumpscarePlayer)} exists in the scene.");
-            }
-
             FreezePlayer(false);
         }
 
