@@ -93,6 +93,9 @@ Shader "Custom/MyLit"
             // Additional lights + their shadows (needed for mixed/real-time shadowing beyond main light)
             #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
             #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS
+            // Forward+ uses a screen-space light list instead of the camera-dependent
+            // per-object light limit used by Forward rendering.
+            #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ EVALUATE_SH_MIXED EVALUATE_SH_VERTEX
 
             // Baked + mixed lighting (lightmaps / shadowmask)
