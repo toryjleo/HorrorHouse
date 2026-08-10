@@ -79,6 +79,7 @@ namespace AdventurePuzzleKit.ExamineSystem
         private AKUIManager akUIManager;
         private BoxCollider boxCollider;
         private int originalCullingMask;
+        private bool movingToExaminePoint;
         #endregion
 
         #region String Field References
@@ -199,6 +200,14 @@ namespace AdventurePuzzleKit.ExamineSystem
             }
         }
 
+        private void LateUpdate()
+        {
+            // Keep the item anchored to the camera while its height is still
+            // changing (for example during a crouch transition).
+            if (allowExamineInput && !movingToExaminePoint)
+                transform.position = GetExaminePosition(currentZoom);
+        }
+
         void ExamineInput()
         {
             if (!GameState.IsExamining) return;
@@ -248,7 +257,7 @@ namespace AdventurePuzzleKit.ExamineSystem
             PlayPickupSound();
             ResetZoomAndPosition(initialZoom);
             allowExamineInput = true;
-            StartCoroutine(MoveToPosition(transform, examinePoint.position, smoothExamineSpeed));
+            StartCoroutine(MoveToExaminePosition(transform, smoothExamineSpeed));
             HandleUI(true);
         }
 
@@ -333,9 +342,35 @@ namespace AdventurePuzzleKit.ExamineSystem
 
         private void ItemZoom(float value, bool moveSelf = true)
         {
-            // Adjust examine point distance
-            examinePoint.localPosition = new Vector3(horizontalOffset, verticalOffset, value);
-            if (moveSelf) transform.position = examinePoint.position;
+            // Use normalized camera axes. The player is non-uniformly scaled
+            // while crouching, which can skew a child transform's local offset.
+            if (moveSelf) transform.position = GetExaminePosition(value);
+        }
+
+        private Vector3 GetExaminePosition(float distance)
+        {
+            Transform cameraTransform = mainCamera.transform;
+            return cameraTransform.position
+                + cameraTransform.right * horizontalOffset
+                + cameraTransform.up * verticalOffset
+                + cameraTransform.forward * distance;
+        }
+
+        IEnumerator MoveToExaminePosition(Transform target, float duration)
+        {
+            // Re-evaluate the destination each frame so a crouch transition
+            // cannot leave the examined item behind in world space.
+            movingToExaminePoint = true;
+            float t = 0;
+            Vector3 start = target.position;
+            while (t < duration)
+            {
+                target.position = Vector3.Lerp(start, GetExaminePosition(currentZoom), t / duration);
+                t += Time.deltaTime;
+                yield return null;
+            }
+            target.position = GetExaminePosition(currentZoom);
+            movingToExaminePoint = false;
         }
 
         IEnumerator MoveToPosition(Transform target, Vector3 destination, float duration)
