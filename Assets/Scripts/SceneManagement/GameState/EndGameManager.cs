@@ -82,8 +82,6 @@ public sealed class EndGameManager : MonoBehaviour
         SetActive(splashPanel, true);
         PlaySound(endStinger);
 
-        // TODO: test
-
         if (endStinger != null && endStinger.clip != null)
         {
             splashDuration = endStinger.clip.length;
