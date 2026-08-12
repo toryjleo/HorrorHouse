@@ -24,6 +24,7 @@ public sealed class RayMarchCameraController : MonoBehaviour
 
     private void Update()
     {
+        UpdateInputRotation();
         PushCamera(Material, GetTargetAspect());
     }
 
@@ -41,7 +42,7 @@ public sealed class RayMarchCameraController : MonoBehaviour
         material.SetFloat(CamAspectId, aspect);
     }
 
-    private Quaternion GetInputRotation()
+    private void UpdateInputRotation()
     {
         if (rotationInput)
         {
@@ -49,8 +50,6 @@ public sealed class RayMarchCameraController : MonoBehaviour
             pitch -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
             pitch = Mathf.Clamp(pitch, -85f, 85f);
         }
-
-        return Quaternion.Euler(pitch, yaw, 0f);
     }
 
     private float GetTargetAspect()
