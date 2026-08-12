@@ -4073,11 +4073,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndGameController
   glitchDuration: 4
-  breatherDuration: 5
   splashDuration: 10
-  glitchOverlayPanel: {fileID: 0}
   splashPanel: {fileID: 2010866470}
-  endStinger: {fileID: 0}
+  endStinger: {fileID: 11400000, guid: e37e396afe2f40fca38469eba60ae780, type: 2}
   sceneManager: {fileID: 0}
 --- !u!114 &386804047
 MonoBehaviour:
@@ -15700,6 +15698,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: sounds.Array.size
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: 'sounds.Array.data[78]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e48e2fc976e55142ca5a41f8c223ee51, type: 2}
     - target: {fileID: 5011438939134509701, guid: 6409546c772906746be719df44f0ff85, type: 3}
       propertyPath: m_Name
       value: AK - Audio Manager

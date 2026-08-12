@@ -12,13 +12,10 @@ public sealed class EndGameManager : MonoBehaviour
     // ── Phase durations ──────────────────────────────────────────────
     [Header("Phase Durations (seconds, real-time)")]
     [SerializeField] private float glitchDuration = 3f;
-    [SerializeField] private float breatherDuration = 5f;
     [SerializeField] private float splashDuration = 10f;
 
     // ── UI panels ────────────────────────────────────────────────────
     [Header("UI Panels")]
-    [Tooltip("Full-screen glitch overlay (Not Responding dialog, scanlines, etc)")]
-    [SerializeField] private GameObject glitchOverlayPanel;
 
     [Tooltip("Company logo splash screen")]
     [SerializeField] private GameObject splashPanel;
@@ -36,7 +33,6 @@ public sealed class EndGameManager : MonoBehaviour
     private void Awake()
     {
         // Ensure all panels start hidden
-        SetActive(glitchOverlayPanel, false);
         SetActive(splashPanel, false);
     }
 
@@ -61,21 +57,8 @@ public sealed class EndGameManager : MonoBehaviour
         StartCoroutine(EndGameSequence());
     }
 
-    // ── The sequence ─────────────────────────────────────────────────
     private IEnumerator EndGameSequence()
     {
-        // ── GLITCH ───────────────────────────────────────────────────
-        if (glitchOverlayPanel != null)
-        {
-            FreezePlayer(true);
-            SetActive(glitchOverlayPanel, true);
-            StopAllGameAudio();
-
-            yield return new WaitForSecondsRealtime(glitchDuration);
-
-            SetActive(glitchOverlayPanel, false);
-        }
-
         // ── JUMPSCARE ─────────────────────────────────────────────────
         if (JumpscarePlayer.Instance != null)
         {
@@ -94,20 +77,17 @@ public sealed class EndGameManager : MonoBehaviour
             FreezePlayer(false);
         }
 
-        // ── BREATHER ─────────────────────────────────────────────────
-        if (breatherDuration > 0f)
-        {
-            SetActive(glitchOverlayPanel, false);
-
-            yield return new WaitForSecondsRealtime(breatherDuration);
-        }
-
         // ── SPLASH ───────────────────────────────────────────────────
         FreezePlayer(true);
-        SetActive(glitchOverlayPanel, false);
         SetActive(splashPanel, true);
         PlaySound(endStinger);
 
+        // TODO: test
+
+        if (endStinger != null && endStinger.clip != null)
+        {
+            splashDuration = endStinger.clip.length;
+        }
         yield return new WaitForSecondsRealtime(splashDuration);
 
         // ── QUIT ─────────────────────────────────────────────────────
