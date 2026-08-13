@@ -11130,6 +11130,92 @@ Transform:
   - {fileID: 1938184840}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1257195204
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1907076072}
+    m_Modifications:
+    - target: {fileID: 1043989093366971822, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: soundClip
+      value: 
+      objectReference: {fileID: 11400000, guid: d76fa5a4adb9da639b4389221b83924b, type: 2}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.49999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.474
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.031109253
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.992
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -270
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823719645450592646, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_Name
+      value: Door Frame - Exit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823719645450592646, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823719645450592646, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558030965546953129, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_Name
+      value: Exit Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558030965546953129, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558030965546953129, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 8558030965546953129, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
 --- !u!1001 &1275534432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11656,6 +11742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370422790}
   - component: {fileID: 1370422791}
+  - component: {fileID: 1370422792}
   m_Layer: 0
   m_Name: John Bishop - Fifth Ending
   m_TagString: Untagged
@@ -11689,7 +11776,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: b0d8ba1a8b31f9bf394c97c5f64cce17, type: 3}
+  m_Resource: {fileID: 8300000, guid: 982b640e77eae62bd92b943eeec3de37, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11699,7 +11786,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 7
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -11766,6 +11853,31 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!169 &1370422792
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370422789}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.022282856
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16181,6 +16293,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8665333972906161904, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
   m_PrefabInstance: {fileID: 1840269173}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1849111271 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2318662687657564063, guid: a3cf29e0890f7ab85ac984184974df76, type: 3}
+  m_PrefabInstance: {fileID: 1257195204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1866923473
 GameObject:
   m_ObjectHideFlags: 0
@@ -16882,6 +16999,7 @@ Transform:
   - {fileID: 1935134884}
   - {fileID: 1033325719}
   - {fileID: 1956331934}
+  - {fileID: 1849111271}
   - {fileID: 1650283040}
   - {fileID: 343779792}
   m_Father: {fileID: 1371578201}
