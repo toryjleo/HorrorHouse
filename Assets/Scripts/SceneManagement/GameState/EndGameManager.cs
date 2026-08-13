@@ -1,6 +1,7 @@
 using System.Collections;
 using AdventurePuzzleKit;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Orchestrates the endgame sequence: Glitch → Jumpscare → Breather → Splash → Quit.
@@ -28,6 +29,11 @@ public sealed class EndGameManager : MonoBehaviour
     [Header("Refs")]
     [SerializeField] private SceneManager sceneManager;
 
+    Coroutine endGameCouroutine = null;
+
+    [SerializeField] private UnityEvent fifthEndingEvent = null;
+    [SerializeField] private AudioSource fifthEndingSource = null;
+
     private bool hasStarted;
 
     private void Awake()
@@ -54,7 +60,7 @@ public sealed class EndGameManager : MonoBehaviour
         }
 
         hasStarted = true;
-        StartCoroutine(EndGameSequence());
+        endGameCouroutine = StartCoroutine(AlternateGameSequence());
     }
 
     private IEnumerator EndGameSequence()
@@ -77,6 +83,59 @@ public sealed class EndGameManager : MonoBehaviour
             FreezePlayer(false);
         }
 
+        // ── SPLASH ───────────────────────────────────────────────────
+        FreezePlayer(true);
+        SetActive(splashPanel, true);
+        PlaySound(endStinger);
+
+        if (endStinger != null && endStinger.clip != null)
+        {
+            splashDuration = endStinger.clip.length;
+        }
+        yield return new WaitForSecondsRealtime(splashDuration);
+
+        // ── QUIT ─────────────────────────────────────────────────────
+        Quit();
+    }
+
+    private IEnumerator AlternateGameSequence()
+    {
+
+        // ── Door close, John Bishop Track Started ─────────────────────────────────────────────────
+        // TODO: Test
+        if (fifthEndingEvent != null)
+        {
+            if (fifthEndingSource != null)
+            {
+                if (fifthEndingSource.clip != null)
+                {
+                    fifthEndingSource.gameObject.SetActive(true);
+                    float waitTime = fifthEndingSource.clip.length;
+                    fifthEndingSource.Play();
+
+                    fifthEndingEvent.Invoke(); // Close door, play sound effect
+
+                    yield return new WaitForSecondsRealtime(waitTime);
+                }
+                else
+                {
+                    Debug.LogWarning("Fifth Ending Audio Source does not have an audio clip assigned in EndGameManager.");
+                    FreezePlayer(false);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Fifth Ending Audio Source is not assigned in EndGameManager.");
+                FreezePlayer(false);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Fifth Ending Event is not assigned in EndGameManager.");
+            FreezePlayer(false);
+        }
+
+        // TODO: This is pretty standardized. Move to a function.
         // ── SPLASH ───────────────────────────────────────────────────
         FreezePlayer(true);
         SetActive(splashPanel, true);
