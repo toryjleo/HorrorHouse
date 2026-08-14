@@ -82,9 +82,17 @@ public sealed class EndGameManager : MonoBehaviour
         {
             endGameCouroutine = StartCoroutine(EndGameSequence());
         }
+    }
 
+    public void InterruptAndSplash()
+    {
+        if (endGameCouroutine != null)
+        {
+            StopCoroutine(endGameCouroutine);
+            endGameCouroutine = null;
+        }
 
-
+        endGameCouroutine = StartCoroutine(SplashSequence());
     }
 
     private IEnumerator EndGameSequence()
@@ -107,26 +115,14 @@ public sealed class EndGameManager : MonoBehaviour
             FreezePlayer(false);
         }
 
-        // ── SPLASH ───────────────────────────────────────────────────
-        FreezePlayer(true);
-        SetActive(splashPanel, true);
-        PlaySound(endStinger);
-
-        if (endStinger != null && endStinger.clip != null)
-        {
-            splashDuration = endStinger.clip.length;
-        }
-        yield return new WaitForSecondsRealtime(splashDuration);
-
-        // ── QUIT ─────────────────────────────────────────────────────
-        Quit();
+        yield return SplashSequence();
     }
 
     private IEnumerator AlternateGameSequence()
     {
 
         // ── Door close, John Bishop Track Started ─────────────────────────────────────────────────
-        // TODO: Test
+        // TODO: cleanup
         if (fifthEndingEvent != null)
         {
             if (fifthEndingSource != null)
@@ -159,7 +155,11 @@ public sealed class EndGameManager : MonoBehaviour
             FreezePlayer(false);
         }
 
-        // TODO: This is pretty standardized. Move to a function.
+        yield return SplashSequence();
+    }
+
+    private IEnumerator SplashSequence()
+    {
         // ── SPLASH ───────────────────────────────────────────────────
         FreezePlayer(true);
         SetActive(splashPanel, true);
