@@ -36,6 +36,16 @@ public sealed class EndGameManager : MonoBehaviour
 
     private bool hasStarted;
 
+    public bool pawnReturned { get; set; } = false;
+
+    // Pieces that are not a pawn.
+    private int numberOfOtherPiecesReturned { get; set; } = 0;
+
+    public void ReturnNonPawnPiece()
+    {
+        numberOfOtherPiecesReturned++;
+    }
+
     private void Awake()
     {
         // Ensure all panels start hidden
@@ -60,7 +70,21 @@ public sealed class EndGameManager : MonoBehaviour
         }
 
         hasStarted = true;
-        endGameCouroutine = StartCoroutine(AlternateGameSequence());
+
+        int threshold = pawnReturned ? 50 + (numberOfOtherPiecesReturned * 10) : 0; // Increase chance by 10% for each non-pawn piece returned
+        int roll = Random.Range(1, 101);
+
+        if (roll <= threshold)
+        {
+            endGameCouroutine = StartCoroutine(AlternateGameSequence());
+        }
+        else
+        {
+            endGameCouroutine = StartCoroutine(EndGameSequence());
+        }
+
+
+
     }
 
     private IEnumerator EndGameSequence()
