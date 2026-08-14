@@ -36,15 +36,10 @@ public sealed class EndGameManager : MonoBehaviour
 
     private bool hasStarted;
 
+    // ── Fifth Ending Data ─────────────────────────────────────────────
     public bool pawnReturned { get; set; } = false;
 
-    // Pieces that are not a pawn.
     private int numberOfOtherPiecesReturned { get; set; } = 0;
-
-    public void ReturnNonPawnPiece()
-    {
-        numberOfOtherPiecesReturned++;
-    }
 
     private void Awake()
     {
@@ -76,11 +71,11 @@ public sealed class EndGameManager : MonoBehaviour
 
         if (roll <= threshold)
         {
-            endGameCouroutine = StartCoroutine(AlternateGameSequence());
+            endGameCouroutine = StartCoroutine(FifthEnding());
         }
         else
         {
-            endGameCouroutine = StartCoroutine(EndGameSequence());
+            endGameCouroutine = StartCoroutine(RandomJumpscare());
         }
     }
 
@@ -92,10 +87,10 @@ public sealed class EndGameManager : MonoBehaviour
             endGameCouroutine = null;
         }
 
-        endGameCouroutine = StartCoroutine(SplashSequence());
+        endGameCouroutine = StartCoroutine(FinalSplashScreen());
     }
 
-    private IEnumerator EndGameSequence()
+    private IEnumerator RandomJumpscare()
     {
         // ── JUMPSCARE ─────────────────────────────────────────────────
         if (JumpscarePlayer.Instance != null)
@@ -115,14 +110,13 @@ public sealed class EndGameManager : MonoBehaviour
             FreezePlayer(false);
         }
 
-        yield return SplashSequence();
+        yield return FinalSplashScreen();
     }
 
-    private IEnumerator AlternateGameSequence()
+    private IEnumerator FifthEnding()
     {
 
         // ── Door close, John Bishop Track Started ─────────────────────────────────────────────────
-        // TODO: cleanup
         if (fifthEndingEvent != null)
         {
             if (fifthEndingSource != null)
@@ -155,10 +149,11 @@ public sealed class EndGameManager : MonoBehaviour
             FreezePlayer(false);
         }
 
-        yield return SplashSequence();
+        yield return FinalSplashScreen();
     }
 
-    private IEnumerator SplashSequence()
+
+    private IEnumerator FinalSplashScreen()
     {
         // ── SPLASH ───────────────────────────────────────────────────
         FreezePlayer(true);
@@ -175,7 +170,13 @@ public sealed class EndGameManager : MonoBehaviour
         Quit();
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────
+    #region  Helpers
+
+    public void ReturnNonPawnPiece()
+    {
+        numberOfOtherPiecesReturned++;
+    }
+
     private void FreezePlayer(bool freeze)
     {
         if (AKDisableManager.instance != null)
@@ -215,6 +216,7 @@ public sealed class EndGameManager : MonoBehaviour
             sceneManager.EndGame();
             return;
         }
+    #endregion
 
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
