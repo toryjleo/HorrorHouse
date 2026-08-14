@@ -29,10 +29,8 @@ public sealed class EndGameManager : MonoBehaviour
     [Header("Refs")]
     [SerializeField] private SceneManager sceneManager;
 
+    // ── Data Tracking ─────────────────────────────────────────────────
     Coroutine endGameCouroutine = null;
-
-    [SerializeField] private UnityEvent fifthEndingEvent = null;
-    [SerializeField] private AudioSource fifthEndingSource = null;
 
     private bool hasStarted;
 
@@ -40,6 +38,9 @@ public sealed class EndGameManager : MonoBehaviour
     public bool pawnReturned { get; set; } = false;
 
     private int numberOfOtherPiecesReturned { get; set; } = 0;
+    [SerializeField] private UnityEvent fifthEndingEvent = null;
+    [SerializeField] private AudioSource fifthEndingSource = null;
+
 
     private void Awake()
     {
