@@ -8561,7 +8561,7 @@ Transform:
   m_GameObject: {fileID: 925568869}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13856,7 +13856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: 'noteText.Array.data[0]'
-      value: "The order of the pieces left-to-right are: knight->bishop->king->pawn.
+      value: "The order of the pieces left-to-right are: knight->king->bishop->pawn.
         \nAnyone could figure it out with 24 combinations.\nGood luck! I am putting
         the pieces back and I\u2019m seeing what is on the other side.\n"
       objectReference: {fileID: 0}
@@ -20924,7 +20924,7 @@ Transform:
   m_GameObject: {fileID: 1217000227048088221}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
