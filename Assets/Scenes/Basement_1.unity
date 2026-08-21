@@ -11860,6 +11860,7 @@ GameObject:
   - component: {fileID: 1370422790}
   - component: {fileID: 1370422791}
   - component: {fileID: 1370422792}
+  - component: {fileID: 1370422793}
   m_Layer: 0
   m_Name: John Bishop - Fifth Ending
   m_TagString: Untagged
@@ -11893,7 +11894,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 982b640e77eae62bd92b943eeec3de37, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9ab40e57693095d8b963b66872981a82, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11903,10 +11904,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 7
-  MaxDistance: 500
+  MinDistance: 6
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -11994,7 +11995,7 @@ AudioLowPassFilter:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.022282856
+      value: 0.039017737
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -12004,6 +12005,19 @@ AudioLowPassFilter:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!168 &1370422793
+AudioEchoFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370422789}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Delay: 50
+  m_DecayRatio: 0.2
+  m_WetMix: 0.1
+  m_DryMix: 1
 --- !u!1 &1371578200
 GameObject:
   m_ObjectHideFlags: 0
