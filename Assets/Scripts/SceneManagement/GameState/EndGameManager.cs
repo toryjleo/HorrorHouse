@@ -1,6 +1,7 @@
 using System.Collections;
 using AdventurePuzzleKit;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Orchestrates the endgame sequence: Glitch → Jumpscare → Breather → Splash → Quit.
@@ -28,7 +29,18 @@ public sealed class EndGameManager : MonoBehaviour
     [Header("Refs")]
     [SerializeField] private SceneManager sceneManager;
 
+    // ── Data Tracking ─────────────────────────────────────────────────
+    Coroutine endGameCouroutine = null;
+
     private bool hasStarted;
+
+    // ── Fifth Ending Data ─────────────────────────────────────────────
+    public bool pawnReturned { get; set; } = false;
+
+    private int numberOfOtherPiecesReturned { get; set; } = 0;
+    [SerializeField] private UnityEvent fifthEndingEvent = null;
+    [SerializeField] private AudioSource fifthEndingSource = null;
+
 
     private void Awake()
     {
@@ -54,10 +66,32 @@ public sealed class EndGameManager : MonoBehaviour
         }
 
         hasStarted = true;
-        StartCoroutine(EndGameSequence());
+
+        int threshold = pawnReturned ? 50 + (numberOfOtherPiecesReturned * 10) : 0; // Increase chance by 10% for each non-pawn piece returned
+        int roll = Random.Range(1, 101);
+
+        if (roll <= threshold)
+        {
+            endGameCouroutine = StartCoroutine(FifthEnding());
+        }
+        else
+        {
+            endGameCouroutine = StartCoroutine(RandomJumpscare());
+        }
     }
 
-    private IEnumerator EndGameSequence()
+    public void InterruptAndSplash()
+    {
+        if (endGameCouroutine != null)
+        {
+            StopCoroutine(endGameCouroutine);
+            endGameCouroutine = null;
+        }
+
+        endGameCouroutine = StartCoroutine(FinalSplashScreen());
+    }
+
+    private IEnumerator RandomJumpscare()
     {
         // ── JUMPSCARE ─────────────────────────────────────────────────
         if (JumpscarePlayer.Instance != null)
@@ -77,6 +111,51 @@ public sealed class EndGameManager : MonoBehaviour
             FreezePlayer(false);
         }
 
+        yield return FinalSplashScreen();
+    }
+
+    private IEnumerator FifthEnding()
+    {
+
+        // ── Door close, John Bishop Track Started ─────────────────────────────────────────────────
+        if (fifthEndingEvent != null)
+        {
+            if (fifthEndingSource != null)
+            {
+                if (fifthEndingSource.clip != null)
+                {
+                    fifthEndingSource.gameObject.SetActive(true);
+                    float waitTime = fifthEndingSource.clip.length;
+                    fifthEndingSource.Play();
+
+                    fifthEndingEvent.Invoke(); // Close door, play sound effect
+
+                    yield return new WaitForSecondsRealtime(waitTime);
+                }
+                else
+                {
+                    Debug.LogWarning("Fifth Ending Audio Source does not have an audio clip assigned in EndGameManager.");
+                    FreezePlayer(false);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Fifth Ending Audio Source is not assigned in EndGameManager.");
+                FreezePlayer(false);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Fifth Ending Event is not assigned in EndGameManager.");
+            FreezePlayer(false);
+        }
+
+        yield return FinalSplashScreen();
+    }
+
+
+    private IEnumerator FinalSplashScreen()
+    {
         // ── SPLASH ───────────────────────────────────────────────────
         FreezePlayer(true);
         SetActive(splashPanel, true);
@@ -92,7 +171,13 @@ public sealed class EndGameManager : MonoBehaviour
         Quit();
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────
+    #region  Helpers
+
+    public void ReturnNonPawnPiece()
+    {
+        numberOfOtherPiecesReturned++;
+    }
+
     private void FreezePlayer(bool freeze)
     {
         if (AKDisableManager.instance != null)
@@ -132,6 +217,7 @@ public sealed class EndGameManager : MonoBehaviour
             sceneManager.EndGame();
             return;
         }
+    #endregion
 
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

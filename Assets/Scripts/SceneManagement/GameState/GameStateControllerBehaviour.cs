@@ -55,7 +55,7 @@ public sealed class GameStateControllerBehaviour : MonoBehaviour
 
     public void TogglePause()
     {
-        if (controller == null)
+        if (controller == null || controller.CurrentState == controller.endGameState)
         {
             return;
         }
