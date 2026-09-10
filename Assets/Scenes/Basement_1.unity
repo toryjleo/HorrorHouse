@@ -350,7 +350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1959746011091302679, guid: 57838c69dd7d3c0428cde17fafcaf238, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.644979
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1959746011091302679, guid: 57838c69dd7d3c0428cde17fafcaf238, type: 3}
       propertyPath: m_LocalPosition.y
@@ -358,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1959746011091302679, guid: 57838c69dd7d3c0428cde17fafcaf238, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.16909027
+      value: -1.311
       objectReference: {fileID: 0}
     - target: {fileID: 1959746011091302679, guid: 57838c69dd7d3c0428cde17fafcaf238, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3262,6 +3262,32 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a6a36354f6271e4aa68d1fc1da0b549, type: 3}
+--- !u!1 &331555813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3087298709611234441, guid: c64715f018568924cbb304343889d52f, type: 3}
+  m_PrefabInstance: {fileID: 1674186659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &331555824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331555813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.AKItem
+  _systemType: 16
+  highlightName: Change Name Here
+  showNameHighlight: 0
+  showInteractPrompt: 1
+  showPickupPrompt: 0
+  showExaminePrompt: 0
+  showEmissionHighlight: 0
+  isEmptyParent: 0
+  includeChildrenWithParentMesh: 0
 --- !u!1001 &333559039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3829,7 +3855,6 @@ Transform:
   - {fileID: 521695174}
   - {fileID: 1073337294}
   - {fileID: 200418231}
-  - {fileID: 2135130334}
   - {fileID: 215319201}
   - {fileID: 143598610}
   m_Father: {fileID: 1866923474}
@@ -5131,14 +5156,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1988327862069430728, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
-      propertyPath: m_Size.y
-      value: 0.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988327862069430728, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3824051045303833837, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.513
@@ -5182,18 +5199,6 @@ PrefabInstance:
     - target: {fileID: 4492923947758358103, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
       propertyPath: m_Name
       value: Side_table_A
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140335585621006445, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8608434027243979196, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
-      propertyPath: m_Size.y
-      value: -0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8608434027243979196, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
-      propertyPath: m_Center.y
-      value: 0.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10516,11 +10521,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1775417946842031306, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.83
+      value: 0.705
       objectReference: {fileID: 0}
     - target: {fileID: 2596078921204289158, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
       propertyPath: m_Name
       value: Wardrobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122320064965231464, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
+      propertyPath: objectOpen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3408363633798976572, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10965,6 +10974,32 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 906737154d1ffda45adc790b4b56d85b, type: 3}
+--- !u!1 &1234638664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3543300001389118651, guid: c64715f018568924cbb304343889d52f, type: 3}
+  m_PrefabInstance: {fileID: 1674186659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1234638675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234638664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.AKItem
+  _systemType: 16
+  highlightName: Change Name Here
+  showNameHighlight: 0
+  showInteractPrompt: 1
+  showPickupPrompt: 0
+  showExaminePrompt: 0
+  showEmissionHighlight: 0
+  isEmptyParent: 0
+  includeChildrenWithParentMesh: 0
 --- !u!1 &1246977569
 GameObject:
   m_ObjectHideFlags: 0
@@ -11617,7 +11652,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 906737154d1ffda45adc790b4b56d85b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.047
+      value: 2.302021
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906737154d1ffda45adc790b4b56d85b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11625,7 +11660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906737154d1ffda45adc790b4b56d85b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.8269997
+      value: 2.68509
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906737154d1ffda45adc790b4b56d85b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11771,6 +11806,32 @@ Transform:
   - {fileID: 1025478914}
   m_Father: {fileID: 379043681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1352618158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6877162482330262740, guid: c64715f018568924cbb304343889d52f, type: 3}
+  m_PrefabInstance: {fileID: 1674186659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1352618169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352618158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.AKItem
+  _systemType: 16
+  highlightName: Change Name Here
+  showNameHighlight: 0
+  showInteractPrompt: 1
+  showPickupPrompt: 0
+  showExaminePrompt: 0
+  showEmissionHighlight: 0
+  isEmptyParent: 0
+  includeChildrenWithParentMesh: 0
 --- !u!4 &1356207031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3392702248372572944, guid: f263c001cf2d04422a18db22f4fe5ad9, type: 3}
@@ -14904,6 +14965,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1866923474}
     m_Modifications:
+    - target: {fileID: 277575953370115661, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3087298709611234441, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543300001389118651, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854752934045633209, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
     - target: {fileID: 5024699712663345848, guid: c64715f018568924cbb304343889d52f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.168
@@ -14956,6 +15033,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5675098e7ed6c1a91ae6cc6b960997e3, type: 2}
+    - target: {fileID: 6877162482330262740, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -14972,9 +15053,24 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 447210405996956641}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4854752934045633209, guid: c64715f018568924cbb304343889d52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1794126203}
+    - targetCorrespondingSourceObject: {fileID: 3087298709611234441, guid: c64715f018568924cbb304343889d52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 331555824}
+    - targetCorrespondingSourceObject: {fileID: 277575953370115661, guid: c64715f018568924cbb304343889d52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2134366082}
+    - targetCorrespondingSourceObject: {fileID: 6877162482330262740, guid: c64715f018568924cbb304343889d52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1352618169}
     - targetCorrespondingSourceObject: {fileID: 6155804093231708905, guid: c64715f018568924cbb304343889d52f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 455948382}
+    - targetCorrespondingSourceObject: {fileID: 3543300001389118651, guid: c64715f018568924cbb304343889d52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1234638675}
   m_SourcePrefab: {fileID: 100100000, guid: c64715f018568924cbb304343889d52f, type: 3}
 --- !u!1001 &1677282990
 PrefabInstance:
@@ -15329,63 +15425,6 @@ Transform:
   - {fileID: 372818476}
   m_Father: {fileID: 425729357}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1736558774
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 370164446}
-    m_Modifications:
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.1170001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.67752635
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.052000046
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99809396
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.014876104
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.059892684
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.00024337579
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 6.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7665499565621703947, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-      propertyPath: m_Name
-      value: Painting_B
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
 --- !u!1001 &1755967187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15906,6 +15945,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4448143169569222721, guid: 83d39c8600530b3d5a228318c01da109, type: 3}
   m_PrefabInstance: {fileID: 1787571604}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1794126192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4854752934045633209, guid: c64715f018568924cbb304343889d52f, type: 3}
+  m_PrefabInstance: {fileID: 1674186659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1794126203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794126192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.AKItem
+  _systemType: 16
+  highlightName: Change Name Here
+  showNameHighlight: 0
+  showInteractPrompt: 1
+  showPickupPrompt: 0
+  showExaminePrompt: 0
+  showEmissionHighlight: 0
+  isEmptyParent: 0
+  includeChildrenWithParentMesh: 0
 --- !u!1 &1803604851
 GameObject:
   m_ObjectHideFlags: 0
@@ -19142,11 +19207,32 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64751501ad4ca2344ac483fd02a00bc5, type: 3}
---- !u!4 &2135130334 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7001553230844571569, guid: 646bb47310b8d5a41a9b42e5a7b2cb12, type: 3}
-  m_PrefabInstance: {fileID: 1736558774}
+--- !u!1 &2134366071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 277575953370115661, guid: c64715f018568924cbb304343889d52f, type: 3}
+  m_PrefabInstance: {fileID: 1674186659}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2134366082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134366071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.AKItem
+  _systemType: 16
+  highlightName: Change Name Here
+  showNameHighlight: 0
+  showInteractPrompt: 1
+  showPickupPrompt: 0
+  showExaminePrompt: 0
+  showEmissionHighlight: 0
+  isEmptyParent: 0
+  includeChildrenWithParentMesh: 0
 --- !u!1001 &2138229909
 PrefabInstance:
   m_ObjectHideFlags: 0
