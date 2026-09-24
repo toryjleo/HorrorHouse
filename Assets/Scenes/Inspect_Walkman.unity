@@ -11006,6 +11006,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 692293206072521988, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_Name
+      value: Right Volume
+      objectReference: {fileID: 0}
     - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.194
@@ -11046,6 +11050,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1630491760434830754, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_Name
+      value: Left Volume
+      objectReference: {fileID: 0}
     - target: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
       propertyPath: m_Name
       value: Walkman_Clean
@@ -11053,6 +11061,30 @@ PrefabInstance:
     - target: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
       propertyPath: m_TagString
       value: InteractiveObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3363794897959230332, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_Name
+      value: Fast Forward
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061552393407498548, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_Name
+      value: Hot Line
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027140892442302608, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_Name
+      value: Reverse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517380973274102502, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_Name
+      value: Eject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899175359241820517, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_Name
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562531897315267677, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_Name
+      value: Tone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
