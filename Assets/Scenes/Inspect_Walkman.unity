@@ -1305,6 +1305,91 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6aef995e5b6bf04d9f046e29d490eda, type: 3}
+--- !u!1 &119358598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+  m_PrefabInstance: {fileID: 1207808412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &119358602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119358598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30e2ef9078add84ead075b008bf6543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ExamineSystem.ExaminableItem
+  initialRotationOffset: {x: 0, y: 0, z: 0}
+  horizontalOffset: 0
+  verticalOffset: 0
+  smoothExamineSpeed: 0.2
+  initialZoom: 0.6
+  zoomRange: {x: 0.4, y: 1}
+  zoomSensitivity: 0.1
+  rotationSpeed: 5
+  invertRotation: 0
+  _hasInspectPoints: 0
+  inspectPoints: []
+  pickupSound: {fileID: 0}
+  dropSound: {fileID: 0}
+  _UIType: 0
+  itemName: Tape Recorder
+  textSize: 32
+  fontType: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  fontColor: {r: 1, g: 1, b: 1, a: 1}
+  itemDescription: Testing testing
+  textSizeDesc: 30
+  fontTypeDesc: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  fontColorDesc: {r: 1, g: 1, b: 1, a: 1}
+  hasChildObjects: 1
+  _isCollectable: 0
+  removeInteractionCollider: 0
+  _systemType: 0
+--- !u!65 &119358603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119358598}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0015685133, y: 0.0005825727, z: 0.0023159597}
+  m_Center: {x: -0.00000081397593, y: 0.000012870119, z: -0.00028445624}
+--- !u!114 &119358604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119358598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164fb0d79cac46c4f8fdfa8fb8a9190c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.AKItem
+  _systemType: 0
+  highlightName: Change Name Here
+  showNameHighlight: 0
+  showInteractPrompt: 0
+  showPickupPrompt: 0
+  showExaminePrompt: 1
+  showEmissionHighlight: 0
+  isEmptyParent: 0
+  includeChildrenWithParentMesh: 0
 --- !u!1001 &131241003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10913,6 +10998,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207754402}
   m_CullTransparentMesh: 1
+--- !u!1001 &1207808412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.194
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.149
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.612
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352004408695242398, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_Name
+      value: Walkman_Clean
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 119358604}
+    - targetCorrespondingSourceObject: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 119358602}
+    - targetCorrespondingSourceObject: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 119358603}
+  m_SourcePrefab: {fileID: 100100000, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
 --- !u!1001 &1227024329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16768,6 +16923,34 @@ PrefabInstance:
     - target: {fileID: 2867797882646790455, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867797882646790455, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867797882646790455, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867797882646790455, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70215315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867797882646790455, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867797882646790455, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.71202594
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867797882646790455, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867797882646790455, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -269.2
       objectReference: {fileID: 0}
     - target: {fileID: 7920018926694573792, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -26021,3 +26204,4 @@ SceneRoots:
   - {fileID: 1387443469439345239}
   - {fileID: 5913235997654524614}
   - {fileID: 1370422790}
+  - {fileID: 1207808412}
