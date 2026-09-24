@@ -303,6 +303,88 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1949bbf2fd2f9b49a735ad0f0e13dc5, type: 3}
+--- !u!1 &10726501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 10726502}
+  - component: {fileID: 10726503}
+  - component: {fileID: 10726504}
+  m_Layer: 0
+  m_Name: Inspect-Play
+  m_TagString: InspectPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &10726502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10726501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1142480699}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &10726503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10726501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec014b729a6173428e08050b7fbe042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ExamineSystem.ExamineInspectPoint
+  inspectDescription: play?
+  specialInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 10726501}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &10726504
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10726501}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0001, y: 0.00015, z: 0.00022}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &12331700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30e2ef9078add84ead075b008bf6543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.ExamineSystem.ExaminableItem
-  initialRotationOffset: {x: 0, y: 0, z: 0}
+  initialRotationOffset: {x: -90, y: 180, z: 0}
   horizontalOffset: 0
   verticalOffset: 0
   smoothExamineSpeed: 0.2
@@ -1331,8 +1413,9 @@ MonoBehaviour:
   zoomSensitivity: 0.1
   rotationSpeed: 5
   invertRotation: 0
-  _hasInspectPoints: 0
-  inspectPoints: []
+  _hasInspectPoints: 1
+  inspectPoints:
+  - {fileID: 10726501}
   pickupSound: {fileID: 0}
   dropSound: {fileID: 0}
   _UIType: 0
@@ -1346,7 +1429,7 @@ MonoBehaviour:
   fontColorDesc: {r: 1, g: 1, b: 1, a: 1}
   hasChildObjects: 1
   _isCollectable: 0
-  removeInteractionCollider: 0
+  removeInteractionCollider: 1
   _systemType: 0
 --- !u!65 &119358603
 BoxCollider:
@@ -10399,6 +10482,11 @@ LightProbeGroup:
   - {x: -1, y: -1, z: 1}
   - {x: -1, y: -1, z: -1}
   m_Dering: 1
+--- !u!4 &1142480699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3306331575027728600, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+  m_PrefabInstance: {fileID: 1207808412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1143388341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11088,7 +11176,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3306331575027728600, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 10726502}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
       insertIndex: -1
