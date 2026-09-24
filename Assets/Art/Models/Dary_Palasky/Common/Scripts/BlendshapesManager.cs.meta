@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7559a5069a41456bb13733f51d7b87b8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 260512
+  packageName: Changeling_Girl
+  packageVersion: 1.1
+  assetPath: Assets/Changeling_Girl/Scripts/BlendshapesManager.cs
+  uploadId: 646733

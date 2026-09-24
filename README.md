@@ -1,6 +1,8 @@
 Included (inside Assets/Packages):
 Adventure Puzzle Kit
 AtmosphericHouse
+GarbageAndTrashProps
+PillsPack
 
 NOTE:
 remove line: `using PlasticPipe.PlasticProtocol.Messages;` from `AKUIManagerEditor.cs`
