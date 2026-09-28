@@ -364,6 +364,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 119358605}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Play
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &10726504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1473,6 +1485,28 @@ MonoBehaviour:
   showEmissionHighlight: 0
   isEmptyParent: 0
   includeChildrenWithParentMesh: 0
+--- !u!95 &119358605
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119358598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e09659a78c1825e6fabb7eab64b6c6fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &131241003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11144,7 +11178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
       propertyPath: m_Name
-      value: Walkman_Clean
+      value: _NoScreen_AnimationTest
       objectReference: {fileID: 0}
     - target: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
       propertyPath: m_TagString
@@ -11174,6 +11208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tone
       objectReference: {fileID: 0}
+    - target: {fileID: 9085518293378402561, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -11190,6 +11228,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 119358603}
+    - targetCorrespondingSourceObject: {fileID: 1839888072464589860, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 119358605}
   m_SourcePrefab: {fileID: 100100000, guid: a9f5c1c41a23851309350ea67072c47a, type: 3}
 --- !u!1001 &1227024329
 PrefabInstance:
