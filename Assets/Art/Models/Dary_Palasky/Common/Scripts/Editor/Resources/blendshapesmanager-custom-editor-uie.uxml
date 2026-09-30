@@ -1,0 +1,16 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Dary%20Palasky/Common/Scripts/Editor/Resources/blendshapesmanager-custom-editor-uie-style.uss?fileID=7433441132597879392&amp;guid=033c68974877ba74fadd2e5e7682999c&amp;type=3#blendshapesmanager-custom-editor-uie-style" />
+    <engine:VisualElement class="blendshapesmanager-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="transition_slider" binding-path="transition" label="Transition" class="blendshapesmanager-slider" />
+                <engine:FloatField value="0" binding-path="transition" class="blendshapesmanager-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Transition" name="transition-progress" binding-path="transition" class="blendshapesmanager-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:Foldout text="Show Advanced Options" value="false" binding-path="showAdvancedOptions">
+        <engine:Button text="Fetch Blendshapes Controllers from Children" name="fetch_button" />
+        <editor:PropertyField name="blendshapesmanager_list" binding-path="blendshapesControllers" label="Blendshapes Controllers" class="list-field" style="min-height: 130px; height: auto; margin-bottom: 0; margin-left: 4px;" />
+    </engine:Foldout>
+</engine:UXML>

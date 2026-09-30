@@ -1,0 +1,98 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Dary%20Palasky/Common/Scripts/Editor/Resources/transformationcontroller-custom-editor-uie-style.uss?fileID=7433441132597879392&amp;guid=dd236c606a03065478bcb3bae33856fc&amp;type=3#transformationcontroller-custom-editor-uie-style" />
+    <engine:VisualElement name="transform-eyes-section" class="transformationcontroller-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="transform_eyes_slider" binding-path="_transform_eyes" label="Transform Eyes" class="transformationcontroller-slider" />
+                <engine:FloatField value="0" binding-path="_transform_eyes" class="transformationcontroller-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Transform Eyes" binding-path="_transform_eyes" class="transformationcontroller-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:VisualElement name="disappearing-hair-a-section" class="transformationcontroller-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="disappearing_hair_a_slider" binding-path="_disappearing_hair_a" label="Disappearing Hair A" class="transformationcontroller-slider" />
+                <engine:FloatField value="0" binding-path="_disappearing_hair_a" class="transformationcontroller-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Disappearing Hair A" binding-path="_disappearing_hair_a" class="transformationcontroller-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:VisualElement name="disappearing-hair-b-section" class="transformationcontroller-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="disappearing_hair_b_slider" binding-path="_disappearing_hair_b" label="Disappearing Hair B" class="transformationcontroller-slider" />
+                <engine:FloatField value="0" binding-path="_disappearing_hair_b" class="transformationcontroller-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Disappearing Hair B" binding-path="_disappearing_hair_b" class="transformationcontroller-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:VisualElement name="veins-section" class="transformationcontroller-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="veins_slider" binding-path="_veins" label="Veins" class="transformationcontroller-slider" />
+                <engine:FloatField value="0" binding-path="_veins" class="transformationcontroller-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Veins" binding-path="_veins" class="transformationcontroller-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:VisualElement name="transform-section" class="transformationcontroller-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="transform_slider" binding-path="_transform" label="Transform" class="transformationcontroller-slider" />
+                <engine:FloatField value="0" binding-path="_transform" class="transformationcontroller-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Transform" binding-path="_transform" class="transformationcontroller-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:VisualElement name="human-roughness-section" class="transformationcontroller-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="human_roughness_slider" binding-path="_human_roughness" label="Human Roughness" class="transformationcontroller-slider" />
+                <engine:FloatField value="0" binding-path="_human_roughness" class="transformationcontroller-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Human Roughness" binding-path="_human_roughness" class="transformationcontroller-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:VisualElement name="cloth-roughness-section" class="transformationcontroller-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="cloth_roughness_slider" binding-path="_cloth_roughness" label="Cloth Roughness" class="transformationcontroller-slider" />
+                <engine:FloatField value="0" binding-path="_cloth_roughness" class="transformationcontroller-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Cloth Roughness" binding-path="_cloth_roughness" class="transformationcontroller-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:VisualElement name="veins-roughness-section" class="transformationcontroller-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="veins_roughness_slider" binding-path="_veins_roughness" label="Veins Roughness" class="transformationcontroller-slider" />
+                <engine:FloatField value="0" binding-path="_veins_roughness" class="transformationcontroller-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Veins Roughness" binding-path="_veins_roughness" class="transformationcontroller-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:VisualElement name="transform-roughness-section" class="transformationcontroller-property" style="flex-grow: 1;">
+        <engine:VisualElement class="slider-row" style="flex-grow: 1;">
+            <engine:VisualElement name="VisualElement" class="input-container" style="flex-grow: 1;">
+                <engine:Slider value="0" high-value="100" name="transform_roughness_slider" binding-path="_transform_roughness" label="Transform Roughness" class="transformationcontroller-slider" />
+                <engine:FloatField value="0" binding-path="_transform_roughness" class="transformationcontroller-float-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:ProgressBar value="0" title="Transform Roughness" binding-path="_transform_roughness" class="transformationcontroller-property-progress-bar" />
+    </engine:VisualElement>
+    <engine:Foldout text="Show Advanced Options" value="true" binding-path="showAdvancedOptions">
+        <engine:VisualElement style="flex-grow: 1; flex-direction: column; width: 100%; max-width: 100%; min-width: 100%;">
+            <engine:Toggle label="Show Transform Eyes Section" value="true" name="show-transform-eyes-section" binding-path="showTransformEyesSection" />
+            <engine:Toggle label="Show Disappearing Hair A Section" value="true" name="show-disappearing-hair-a-section" binding-path="showDisappearingHairASection" />
+            <engine:Toggle label="Show Disappearing Hair B Section" value="true" name="show-disappearing-hair-b-section" binding-path="showDisappearingHairBSection" />
+            <engine:Toggle label="Show Veins Section" value="true" name="show-veins-section" binding-path="showVeinsSection" />
+            <engine:Toggle label="Show Transform Section" value="true" name="show-transform-section" binding-path="showTransformSection" />
+            <engine:Toggle label="Show Human Roughness Section" value="true" name="show-human-roughness-section" binding-path="showHumanRoughnessSection" />
+            <engine:Toggle label="Show Cloth Roughness Section" value="true" name="show-cloth-roughness-section" binding-path="showClothRoughnessSection" />
+            <engine:Toggle label="Show Veins Roughness Section" value="true" name="show-veins-roughness-section" binding-path="showVeinsRoughnessSection" />
+            <engine:Toggle label="Show Transform Roughness Section" value="true" name="show-transform-roughness-section" binding-path="showTransformRoughnessSection" />
+        </engine:VisualElement>
+        <editor:PropertyField name="materials_list" binding-path="materials" label="Materials" class="list-field" style="min-height: 130px; height: auto; margin-bottom: 0; margin-left: 4px;" />
+    </engine:Foldout>
+</engine:UXML>
