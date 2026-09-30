@@ -25871,14 +25871,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 948937040}
     m_Modifications:
-    - target: {fileID: 2023326982945212740, guid: df9dfef1ed54ed229a301c2098c2bfd3, type: 3}
-      propertyPath: showExaminePrompt
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3216989264603607572, guid: df9dfef1ed54ed229a301c2098c2bfd3, type: 3}
-      propertyPath: inspectDescription
-      value: PLAY
-      objectReference: {fileID: 0}
     - target: {fileID: 5960413248672505679, guid: df9dfef1ed54ed229a301c2098c2bfd3, type: 3}
       propertyPath: m_Name
       value: _NoScreen_AnimationTest
