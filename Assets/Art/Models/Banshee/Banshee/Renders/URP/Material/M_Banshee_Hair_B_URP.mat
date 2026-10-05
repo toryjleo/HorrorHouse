@@ -244,7 +244,7 @@ Material:
     - _Disappearing_B_Hair: 0
     - _Disappearing_H_Hair: 0
     - _Disappearing_Hair_A: 0
-    - _Disappearing_Hair_B: 3.5
+    - _Disappearing_Hair_B: 0.115499996
     - _DstBlend: 0
     - _Float8: 0.58
     - _GlossMapScale: 1
@@ -276,10 +276,10 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - RootColor: {r: 1, g: 1, b: 1, a: 1}
+    - RootColor: {r: 0.62706256, g: 0.3718045, b: 0.12085127, a: 1}
     - TipColor: {r: 1, g: 1, b: 1, a: 1}
     - _BansheeDissolveColor: {r: 0.49056602, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.6431373, g: 0.47843137, b: 0.36078432, a: 1}
     - _BloodColor: {r: 0.22745097, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorSkin_Human0: {r: 1, g: 1, b: 1, a: 0}

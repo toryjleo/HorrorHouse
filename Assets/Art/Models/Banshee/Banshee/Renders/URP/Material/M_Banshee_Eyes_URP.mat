@@ -8,11 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Banshee_Eyes_URP
-  m_Shader: {fileID: -6465566751694194690, guid: 14f9dcb222390db4ea62d5702d0810f1, type: 3}
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
+  - _ADDITIONAL_LIGHTS
   - _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -33,8 +34,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ClearCoatMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ClearCoatSmoothnessMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ColorBanshee:
         m_Texture: {fileID: 2800000, guid: 638d8eba89f943bfa67640619a7aa2f8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorTransform:
@@ -70,10 +83,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 638d8eba89f943bfa67640619a7aa2f8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetalnessMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -81,11 +98,23 @@ Material:
         m_Texture: {fileID: 2800000, guid: 3af7178eb6864e6ba6ce254013122e75, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SmoothnessMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -120,28 +149,44 @@ Material:
     m_Ints: []
     m_Floats:
     - _BansheeEyes: 0
+    - _BlendType: 0
     - _BumpScale: 1
+    - _ClearCoatSmoothness: 0
+    - _ClearCoatStrength: 0
     - _ColorEffect: 1.2
+    - _Cull: 2
     - _Cutoff: 0.5
+    - _DestBlend: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EmissionIntensity: 0
     - _EmissionIntensity1: 100
     - _EmissiveMaskSwitch: 0
     - _EnableEmissionMask: 0
+    - _EnableMultipleLights: 1
+    - _FaceRenderingMode: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
+    - _MetalnessStrength: 0
     - _Mode: 0
+    - _NormalStrength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ParallaxStrength: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _ReceiveShadows: 1
     - _Roughness: 0.941
+    - _RoughnessMapToggle: 0
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _SourceBlend: 1
     - _SpecularHighlights: 1
+    - _SpecularSetupToggle: 0
     - _SrcBlend: 1
+    - _SurfaceType: 0
     - _TransformEyes: 0
     - _UVSec: 0
     - _ZWrite: 1
@@ -154,9 +199,12 @@ Material:
     - _Color0: {r: 1, g: 0, b: 0, a: 0}
     - _ColorEffect: {r: 1, g: 0, b: 0, a: 0}
     - _ColorHumanEyes: {r: 1, g: 1, b: 1, a: 0}
+    - _ColorTint: {r: 1, g: 1, b: 1, a: 1}
     - _ColorTransformEyes: {r: 0.9245283, g: 0.83556426, b: 0.83556426, a: 0}
     - _EmissionColor: {r: 1.2676506e+30, g: 0, b: 0, a: 1}
     - _EmissionColor1: {r: 1, g: 0.072322346, b: 0, a: 1}
+    - _EmissionTint: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecularTint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3572812297519999476

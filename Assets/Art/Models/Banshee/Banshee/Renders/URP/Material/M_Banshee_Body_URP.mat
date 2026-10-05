@@ -165,7 +165,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HumanRoughness: 5.58
-    - _Human_Roughness: 0.8
+    - _Human_Roughness: 1.42
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -177,11 +177,11 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Transform: 0
-    - _Transform_Roughness: 0.74
+    - _Transform_Roughness: 1.12
     - _UVSec: 0
     - _Veins: 0
     - _VeinsRoughness: 0.737
-    - _Veins_Roughness: 0.63
+    - _Veins_Roughness: 0.235
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
