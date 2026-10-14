@@ -8611,7 +8611,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 779662215}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 1
   m_Dithering: 0
@@ -18688,6 +18688,14 @@ PrefabInstance:
     - target: {fileID: 2867797882646790455, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.342063
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076855518800822542, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076855518800822542, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
+      propertyPath: m_TaaSettings.m_ContrastAdaptiveSharpening
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7920018926694573792, guid: b40da2e8773a8674788b83279f1d07c2, type: 3}
       propertyPath: m_CullingMask.m_Bits
