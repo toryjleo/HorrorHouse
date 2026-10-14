@@ -55,20 +55,11 @@ namespace AdventurePuzzleKit
         private Camera mainCamera;            // Reference to main camera
         private float verticalRotation;       // Tracks up/down camera rotation
         private Vector3 currentMovement = Vector3.zero; // Full movement vector (incl. gravity)
-        private Vector3 standingCenter;
         private CharacterController characterController; // CharacterController component
 
         private void Awake()
         {
             characterController = GetComponent<CharacterController>();
-            // Establish one standing capsule before movement starts. Preserve its feet.
-            float originalBottom = characterController.center.y - characterController.height * 0.5f;
-            standHeight = Mathf.Max(standHeight, characterController.radius * 2f);
-            crouchHeight = Mathf.Clamp(crouchHeight, characterController.radius * 2f, standHeight);
-            standingCenter = characterController.center;
-            standingCenter.y = originalBottom + standHeight * 0.5f;
-            characterController.height = standHeight;
-            characterController.center = standingCenter;
             mainCamera = Camera.main;
             SetCameraHeight(cameraHeightOffset);
         }
@@ -76,12 +67,9 @@ namespace AdventurePuzzleKit
         private void Update()
         {
             // Handle player controls
-            if (canMove)
-            {
-                HandleCrouching();
-                HandleMovement();
-            }
+            if (canMove) HandleMovement();
             if (canRotate) HandleRotation();
+            HandleCrouching();
             HandleFootsteps();
         }
 
@@ -178,56 +166,59 @@ namespace AdventurePuzzleKit
             mainCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
         }
 
-        // Resize only the capsule; scaling the player also moves the camera and feet.
+        // Handles crouch toggle and transition
         void HandleCrouching()
         {
+            // If crouch is disabled, force standing height
             if (!canCrouch)
             {
-                if (isCrouching && CanStandUp()) isCrouching = false;
-            }
-            else if (Input.GetKeyDown(crouchKey))
-            {
-                if (!isCrouching) isCrouching = true;
-                else if (CanStandUp()) isCrouching = false;
-            }
-
-            float targetHeight = isCrouching ? crouchHeight : standHeight;
-            // Recheck throughout expansion in case we move under an obstruction.
-            if (targetHeight > characterController.height && !CanStandUp())
-            {
-                isCrouching = true;
-                targetHeight = crouchHeight;
-            }
-
-            float newHeight = Mathf.MoveTowards(characterController.height, targetHeight,
-                Time.deltaTime * Mathf.Max(0.01f, crouchTransitionSpeed));
-            if (newHeight != characterController.height)
-            {
-                characterController.height = newHeight;
-                Vector3 center = standingCenter;
-                center.y -= (standHeight - newHeight) * 0.5f;
-                characterController.center = center;
-            }
-
-            if (mainCamera != null)
-            {
-                Vector3 position = mainCamera.transform.localPosition;
-                float targetCameraHeight = cameraHeightOffset * (newHeight / standHeight);
-                // MoveTowards reaches its target exactly instead of drifting indefinitely.
-                float cameraY = Mathf.MoveTowards(position.y, targetCameraHeight,
-                    Time.deltaTime * Mathf.Max(0.01f, crouchTransitionSpeed));
-                if (cameraY != position.y)
+                if (isCrouching && CanStandUp())
                 {
-                    position.y = cameraY;
-                    mainCamera.transform.localPosition = position;
+                    isCrouching = false;
+                    characterController.height = standHeight;
+                    transform.localScale = new Vector3(1, 1, 1); // Reset scale
+                    SetCameraHeight(cameraHeightOffset); // Reset camera height
+                }
+                return;
+            }
+
+            // Toggle crouch state on key press
+            if (Input.GetKeyDown(crouchKey))
+            {
+                if (isCrouching)
+                {
+                    if (CanStandUp())
+                    {
+                        isCrouching = false;
+                    }
+                }
+                else
+                {
+                    isCrouching = true;
                 }
             }
+
+            // Smoothly transition height and scale
+            float targetHeight = isCrouching ? crouchHeight : standHeight;
+            float targetScale = isCrouching ? (crouchHeight / standHeight) : 1f;
+            float targetCameraHeight = isCrouching ? (cameraHeightOffset * targetScale) : cameraHeightOffset;
+            
+            characterController.height = Mathf.MoveTowards(characterController.height, targetHeight, Time.deltaTime * crouchTransitionSpeed);
+            Vector3 targetScaleVec = new Vector3(1, targetScale, 1);
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScaleVec, Time.deltaTime * crouchTransitionSpeed);
+            
+            // Adjust camera height based on crouch state
+            float currentCameraY = mainCamera.transform.localPosition.y;
+            float newCameraY = Mathf.Lerp(currentCameraY, targetCameraHeight, Time.deltaTime * crouchTransitionSpeed);
+            mainCamera.transform.localPosition = new Vector3(0, newCameraY, 0);
         }
 
         bool CanStandUp()
         {
             Bounds bounds = characterController.bounds;
-            float targetTop = bounds.min.y + (standHeight * Mathf.Abs(transform.lossyScale.y));
+            float currentLocalScaleY = Mathf.Max(transform.localScale.y, 0.0001f);
+            float parentScaleY = transform.lossyScale.y / currentLocalScaleY;
+            float targetTop = bounds.min.y + (standHeight * parentScaleY);
             float extraHeight = targetTop - bounds.max.y;
 
             if (extraHeight <= 0f)
