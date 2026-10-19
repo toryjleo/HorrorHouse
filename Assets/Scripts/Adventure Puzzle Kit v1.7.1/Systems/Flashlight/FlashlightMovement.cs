@@ -18,7 +18,7 @@ namespace AdventurePuzzleKit.FlashlightSystem
             set { _speed = value; }
         }
 
-        void Start()
+        void Awake()
         {
             myTransform = transform;
             followTransform = Camera.main.transform;
