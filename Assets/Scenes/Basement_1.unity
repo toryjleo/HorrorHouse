@@ -12006,6 +12006,14 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.07220027
       objectReference: {fileID: 0}
+    - target: {fileID: 1434499405040270960, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446232215382997958, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1775417946842031306, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.705
@@ -12013,6 +12021,10 @@ PrefabInstance:
     - target: {fileID: 2596078921204289158, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
       propertyPath: m_Name
       value: Wardrobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849748065578067136, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3122320064965231464, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
       propertyPath: objectOpen
@@ -12058,7 +12070,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9116331568713471785, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9116331568713471785, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
+    - {fileID: 2849748065578067136, guid: 97ffc7cd759d89f40b00ec63ad2990c7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
