@@ -56,6 +56,8 @@ namespace AdventurePuzzleKit
         private float verticalRotation;       // Tracks up/down camera rotation
         private Vector3 currentMovement = Vector3.zero; // Full movement vector (incl. gravity)
         private CharacterController characterController; // CharacterController component
+        private bool savedCursorVisible;      // Saved cursor visibility for cutscene lock
+        private CursorLockMode savedCursorLock; // Saved cursor lock mode for cutscene lock
 
         private void Awake()
         {
@@ -307,6 +309,32 @@ namespace AdventurePuzzleKit
             canRotate = !active;
 
             if (active && playerAudioSource != null && playerAudioSource.isPlaying)
+            {
+                playerAudioSource.Stop();
+            }
+        }
+
+        // Locks the player for cutscenes/intros: disables movement, hides cursor, stops audio.
+        // Unlike SetPlayerDisableMode, cursor is hidden and locked (not shown).
+        public void SetCutsceneLock(bool locked)
+        {
+            if (locked)
+            {
+                savedCursorVisible = Cursor.visible;
+                savedCursorLock = Cursor.lockState;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.visible = savedCursorVisible;
+                Cursor.lockState = savedCursorLock;
+            }
+
+            canMove = !locked;
+            canRotate = !locked;
+
+            if (locked && playerAudioSource != null && playerAudioSource.isPlaying)
             {
                 playerAudioSource.Stop();
             }

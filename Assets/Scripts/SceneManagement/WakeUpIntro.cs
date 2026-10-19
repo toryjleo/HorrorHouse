@@ -11,6 +11,7 @@ public sealed class WakeUpIntro : MonoBehaviour
     [SerializeField] private Camera gameplayCamera;
     [SerializeField] private Camera introCamera;
     [SerializeField] private Animator introAnimator;
+    [SerializeField] private AKFPSController fpsController;
     [SerializeField] private string stateName = "Base Layer.WakeUp";
     [Tooltip("Any additional gameplay scripts that read input.")]
     [SerializeField] private Behaviour[] additionalInputScripts;
@@ -19,18 +20,25 @@ public sealed class WakeUpIntro : MonoBehaviour
     private bool playing;
     private bool previousBusy;
     private bool previousCameraEnabled;
-    private bool previousCursorVisible;
-    private CursorLockMode previousCursorLock;
     private int stateHash;
 
     private void Start()
     {
+        if (!ValidateSetup()) return;
+        playing = true;
+        SaveAndLockInput();
+        SwapToIntroCamera();
+    }
+
+    private bool ValidateSetup()
+    {
         if (gameplayCamera == null || introCamera == null || introAnimator == null ||
+            fpsController == null ||
             gameplayCamera == introCamera || !introCamera.gameObject.activeInHierarchy ||
             !introAnimator.gameObject.activeInHierarchy || introAnimator.runtimeAnimatorController == null)
         {
-            Debug.LogError("WakeUpIntro: assign two distinct cameras and an active intro Animator with a controller.", this);
-            return;
+            Debug.LogError("WakeUpIntro: assign two distinct cameras, an FPS controller, and an active intro Animator with a controller.", this);
+            return false;
         }
 
         stateHash = Animator.StringToHash(stateName);
@@ -39,7 +47,7 @@ public sealed class WakeUpIntro : MonoBehaviour
         {
             introAnimator.enabled = false;
             Debug.LogError("WakeUpIntro: missing Animator state " + stateName, this);
-            return;
+            return false;
         }
 
         introAnimator.Play(stateHash, 0, 0f);
@@ -49,27 +57,33 @@ public sealed class WakeUpIntro : MonoBehaviour
         {
             introAnimator.enabled = false;
             Debug.LogError("WakeUpIntro: WakeUp must be non-looping, with positive duration and playback speed.", this);
-            return;
+            return false;
         }
 
+        return true;
+    }
+
+    private void SaveAndLockInput()
+    {
         previousBusy = GameState.IsUsingSystem;
-        previousCameraEnabled = gameplayCamera.enabled;
-        previousCursorVisible = Cursor.visible;
-        previousCursorLock = Cursor.lockState;
-        playing = true;
         GameState.IsUsingSystem = true;
-        LockAll<AKFPSController>();
+
+        fpsController.SetCutsceneLock(true);
+
         LockAll<AKInteractor>();
         LockAll<AKCameraZoom>();
         LockAll<AKUIManager>();
         LockAll<FlashlightController>();
         LockAll<GasMaskController>();
         LockAll<GameStateControllerBehaviour>();
+
         if (additionalInputScripts != null)
             foreach (Behaviour script in additionalInputScripts) Lock(script);
+    }
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+    private void SwapToIntroCamera()
+    {
+        previousCameraEnabled = gameplayCamera.enabled;
         introCamera.fieldOfView = gameplayCamera.fieldOfView;
         gameplayCamera.enabled = false;
         introCamera.enabled = true;
@@ -122,10 +136,11 @@ public sealed class WakeUpIntro : MonoBehaviour
         if (introCamera != null) introCamera.enabled = false;
         if (gameplayCamera != null) gameplayCamera.enabled = previousCameraEnabled;
         GameState.IsUsingSystem = previousBusy;
+
+        if (fpsController != null) fpsController.SetCutsceneLock(false);
+
         foreach (KeyValuePair<Behaviour, bool> entry in inputStates)
             if (entry.Key != null) entry.Key.enabled = entry.Value;
         inputStates.Clear();
-        Cursor.visible = previousCursorVisible;
-        Cursor.lockState = previousCursorLock;
     }
 }
