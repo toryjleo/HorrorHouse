@@ -4,8 +4,6 @@ using AdventurePuzzleKit.FlashlightSystem;
 using AdventurePuzzleKit.GasMaskSystem;
 using UnityEngine;
 
-// Run after other Start methods, but before the first Update/render.
-[DefaultExecutionOrder(100)]
 public sealed class WakeUpIntro : MonoBehaviour
 {
     [SerializeField] private Camera gameplayCamera;
