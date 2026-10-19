@@ -52,6 +52,7 @@ namespace AdventurePuzzleKit
         private int lastPlayedIndex = -1;     // Used to avoid repeating the same footstep sound
         private bool isMoving;                // True when player is moving
         private float nextStepTime;           // Timer for footstep sounds
+        private bool cutsceneCrouchLocked;    // Prevents crouching during cutscenes
         private Camera mainCamera;            // Reference to main camera
         private float verticalRotation;       // Tracks up/down camera rotation
         private Vector3 currentMovement = Vector3.zero; // Full movement vector (incl. gravity)
@@ -171,6 +172,12 @@ namespace AdventurePuzzleKit
         // Handles crouch toggle and transition
         void HandleCrouching()
         {
+            if (cutsceneCrouchLocked)
+            {
+                ForceStandingPose();
+                return;
+            }
+
             // If crouch is disabled, force standing height
             if (!canCrouch)
             {
@@ -213,6 +220,18 @@ namespace AdventurePuzzleKit
             float currentCameraY = mainCamera.transform.localPosition.y;
             float newCameraY = Mathf.Lerp(currentCameraY, targetCameraHeight, Time.deltaTime * crouchTransitionSpeed);
             mainCamera.transform.localPosition = new Vector3(0, newCameraY, 0);
+        }
+
+        private void ForceStandingPose()
+        {
+            isCrouching = false;
+            if (characterController != null)
+            {
+                characterController.height = standHeight;
+            }
+
+            transform.localScale = Vector3.one;
+            SetCameraHeight(cameraHeightOffset);
         }
 
         bool CanStandUp()
@@ -324,11 +343,14 @@ namespace AdventurePuzzleKit
                 savedCursorLock = Cursor.lockState;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                cutsceneCrouchLocked = true;
+                ForceStandingPose();
             }
             else
             {
                 Cursor.visible = savedCursorVisible;
                 Cursor.lockState = savedCursorLock;
+                cutsceneCrouchLocked = false;
             }
 
             canMove = !locked;
