@@ -135,9 +135,6 @@ namespace AdventurePuzzleKit.ExamineSystem
             originalRotation = transform.rotation;
             examinePoint = GameObject.FindGameObjectWithTag("ExaminePoint")?.transform;
             boxCollider = GetComponent<BoxCollider>();
-            mainCamera = Camera.main;
-            if (mainCamera != null)
-                originalCullingMask = mainCamera.cullingMask;
             if (isCollectable) SetType();
             CheckSoundDebug();
         }
@@ -237,6 +234,18 @@ namespace AdventurePuzzleKit.ExamineSystem
 
         public void ExamineObject()
         {
+            if (GameState.IsExamining) return;
+
+            // The player camera may be activated or replaced after this item's
+            // Start. Resolve it before changing layers or entering examine mode.
+            mainCamera = Camera.main;
+            if (mainCamera == null)
+            {
+                Debug.LogWarning($"Cannot examine '{name}': no active camera tagged MainCamera was found.", this);
+                return;
+            }
+            originalCullingMask = mainCamera.cullingMask;
+
             // Start the examination state
             GameState.IsExamining = true;
             GameState.Paused -= HandlePauseWhileExamining;
