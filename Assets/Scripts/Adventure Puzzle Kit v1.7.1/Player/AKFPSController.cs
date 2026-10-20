@@ -52,10 +52,13 @@ namespace AdventurePuzzleKit
         private int lastPlayedIndex = -1;     // Used to avoid repeating the same footstep sound
         private bool isMoving;                // True when player is moving
         private float nextStepTime;           // Timer for footstep sounds
+        private bool cutsceneCrouchLocked;    // Prevents crouching during cutscenes
         private Camera mainCamera;            // Reference to main camera
         private float verticalRotation;       // Tracks up/down camera rotation
         private Vector3 currentMovement = Vector3.zero; // Full movement vector (incl. gravity)
         private CharacterController characterController; // CharacterController component
+        private bool savedCursorVisible;      // Saved cursor visibility for cutscene lock
+        private CursorLockMode savedCursorLock; // Saved cursor lock mode for cutscene lock
 
         private void Awake()
         {
@@ -169,6 +172,12 @@ namespace AdventurePuzzleKit
         // Handles crouch toggle and transition
         void HandleCrouching()
         {
+            if (cutsceneCrouchLocked)
+            {
+                ForceStandingPose();
+                return;
+            }
+
             // If crouch is disabled, force standing height
             if (!canCrouch)
             {
@@ -211,6 +220,18 @@ namespace AdventurePuzzleKit
             float currentCameraY = mainCamera.transform.localPosition.y;
             float newCameraY = Mathf.Lerp(currentCameraY, targetCameraHeight, Time.deltaTime * crouchTransitionSpeed);
             mainCamera.transform.localPosition = new Vector3(0, newCameraY, 0);
+        }
+
+        private void ForceStandingPose()
+        {
+            isCrouching = false;
+            if (characterController != null)
+            {
+                characterController.height = standHeight;
+            }
+
+            transform.localScale = Vector3.one;
+            SetCameraHeight(cameraHeightOffset);
         }
 
         bool CanStandUp()
@@ -307,6 +328,35 @@ namespace AdventurePuzzleKit
             canRotate = !active;
 
             if (active && playerAudioSource != null && playerAudioSource.isPlaying)
+            {
+                playerAudioSource.Stop();
+            }
+        }
+
+        // Locks the player for cutscenes/intros: disables movement, hides cursor, stops audio.
+        // Unlike SetPlayerDisableMode, cursor is hidden and locked (not shown).
+        public void SetCutsceneLock(bool locked)
+        {
+            if (locked)
+            {
+                savedCursorVisible = Cursor.visible;
+                savedCursorLock = Cursor.lockState;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                cutsceneCrouchLocked = true;
+                ForceStandingPose();
+            }
+            else
+            {
+                Cursor.visible = savedCursorVisible;
+                Cursor.lockState = savedCursorLock;
+                cutsceneCrouchLocked = false;
+            }
+
+            canMove = !locked;
+            canRotate = !locked;
+
+            if (locked && playerAudioSource != null && playerAudioSource.isPlaying)
             {
                 playerAudioSource.Stop();
             }
