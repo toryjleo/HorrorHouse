@@ -10314,6 +10314,26 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: fontType
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d297fbcb9fef92d28e11a84e9acf5d6, type: 2}
+    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: textSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: fontColor.b
+      value: 0.47049874
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: fontColor.g
+      value: 0.11888958
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
+      propertyPath: fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989890030215801003, guid: 12b022ca108b63653b3636eaf8bcd491, type: 3}
       propertyPath: hasMultPages
       value: 0
       objectReference: {fileID: 0}

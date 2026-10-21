@@ -89,8 +89,6 @@ namespace AdventurePuzzleKit.NoteSystem
         private void Start()
         {
             canClick = false; // Disable input initially
-            notesRaycastScript = Camera.main.GetComponent<AKInteractor>(); // Get raycast interaction component
-            boxCollider = GetComponent<BoxCollider>(); // Get box collider component
             DebugReferenceCheck(); // Check for missing audio references
         }
 
@@ -103,8 +101,37 @@ namespace AdventurePuzzleKit.NoteSystem
             }
         }
 
+        // The selector can call ShowNote immediately after enabling this component,
+        // before Unity has invoked Start on it.
+        private bool TryInitializeInteractionReferences()
+        {
+            if (notesRaycastScript == null && Camera.main != null)
+            {
+                notesRaycastScript = Camera.main.GetComponent<AKInteractor>();
+            }
+
+            if (boxCollider == null)
+            {
+                boxCollider = GetComponent<BoxCollider>();
+            }
+
+            if (notesRaycastScript == null || boxCollider == null)
+            {
+                Debug.LogError("Cannot open custom note: the MainCamera needs an AKInteractor " +
+                    "and the note needs a BoxCollider.", this);
+                return false;
+            }
+
+            return true;
+        }
+
         public void ShowNote()
         {
+            if (!TryInitializeInteractionReferences())
+            {
+                return;
+            }
+
             CustomNoteUIManager.instance.noteController = gameObject.GetComponent<CustomNoteController>(); // Link this controller to the UI
             noteUIController = CustomNoteUIManager.instance; // Cache UI manager reference
             GameState.Paused -= CloseNote;
