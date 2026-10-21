@@ -11,7 +11,7 @@ namespace AdventurePuzzleKit.NoteSystem
         SerializedProperty pageImage;
 
         SerializedProperty hasMultPages;
-        SerializedProperty noteText;
+        SerializedProperty pages;
 
         SerializedProperty noteTextAreaScale;
         SerializedProperty textSize;
@@ -40,7 +40,7 @@ namespace AdventurePuzzleKit.NoteSystem
             hasMultPages = serializedObject.FindProperty(nameof(hasMultPages));
             pageImage = serializedObject.FindProperty(nameof(pageImage));
 
-            noteText = serializedObject.FindProperty(nameof(noteText));
+            pages = serializedObject.FindProperty(nameof(pages));
             noteTextAreaScale = serializedObject.FindProperty(nameof(noteTextAreaScale));
 
             textSize = serializedObject.FindProperty(nameof(textSize));
@@ -86,7 +86,19 @@ namespace AdventurePuzzleKit.NoteSystem
             EditorGUILayout.PropertyField(pageImage);
             EditorGUILayout.Space(2);
             EditorGUILayout.PropertyField(hasMultPages);
-            EditorGUILayout.PropertyField(noteText);
+
+            EditorGUILayout.LabelField("Note Pages", EditorStyles.boldLabel);
+            pages.arraySize = EditorGUILayout.IntField("Size", pages.arraySize);
+            for (int i = 0; i < pages.arraySize; i++)
+            {
+                SerializedProperty entry = pages.GetArrayElementAtIndex(i);
+                EditorGUILayout.LabelField($"Page {i + 1}", EditorStyles.miniBoldLabel);
+                EditorGUI.indentLevel++;
+                EditorGUILayout.PropertyField(entry.FindPropertyRelative("text"), new GUIContent("Text"));
+                EditorGUILayout.PropertyField(entry.FindPropertyRelative("fontOverride"), new GUIContent("Font Override (Optional)"));
+                EditorGUI.indentLevel--;
+                EditorGUILayout.Space(4);
+            }
             EditorGUILayout.Space(5);
             #endregion
 

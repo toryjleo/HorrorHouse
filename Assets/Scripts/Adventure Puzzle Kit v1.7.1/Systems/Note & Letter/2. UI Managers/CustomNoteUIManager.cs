@@ -82,6 +82,16 @@ namespace AdventurePuzzleKit.NoteSystem
             customNoteTextUI.text = noteText; // Set the text content
         }
 
+        // Updates the text content and font of the note
+        public void FillNoteText(string noteText, TMP_FontAsset font)
+        {
+            customNoteTextUI.text = noteText;
+            if (font != null)
+            {
+                customNoteTextUI.font = font;
+            }
+        }
+
         // Toggles the visibility of the next page button
         public void ShowNextButton(bool show)
         {
