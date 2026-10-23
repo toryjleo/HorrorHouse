@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6a1599832c477296d7ab82592ca7e2, type: 3}
   m_Name: Emily
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.NoteSystem.NotePageStyle
-  fontOverride: {fileID: 0}
-  overrideFontSize: 0
-  fontSizeOverride: 25
+  fontOverride: {fileID: 11400000, guid: 68558f18efb27c7909940728bcf73d6b, type: 2}
+  fontSizeOverride: 42
