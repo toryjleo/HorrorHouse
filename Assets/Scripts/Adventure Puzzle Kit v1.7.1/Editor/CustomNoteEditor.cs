@@ -63,6 +63,7 @@ namespace AdventurePuzzleKit.NoteSystem
 
         public override void OnInspectorGUI()
         {
+            serializedObject.Update();
             #region Visual Script Reference
             GUI.enabled = false;
             EditorGUILayout.ObjectField("Script:", MonoScript.FromMonoBehaviour((CustomNoteController)target), typeof(CustomNoteController), false);
@@ -95,7 +96,8 @@ namespace AdventurePuzzleKit.NoteSystem
                 EditorGUILayout.LabelField($"Page {i + 1}", EditorStyles.miniBoldLabel);
                 EditorGUI.indentLevel++;
                 EditorGUILayout.PropertyField(entry.FindPropertyRelative("text"), new GUIContent("Text"));
-                EditorGUILayout.PropertyField(entry.FindPropertyRelative("fontOverride"), new GUIContent("Font Override (Optional)"));
+                SerializedProperty style = entry.FindPropertyRelative("style");
+                EditorGUILayout.PropertyField(style, new GUIContent("Page Style (Optional)"));
                 EditorGUI.indentLevel--;
                 EditorGUILayout.Space(4);
             }
