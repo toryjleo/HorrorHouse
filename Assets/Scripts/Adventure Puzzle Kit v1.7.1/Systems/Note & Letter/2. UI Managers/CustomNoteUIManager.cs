@@ -51,6 +51,7 @@ namespace AdventurePuzzleKit.NoteSystem
 
             customNoteTextUI.rectTransform.sizeDelta = noteTextAreaScale; // Set the text area size
 
+            customNoteTextUI.enableAutoSizing = false;
             customNoteTextUI.fontSize = textSize; // Set the font size
             customNoteTextUI.font = fontType; // Set the font type
             customNoteTextUI.color = fontColor; // Set the font color
@@ -80,6 +81,25 @@ namespace AdventurePuzzleKit.NoteSystem
         public void FillNoteText(string noteText)
         {
             customNoteTextUI.text = noteText; // Set the text content
+        }
+
+        // Updates the text content and font of the note
+        public void FillNoteText(string noteText, TMP_FontAsset font)
+        {
+            customNoteTextUI.text = noteText;
+            if (font != null)
+            {
+                customNoteTextUI.font = font;
+            }
+        }
+
+        // Applies size and color on every page, including pages using the note defaults.
+        public void FillNoteText(string noteText, TMP_FontAsset font, int fontSize, Color fontColor)
+        {
+            FillNoteText(noteText, font);
+            customNoteTextUI.enableAutoSizing = false;
+            customNoteTextUI.fontSize = fontSize;
+            customNoteTextUI.color = fontColor;
         }
 
         // Toggles the visibility of the next page button

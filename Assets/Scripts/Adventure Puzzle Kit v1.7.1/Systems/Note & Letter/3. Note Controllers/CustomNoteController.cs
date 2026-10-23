@@ -7,6 +7,18 @@ using UnityEngine;
 
 namespace AdventurePuzzleKit.NoteSystem
 {
+    [System.Serializable]
+    public struct NotePageEntry
+    {
+        [TextArea(4, 8)] public string text;
+        public NotePageStyle style;
+
+        // Retained for existing scenes and prefabs until their overrides are saved as a style.
+        [HideInInspector] public TMP_FontAsset fontOverride;
+        [HideInInspector] public bool overrideFontSize;
+        [HideInInspector] public int fontSizeOverride;
+    }
+
     // Controls the logic for displaying and interacting with a custom note, which includes a single image and customizable text
     public class CustomNoteController : MonoBehaviour
     {
@@ -22,8 +34,8 @@ namespace AdventurePuzzleKit.NoteSystem
         // Indicates if the note has multiple pages
         [SerializeField] private bool hasMultPages = false;
 
-        // Array of text content for the note pages
-        [TextArea(4, 8)][SerializeField] private string[] noteText = null;
+        // Array of page entries, each with text and optional font and size styles
+        [SerializeField] private NotePageEntry[] pages = null;
 
         // Scale of the text area for the note
         [SerializeField] private Vector2 noteTextAreaScale = new Vector2(495, 795);
@@ -154,8 +166,9 @@ namespace AdventurePuzzleKit.NoteSystem
             }
 
             AKUIManager.instance.SetHighlightName(null, false, false, false, false, false); // Clear UI highlight
-            // Initialize note UI with the page image, text, and formatting
-            noteUIController.CustomNoteInitialize(pageImage, pageScale, noteText[pageNum], noteTextAreaScale, textSize, fontType, fontColor);
+            // Initialize note UI with the page image, text area, and formatting
+            string pageText = (pages != null && pages.Length > pageNum) ? pages[pageNum].text : "";
+            noteUIController.CustomNoteInitialize(pageImage, pageScale, pageText, noteTextAreaScale, ResolveFontSize(pageNum), ResolveFont(pageNum), fontColor);
             PlayFlipAudio(); // Play page flip sound
 
             // Play discovery sound the first time this note is opened
@@ -224,16 +237,17 @@ namespace AdventurePuzzleKit.NoteSystem
         // Navigates to the next page of the note
         public void NextPage()
         {
-            if (pageNum < noteText.Length - 1) // Check if there are more pages
+            int pageCount = pages != null ? pages.Length : 0;
+            if (pageNum < pageCount - 1) // Check if there are more pages
             {
                 pageNum++; // Increment page number
-                noteUIController.FillNoteText(noteText[pageNum]); // Update text content
+                DisplayCurrentPage(); // Update text and font
                 PlayFlipAudio(); // Play page flip sound
                 TryPlayPageSpecificSound(); // Play page-specific sound if applicable
                 EnabledButtons(); // Enable navigation buttons
 
                 // Hide next button if on the last page
-                if (pageNum >= noteText.Length - 1)
+                if (pageNum >= pageCount - 1)
                 {
                     noteUIController.ShowNextButton(false);
                 }
@@ -246,7 +260,7 @@ namespace AdventurePuzzleKit.NoteSystem
             if (pageNum >= 1) // Check if not on the first page
             {
                 pageNum--; // Decrement page number
-                noteUIController.FillNoteText(noteText[pageNum]); // Update text content
+                DisplayCurrentPage(); // Update text and font
                 PlayFlipAudio(); // Play page flip sound
                 TryPlayPageSpecificSound(); // Play page-specific sound if applicable
                 EnabledButtons(); // Enable navigation buttons
@@ -257,6 +271,58 @@ namespace AdventurePuzzleKit.NoteSystem
                     noteUIController.ShowPreviousButton(false);
                 }
             }
+        }
+
+        // Resolves the font for the given page: uses the page's override if set, otherwise the note's default font
+        private TMP_FontAsset ResolveFont(int page)
+        {
+            NotePageStyle style = GetPageStyle(page);
+            if (style != null && style.fontOverride != null)
+            {
+                return style.fontOverride;
+            }
+
+            if (style == null && pages != null && page >= 0 && page < pages.Length && pages[page].fontOverride != null)
+            {
+                return pages[page].fontOverride;
+            }
+
+            if (fontType != null)
+            {
+                return fontType;
+            }
+
+            Debug.LogWarning($"CustomNoteController on {gameObject.name}: No font override or default font assigned. Using TMP prefab default.", this);
+            return null;
+        }
+
+        private int ResolveFontSize(int page)
+        {
+            NotePageStyle style = GetPageStyle(page);
+            if (style != null)
+            {
+                return Mathf.Max(1, style.fontSizeOverride);
+            }
+
+            if (pages != null && page >= 0 && page < pages.Length && pages[page].overrideFontSize)
+            {
+                return Mathf.Max(1, pages[page].fontSizeOverride);
+            }
+
+            return textSize;
+        }
+
+        private NotePageStyle GetPageStyle(int page)
+        {
+            return pages != null && page >= 0 && page < pages.Length ? pages[page].style : null;
+        }
+
+        // Updates all page formatting so overrides do not carry over to other pages.
+        private void DisplayCurrentPage()
+        {
+            string pageText = (pages != null && pages.Length > pageNum) ? pages[pageNum].text : "";
+            TMP_FontAsset resolvedFont = ResolveFont(pageNum);
+            noteUIController.FillNoteText(pageText, resolvedFont, ResolveFontSize(pageNum), fontColor);
         }
 
         // Resets the note to its initial state
