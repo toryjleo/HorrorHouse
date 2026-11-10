@@ -16,6 +16,14 @@ namespace FS_Atmo
         private bool hasAdditional = false;
         float myNormalizedTime;
 
+        [Header("Random Item Spawn")]
+        [Tooltip("Child object kept disabled in the drawer. Enabled (and stays enabled) by a successful roll after the drawer fully closes.")]
+        public GameObject spawnItem;
+        [Range(0f, 100f)] public float spawnChance = 25f;
+        [Tooltip("Fires when the item spawns. Hook up any other audio/FX here.")]
+        public UnityEngine.Events.UnityEvent onItemSpawned;
+        private Coroutine spawnRoutine;
+
 
         // Open or close animator state in start depending on selection.
         // Additional object with animator. For example another door when double doors. 
@@ -62,6 +70,7 @@ namespace FS_Atmo
                     {
                         myAnimator.Play("Close", 0, 0.0f);
                         objectOpen = false;
+                        StartCloseRoll();
                     }
 
                     else
@@ -78,6 +87,7 @@ namespace FS_Atmo
                 {
                     myAnimator.Play("Close", 0, 0.0f);
                     objectOpen = false;
+                    StartCloseRoll();
                     animateAdditional.GetComponent<SimpleOpenClose>().objectOpenAdditional = false;
 
                     if (objectOpenAdditional == true)
@@ -85,6 +95,7 @@ namespace FS_Atmo
                         additionalAnimator.Play("Close", 0, 0.0f);
                         objectOpenAdditional = false;
                         animateAdditional.GetComponent<SimpleOpenClose>().objectOpen = false;
+                        animateAdditional.GetComponent<SimpleOpenClose>().StartCloseRoll();
                     }
 
                 }
@@ -107,6 +118,37 @@ namespace FS_Atmo
 
             }
 
+        }
+
+        // Rolls for the hidden item once the close animation has fully finished.
+        // A closed drawer is off-screen contents, so no visibility check is needed.
+        public void StartCloseRoll()
+        {
+            if (spawnItem == null || spawnItem.activeSelf) return;
+            if (spawnRoutine != null) StopCoroutine(spawnRoutine);
+            spawnRoutine = StartCoroutine(CloseRollRoutine());
+        }
+
+        private IEnumerator CloseRollRoutine()
+        {
+            yield return null; // Animator still reports the old state on the frame Play() is called
+
+            Animator anim = myAnimator;
+            while (true)
+            {
+                if (objectOpen) { spawnRoutine = null; yield break; } // reopened before finishing
+                AnimatorStateInfo s = anim.GetCurrentAnimatorStateInfo(0);
+                if (s.IsName("Close") && s.normalizedTime >= 1f) break;
+                yield return null;
+            }
+
+            if (Random.value * 100f < spawnChance)
+            {
+                spawnItem.SetActive(true);
+                onItemSpawned?.Invoke();
+            }
+
+            spawnRoutine = null;
         }
 
         // ── IInteractable ──────────────────────────────────────────────
