@@ -3,6 +3,7 @@ using AdventurePuzzleKit;
 using AdventurePuzzleKit.FlashlightSystem;
 using AdventurePuzzleKit.GasMaskSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 public sealed class WakeUpIntro : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public sealed class WakeUpIntro : MonoBehaviour
     [SerializeField] private string stateName = "Base Layer.WakeUp";
     [Tooltip("Any additional gameplay scripts that read input.")]
     [SerializeField] private Behaviour[] additionalInputScripts;
+    [SerializeField] private UnityEvent onIntroStart;
 
     private readonly Dictionary<Behaviour, bool> inputStates = new Dictionary<Behaviour, bool>();
     private bool playing;
@@ -26,6 +28,7 @@ public sealed class WakeUpIntro : MonoBehaviour
         playing = true;
         SaveAndLockInput();
         SwapToIntroCamera();
+        onIntroStart?.Invoke();
     }
 
     private bool ValidateSetup()
