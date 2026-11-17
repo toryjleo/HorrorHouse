@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9816c4696d32d04b808d3eedf06bcd2, type: 3}
-  m_Name: SO_MetalSqueak
+  m_Name: SO_MetalDrawerClose
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.Sound
-  category: 0
-  clip: {fileID: 8300000, guid: e62e5ae4f89bae6b790840b7683846b1, type: 3}
-  volume: 0.2
+  category: 16
+  clip: {fileID: 0}
+  volume: 0.1
   volumeVariance: 0.1
   pitch: 1
-  pitchVariance: 0.32
+  pitchVariance: 0.1
   loop: 0
   isPlaying: 0
   mixerGroup: {fileID: 0}
