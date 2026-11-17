@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9816c4696d32d04b808d3eedf06bcd2, type: 3}
   m_Name: SO_MetalDrawerOpen
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.Sound
-  category: 16
-  clip: {fileID: 0}
+  category: 0
+  clip: {fileID: 8300000, guid: 8846d3ed4fadaa0918071793d74b8702, type: 3}
   volume: 0.1
   volumeVariance: 0.1
   pitch: 1
