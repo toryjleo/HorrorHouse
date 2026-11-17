@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9816c4696d32d04b808d3eedf06bcd2, type: 3}
-  m_Name: SO_Chugging_Echos_Scare2
+  m_Name: SO_Field
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.Sound
   category: 24
-  clip: {fileID: 8300000, guid: 001f63fc25ce3be17ab0a012be122954, type: 3}
+  clip: {fileID: 8300000, guid: 0aac4b63a139fcd91a38d4c40a46251a, type: 3}
   volume: 1
   volumeVariance: 0
   pitch: 1
