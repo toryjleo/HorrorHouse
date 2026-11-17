@@ -89,6 +89,35 @@ Shader "HorrorHouse/Image Stretch Inset"
             float _StretchAlpha;
             float _ScareProgress;
 
+            // _ScareProgress (0-1) is split into this many equal steps. Each step moves
+            // the inset to the next corner, so the inset jumps (JUMP_STEPS - 1) times.
+            static const float JUMP_STEPS = 4.0;
+
+            // Returns which step we're in: 0, 1, 2 or 3 (4 only at progress == 1, same as 3).
+            float GetJumpStep(float scareProgress)
+            {
+                return floor(saturate(scareProgress) * JUMP_STEPS);
+            }
+
+            // Returns the inset's upper-right UV for the given step.
+            // Corner order: top-left -> bottom-right -> bottom-left -> top-right.
+            float2 GetInsetMax(float jumpStep, float padding, float2 insetSize)
+            {
+                float2 minEdge = padding + insetSize; // inset touching the left / bottom padding
+                float2 maxEdge = float2(1.0 - padding, 1.0 - padding); // inset touching the right / top padding
+
+                float2 topLeft = float2(minEdge.x, maxEdge.y);
+                float2 bottomRight = float2(maxEdge.x, minEdge.y);
+                float2 bottomLeft = minEdge;
+                float2 topRight = maxEdge;
+
+                float2 insetMax = topLeft;                                       // step 0 (progress 0.00 - 0.25)
+                insetMax = lerp(insetMax, bottomRight, step(1.0, jumpStep));     // step 1 (progress 0.25 - 0.50)
+                insetMax = lerp(insetMax, bottomLeft, step(2.0, jumpStep));      // step 2 (progress 0.50 - 0.75)
+                insetMax = lerp(insetMax, topRight, step(3.0, jumpStep));        // step 3 (progress 0.75 - 1.00)
+                return insetMax;
+            }
+
             v2f vert(appdata input)
             {
                 v2f output;
@@ -106,16 +135,8 @@ Shader "HorrorHouse/Image Stretch Inset"
                 float padding = saturate(_Padding);
                 float2 insetSize = float2(insetScale, insetScale);
 
-                float jumpPhase = floor(saturate(_ScareProgress) * 4.0);
-                float2 topLeft = float2(padding + insetSize.x, 1.0 - padding);
-                float2 bottomRight = float2(1.0 - padding, padding + insetSize.y);
-                float2 bottomLeft = padding + insetSize;
-                float2 topRight = 1.0 - padding;
-
-                float2 insetMax = topLeft;
-                insetMax = lerp(insetMax, bottomRight, step(1.0, jumpPhase));
-                insetMax = lerp(insetMax, bottomLeft, step(2.0, jumpPhase));
-                insetMax = lerp(insetMax, topRight, step(3.0, jumpPhase));
+                float jumpStep = GetJumpStep(_ScareProgress);
+                float2 insetMax = GetInsetMax(jumpStep, padding, insetSize);
                 float2 insetMin = insetMax - insetSize;
 
                 float2 clampedInsetUv = clamp(uv, insetMin, insetMax);

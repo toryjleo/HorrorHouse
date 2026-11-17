@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_Complete_Corruption_Scare
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.Sound
   category: 24
-  clip: {fileID: 8300000, guid: def80c5610d3a7b9b97be96ce5d9c6eb, type: 3}
+  clip: {fileID: 8300000, guid: 4c89371a61edd1d55b2f2834f82538d8, type: 3}
   volume: 1
   volumeVariance: 0
   pitch: 1

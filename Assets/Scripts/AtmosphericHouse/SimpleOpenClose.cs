@@ -16,6 +16,10 @@ namespace FS_Atmo
         private bool hasAdditional = false;
         float myNormalizedTime;
 
+        [Header("Audio")]
+        public Sound openSound;
+        public Sound closeSound;
+
         [Header("Random Item Spawn")]
         [Tooltip("Child object kept disabled in the drawer. Enabled (and stays enabled) by a successful roll after the drawer fully closes.")]
         public GameObject spawnItem;
@@ -41,6 +45,7 @@ namespace FS_Atmo
             if (objectOpen == true)
             {
                 myAnimator.Play("Open", 0, 1.0f);
+                PlaySfx(openSound);
             }
             if (animateAdditional != null)
                 if (animateAdditional.GetComponent<SimpleOpenClose>())
@@ -69,6 +74,7 @@ namespace FS_Atmo
                     if (objectOpen == true)
                     {
                         myAnimator.Play("Close", 0, 0.0f);
+                        PlaySfx(closeSound);
                         objectOpen = false;
                         StartCloseRoll();
                     }
@@ -76,6 +82,7 @@ namespace FS_Atmo
                     else
                     {
                         myAnimator.Play("Open", 0, 0.0f);
+                        PlaySfx(openSound);
                         objectOpen = true;
                     }
                 }
@@ -86,6 +93,7 @@ namespace FS_Atmo
                 if (objectOpen == true)
                 {
                     myAnimator.Play("Close", 0, 0.0f);
+                    PlaySfx(closeSound);
                     objectOpen = false;
                     StartCloseRoll();
                     animateAdditional.GetComponent<SimpleOpenClose>().objectOpenAdditional = false;
@@ -103,6 +111,7 @@ namespace FS_Atmo
                 else
                 {
                     myAnimator.Play("Open", 0, 0.0f);
+                    PlaySfx(openSound);
                     objectOpen = true;
                     animateAdditional.GetComponent<SimpleOpenClose>().objectOpenAdditional = true;
 
@@ -149,6 +158,12 @@ namespace FS_Atmo
             }
 
             spawnRoutine = null;
+        }
+
+        public void PlaySfx(Sound sound)
+        {
+            if (sound != null && AKAudioManager.instance != null)
+                AKAudioManager.instance.Play(sound);
         }
 
         // ── IInteractable ──────────────────────────────────────────────

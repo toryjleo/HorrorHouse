@@ -7666,6 +7666,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3560238716945433117, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 11400000, guid: ad5f181d84bec9abe947281f1de7a540, type: 2}
+    - target: {fileID: 3560238716945433117, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 93afa41be15426d8fb713da0fa874fe7, type: 2}
+    - target: {fileID: 3560238718540185269, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 11400000, guid: ad5f181d84bec9abe947281f1de7a540, type: 2}
+    - target: {fileID: 3560238718540185269, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 93afa41be15426d8fb713da0fa874fe7, type: 2}
     - target: {fileID: 3824051045303833837, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.5129995
@@ -7718,6 +7734,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Side_table_A
       objectReference: {fileID: 0}
+    - target: {fileID: 7603585436898049523, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 11400000, guid: ad5f181d84bec9abe947281f1de7a540, type: 2}
+    - target: {fileID: 7603585436898049523, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 93afa41be15426d8fb713da0fa874fe7, type: 2}
     - target: {fileID: 7925241060530183129, guid: 6ca2058739c014245bdbf22fbd4a2a31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0004940033
@@ -9080,7 +9104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AdventurePuzzleKit.PlayerInventory
   persistAcrossScenes: 1
   maxSlots: 8
-  pickupSound: {fileID: 11400000, guid: 9863a0c1b5ad687d4b6463a3f81b4852, type: 2}
+  pickupSound: {fileID: 11400000, guid: 4331ef160dc406452b80a59c2b39739c, type: 2}
 --- !u!4 &606785998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4452101818881345209, guid: a59bf30492a610e499f9efff0a901a08, type: 3}
@@ -20966,6 +20990,10 @@ PrefabInstance:
       propertyPath: initialZoom
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1202692496387098032, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 11400000, guid: b4be61330ac7872468125b02eac8139c, type: 2}
     - target: {fileID: 1202692496875816586, guid: 7bd1e963015ea894e9d39618b928f4b9, type: 3}
       propertyPath: m_Name
       value: Flashlight - Objects
@@ -22258,6 +22286,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: InteractiveObject
       objectReference: {fileID: 0}
+    - target: {fileID: 282173942062034452, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 11400000, guid: a05e092747ebc2ac597b7e9bc553b2cd, type: 2}
+    - target: {fileID: 282173942062034452, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b172b501eb850da9a3ac87061744a50, type: 2}
+    - target: {fileID: 282173942062034452, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: objectOpenAdditional
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402370394182479520, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 11400000, guid: a05e092747ebc2ac597b7e9bc553b2cd, type: 2}
+    - target: {fileID: 402370394182479520, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b172b501eb850da9a3ac87061744a50, type: 2}
     - target: {fileID: 850765315283791146, guid: c64715f018568924cbb304343889d52f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -22267,9 +22315,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 974635021293100233, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 11400000, guid: a05e092747ebc2ac597b7e9bc553b2cd, type: 2}
+    - target: {fileID: 974635021293100233, guid: c64715f018568924cbb304343889d52f, type: 3}
       propertyPath: spawnItem
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 974635021293100233, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b172b501eb850da9a3ac87061744a50, type: 2}
     - target: {fileID: 974635021293100233, guid: c64715f018568924cbb304343889d52f, type: 3}
       propertyPath: spawnChance
       value: 20
@@ -22307,9 +22363,17 @@ PrefabInstance:
       value: AdventurePuzzleKit.Sound, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1428709065794535220, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 11400000, guid: a05e092747ebc2ac597b7e9bc553b2cd, type: 2}
+    - target: {fileID: 1428709065794535220, guid: c64715f018568924cbb304343889d52f, type: 3}
       propertyPath: spawnItem
       value: 
       objectReference: {fileID: 2145543120}
+    - target: {fileID: 1428709065794535220, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b172b501eb850da9a3ac87061744a50, type: 2}
     - target: {fileID: 1428709065794535220, guid: c64715f018568924cbb304343889d52f, type: 3}
       propertyPath: spawnChance
       value: 20
@@ -22422,10 +22486,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: InteractiveObject
       objectReference: {fileID: 0}
+    - target: {fileID: 8963684603171115749, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 11400000, guid: a05e092747ebc2ac597b7e9bc553b2cd, type: 2}
+    - target: {fileID: 8963684603171115749, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b172b501eb850da9a3ac87061744a50, type: 2}
     - target: {fileID: 9172422042622356020, guid: c64715f018568924cbb304343889d52f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9218916091056815038, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 11400000, guid: a05e092747ebc2ac597b7e9bc553b2cd, type: 2}
+    - target: {fileID: 9218916091056815038, guid: c64715f018568924cbb304343889d52f, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b172b501eb850da9a3ac87061744a50, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -24457,7 +24537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
       propertyPath: sounds.Array.size
-      value: 80
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
       propertyPath: 'sounds.Array.data[78]'
@@ -24467,6 +24547,26 @@ PrefabInstance:
       propertyPath: 'sounds.Array.data[79]'
       value: 
       objectReference: {fileID: 11400000, guid: 81fe1eea4c6f93d96881efd78a540bf5, type: 2}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: 'sounds.Array.data[80]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ad5f181d84bec9abe947281f1de7a540, type: 2}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: 'sounds.Array.data[81]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 93afa41be15426d8fb713da0fa874fe7, type: 2}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: 'sounds.Array.data[82]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a05e092747ebc2ac597b7e9bc553b2cd, type: 2}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: 'sounds.Array.data[83]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b172b501eb850da9a3ac87061744a50, type: 2}
+    - target: {fileID: 5011438939134509700, guid: 6409546c772906746be719df44f0ff85, type: 3}
+      propertyPath: 'sounds.Array.data[84]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4331ef160dc406452b80a59c2b39739c, type: 2}
     - target: {fileID: 5011438939134509701, guid: 6409546c772906746be719df44f0ff85, type: 3}
       propertyPath: m_Name
       value: AK - Audio Manager
@@ -29329,8 +29429,8 @@ MonoBehaviour:
   inspectPoints:
   - {fileID: 5983779359670934283}
   - {fileID: 5983779359185404730}
-  pickupSound: {fileID: 11400000, guid: 66a48010472fcb140b2c8189307dbd0e, type: 2}
-  dropSound: {fileID: 11400000, guid: 66a48010472fcb140b2c8189307dbd0e, type: 2}
+  pickupSound: {fileID: 11400000, guid: ce7aa35ec39f21448bb49846d66018b7, type: 2}
+  dropSound: {fileID: 11400000, guid: ce7aa35ec39f21448bb49846d66018b7, type: 2}
   _UIType: 0
   itemName: This could open?
   textSize: 35
