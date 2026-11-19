@@ -22,6 +22,9 @@ public class BansheeGrabSequence : MonoBehaviour
     [Tooltip("The witch's hand bone. After the lerp, the player follows this (position only).")]
     [SerializeField] private Transform handToFollow;
 
+    [Tooltip("Optional: BansheeLookAtIK on the Animator's GameObject. Makes her look at the player once the sequence starts.")]
+    [SerializeField] private BansheeLookAtIK lookAt;
+
 
     [Tooltip("Player's AKFPSController. Found automatically if left empty.")]
     [SerializeField] private AKFPSController player;
@@ -103,6 +106,11 @@ public class BansheeGrabSequence : MonoBehaviour
         LockPlayer();
 
         animator.SetTrigger(pickUpTrigger);
+
+        if (lookAt != null)
+        {
+            lookAt.StartLooking();
+        }
 
 
         yield return SnapIntoHand();

@@ -288,7 +288,7 @@ MonoBehaviour:
   handToFollow: {fileID: 195064205}
   player: {fileID: 0}
   pickUpTrigger: PickUp
-  snapDuration: 2
+  snapDuration: 2.86
   testKey: 103
 --- !u!1001 &650520424
 PrefabInstance:
