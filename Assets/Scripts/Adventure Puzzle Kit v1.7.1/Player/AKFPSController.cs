@@ -44,6 +44,8 @@ namespace AdventurePuzzleKit
 
         [Header("Control Toggles")]
         [SerializeField] public bool canJump = true; // Toggle for jumping
+        [Tooltip("Hide and lock the cursor when the scene starts. Use in scenes without a pause menu/manager that locks it (e.g. test scenes).")]
+        [SerializeField] private bool lockCursorOnStart = false;
 
         public bool canMove = true;                                   // Toggle for player movement
         public bool canRotate = true;                                 // Toggle for player rotation
@@ -65,6 +67,15 @@ namespace AdventurePuzzleKit
             characterController = GetComponent<CharacterController>();
             mainCamera = Camera.main;
             SetCameraHeight(cameraHeightOffset);
+        }
+
+        private void Start()
+        {
+            if (lockCursorOnStart)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
 
         private void Update()
