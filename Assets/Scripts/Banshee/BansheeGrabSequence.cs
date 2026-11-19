@@ -41,6 +41,22 @@ public class BansheeGrabSequence : MonoBehaviour
     [Tooltip("How long the lerp from the player's position into the hand takes.")]
     [SerializeField] private float snapDuration = 2.0f;
 
+    [Header("Drop Into Mouth")]
+    [Tooltip("Empty inside her mouth/throat, parented to her head bone so it moves with her. The player drops to this point.")]
+    [SerializeField] private Transform mouthTarget;
+
+    [Tooltip("Name of the Animator state holding the pick-up clip (as in the Animator window).")]
+    [SerializeField] private string dropStateName = "PickUp";
+
+    [Tooltip("How far through the animation (0-1) the player is dropped. Match this to when the mouth is open.")]
+    [Range(0f, 1f)] [SerializeField] private float dropAtNormalizedTime = 0.9f;
+
+    [Tooltip("How long the drop takes, in seconds.")]
+    [SerializeField] private float dropDuration = 0.35f;
+
+    [Tooltip("Fired right after the player lands in the mouth. Hook up the fade, sound and ending here.")]
+    [SerializeField] private UnityEvent onEaten;
+
     /*[Tooltip("Seconds after the player is in the hand before On Eaten fires. Ignored if the animation calls the 'Eat' event first.")]
     [SerializeField] private float eatDelay = 3.0f;
 
@@ -59,6 +75,7 @@ public class BansheeGrabSequence : MonoBehaviour
     //private Camera playerCamera;
     private bool started;
     private bool carrying;
+    private bool inMouth;
     private Vector3 handLocalOffset; // Player position in the hand's local space, captured when the lerp ends
     //private bool cameraSteering;
 
@@ -115,16 +132,46 @@ public class BansheeGrabSequence : MonoBehaviour
 
         yield return SnapIntoHand();
 
-        // Carried by the hand until eaten.
-        /*carrying = true;
+        // Carried by the hand until the animation is far enough along for the drop.
+        yield return new WaitUntil(() =>
+        {
+            AnimatorStateInfo s = animator.GetCurrentAnimatorStateInfo(0);
+            return s.IsName(dropStateName) && s.normalizedTime >= dropAtNormalizedTime;
+        });
+
+        yield return DropIntoMouth();
+
+        onEaten?.Invoke();
+    }
+
+    private IEnumerator DropIntoMouth()
+    {
+        // Let go of the hand.
+        carrying = false;
+
+        if (mouthTarget == null)
+        {
+            Debug.LogWarning($"{nameof(BansheeGrabSequence)} on '{name}': Mouth Target is not assigned, skipping the drop.", this);
+            yield break;
+        }
+
+        Transform p = player.transform;
+        Vector3 startPos = p.position;
+
         float t = 0f;
-        while (!eatSignalled && t < eatDelay)
+        while (t < dropDuration)
         {
             t += Time.deltaTime;
+            float k = Mathf.Clamp01(t / dropDuration);
+
+            // k * k starts slow and speeds up, like falling.
+            p.position = Vector3.Lerp(startPos, mouthTarget.position, k * k);
+
             yield return null;
         }
 
-        onEaten?.Invoke();*/
+        // Stay inside the mouth as her head keeps moving.
+        inMouth = true;
     }
 
     /// <summary>
@@ -180,6 +227,10 @@ public class BansheeGrabSequence : MonoBehaviour
         {
             // Position only: rotation stays under the player's mouse look.
             player.transform.position = handToFollow.TransformPoint(handLocalOffset);
+        }
+        else if (inMouth)
+        {
+            player.transform.position = mouthTarget.position;
         }
 
         // Steer the camera for the whole sequence (grab, lerp and carry), not just while carried.
