@@ -289,7 +289,7 @@ MonoBehaviour:
   lookAt: {fileID: 508302756}
   player: {fileID: 0}
   pickUpTrigger: PickUp
-  snapDuration: 2.86
+  snapDuration: 4
   mouthTarget: {fileID: 880248341}
   dropStateName: PickUp
   dropAtNormalizedTime: 1
