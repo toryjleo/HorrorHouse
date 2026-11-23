@@ -156,7 +156,6 @@ MonoBehaviour:
   handToFollow: {fileID: 195064205}
   lookAt: {fileID: 508302756}
   player: {fileID: 0}
-  pickUpTrigger: PickUp
   snapDuration: 4
   mouthTarget: {fileID: 880248341}
   dropStateName: PickUp
@@ -293,6 +292,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6038193532956730770, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[23]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038193532956730770, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[24]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038193532956730770, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[25]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038193532956730770, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
       propertyPath: 'm_BlendShapeWeights.Array.data[26]'
       value: 0
       objectReference: {fileID: 0}
@@ -307,6 +318,22 @@ PrefabInstance:
     - target: {fileID: 6038193532956730770, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
       propertyPath: 'm_BlendShapeWeights.Array.data[31]'
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038193532956730770, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[44]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038193532956730770, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[45]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038193532956730770, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[56]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038193532956730770, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[58]'
+      value: 50.5
       objectReference: {fileID: 0}
     - target: {fileID: 6069930967631225794, guid: 43c16ce91f3f40342939363cd3cf07ae, type: 3}
       propertyPath: m_UpdateWhenOffscreen
