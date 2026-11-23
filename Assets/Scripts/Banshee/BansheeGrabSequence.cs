@@ -29,13 +29,6 @@ public class BansheeGrabSequence : MonoBehaviour
     [Tooltip("Player's AKFPSController. Found automatically if left empty.")]
     [SerializeField] private AKFPSController player;
 
-    /*[Tooltip("Optional: a transform at the banshee's face/mouth. The camera turns to look at it while being carried.")]
-    [SerializeField] private Transform lookTarget;*/
-
-    [Header("Animation")]
-    [Tooltip("Animator trigger that starts the pick-up animation.")]
-    [SerializeField] private string pickUpTrigger = "PickUp";
-
     [Header("Timing")]
 
     [Tooltip("How long the lerp from the player's position into the hand takes.")]
@@ -49,7 +42,7 @@ public class BansheeGrabSequence : MonoBehaviour
     [SerializeField] private string dropStateName = "PickUp";
 
     [Tooltip("How far through the animation (0-1) the player is dropped. Match this to when the mouth is open.")]
-    [Range(0f, 1f)] [SerializeField] private float dropAtNormalizedTime = 0.9f;
+    [Range(0f, 1f)][SerializeField] private float dropAtNormalizedTime = 0.9f;
 
     [Tooltip("How long the drop takes, in seconds.")]
     [SerializeField] private float dropDuration = 0.35f;
@@ -122,7 +115,7 @@ public class BansheeGrabSequence : MonoBehaviour
     {
         LockPlayer();
 
-        animator.SetTrigger(pickUpTrigger);
+        animator.SetBool("IsPickingUp", true);
 
         if (lookAt != null)
         {
