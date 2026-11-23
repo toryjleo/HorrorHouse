@@ -29,6 +29,13 @@ public class BansheeGrabSequence : MonoBehaviour
     [Tooltip("Player's AKFPSController. Found automatically if left empty.")]
     [SerializeField] private AKFPSController player;
 
+    [Header("Player Light")]
+    [Tooltip("Prefab with a Light + FlickeringLight. Spawned as a child of the player when the sequence starts. Leave empty for no light.")]
+    [SerializeField] private GameObject playerLightPrefab;
+
+    [Tooltip("Local position of the light relative to the player.")]
+    [SerializeField] private Vector3 playerLightOffset = new Vector3(0f, 1.5f, 0f);
+
     [Header("Timing")]
 
     [Tooltip("How long the lerp from the player's position into the hand takes.")]
@@ -114,6 +121,7 @@ public class BansheeGrabSequence : MonoBehaviour
     private IEnumerator Sequence()
     {
         LockPlayer();
+        SpawnPlayerLight();
 
         animator.SetBool("IsPickingUp", true);
 
@@ -165,6 +173,15 @@ public class BansheeGrabSequence : MonoBehaviour
 
         // Stay inside the mouth as her head keeps moving.
         inMouth = true;
+    }
+
+    private void SpawnPlayerLight()
+    {
+        if (playerLightPrefab == null) return;
+
+        GameObject lightObj = Instantiate(playerLightPrefab, player.transform);
+        lightObj.transform.localPosition = playerLightOffset;
+        lightObj.transform.localRotation = Quaternion.identity;
     }
 
     /// <summary>
