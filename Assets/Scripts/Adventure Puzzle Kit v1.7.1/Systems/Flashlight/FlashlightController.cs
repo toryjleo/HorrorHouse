@@ -230,6 +230,15 @@ namespace AdventurePuzzleKit.FlashlightSystem
             FlashlightClickSound();
         }
 
+        // Forces the flashlight off (e.g. for cutscenes). Pass lockInput = true to stop the player turning it back on.
+        public void ForceOff(bool lockInput)
+        {
+            isFlashlightOn = false;
+            if (flashlightSpot != null) flashlightSpot.enabled = false;
+            UpdateUIElements();
+            enabled = !lockInput;
+        }
+
         // Drain one battery over time
         void ReplaceBattery()
         {

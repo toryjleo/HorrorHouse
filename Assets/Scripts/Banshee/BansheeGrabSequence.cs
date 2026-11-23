@@ -1,5 +1,6 @@
 using System.Collections;
 using AdventurePuzzleKit;
+using AdventurePuzzleKit.FlashlightSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -122,6 +123,12 @@ public class BansheeGrabSequence : MonoBehaviour
     {
         LockPlayer();
         SpawnPlayerLight();
+
+        // Flashlight off, and the player can't turn it back on during the sequence.
+        if (FlashlightController.instance != null)
+        {
+            FlashlightController.instance.ForceOff(true);
+        }
 
         animator.SetBool("IsPickingUp", true);
 
